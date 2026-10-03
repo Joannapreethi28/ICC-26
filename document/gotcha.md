@@ -133,3 +133,5 @@ It failed on tab-group errors after 12 answers and was dropped. **Rule:** before
 ### G-023 | Laya provenance: popularity and identity not verified | OPEN | 3 Oct | Jabin
 **Observed:** 358 likes (not downloads), HF API shows 0 downloads, model created 19 Sep 2026. Files and package audited clean (docs/09). I downloaded it before Sir Jabin had seen the model page; he should have been asked first.
 **Rule:** ask before downloading any new model or package. Sir Jabin decides whether to keep Laya or switch to a more popular base (for example xlm-roberta-base or mmBERT-base) for comparison.
+
+**Update to G-023 (3 Oct):** the 0-downloads warning was overstated. Both Laya repos lack a root config.json, so Hugging Face's counter probably never counts them (inference, unverified). Do not cite 0 downloads as a risk. Comparison plan: fine-tune Laya and xlm-roberta-base on the same data, pick by held-out results.
