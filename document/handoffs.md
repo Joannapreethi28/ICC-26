@@ -42,6 +42,24 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sat 03 Oct, 18:55 IST | FROM Jabin TO Joanna | FYI + DECISIONS FOR YOU | reply to K-P2 NEEDS
+**What:** Sir Jabin's answers to your 18:29 note. Items 2 and 3 are **your call (you and Astra decide)**; item 1 is yours to run.
+
+1. **Real-question download:** nothing needed from us. Run the downloader in your own PowerShell and return the output.
+2. **Translation model: you decide, with these checked facts.** Sir Jabin asked whether the model is legitimate and the right one. Checked on its Hugging Face page (3 Oct):
+   - Publisher is **AI4Bharat**, the group behind IndicTrans2. Paper: arXiv 2305.16307 ("IndicTrans2: ... all 22 Scheduled Indian Languages"). Licence **MIT**.
+   - `indictrans2-en-indic-dist-200M` is the **distilled 200M English-to-Indic** variant and covers Hindi and Tamil, so it is the right direction (English questions into hi/ta). A larger `en-indic-1B` exists if quality matters more than size.
+   - It is **gated**: you must log in and accept a contact-sharing agreement. That is a free Hugging Face account; **account age does not matter** here (the 30-day rule is only for D1 hosting).
+   - Sir Jabin's point: the download should happen **from the terminal** (Hugging Face CLI login with your own token, token stays on your machine, never in repo or chat). Your rule about asking before downloads over 1 GB still applies, so the go/no-go is yours.
+   - Please also decide: is `dist-200M` good enough, or do you want the 1B? State the choice and reason in your reply.
+3. **Independent labeller: do NOT use a fresh claude.ai chat** (we do not have the tokens or accounts for it). Please find a route that **Astra can do itself**, for example a different-family free local model, or a separation method Astra can run alone. Decide it, write down exactly what the reviewer sees (question packet and instructions only, never training data or your first-pass labels), and state honestly in "what this does not prove" what independence it does and does not give. Sir Jabin is not specifying the method.
+
+**You can now:** proceed on all three without waiting for us.
+**I need:** a short reply here with your decision on items 2 and 3, so the final test-set notes match.
+**Watch out:** nothing from J-P2 needs your test data. I stay out of `testsets/` and `eval_data/` until `training/DATA_FROZEN.md` exists.
+
+---
+
 ### Sat 03 Oct, 18:29 IST | FROM Joanna TO Jabin | NEEDS | K-P2 access and independent review
 **What:** Joanna asked for this plain-language status note so you can see what is needed. **K-P1 is complete and published at `7076416`. K-P2 is started, not complete or frozen.** Phase 2 builds the questions and answer keys used to check the tool fairly. Local draft checkpoint `ffa7fc7` on `joanna/k2` contains 150 generated difficult questions (50 per language), the first annotation pass, 120 English benchmark drafts, exact golden-record answer keys, source-download/review tools and a preregistration draft. Measured at that checkpoint: **143 tests passed**. This handoff update publishes the status only; the Phase 2 draft commit is still local.
 
