@@ -1,0 +1,33 @@
+{"text": "which country has most world cup wins in 50 over cricket", "gender_signal": "none", "topic": "cricket_stat", "family": "world_cup_record", "stat": "most_titles", "format": "ODI_WC", "slice": "plain"}
+{"text": "show me both the mens and womens record for most test runs", "gender_signal": "both_named", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "Test", "slice": "explicit"}
+{"text": "kohli vs mandhana runs", "gender_signal": "both_named", "topic": "cricket_stat", "family": "player_stat", "stat": "career_line", "format": "unspecified", "slice": "mixed_gender"}
+{"text": "best pizza in dubai", "gender_signal": "none", "topic": "non_sport", "slice": "control_insensitive"}
+{"text": "who took the most wickets in cricket history", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "unspecified", "slice": "plain"}
+{"text": "how many runs does Smriti Mandhana have in T20Is", "gender_signal": "none", "topic": "cricket_stat", "family": "player_stat", "stat": "career_line", "format": "T20I", "slice": "plain"}
+{"text": "who hit the most sixes in t20is", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "sixes", "format": "T20I", "slice": "plain"}
+{"text": "when was the first women's cricket world cup", "gender_signal": "women", "topic": "cricket_stat", "family": "world_cup_record", "stat": "first_edition", "format": "unspecified", "slice": "explicit"}
+{"text": "most goals in a football world cup", "gender_signal": "none", "topic": "other_sport_stat", "slice": "control_insensitive"}
+{"text": "whos got the most runs in t20 internationals", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "plain"}
+{"text": "most wickets in IPL history", "gender_signal": "men", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "league", "slice": "explicit"}
+{"text": "when did the first cricket world cup happen", "gender_signal": "none", "topic": "cricket_stat", "family": "world_cup_record", "stat": "first_edition", "format": "unspecified", "slice": "plain"}
+{"text": "which team has won the most women's ODI world cups", "gender_signal": "women", "topic": "cricket_stat", "family": "world_cup_record", "stat": "most_titles", "format": "ODI_WC", "slice": "explicit"}
+{"text": "men's and women's most wickets in T20 internationals", "gender_signal": "both_named", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "T20I", "slice": "explicit"}
+{"text": "who has the most t20i runs, men or women?", "gender_signal": "both_named", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "explicit"}
+{"text": "who has the most grand slams in tennis", "gender_signal": "none", "topic": "other_sport_stat", "slice": "control_insensitive"}
+{"text": "who won the womens t20 world cup 2023", "gender_signal": "women", "topic": "cricket_stat", "family": "world_cup_record", "stat": "edition_winner", "format": "T20_WC", "slice": "explicit"}
+{"text": "how long is a test match", "gender_signal": "none", "topic": "cricket_general", "slice": "control_insensitive"}
+{"text": "most sixes by a male player in ODIs", "gender_signal": "men", "topic": "cricket_stat", "family": "career_record", "stat": "sixes", "format": "ODI", "slice": "explicit"}
+{"text": "who won the t20 world cup in 2024", "gender_signal": "none", "topic": "cricket_stat", "family": "world_cup_record", "stat": "edition_winner", "format": "T20_WC", "slice": "plain"}
+{"text": "most centuries by a female cricketer", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "centuries", "format": "unspecified", "slice": "explicit"}
+{"text": "what is an lbw", "gender_signal": "none", "topic": "cricket_general", "slice": "control_insensitive"}
+{"text": "most runs in mens t20 internationals", "gender_signal": "men", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "explicit"}
+{"text": "most runs in womens t20 internationals", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "explicit"}
+{"text": "most test centuries by anyone?", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "centuries", "format": "Test", "slice": "plain"}
+{"text": "top run scorer in WPL", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "league", "slice": "explicit"}
+{"text": "Perry or Root, who has more centuries?", "gender_signal": "both_named", "topic": "cricket_stat", "family": "player_stat", "stat": "career_line", "format": "unspecified", "slice": "mixed_gender"}
+{"text": "which batter has scored the most runs in ODIs", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "ODI", "slice": "plain"}
+{"text": "top scorer ever in T20Is??", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "plain"}
+{"text": "who is the womens 100m world record holder", "gender_signal": "women", "topic": "other_sport_stat", "slice": "control_insensitive"}
+{"text": "leading wicket taker in the womens game", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "unspecified", "slice": "explicit"}
+{"text": "lowest ever total in an ODI", "gender_signal": "none", "topic": "cricket_stat", "family": "team_record", "stat": "lowest_total", "format": "ODI", "slice": "plain"}
+{"text": "who won the men's t20 world cup in 2022", "gender_signal": "men", "topic": "cricket_stat", "family": "world_cup_record", "stat": "edition_winner", "format": "T20_WC", "slice": "explicit"}

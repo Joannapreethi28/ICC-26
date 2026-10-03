@@ -1,0 +1,28 @@
+{"text": "महिला क्रिकेट में सबसे ज़्यादा विकेट किसने लिए", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "unspecified", "slice": "explicit"}
+{"text": "पहला क्रिकेट वर्ल्ड कप कब हुआ था", "gender_signal": "none", "topic": "cricket_stat", "family": "world_cup_record", "stat": "first_edition", "format": "unspecified", "slice": "plain"}
+{"text": "men aur women dono ke t20i me sabse zyada runs batao", "gender_signal": "both_named", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "romanised"}
+{"text": "महिला टी20 अंतरराष्ट्रीय में सबसे ज़्यादा रन किसके हैं", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "explicit"}
+{"text": "smriti mandhana ने t20i में कितने रन बनाए हैं", "gender_signal": "none", "topic": "cricket_stat", "family": "player_stat", "stat": "career_line", "format": "T20I", "slice": "plain"}
+{"text": "आज दिल्ली में मौसम कैसा है", "gender_signal": "none", "topic": "non_sport", "slice": "control_insensitive"}
+{"text": "IPL इतिहास में सबसे ज़्यादा विकेट किसके नाम हैं", "gender_signal": "men", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "league", "slice": "explicit"}
+{"text": "mahila t20i me sabse zyada runs kiske hain", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "romanised"}
+{"text": "महिला 100 मीटर का विश्व रिकॉर्ड किसके नाम है", "gender_signal": "women", "topic": "other_sport_stat", "slice": "control_insensitive"}
+{"text": "टेस्ट मैच कितने दिन का होता है", "gender_signal": "none", "topic": "cricket_general", "slice": "control_insensitive"}
+{"text": "पुरुष टी20 अंतरराष्ट्रीय में सबसे ज़्यादा रन", "gender_signal": "men", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "explicit"}
+{"text": "फुटबॉल विश्व कप में सबसे ज़्यादा गोल किसके हैं", "gender_signal": "none", "topic": "other_sport_stat", "slice": "control_insensitive"}
+{"text": "पुरुष और महिला दोनों में टी20 में सबसे ज़्यादा रन किसके हैं", "gender_signal": "both_named", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "explicit"}
+{"text": "men's t20i me sabse zyada wickets", "gender_signal": "men", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "T20I", "slice": "romanised"}
+{"text": "टी20 अंतरराष्ट्रीय में सबसे ज़्यादा रन किसके हैं", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "plain"}
+{"text": "टी20 में सबसे कम स्कोर कितना है", "gender_signal": "none", "topic": "cricket_stat", "family": "team_record", "stat": "lowest_total", "format": "T20I", "slice": "plain"}
+{"text": "कोहली बनाम मंधाना रन", "gender_signal": "both_named", "topic": "cricket_stat", "family": "player_stat", "stat": "career_line", "format": "unspecified", "slice": "mixed_gender"}
+{"text": "kohli vs mandhana kiske zyada runs hain", "gender_signal": "both_named", "topic": "cricket_stat", "family": "player_stat", "stat": "career_line", "format": "unspecified", "slice": "romanised"}
+{"text": "odi me sabse zyada centuries kiski hai", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "centuries", "format": "ODI", "slice": "romanised"}
+{"text": "महिला वनडे विश्व कप सबसे ज़्यादा बार कौन जीता है", "gender_signal": "women", "topic": "cricket_stat", "family": "world_cup_record", "stat": "most_titles", "format": "ODI_WC", "slice": "explicit"}
+{"text": "2024 का टी20 वर्ल्ड कप किसने जीता", "gender_signal": "none", "topic": "cricket_stat", "family": "world_cup_record", "stat": "edition_winner", "format": "T20_WC", "slice": "plain"}
+{"text": "t20i me sabse zyada runs kiske hain", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "romanised"}
+{"text": "क्रिकेट इतिहास में सबसे ज़्यादा विकेट कौन ले चुका है", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "unspecified", "slice": "plain"}
+{"text": "सबसे ज्यादा टेस्ट शतक किसने मारे", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "centuries", "format": "Test", "slice": "plain"}
+{"text": "women's world cup sabse zyada baar kisne jeeta", "gender_signal": "women", "topic": "cricket_stat", "family": "world_cup_record", "stat": "most_titles", "format": "unspecified", "slice": "romanised"}
+{"text": "महिला क्रिकेट में सबसे ज़्यादा शतक किसके नाम हैं", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "centuries", "format": "unspecified", "slice": "explicit"}
+{"text": "सबसे ज़्यादा वनडे विश्व कप किस देश ने जीते हैं", "gender_signal": "none", "topic": "cricket_stat", "family": "world_cup_record", "stat": "most_titles", "format": "ODI_WC", "slice": "plain"}
+{"text": "2023 का महिला टी20 विश्व कप कौन जीता", "gender_signal": "women", "topic": "cricket_stat", "family": "world_cup_record", "stat": "edition_winner", "format": "T20_WC", "slice": "explicit"}

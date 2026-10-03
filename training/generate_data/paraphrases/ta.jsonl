@@ -1,0 +1,28 @@
+{"text": "பெண்கள் கிரிக்கெட்டில் அதிக விக்கெட் எடுத்தவர் யார்", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "unspecified", "slice": "explicit"}
+{"text": "முதல் கிரிக்கெட் உலகக் கோப்பை எப்போது நடந்தது", "gender_signal": "none", "topic": "cricket_stat", "family": "world_cup_record", "stat": "first_edition", "format": "unspecified", "slice": "plain"}
+{"text": "men women rendu perukkum t20i-la adhiga run sollunga", "gender_signal": "both_named", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "romanised"}
+{"text": "பெண்கள் டி20 சர்வதேசப் போட்டிகளில் அதிக ரன் யார் எடுத்தது", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "explicit"}
+{"text": "மந்தனா T20I-ல் எத்தனை ரன் எடுத்திருக்கிறார்", "gender_signal": "none", "topic": "cricket_stat", "family": "player_stat", "stat": "career_line", "format": "T20I", "slice": "plain"}
+{"text": "இன்று சென்னையில் வானிலை எப்படி", "gender_signal": "none", "topic": "non_sport", "slice": "control_insensitive"}
+{"text": "IPL வரலாற்றில் அதிக விக்கெட் எடுத்தவர்", "gender_signal": "men", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "league", "slice": "explicit"}
+{"text": "pengal t20i-la adhiga run yaaru", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "romanised"}
+{"text": "பெண்கள் 100 மீட்டர் உலக சாதனை யாருடையது", "gender_signal": "women", "topic": "other_sport_stat", "slice": "control_insensitive"}
+{"text": "டெஸ்ட் போட்டி எத்தனை நாள்", "gender_signal": "none", "topic": "cricket_general", "slice": "control_insensitive"}
+{"text": "ஆண்கள் டி20 சர்வதேசப் போட்டிகளில் அதிக ரன்", "gender_signal": "men", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "explicit"}
+{"text": "கால்பந்து உலகக் கோப்பையில் அதிக கோல் யார் அடித்தது", "gender_signal": "none", "topic": "other_sport_stat", "slice": "control_insensitive"}
+{"text": "ஆண்கள், பெண்கள் இருவரிலும் டி20-யில் அதிக ரன் யார்", "gender_signal": "both_named", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "explicit"}
+{"text": "men's t20i-la adhiga wickets", "gender_signal": "men", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "T20I", "slice": "romanised"}
+{"text": "டி20 சர்வதேசப் போட்டிகளில் அதிக ரன் யார் எடுத்தது", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "plain"}
+{"text": "டி20-யில் மிகக் குறைந்த ஸ்கோர் எவ்வளவு", "gender_signal": "none", "topic": "cricket_stat", "family": "team_record", "stat": "lowest_total", "format": "T20I", "slice": "plain"}
+{"text": "கோலி vs மந்தனா ரன்கள்", "gender_signal": "both_named", "topic": "cricket_stat", "family": "player_stat", "stat": "career_line", "format": "unspecified", "slice": "mixed_gender"}
+{"text": "kohli vs mandhana yaarukku adhiga run", "gender_signal": "both_named", "topic": "cricket_stat", "family": "player_stat", "stat": "career_line", "format": "unspecified", "slice": "romanised"}
+{"text": "odi-la adhiga century yaarukku", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "centuries", "format": "ODI", "slice": "romanised"}
+{"text": "மகளிர் ஒருநாள் உலகக் கோப்பையை அதிக முறை வென்ற அணி", "gender_signal": "women", "topic": "cricket_stat", "family": "world_cup_record", "stat": "most_titles", "format": "ODI_WC", "slice": "explicit"}
+{"text": "2024 டி20 உலகக் கோப்பை வென்ற அணி எது", "gender_signal": "none", "topic": "cricket_stat", "family": "world_cup_record", "stat": "edition_winner", "format": "T20_WC", "slice": "plain"}
+{"text": "t20i-la adhiga run yaaru eduthadhu", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "runs", "format": "T20I", "slice": "romanised"}
+{"text": "கிரிக்கெட் வரலாற்றில் அதிக விக்கெட் எடுத்தவர் யார்", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "wickets", "format": "unspecified", "slice": "plain"}
+{"text": "டெஸ்டில் அதிக சதம் அடித்தவர் யார்", "gender_signal": "none", "topic": "cricket_stat", "family": "career_record", "stat": "centuries", "format": "Test", "slice": "plain"}
+{"text": "women's world cup adhiga thadava jeichadhu yaaru", "gender_signal": "women", "topic": "cricket_stat", "family": "world_cup_record", "stat": "most_titles", "format": "unspecified", "slice": "romanised"}
+{"text": "அதிக சதம் அடித்த வீராங்கனை யார்", "gender_signal": "women", "topic": "cricket_stat", "family": "career_record", "stat": "centuries", "format": "unspecified", "slice": "explicit"}
+{"text": "ஒருநாள் உலகக் கோப்பையை அதிக முறை வென்ற நாடு எது", "gender_signal": "none", "topic": "cricket_stat", "family": "world_cup_record", "stat": "most_titles", "format": "ODI_WC", "slice": "plain"}
+{"text": "2023 பெண்கள் டி20 உலகக் கோப்பை வென்றது யார்", "gender_signal": "women", "topic": "cricket_stat", "family": "world_cup_record", "stat": "edition_winner", "format": "T20_WC", "slice": "explicit"}

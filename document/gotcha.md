@@ -125,3 +125,7 @@ It failed on tab-group errors after 12 answers and was dropped. **Rule:** before
 ### G-021 | Surname examples in the plan require a bounded interpretation | HANDLED | 3 Oct | Joanna
 **Observed:** T1.5 says surname-only matches are unknown but also explicitly requires "Kohli vs Mandhana" to resolve both categories.
 **Implementation:** only those two named shorthand examples are reviewed exceptions tied to source ESPNcricinfo IDs. Other surnames, including a currently unique surname, stay `gender=None`. Shared country names are always neutral. Fuzzy matching requires equal token counts and character similarity as well as token-set similarity, preventing partial-name matches from bypassing the ambiguity rule.
+
+### G-022 | Template labels differ from rules labels, and shell heredocs break on this path | HANDLED | 3 Oct | Jabin
+**Observed:** the audit shows the rules labeller disagrees with template labels on mixed-gender players, weak cues, injection rows and Hinglish/Tanglish topics. Separately, Git Bash heredocs fail ('unexpected EOF') when the content has apostrophes and the path contains ICC'26. Also, typos corrupted gender cue words (e.g. 'putush'), which would be label noise.
+**Rule:** model labels come from the template that wrote the text, never from rules. Typo noise must skip the `_PROTECT` gender-cue set. Use the Write tool for files with apostrophes, not heredocs.

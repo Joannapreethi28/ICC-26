@@ -45,3 +45,9 @@ Dates are 2-3 Oct 2026. "SJ" = Sir Jabin.
 - Which free local LLM to use for the three-arm test (any open instruct model that fits an 8 GB GPU).
 - Exact free hosting split (Hugging Face Space for demo+MCP+API; static pages host for record pages).
 - Whether to also use ICC official data later (production path; not for the hackathon).
+
+## J-P2 data decisions (3 Oct, Jabin)
+- Generated data goes to `training/data/` and its tests to `tests/nlu/`.
+- Labelling conventions: weak gender cue -> none; mixed-gender player pair -> both_named; injection keeps the underlying gender; labels come from the template, never the rules labeller.
+- Calibration uses template families disjoint from training, so calibration measures unseen phrasings.
+- Sizes: train 3,600 per language, calib about 1,000 per language, seed 20261003. Hindi/Tamil banks are synthetic until native-speaker review (before G3).

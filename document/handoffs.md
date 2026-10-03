@@ -151,3 +151,11 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 3. Task 0.2 (repo scaffold + env checks incl. RTX 5060 CUDA) and Task 0.3 (golden loader + leader cross-check).
 
 **Watch out:** see `gotcha.md` G-001 (Cricsheet has no Afghanistan matches), G-002 (HF hosting), G-003 (Laya data format).
+
+### Sat 03 Oct, 23:00 | FROM Jabin TO both | DONE | J-P2
+**What:** training and calibration data built and frozen. `training/generate_data/` (schema, banks_en/hi/ta, noise, grammar, build_dataset, PROMPTS.md, paraphrases/), `training/data/{train,calib}.jsonl` (10,780 / 2,981 rows, all three languages, every gender label 21-30%), hashes in `training/DATA_FROZEN.md`, `tests/nlu/test_dataset.py`.
+**You can now:** Joanna, DATA_FROZEN.md exists, so the test-set firewall (G-011) is lifted for Jabin's leakage check. Nothing needed from you for J-P3.
+**I need:** native-speaker review of the Hindi/Tamil banks (`banks_hi.py`, `banks_ta.py`) and paraphrases before Gate G3. Until then the Hindi/Tamil rows are synthetic, not native.
+**Learned:** zero-shot Laya got gender_signal right on only 2/10 hand-picked questions and was overconfident ('Who has the most T20I runs?' -> men at 0.93; 'capital of France?' -> women 0.74). This is why we fine-tune and calibrate. Not a rate, just 10 questions.
+**Watch out:** labels come from the template, not the rules labeller. Conventions: weak cue (e.g. Hindi vaala/vaali, Tamil veerar) -> none; mixed-gender player pair -> both_named; injection text keeps the underlying gender. Rules and templates disagree on these on purpose (G-022).
+
