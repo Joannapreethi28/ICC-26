@@ -14,6 +14,9 @@ Test-set CSV format (testsets/*.csv), one row per query, columns = TESTSET_COLUM
   slice              one of SLICES
   source             nq_open | aya | indictrans2 | heldout_gen
   adjudicated        0 (both annotators agreed) | 1 (decided after disagreement; reason in notes)
+                     empty string for single-agent self-review (not applicable); notes and
+                     the review manifest must state review_method=same_agent_self_review.
+                     Blank is never evidence of independent annotator agreement.
   notes              free text
 """
 
