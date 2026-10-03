@@ -96,6 +96,28 @@ Keep missing-entity coverage separate from the expected policy decision.
 Test/league stats, specific historical-edition results, rankings, captains,
 head-to-head lines and unsupported firsts remain unsupported in this contract.
 
+Natural-query clarifications recorded before any classifier/answer evaluation:
+
+- A country, season, opponent, age group, threshold or bowling-style filter must
+  not silently receive an unrestricted headline answer. Preserve the nearest
+  statistic label but mark unsupported when the catalogue cannot apply the filter.
+- Unqualified T20 cricket can include domestic cricket. Without an international
+  qualifier, use `unspecified` and unsupported for that request, rather than
+  silently asserting T20I. A named T20 World Cup remains `T20_WC`.
+- Generic batsman/player terms do not alone force men. The conventional award
+  name "man of the match/series" also does not establish a men's-only competition.
+- First/latest World Cup date or host questions use the corresponding tournament
+  record, whose frozen truth includes that event information. Historical editions
+  and country-specific first victories remain separate unsupported requests.
+- Domestic first-class records use the available `league` label; they are not
+  equated with international Test records. Cricket biographies, equipment, laws
+  and administrative history are general unless a specific playing record,
+  tournament statistic, captain/ranking or historical first is requested.
+- Natural short searches may be fragments. A translation must retain the target,
+  statistic, qualifiers and gender cues, but need not be polished prose. Reject
+  lost entities, negation, exact thresholds or format qualifiers. Label the actual
+  translated text; source typos do not automatically survive translation.
+
 ## Slice selection
 
 Choose the first applicable slice in this priority order: `injection`,

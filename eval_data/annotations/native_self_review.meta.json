@@ -1,0 +1,13 @@
+{
+  "model": "GPT-6 (Codex development agent)",
+  "model_family": "GPT",
+  "run_date": "2026-10-03",
+  "review_method": "same_agent_self_review",
+  "independent": false,
+  "prior_labels_visible": true,
+  "seen_training_data": false,
+  "items": 30,
+  "scope": "Original source questions and prior labels were read for a second semantic pass; no classifier/rules predictions or training data were used.",
+  "items_sha256": "91e17de9aaa2c834996444d588bd232eadb5d294ca52d46f610d63ccc62a873b",
+  "first_pass_sha256": "530115370440b44cf9c5a85dde60883000dbaf9b5461ea767a066685660ec967"
+}

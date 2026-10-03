@@ -1,4 +1,4 @@
-# Benchmark v1 preregistration — DRAFT, not yet frozen
+# Benchmark v1 preregistration — binding at the v1 freeze
 
 Owner: Joanna. Created 3 October 2026 before inspecting any E1 output. This file
 becomes binding when the benchmark and annotation artefacts are frozen and hashed.
@@ -29,6 +29,13 @@ serialised directly from `data/golden/records_v1.csv`, with their individual dat
 and URLs; models do not write the answer key. Empty truth for unsupported/general
 questions is explicit, not a fabricated expected fact. `data_timestamp` identifies
 the frozen snapshot; each fact retains its own `as_of`.
+
+Final v1 composition, recorded before results: 120 English, 34 Hindi and 34 Tamil
+questions. All 25 golden intents occur in each language; translated subsets have
+nine controls each. Tamil uses alternate reviewed English origins for one bowling
+record and one explicit-both control after translation-quality exclusions. Use
+recorded origin IDs for comparisons; not every translated row has the same English
+origin across Hindi and Tamil.
 
 ## Model and sampling — fixed before E1
 
@@ -125,6 +132,10 @@ question's three responses together; compute paired differences and percentile
 95% intervals. For multilingual translated equivalents, also report the dependence
 on shared English origins and do not pool languages as independent evidence.
 Report descriptive results for small slices without claiming reliable precision.
+If the same held-out classifier files are used to select the winning model family,
+report that selection use explicitly: the selected winner's score is not an
+untouched confirmation test. Do not tune thresholds, prompts, training data or
+labels after viewing these results and present the rerun as the original test.
 The initial English design includes four neutral phrasings for each of 25 golden
 intents. These are correlated paraphrases, not 100 independent underlying facts.
 Also report a sensitivity analysis bootstrapping whole intent groups (all query

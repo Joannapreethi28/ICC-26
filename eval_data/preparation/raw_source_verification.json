@@ -1,0 +1,28 @@
+{
+  "status": "VERIFIED AGAINST DOWNLOADED OFFICIAL PARQUET",
+  "date": "2026-10-03",
+  "rows": 390,
+  "files": [
+    {
+      "source_file": "aya/test/0000.parquet",
+      "sha256": "52bbb79461bff9887c9987a5737d9a06f5ec6c78c08d770828c37fc182ce2cca",
+      "matched_rows": 0
+    },
+    {
+      "source_file": "aya/train/0000.parquet",
+      "sha256": "51baa85043b569ba117f41516b32d1b0e4e2647fb203a08933f98a556fb1fb06",
+      "matched_rows": 30
+    },
+    {
+      "source_file": "nq_open/train/0000.parquet",
+      "sha256": "25d3a544324f900b31ebc05a3a5686bdd5b9b42738133500675c3f20eee7d83a",
+      "matched_rows": 347
+    },
+    {
+      "source_file": "nq_open/validation/0000.parquet",
+      "sha256": "b074bed0bccb56fa1551a8ac1c9c51ce89bc11c7fbb6a9c713b2c33a98531e12",
+      "matched_rows": 13
+    }
+  ],
+  "method": "SHA-256 for every downloaded parquet; exact text comparison at recorded zero-based physical source row for every selected NQ/Aya item."
+}

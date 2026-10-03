@@ -1,0 +1,73 @@
+{
+  "status": "UNLABELLED CANDIDATES — NOT FROZEN",
+  "counts": {
+    "scanned_ta": 14133,
+    "scanned_hi": 1153,
+    "scanned_en": 91535,
+    "candidates": 4800,
+    "control_candidates": 100
+  },
+  "candidate_counts": {
+    "ta:cricket": 40,
+    "hi:cricket": 12,
+    "ta:xsport": 29,
+    "hi:xsport": 1,
+    "en:xsport": 3895,
+    "en:cricket": 2055
+  },
+  "note": "Keyword matches are a retrieval step, not labels. False matches and oversized multi-task prompts require review.",
+  "inputs": {
+    "created_at": "2026-10-03T14:16:50.160859+00:00",
+    "files": [
+      {
+        "dataset": "CohereLabs/aya_dataset",
+        "source": "aya",
+        "split": "test",
+        "path": "aya/test/0000.parquet",
+        "url": "https://huggingface.co/datasets/CohereLabs/aya_dataset/resolve/refs%2Fconvert%2Fparquet/default/test/0000.parquet",
+        "bytes": 977517,
+        "sha256": "52bbb79461bff9887c9987a5737d9a06f5ec6c78c08d770828c37fc182ce2cca",
+        "rows": 1750,
+        "fetched_at": "2026-10-03T14:16:55.068334+00:00",
+        "licence": "Apache-2.0"
+      },
+      {
+        "dataset": "CohereLabs/aya_dataset",
+        "source": "aya",
+        "split": "train",
+        "path": "aya/train/0000.parquet",
+        "url": "https://huggingface.co/datasets/CohereLabs/aya_dataset/resolve/refs%2Fconvert%2Fparquet/default/train/0000.parquet",
+        "bytes": 137195800,
+        "sha256": "51baa85043b569ba117f41516b32d1b0e4e2647fb203a08933f98a556fb1fb06",
+        "rows": 202362,
+        "fetched_at": "2026-10-03T14:17:15.057411+00:00",
+        "licence": "Apache-2.0"
+      },
+      {
+        "dataset": "google-research-datasets/nq_open",
+        "source": "nq_open",
+        "split": "train",
+        "path": "nq_open/train/0000.parquet",
+        "url": "https://huggingface.co/datasets/google-research-datasets/nq_open/resolve/refs%2Fconvert%2Fparquet/nq_open/train/0000.parquet",
+        "bytes": 4464642,
+        "sha256": "25d3a544324f900b31ebc05a3a5686bdd5b9b42738133500675c3f20eee7d83a",
+        "rows": 87925,
+        "fetched_at": "2026-10-03T14:16:52.761330+00:00",
+        "licence": "CC-BY-SA-3.0"
+      },
+      {
+        "dataset": "google-research-datasets/nq_open",
+        "source": "nq_open",
+        "split": "validation",
+        "path": "nq_open/validation/0000.parquet",
+        "url": "https://huggingface.co/datasets/google-research-datasets/nq_open/resolve/refs%2Fconvert%2Fparquet/nq_open/validation/0000.parquet",
+        "bytes": 213603,
+        "sha256": "b074bed0bccb56fa1551a8ac1c9c51ce89bc11c7fbb6a9c713b2c33a98531e12",
+        "rows": 3610,
+        "fetched_at": "2026-10-03T14:16:54.084256+00:00",
+        "licence": "CC-BY-SA-3.0"
+      }
+    ],
+    "complete": true
+  }
+}

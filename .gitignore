@@ -17,6 +17,9 @@ models/
 *.onnx
 *.gguf
 
+# Rebuilt evaluation staging copy; final frozen files are tracked separately.
+/eval_data/preparation/release/
+
 # Local-only research material (kept off the public repo)
 icc-make-ai-know-her/source_docs/
 icc-make-ai-know-her/prompts_archive/

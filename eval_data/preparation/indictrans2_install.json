@@ -1,0 +1,516 @@
+{
+  "status": "DOWNLOADED AND INSTALLED; INFERENCE PILOT PENDING",
+  "installed_at": "2026-10-03T14:37:12.532644+00:00",
+  "repo_id": "ai4bharat/indictrans2-en-indic-dist-200M",
+  "revision": "173b94239f7c38886b2747b8d4a5db771a7e1232",
+  "weight_bytes": 1098427592,
+  "weight_sha256": "0039e4304e9889acc5c8350a193311d07aa5399b6d9fb0445e8fde19e3533bb5",
+  "small_files": [
+    {
+      "filename": ".gitattributes",
+      "bytes": 1565,
+      "sha256": "20fcfeb45de304335307c1ba9af2c6b4ec6d0b781f4b909d7dc804c34871fbef"
+    },
+    {
+      "filename": "LICENSE",
+      "bytes": 1128,
+      "sha256": "383258420065a19d9fef0daf00d10792d3f8a5ccf783d94a91f5d6755386615b"
+    },
+    {
+      "filename": "README.md",
+      "bytes": 4331,
+      "sha256": "81893d2daaa6e76f44073116d0e2d466f5696d2340776039abd6ff4d2f9a4f14"
+    },
+    {
+      "filename": "config.json",
+      "bytes": 1371,
+      "sha256": "1429519f3b36f8bab631ed632b328a3422c19c4225c825dcde27c545746f475e"
+    },
+    {
+      "filename": "configuration_indictrans.py",
+      "bytes": 14155,
+      "sha256": "d7e4ce84efacc18981228f5071b00dba6e3bf165f8ea7bcc8ecdada8942e1a52"
+    },
+    {
+      "filename": "dict.SRC.json",
+      "bytes": 645314,
+      "sha256": "c6f65113581422c8777991d3770123c63447fe63dc5f3e8f4187eeff7553a689"
+    },
+    {
+      "filename": "dict.TGT.json",
+      "bytes": 3390440,
+      "sha256": "f7817850c9e4b99c59fad57d0611c7720f1921f215e6f247cf25d52eff7f1146"
+    },
+    {
+      "filename": "generation_config.json",
+      "bytes": 163,
+      "sha256": "6c8b29ae72e680d5a2d9e849567f6f556d3f4e9bbd42434964a646f49b556972"
+    },
+    {
+      "filename": "model.SRC",
+      "bytes": 759425,
+      "sha256": "3cedc5cbcc740369b76201942a0f096fec7287fee039b55bdb956f301235b914"
+    },
+    {
+      "filename": "model.TGT",
+      "bytes": 3256903,
+      "sha256": "ac9257c8e76b8b607705b959cc3d075656ea33032f7a974e467b8941df6e98d4"
+    },
+    {
+      "filename": "modeling_indictrans.py",
+      "bytes": 79786,
+      "sha256": "99a90c287f959ad4ad30c2dcfbd0bb0675e8658d6d40c1db3a218615a08f706f"
+    },
+    {
+      "filename": "special_tokens_map.json",
+      "bytes": 96,
+      "sha256": "9046da57c270c8e74d0f38832b4adce269c9d914ef21d2a0925e7772152dd793"
+    },
+    {
+      "filename": "tokenization_indictrans.py",
+      "bytes": 8044,
+      "sha256": "35396cf65b9fdc21379f8bc12cd658eec32fbe5de87a25fa5f4df190c5ffc4e3"
+    },
+    {
+      "filename": "tokenizer_config.json",
+      "bytes": 1106,
+      "sha256": "283f76ffdd7e553ec7f108ad8eeb0124052db4bdadd924b3c291c591c8dd6625"
+    }
+  ],
+  "processor_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/VarunGumma/IndicTransToolkit/0e68fb5872f4d821578a5252f90ad43c9649370f/IndicTransTokenizer/processor.py",
+      "filename": "processor.py",
+      "bytes": 19117,
+      "sha256": "b50b4f16a0fc0d83e14ea5478bf2f76901b85f8bd09e39620d90ac2210e958d9"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/VarunGumma/IndicTransToolkit/0e68fb5872f4d821578a5252f90ad43c9649370f/LICENSE",
+      "filename": "LICENSE",
+      "bytes": 1062,
+      "sha256": "3be0a01dffc3eda371f1532a50116384d3b51695dbe30068c67419aa0923a715"
+    }
+  ],
+  "processor_revision": "0e68fb5872f4d821578a5252f90ad43c9649370f",
+  "packages": [
+    {
+      "name": "torch",
+      "version": "2.6.0+cpu",
+      "url": "https://download.pytorch.org/whl/cpu/torch-2.6.0%2Bcpu-cp311-cp311-win_amd64.whl",
+      "hashes": {
+        "sha256": "24c9d3d13b9ea769dd7bd5c11cfa1fc463fd7391397156565484565ca685d908"
+      }
+    },
+    {
+      "name": "transformers",
+      "version": "4.51.3",
+      "url": "https://files.pythonhosted.org/packages/a9/b6/5257d04ae327b44db31f15cce39e6020cc986333c715660b1315a9724d82/transformers-4.51.3-py3-none-any.whl",
+      "hashes": {
+        "sha256": "fd3279633ceb2b777013234bbf0b4f5c2d23c4626b05497691f00cfda55e8a83"
+      }
+    },
+    {
+      "name": "huggingface-hub",
+      "version": "0.36.0",
+      "url": "https://files.pythonhosted.org/packages/cb/bd/1a875e0d592d447cbc02805fd3fe0f497714d6a2583f59d14fa9ebad96eb/huggingface_hub-0.36.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "7bcc9ad17d5b3f07b57c78e79d527102d08313caa278a641993acddcb894548d"
+      }
+    },
+    {
+      "name": "numpy",
+      "version": "2.2.6",
+      "url": "https://files.pythonhosted.org/packages/31/0a/f354fb7176b81747d870f7991dc763e157a934c717b67b58456bc63da3df/numpy-2.2.6-cp311-cp311-win_amd64.whl",
+      "hashes": {
+        "sha256": "e8213002e427c69c45a52bbd94163084025f533a55a59d6f9c5b820774ef3303"
+      }
+    },
+    {
+      "name": "sentencepiece",
+      "version": "0.2.0",
+      "url": "https://files.pythonhosted.org/packages/a2/f6/587c62fd21fc988555b85351f50bbde43a51524caafd63bc69240ded14fd/sentencepiece-0.2.0-cp311-cp311-win_amd64.whl",
+      "hashes": {
+        "sha256": "0993dbc665f4113017892f1b87c3904a44d0640eda510abcacdfb07f74286d36"
+      }
+    },
+    {
+      "name": "sacremoses",
+      "version": "0.1.1",
+      "url": "https://files.pythonhosted.org/packages/0b/f0/89ee2bc9da434bd78464f288fdb346bc2932f2ee80a90b2a4bbbac262c74/sacremoses-0.1.1-py3-none-any.whl",
+      "hashes": {
+        "sha256": "31e04c98b169bfd902144824d191825cd69220cdb4ae4bcf1ec58a7db5587b1a"
+      }
+    },
+    {
+      "name": "indic-nlp-library",
+      "version": "0.92",
+      "url": "https://files.pythonhosted.org/packages/ec/21/61240bcf965cedfec993497b38c42f054b149b9669e6d6cddeb1dee09d51/indic_nlp_library-0.92-py3-none-any.whl",
+      "hashes": {
+        "sha256": "6cbc38886184e94f71c9a59e7448a9cae086c7cb222ffd9aef6fd74ea0daf895"
+      }
+    },
+    {
+      "name": "sympy",
+      "version": "1.13.1",
+      "url": "https://files.pythonhosted.org/packages/b2/fe/81695a1aa331a842b582453b605175f419fe8540355886031328089d840a/sympy-1.13.1-py3-none-any.whl",
+      "hashes": {
+        "sha256": "db36cdc64bf61b9b24578b6f7bab1ecdd2452cf008f34faa33776680c26d66f8"
+      }
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "url": "https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c"
+      }
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.21.4",
+      "url": "https://files.pythonhosted.org/packages/41/f2/fd673d979185f5dcbac4be7d09461cbb99751554ffb6718d0013af8604cb/tokenizers-0.21.4-cp39-abi3-win_amd64.whl",
+      "hashes": {
+        "sha256": "475d807a5c3eb72c59ad9b5fcdb254f6e17f53dfcbb9903233b0dfa9c943b597"
+      }
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.9.0",
+      "url": "https://files.pythonhosted.org/packages/6c/c0/a98505f18594f1bce828bb159cec0fcf9860562f1a2c85913409fc8f3d9e/fsspec-2026.9.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "8dd6e646e99ea382bd85f97a45e6b526a442d79423a7dc673f1e2756d05fcb5f"
+      }
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+      "hashes": {
+        "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+      }
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "url": "https://files.pythonhosted.org/packages/da/e3/ea007450a105ae919a72393cb06f122f288ef60bba2dc64b26e2646fa315/pyyaml-6.0.3-cp311-cp311-win_amd64.whl",
+      "hashes": {
+        "sha256": "9f3bfb4965eb874431221a3ff3fdcddc7e74e3b07799e0e84ca4a0f867d449bf"
+      }
+    },
+    {
+      "name": "regex",
+      "version": "2026.9.29",
+      "url": "https://files.pythonhosted.org/packages/4d/4a/aab232183c70fdcf77bcf0c51819da02ec522e393e6a0bf00bcf2142e21f/regex-2026.9.29-cp311-cp311-win_amd64.whl",
+      "hashes": {
+        "sha256": "1043aedf5917caa861bcb25a9c11460049656bdf0017a90a309fa8f255467725"
+      }
+    },
+    {
+      "name": "safetensors",
+      "version": "0.8.0",
+      "url": "https://files.pythonhosted.org/packages/1b/6d/3fba214c1e5e0f69991677ec3bc17023f0421776975e1de0c682dca475e2/safetensors-0.8.0-cp310-abi3-win_amd64.whl",
+      "hashes": {
+        "sha256": "096ec1a98435df7beb08853bb5aa9081a84f23d0adc67ed1a0a10550f608373f"
+      }
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1",
+      "url": "https://files.pythonhosted.org/packages/a7/03/921a3d3c75785aca9ebfbfcabfbc3a1be12e2ab5265deb026d55a5a3f83e/tqdm-4.70.1-py3-none-any.whl",
+      "hashes": {
+        "sha256": "c293e525e6fef9c20e8728fd4612df02a0aa31bb5fe91ecd93e123b1b7bffa73"
+      }
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+      }
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360"
+      }
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "url": "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl",
+      "hashes": {
+        "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"
+      }
+    },
+    {
+      "name": "filelock",
+      "version": "4.0.9",
+      "url": "https://files.pythonhosted.org/packages/01/4f/83454fafd628e1e7e1726d74e44fb2332be5969d04c6182ca1fecb6c580e/filelock-4.0.9-py3-none-any.whl",
+      "hashes": {
+        "sha256": "9287fd61b99a806e5202be29a83034c0808a1b9830e820537c2f5773981f7eeb"
+      }
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "url": "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl",
+      "hashes": {
+        "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+      }
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.4",
+      "url": "https://files.pythonhosted.org/packages/91/89/f2b509f7bf79352e40117824c1070dbeafd4df67031d3fa98165a3134228/markupsafe-3.0.4-cp311-cp311-win_amd64.whl",
+      "hashes": {
+        "sha256": "fdb4ca07ab75ffadab4a8b135ad59cdbb3156b99310f3d565370da74a15d6bd3"
+      }
+    },
+    {
+      "name": "joblib",
+      "version": "1.6.0",
+      "url": "https://files.pythonhosted.org/packages/18/53/84099323c2ec4be98d935f63c033ac4151ee83836ca1050ede3b3aadf155/joblib-1.6.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "3dbbf9f6e4b592a2357b854608e980fe6390d131d7a82f011a377ef2ebef7aba"
+      }
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2",
+      "url": "https://files.pythonhosted.org/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl",
+      "hashes": {
+        "sha256": "9acb47f6afd73f60dc1df93bb801b472f05ff42fa6c84167d25cb206be1fbf4a"
+      }
+    },
+    {
+      "name": "Morfessor",
+      "version": "2.0.6",
+      "url": "https://files.pythonhosted.org/packages/39/e6/7afea30be2ee4d29ce9de0fa53acbb033163615f849515c0b1956ad074ee/Morfessor-2.0.6-py3-none-any.whl",
+      "hashes": {
+        "sha256": "7215e37909ebd2bafeeec5fdf4e339a25e61aee4895ff99317b9fb44eddab562"
+      }
+    },
+    {
+      "name": "networkx",
+      "version": "3.6.1",
+      "url": "https://files.pythonhosted.org/packages/9e/c9/b2622292ea83fbb4ec318f5b9ab867d0a28ab43c5717bb85b0a5f6b3b0a4/networkx-3.6.1-py3-none-any.whl",
+      "hashes": {
+        "sha256": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762"
+      }
+    },
+    {
+      "name": "pandas",
+      "version": "3.0.6",
+      "url": "https://files.pythonhosted.org/packages/d3/dc/d2df02854aec5d47659acfb2be352eecc691845b2f86e99c84f1010a8671/pandas-3.0.6-cp311-cp311-win_amd64.whl",
+      "hashes": {
+        "sha256": "2e5fa32ff162dfdbc280157d664f44d23049ae414725af9676df339c501d82cd"
+      }
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "hashes": {
+        "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+      }
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
+      "hashes": {
+        "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+      }
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "url": "https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl",
+      "hashes": {
+        "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+      }
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "url": "https://files.pythonhosted.org/packages/e8/fc/fdf8cf52ff21cd5bf158f20978991cf985325842f74283eb6df26c8a39d8/charset_normalizer-3.5.2-cp311-cp311-win_amd64.whl",
+      "hashes": {
+        "sha256": "87e50a3e7cb90af586b6c5faf23e302a970415ac73bd7bd90a515a04b427ef96"
+      }
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "url": "https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl",
+      "hashes": {
+        "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+      }
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "url": "https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+      }
+    },
+    {
+      "name": "certifi",
+      "version": "2026.7.22",
+      "url": "https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl",
+      "hashes": {
+        "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+      }
+    },
+    {
+      "name": "sphinx-argparse",
+      "version": "0.6.1",
+      "url": "https://files.pythonhosted.org/packages/cb/2a/6f4b73c1086822852eb9a2a905cfe377daafa7ab2c3196d8854dc99d1616/sphinx_argparse-0.6.1-py3-none-any.whl",
+      "hashes": {
+        "sha256": "5b4c5e8f9194be4a48f0b3918eb5c32434c400e08f92a64fb5343ee282158c4a"
+      }
+    },
+    {
+      "name": "Sphinx",
+      "version": "9.0.4",
+      "url": "https://files.pythonhosted.org/packages/c6/3f/4bbd76424c393caead2e1eb89777f575dee5c8653e2d4b6afd7a564f5974/sphinx-9.0.4-py3-none-any.whl",
+      "hashes": {
+        "sha256": "5bebc595a5e943ea248b99c13814c1c5e10b3ece718976824ffa7959ff95fffb"
+      }
+    },
+    {
+      "name": "docutils",
+      "version": "0.22.4",
+      "url": "https://files.pythonhosted.org/packages/02/10/5da547df7a391dcde17f59520a231527b8571e6f46fc8efb02ccb370ab12/docutils-0.22.4-py3-none-any.whl",
+      "hashes": {
+        "sha256": "d0013f540772d1420576855455d050a2180186c91c15779301ac2ccb3eeb68de"
+      }
+    },
+    {
+      "name": "alabaster",
+      "version": "1.0.0",
+      "url": "https://files.pythonhosted.org/packages/7e/b3/6b4067be973ae96ba0d615946e314c5ae35f9f993eca561b356540bb0c2b/alabaster-1.0.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "fc6786402dc3fcb2de3cabd5fe455a2db534b371124f1f21de8731783dec828b"
+      }
+    },
+    {
+      "name": "babel",
+      "version": "2.18.0",
+      "url": "https://files.pythonhosted.org/packages/77/f5/21d2de20e8b8b0408f0681956ca2c69f1320a3848ac50e6e7f39c6159675/babel-2.18.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "e2b422b277c2b9a9630c1d7903c2a00d0830c409c59ac8cae9081c92f1aeba35"
+      }
+    },
+    {
+      "name": "imagesize",
+      "version": "2.0.1",
+      "url": "https://files.pythonhosted.org/packages/01/f9/575c8d760eae1fc99651b7cc5efd96ad5379ca4d6b53750b0fb4fe983f34/imagesize-2.0.1-py3-none-any.whl",
+      "hashes": {
+        "sha256": "ea0c9a0384df69ed86a943a15cde37d0360b82491b3910dc2215e202e62b5b02"
+      }
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "url": "https://files.pythonhosted.org/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9"
+      }
+    },
+    {
+      "name": "roman-numerals",
+      "version": "4.1.0",
+      "url": "https://files.pythonhosted.org/packages/04/54/6f679c435d28e0a568d8e8a7c0a93a09010818634c3c3907fc98d8983770/roman_numerals-4.1.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "647ba99caddc2cc1e55a51e4360689115551bf4476d90e8162cf8c345fe233c7"
+      }
+    },
+    {
+      "name": "snowballstemmer",
+      "version": "3.1.1",
+      "url": "https://files.pythonhosted.org/packages/4c/07/2ebca9b11fb9be7340a818d8d6f63feaebb146be2c4afbd6061701d6df6e/snowballstemmer-3.1.1-py3-none-any.whl",
+      "hashes": {
+        "sha256": "7e207fa178741da09cdee59d3ecec3827ad5f92b1fc5c9ff3755b639f71f5752"
+      }
+    },
+    {
+      "name": "sphinxcontrib-applehelp",
+      "version": "2.0.0",
+      "url": "https://files.pythonhosted.org/packages/5d/85/9ebeae2f76e9e77b952f4b274c27238156eae7979c5421fba91a28f4970d/sphinxcontrib_applehelp-2.0.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "4cd3f0ec4ac5dd9c17ec65e9ab272c9b867ea77425228e68ecf08d6b28ddbdb5"
+      }
+    },
+    {
+      "name": "sphinxcontrib-devhelp",
+      "version": "2.0.0",
+      "url": "https://files.pythonhosted.org/packages/35/7a/987e583882f985fe4d7323774889ec58049171828b58c2217e7f79cdf44e/sphinxcontrib_devhelp-2.0.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "aefb8b83854e4b0998877524d1029fd3e6879210422ee3780459e28a1f03a8a2"
+      }
+    },
+    {
+      "name": "sphinxcontrib-htmlhelp",
+      "version": "2.1.0",
+      "url": "https://files.pythonhosted.org/packages/0a/7b/18a8c0bcec9182c05a0b3ec2a776bba4ead82750a55ff798e8d406dae604/sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "166759820b47002d22914d64a075ce08f4c46818e17cfc9470a9786b759b19f8"
+      }
+    },
+    {
+      "name": "sphinxcontrib-jsmath",
+      "version": "1.0.1",
+      "url": "https://files.pythonhosted.org/packages/c2/42/4c8646762ee83602e3fb3fbe774c2fac12f317deb0b5dbeeedd2d3ba4b77/sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl",
+      "hashes": {
+        "sha256": "2ec2eaebfb78f3f2078e73666b1415417a116cc848b72e5172e596c871103178"
+      }
+    },
+    {
+      "name": "sphinxcontrib-qthelp",
+      "version": "2.0.0",
+      "url": "https://files.pythonhosted.org/packages/27/83/859ecdd180cacc13b1f7e857abf8582a64552ea7a061057a6c716e790fce/sphinxcontrib_qthelp-2.0.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "b18a828cdba941ccd6ee8445dbe72ffa3ef8cbe7505d8cd1fa0d42d3f2d5f3eb"
+      }
+    },
+    {
+      "name": "sphinxcontrib-serializinghtml",
+      "version": "2.0.0",
+      "url": "https://files.pythonhosted.org/packages/52/a7/d2782e4e3f77c8450f727ba74a8f12756d5ba823d81b941f1b04da9d033a/sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl",
+      "hashes": {
+        "sha256": "6e2cb0eef194e10c27ec0023bfeb25badbbb5868244cf5bc5bdc04e4464bf331"
+      }
+    },
+    {
+      "name": "sphinx_rtd_theme",
+      "version": "3.1.0",
+      "url": "https://files.pythonhosted.org/packages/87/c7/b5c8015d823bfda1a346adb2c634a2101d50bb75d421eb6dcb31acd25ebc/sphinx_rtd_theme-3.1.0-py2.py3-none-any.whl",
+      "hashes": {
+        "sha256": "1785824ae8e6632060490f67cf3a72d404a85d2d9fc26bce3619944de5682b89"
+      }
+    },
+    {
+      "name": "sphinxcontrib-jquery",
+      "version": "4.1",
+      "url": "https://files.pythonhosted.org/packages/76/85/749bd22d1a68db7291c89e2ebca53f4306c3f205853cf31e9de279034c3c/sphinxcontrib_jquery-4.1-py2.py3-none-any.whl",
+      "hashes": {
+        "sha256": "f936030d7d0147dd026a4f2b5a57343d233f1fc7b363f68b3d4f1cb0993878ae"
+      }
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.5",
+      "url": "https://files.pythonhosted.org/packages/94/21/1e5995a1c920cce14e4bffae20c665ec10e7ed03ab25e006cd741092b718/tzdata-2026.5-py2.py3-none-any.whl",
+      "hashes": {
+        "sha256": "b683bd1b6659ddcd810ff02ad09ba821d4bf1065072805063eb35c49617905ac"
+      }
+    }
+  ],
+  "runtime": "Windows x64 / Python 3.11 / CPU float32",
+  "download_approval": "Joanna; helper run explicitly with --approved-download",
+  "translation_status": "not run"
+}

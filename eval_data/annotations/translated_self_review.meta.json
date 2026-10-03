@@ -1,0 +1,13 @@
+{
+  "model": "GPT-6 (Codex development agent)",
+  "model_family": "GPT",
+  "run_date": "2026-10-03",
+  "review_method": "same_agent_self_review",
+  "independent": false,
+  "prior_labels_visible": true,
+  "seen_training_data": false,
+  "items": 300,
+  "items_sha256": "9622b1e06001d28104c4f9f8f4d4f9a7a1e3a6e38914b5412a20c60734432b70",
+  "first_pass_sha256": "d1d6833f1e71dac0b1c28d7c32d39949624d3c7578582e660332e4833b84b99d",
+  "scope": "All 300 retained actual Hindi/Tamil translations read again alongside assigned labels; one non-independent reviewer."
+}

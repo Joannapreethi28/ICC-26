@@ -1,3 +1,7 @@
+> Status update, 3 October 2026: account/access, model download and local inference
+> are complete. This file preserves the original access instructions. See
+> `TRANSLATION_SETUP.md` for the measured run and `DATA_CARD.md` for final retention.
+
 # IndicTrans2 access setup
 
 Joanna reports creating her free Hugging Face account, verifying her email and

@@ -1,0 +1,8 @@
+# Isolated CPU inference environment; does not replace the HF login environment.
+torch @ https://download.pytorch.org/whl/cpu/torch-2.6.0%2Bcpu-cp311-cp311-win_amd64.whl
+transformers==4.51.3
+huggingface-hub==0.36.0
+numpy==2.2.6
+sentencepiece==0.2.0
+sacremoses==0.1.1
+indic-nlp-library==0.92

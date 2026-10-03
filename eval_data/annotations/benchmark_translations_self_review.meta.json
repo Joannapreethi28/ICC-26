@@ -1,0 +1,13 @@
+{
+  "model": "GPT-6 (Codex development agent)",
+  "model_family": "GPT",
+  "run_date": "2026-10-03",
+  "review_method": "same_agent_self_review",
+  "independent": false,
+  "prior_labels_visible": true,
+  "seen_training_data": false,
+  "items": 68,
+  "items_sha256": "066c872ab973b9cfb523699dbe8cfda4209e14e2c45b34329e078ebea6cb8209",
+  "first_pass_sha256": "21c003dd497d3970b8c7c427b71757d5236229cf933fe1d99c69213af79279e3",
+  "english_review_sha256": "5fef0585c8e320ae87071099730d7f858cd07a71741be5eab654fac0298a2770"
+}

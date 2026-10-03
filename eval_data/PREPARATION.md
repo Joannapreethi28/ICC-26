@@ -1,121 +1,40 @@
-# Phase 2 preparation — not a frozen evaluation release
+# Phase 2 preparation and audit trail
 
-Prepared on 3 October 2026 by Joanna's GPT-family development agent. The files
-below are evaluation material and must not enter a training-generation context.
-Jabin must respect the firewall in `OWNERS.md` before opening this directory.
+The final composition and limitations are in [DATA_CARD.md](DATA_CARD.md).
+This directory contains evaluation material; it must never enter training generation.
 
-## Current measured state
+- `preparation/source_manifest.json`: four official parquet downloads, hashes,
+  source sizes and retrieval counts. Raw parquet remains gitignored.
+- `preparation/source_candidates.jsonl`, `control_candidates.jsonl`: unlabelled
+  retrieval archives. Keyword routes are not semantic labels.
+- `preparation/nq_selected_indices.json`, `native_exclusions.jsonl`: natural-source
+  sampling and exclusion decisions. Final source text exactly matches original rows.
+- `preparation/raw_source_verification.json`: all 390 retained original NQ/Aya rows
+  checked against their downloaded official parquet and recorded source indexes.
+- `annotations/*_a.jsonl`: original annotation passes, preserved.
+- `annotations/*_self_review.jsonl` and `.meta.json`: actual second semantic passes,
+  reasons, corrections, reviewer declarations and input bindings where applicable.
+- `preparation/translation*_requests.jsonl` and `translation*_output.jsonl`: actual
+  input/output history for the pilot, main and reserve IndicTrans2 runs. The suffix
+  reserve is an additional quality-replacement pool, not a second evaluation model.
+- `preparation/translated_items.jsonl`, `benchmark_translation_items.jsonl`: selected
+  raw model outputs, unchanged. Separate exclusion logs retain rejected/unused IDs.
+- `tools/review.py`: label and self-review validator; never uses the project NLU.
+- `tools/build_benchmark.py`: original English benchmark answer-key builder.
+- `tools/build_release.py`: combines reviewed evidence, rejects mismatched sources,
+  stale reviews and duplicates, and produces/checks the final release.
+- `preparation/release/`: reproducible staging copy. The top-level final CSVs and
+  `testsets/FROZEN.md` become authoritative at freeze; old drafts remain historical.
 
-- 150 generated hard-case candidates: 50 English, 50 Hindi, 50 Tamil. They are
-  designed model-authored examples, not real user queries or native-speaker data.
-- Astra annotated and then semantically rechecked all 150 generated items under
-  Joanna's selected same-agent method. All original labels were retained; per-item
-  review notes, original/reviewed annotations and input hashes are recorded.
-  This is not independent agreement or human review. The resulting CSVs remain
-  in `preparation/self_reviewed_heldout/`, not the final frozen test sets.
-- 120 English benchmark draft questions: 100 neutral paraphrases across 25
-  golden intents and 20 controls/unsupported/ambiguous cases. Golden answer fields
-  copy the source CSV rows exactly, including evidence limitations and dates.
-- All 120 English benchmark prompts now have recorded semantic self-review;
-  original design labels were retained. The reviewed draft is separate from the
-  unreviewed checkpoint. Input hashes reject stale reviews after question or
-  golden-source changes. This checks meaning and answer-key alignment, not fresh
-  external verification of the underlying cricket records.
-- No natural-query sources have been downloaded in this session yet; no source
-  selection counts, IndicTrans2 translations, or frozen results are claimed.
-- The full first-phase snapshot is on `main` at `7076416`. Phase 2 remains on the
-  local `joanna/k2` branch until the remaining gates are satisfied.
+The original `blind_heldout/` packet is retained for audit history. It does not make
+this same-session review blind. Joanna explicitly replaced the old second-model
+requirement; do not request another reviewer or infer independent agreement.
 
-## Files and purpose
+Rebuild locally with `python eval_data/tools/build_release.py`; verify an existing
+freeze with `--check`. `--freeze` creates the first local release and refuses to
+replace an existing one. Git publication is a separate step, recorded in handoffs.
 
-| File | Purpose |
-|---|---|
-| `tools/fetch_sources.py` | Download official source parquet under a 900 MiB ceiling; preserve checksums, row references, spelling and duplicate references. Keyword retrieval produces candidates, never labels. |
-| `preparation/heldout_candidates.jsonl` | Model-generated difficult queries with source and generator provenance. |
-| `annotations/heldout_a.jsonl` and `.meta.json` | Original annotation pass and declared model/context metadata, retained for comparison. |
-| `annotations/heldout_self_review.jsonl` and `.meta.json` | Actual same-agent review notes and process metadata. |
-| `preparation/self_reviewed_heldout/` | 150 reviewed generated rows as draft CSVs, with blank adjudication values and a correction/provenance manifest. |
-| `preparation/blind_heldout/` | Existing query-only packet and vocabulary; using this does not make same-session self-review blind. |
-| `ANNOTATION_RUBRIC.md` | Semantic labelling instructions, planned support scope and disagreement rules. |
-| `tools/review.py` | Validate the selected self-review method and log corrections without false agreement claims. The original dual-review validator is retained separately. Neither route automatically freezes data. |
-| `preparation/benchmark_seeds.jsonl` | Designed English prompts; proposed interpretations still require semantic review. |
-| `tools/build_benchmark.py` | Rebuild the unreviewed draft; `--reviewed` validates review coverage and input hashes before building the separate reviewed draft. |
-| `preparation/benchmark_en_draft.csv` and `.manifest.json` | English draft with source hashes, counts and source-evidence caveats. |
-| `annotations/benchmark_self_review.jsonl` and `.meta.json` | 120 semantic review notes, exact input hashes and the single-reviewer limitation. |
-| `preparation/benchmark_en_self_reviewed.csv` and `.manifest.json` | Reviewed English draft with exact source-row answer keys; translations and final freeze still pending. |
-| `PREREGISTRATION.md` | Draft prompts, settings, scoring denominators and bootstrap design; no results. |
-
-## Resume the public-source step
-
-From the repository root with the project Python environment:
-
-```powershell
-python eval_data/tools/fetch_sources.py
-```
-
-The current Codex execution sandbox cannot make the download connections. Joanna
-has been given the full-path equivalent to run in normal PowerShell. The script
-does not require a Hugging Face account for these public datasets. If it fails,
-retain its output; do not invent replacement source rows. After downloading,
-`--extract-only` repeats checksum-validated retrieval offline.
-
-Official references:
-[dataset parquet API](https://huggingface.co/docs/dataset-viewer/en/parquet),
-[NQ-open](https://huggingface.co/datasets/google-research-datasets/nq_open),
-[Aya](https://huggingface.co/datasets/CohereLabs/aya_dataset).
-Project source credits: NQ-open CC BY-SA 3.0; Aya Apache-2.0. Preserve attribution
-in the final benchmark/data card and record the actual source file hashes.
-
-## Review method chosen by Joanna
-
-On 3 October 2026 Joanna instructed Astra to be the reviewer and declined another
-Claude chat. This supersedes the earlier two-family requirement; the decision and
-the shared CSV clarification are recorded in `document/handoffs.md`. Do not ask
-Joanna for a second reviewer again unless she changes this instruction.
-
-Astra semantically rechecks every question and label against the rubric, records
-a `review_note` per item, preserves the first pass and explains corrections.
-The same session has seen its prior labels, so a query-only packet does not make
-this blind. No training-data generator or project NLU classifier labels the data.
-
-Use `tools/review.py self-review` with `--items`, `--a`, `--reviewed`, `--meta` and
-`--out`. Metadata identifies `model`, `model_family`, ISO `run_date`,
-`review_method=same_agent_self_review`, `prior_labels_visible=true`,
-`seen_training_data=false` and `independent=false`. These are honest process
-declarations; the validator cannot independently certify them. Every reviewed
-annotation needs a reason. Output uses blank `adjudicated` (not applicable),
-method-identifying notes and a manifest with actual corrections. It stays a draft
-until all remaining source, translation and freeze requirements are satisfied.
-
-One model can repeat its own mistakes, particularly on questions it authored.
-Report one reviewer and no independent agreement rate or completed human review.
-
-## Translation requirements still pending
-
-Use the actual [IndicTrans2 distilled English-to-Indic model](https://huggingface.co/ai4bharat/indictrans2-en-indic-dist-200M)
-for the required real-query and benchmark translations. Its access gate requires
-Joanna to log in and accept the provider's conditions. Never paste access tokens
-in chat or commit them. The [model files](https://huggingface.co/ai4bharat/indictrans2-en-indic-dist-200M/tree/main)
-include approximately 1.1 GB of safetensors weights; avoid downloading the duplicate
-PyTorch weights. Runtime packages add further download/storage requirements.
-
-Update: Joanna reports that account creation, email verification and model access
-acceptance are done. The prepared terminal helper is awaiting execution; see
-[HF_ACCESS.md](HF_ACCESS.md). No model weights or translation runtime are installed.
-
-The project instruction in `document/joanna_split.md` §0 is: **"Ask Joanna before
-downloads larger than 1 GB or jobs longer than 20 minutes."** No such download or
-long-running translation job has been authorised or started. Before requesting it,
-prepare the exact pinned model/package plan, inspect required custom model code,
-and estimate runtime with a small sample. Do not label GPT-authored translations
-as `indictrans2`. Keep model revision, generation settings, English origin IDs,
-raw output and translation-review notes.
-
-## Remaining work before K-P2 DONE
-
-Select real NQ/Aya queries semantically and log exclusions; finish annotation and
-self-review for the remaining natural and translated sets; run actual IndicTrans2
-translations; record corrections; publish the required CSVs and provenance; validate counts,
-hash and freeze all final inputs before any evaluation output is inspected. Post
-the final handoff and push only with an accurate completion status. No measured
-model accuracy or benchmark outcome exists yet.
+Source retrieval uses [Hugging Face's parquet API](https://huggingface.co/docs/dataset-viewer/en/parquet),
+[NQ-open](https://huggingface.co/datasets/google-research-datasets/nq_open) and
+[Aya](https://huggingface.co/datasets/CohereLabs/aya_dataset). No project classifier
+or benchmark model results were used to select or label these questions.

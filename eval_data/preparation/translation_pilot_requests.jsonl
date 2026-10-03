@@ -1,0 +1,4 @@
+{"id": "pilot-hi-0", "text": "Who has scored the most career runs in T20 internationals?", "target_lang": "hi", "evaluation_set": "pilot", "origin_id": "bench-en-001"}
+{"id": "pilot-hi-1", "text": "Who has the most runs in women's T20 internationals?", "target_lang": "hi", "evaluation_set": "pilot", "origin_id": "bench-en-101"}
+{"id": "pilot-ta-0", "text": "Who has scored the most career runs in T20 internationals?", "target_lang": "ta", "evaluation_set": "pilot", "origin_id": "bench-en-001"}
+{"id": "pilot-ta-1", "text": "Who has the most runs in women's T20 internationals?", "target_lang": "ta", "evaluation_set": "pilot", "origin_id": "bench-en-101"}

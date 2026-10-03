@@ -1,0 +1,45 @@
+{"id": "ta-aya-train-5a69e8e6-002050", "candidate_index": 2, "reason": "Cricket/tennis appears only among multiple-choice options in an unrelated sport identity/popularity question; not a cricket statistic or a cross-sport statistic."}
+{"id": "ta-aya-train-5a69e8e6-016541", "candidate_index": 4, "reason": "Source is a paragraph or incomplete continuation without a standalone statistical question."}
+{"id": "ta-aya-train-5a69e8e6-022532", "candidate_index": 5, "reason": "Article continuation or summarization task rather than a standalone sports statistics query; preserve full original only in candidate archive."}
+{"id": "ta-aya-train-5a69e8e6-045163", "candidate_index": 11, "reason": "Multi-part prompt with different factual/statistical targets; cannot represent faithfully as one evaluation row without splitting the source."}
+{"id": "hi-aya-train-5a69e8e6-047401", "candidate_index": 12, "reason": "Paragraph topic/context identification, not a sports statistics question."}
+{"id": "ta-aya-train-5a69e8e6-070093", "candidate_index": 21, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-010118; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-071465", "candidate_index": 22, "reason": "Multi-part prompt with different factual/statistical targets; cannot represent faithfully as one evaluation row without splitting the source."}
+{"id": "ta-aya-train-5a69e8e6-073384", "candidate_index": 23, "reason": "Source is a paragraph or incomplete continuation without a standalone statistical question."}
+{"id": "ta-aya-train-5a69e8e6-075872", "candidate_index": 24, "reason": "Reading-comprehension prompt supplies the club/title answer in its context; excluded from standalone fan-statistics transfer set."}
+{"id": "ta-aya-train-5a69e8e6-078162", "candidate_index": 25, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-010118; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-078529", "candidate_index": 26, "reason": "Football definition, not an other-sport statistical request."}
+{"id": "ta-aya-train-5a69e8e6-083330", "candidate_index": 28, "reason": "Source is a paragraph or incomplete continuation without a standalone statistical question."}
+{"id": "ta-aya-train-5a69e8e6-092766", "candidate_index": 30, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-066084; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-094844", "candidate_index": 31, "reason": "Multi-part prompt with different factual/statistical targets; cannot represent faithfully as one evaluation row without splitting the source."}
+{"id": "ta-aya-train-5a69e8e6-095995", "candidate_index": 32, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-066084; excluded to avoid duplicate inflation."}
+{"id": "hi-aya-train-5a69e8e6-100191", "candidate_index": 35, "reason": "Multi-part prompt with different factual/statistical targets; cannot represent faithfully as one evaluation row without splitting the source."}
+{"id": "ta-aya-train-5a69e8e6-106193", "candidate_index": 37, "reason": "Cricket/tennis appears only among multiple-choice options in an unrelated sport identity/popularity question; not a cricket statistic or a cross-sport statistic."}
+{"id": "hi-aya-train-5a69e8e6-106220", "candidate_index": 38, "reason": "Multi-part prompt with different factual/statistical targets; cannot represent faithfully as one evaluation row without splitting the source."}
+{"id": "ta-aya-train-5a69e8e6-106604", "candidate_index": 39, "reason": "Multi-part prompt with different factual/statistical targets; cannot represent faithfully as one evaluation row without splitting the source."}
+{"id": "ta-aya-train-5a69e8e6-111509", "candidate_index": 40, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-000896; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-111641", "candidate_index": 41, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-066084; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-116113", "candidate_index": 43, "reason": "Article continuation or summarization task rather than a standalone sports statistics query; preserve full original only in candidate archive."}
+{"id": "ta-aya-train-5a69e8e6-116188", "candidate_index": 44, "reason": "Article continuation or summarization task rather than a standalone sports statistics query; preserve full original only in candidate archive."}
+{"id": "hi-aya-train-5a69e8e6-117292", "candidate_index": 45, "reason": "Paragraph topic/context identification, not a sports statistics question."}
+{"id": "ta-aya-train-5a69e8e6-122774", "candidate_index": 48, "reason": "Source is a paragraph or incomplete continuation without a standalone statistical question."}
+{"id": "ta-aya-train-5a69e8e6-124768", "candidate_index": 49, "reason": "Federation suspension/administration news, not an other-sport statistical request."}
+{"id": "ta-aya-train-5a69e8e6-125262", "candidate_index": 50, "reason": "Cricket/tennis appears only among multiple-choice options in an unrelated sport identity/popularity question; not a cricket statistic or a cross-sport statistic."}
+{"id": "hi-aya-train-5a69e8e6-130740", "candidate_index": 51, "reason": "Multi-part prompt with different factual/statistical targets; cannot represent faithfully as one evaluation row without splitting the source."}
+{"id": "ta-aya-train-5a69e8e6-135855", "candidate_index": 55, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-010118; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-136234", "candidate_index": 56, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-089554; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-146705", "candidate_index": 58, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-089554; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-151181", "candidate_index": 59, "reason": "Article continuation or summarization task rather than a standalone sports statistics query; preserve full original only in candidate archive."}
+{"id": "ta-aya-train-5a69e8e6-152064", "candidate_index": 60, "reason": "Federation suspension/administration news, not an other-sport statistical request."}
+{"id": "ta-aya-train-5a69e8e6-155554", "candidate_index": 62, "reason": "Source is a paragraph or incomplete continuation without a standalone statistical question."}
+{"id": "ta-aya-train-5a69e8e6-159499", "candidate_index": 63, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-063758; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-160535", "candidate_index": 64, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-120793; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-166348", "candidate_index": 65, "reason": "Source is a paragraph or incomplete continuation without a standalone statistical question."}
+{"id": "ta-aya-train-5a69e8e6-167107", "candidate_index": 66, "reason": "Paragraph topic/context identification, not a sports statistics question."}
+{"id": "ta-aya-train-5a69e8e6-177189", "candidate_index": 67, "reason": "Article continuation or summarization task rather than a standalone sports statistics query; preserve full original only in candidate archive."}
+{"id": "ta-aya-train-5a69e8e6-179397", "candidate_index": 68, "reason": "Football definition, not an other-sport statistical request."}
+{"id": "ta-aya-train-5a69e8e6-185395", "candidate_index": 70, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-050935; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-194931", "candidate_index": 71, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-132039; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-199579", "candidate_index": 72, "reason": "Federation suspension/administration news, not an other-sport statistical request."}
+{"id": "ta-aya-train-5a69e8e6-199655", "candidate_index": 73, "reason": "Prefix, spacing or punctuation variant of retained source ta-aya-train-5a69e8e6-050935; excluded to avoid duplicate inflation."}
+{"id": "ta-aya-train-5a69e8e6-200252", "candidate_index": 74, "reason": "Source is a paragraph or incomplete continuation without a standalone statistical question."}
