@@ -87,3 +87,25 @@ Export for CPU (ONNX via `laya[onnx]` if it works), load once, batch the typed q
 - **Open items:** Convai Innovations' identity is unverified; the Hub API reports 0 downloads; a neural network's weights cannot be proven free of hidden behaviour. Controls: our held-out tests (per language, per slice), policy and database in plain code (the model only picks categories, never writes a fact), fail-safe to 'show both'. Option for J-P3: train with `HF_HUB_OFFLINE=1` so nothing else downloads.
 
 - **Extra checks (3 Oct 2026):** Windows Defender custom scan of the model cache folder finished with 0 threat detections. With HF_HUB_OFFLINE=1 and TRANSFORMERS_OFFLINE=1 the model loads with no network access. All 321,908,998 parameters are finite (0 NaN/inf tensors); tensor groups are encoder (134), head (24), scorer (6), act_head (4), type_emb (1), temperature (1), which matches a standard encoder plus decision head. This lowers risk but is not a proof of 100% safety; hidden model behaviour can only be tested, not proven absent.
+
+
+## Our approach in plain words (written 3 Oct 2026, J-P3)
+
+**Yes, this is transfer learning (fine-tuning).** Laya already knows 100+ languages and how to answer typed questions with probabilities. We do not train from zero. We continue training it on cricket gender/topic/stat questions in English, Hindi and Tamil, so it learns our specific labels.
+
+Method, step by step:
+1. **Data (J-P2, frozen):** templates + banks + hand-labelled paraphrases generate train.jsonl (10,780 items) and calib.jsonl (2,981). About 40% of queries carry messy-input noise (typos, odd casing, missing "?", SMS spelling, filler words, romanised Hindi/Tamil). Labels come from the template, never from the rules system. Train and calib template families are disjoint.
+2. **Training (`training/train_laya.py`):** Laya's own recipe. Loss = soft cross-entropy + a policy-gradient term with a proper-scoring reward (noise sigma 0.4 -> 0.1). AdamW, encoder LR 2.5e-5, head LR 1e-4, cosine schedule, grad clip 1.0, bf16, gradient checkpointing, micro-batch 8 x accum 4 = 32, 3 epochs, seed 20261003. Whole encoder + head are updated (full fine-tune, not LoRA).
+3. **Calibration:** temperature per (question type, option-count bucket) fitted with LBFGS on calib.jsonl, so "90% sure" really means about 90%. ECE reported before and after.
+4. **Comparison arm:** the same frozen data on `FacebookAI/xlm-roberta-base` (plain classifier head, same 10 questions as separate heads). Winner chosen by held-out per-language accuracy, not by name or popularity.
+5. **Evaluation (J-P4):** only on the frozen test sets (never used in training), per language and per source. Calib-set numbers in results/training_log.md are NOT headline accuracy.
+6. **Safety of use:** model only picks categories; facts come from the database; unsure gender -> treat as neutral, show both.
+
+### xlm-roberta-base provenance (verified 3 Oct 2026)
+- Repo `FacebookAI/xlm-roberta-base`: 927 likes, ~16.0M downloads last month, author FacebookAI (MEASURED via HF API).
+- Downloaded only config.json, sentencepiece.bpe.model, tokenizer.json, model.safetensors (1,115,567,652 bytes). No pickle .bin file fetched.
+- SHA256 of model.safetensors = 6fd4797bc397c3b8b55d6bb5740366b57e6a3ce91c04c77f22aafc0c128e6feb, equals the hash HF publishes: MATCH.
+- Sir Jabin approved this download (3 Oct, "start this step 4").
+
+### Laya downloads counter (confirmed by Sir Jabin's screenshot, 3 Oct)
+The Laya model page itself says "Downloads are not tracked for this model." So 0/blank downloads is a HF counting artefact (no root config.json), not a sign of an unused or fake model. 358 likes is the real popularity signal. This does not by itself prove the model is safe; our hash, header, scan and offline-load checks do.
