@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "data_version": "1.2.0",
+    "created": "2017-01-14",
+    "revision": 2
+  },
+  "info": {
+    "balls_per_over": 6,
+    "city": "Brisbane",
+    "dates": [
+      "2017-01-13"
+    ],
+    "event": {
+      "match_number": 1,
+      "name": "Pakistan in Australia ODI Series"
+    },
+    "gender": "male",
+    "match_type": "ODI",
+    "match_type_number": 3817,
+    "officials": {
+      "match_referees": [
+        "JJ Crowe"
+      ],
+      "reserve_umpires": [
+        "SJ Nogajski"
+      ],
+      "tv_umpires": [
+        "CB Gaffaney"
+      ],
+      "umpires": [
+        "MD Martell",
+        "C Shamshuddin"
+      ]
+    },
+    "outcome": {
+      "by": {
+        "runs": 92
+      },
+      "winner": "Australia"
+    },
+    "overs": 50,
+    "player_of_match": [
+      "MS Wade"
+    ],
+    "players": {
+      "Australia": [
+        "DA Warner",
+        "TM Head",
+        "SPD Smith",
+        "CA Lynn",
+        "MR Marsh",
+        "GJ Maxwell",
+        "MS Wade",
+        "JP Faulkner",
+        "PJ Cummins",
+        "MA Starc",
+        "B Stanlake"
+      ],
+      "Pakistan": [
+        "Azhar Ali",
+        "Sharjeel Khan",
+        "Mohammad Hafeez",
+        "Babar Azam",
+        "Umar Akmal",
+        "Mohammad Rizwan",
+        "Imad Wasim",
+        "Mohammad Nawaz (3)",
+        "Mohammad Amir",
+        "Wahab Riaz",
+        "Hasan Ali"
+      ]
+    },
+    "registry": {
+      "people": {
+        "Azhar Ali": "211de69f",
+        "B Stanlake": "6834d1f2",
+        "Babar Azam": "8a75e999",
+        "C Shamshuddin": "0f9d921b",
+        "CA Lynn": "45eda7c8",
+        "CB Gaffaney": "d5ac41d8",
+        "DA Warner": "dcce6f09",
+        "GJ Maxwell": "b681e71e",
+        "Hasan Ali": "2911de16",
+        "Imad Wasim": "9cb8d7a6",
+        "JJ Crowe": "2e760301",
+        "JP Faulkner": "808f425a",
+        "MA Starc": "3fb19989",
+        "MD Martell": "487c072e",
+        "MR Marsh": "3d8feaf8",
+        "MS Wade": "afa7e784",
+        "Mohammad Amir": "e174dadd",
+        "Mohammad Hafeez": "9ab63e7b",
+        "Mohammad Nawaz (3)": "3086f7a4",
+        "Mohammad Rizwan": "2f26ac1a",
+        "PJ Cummins": "ded9240e",
+        "SJ Nogajski": "9b3f9323",
+        "SPD Smith": "30a45b23",
+        "Sharjeel Khan": "193ef196",
+        "TM Head": "12b610c2",
+        "Umar Akmal": "fd2bf2a0",
+        "Wahab Riaz": "b3118300"
+      }
+    },
+    "season": "2016/17",
+    "team_type": "international",
+    "teams": [
+      "Australia",
+      "Pakistan"
+    ],
+    "toss": {
+      "decision": "bat",
+      "winner": "Australia"
+    },
+    "venue": "Brisbane Cricket Ground, Woolloongabba"
+  },
+  "innings": [
+    {
+      "team": "Australia",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "actual_delivery": "0.1",
+              "batter": "DA Warner",
+              "bowler": "Mohammad Amir",
+              "non_striker": "TM Head",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "actual_delivery": "0.2",
+              "batter": "DA Warner",
+              "bowler": "Mohammad Amir",
+              "non_striker": "TM Head",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "actual_delivery": "0.3",
+              "batter": "DA Warner",
+              "bowler": "Mohammad Amir",
+              "non_striker": "TM Head",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "actual_delivery": "0.4",
+              "batter": "DA Warner",
+              "bowler": "Mohammad Amir",
+              "non_striker": "TM Head",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "actual_delivery": "0.5",
+              "batter": "DA Warner",
+              "bowler": "Mohammad Amir",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "TM Head",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "actual_delivery": "0.5",
+              "batter": "DA Warner",
+              "bowler": "Mohammad Amir",
+              "non_striker": "TM Head",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "actual_delivery": "0.6",
+              "batter": "DA Warner",
+              "bowler": "Mohammad Amir",
+              "non_striker": "TM Head",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        }
+      ],
+      "powerplays": [
+        {
+          "from": 0.1,
+          "to": 9.6,
+          "type": "mandatory"
+        },
+        {
+          "from": 10.1,
+          "to": 39.6,
+          "type": "mandatory"
+        },
+        {
+          "from": 40.1,
+          "to": 49.6,
+          "type": "mandatory"
+        }
+      ]
+    }
+  ]
+}

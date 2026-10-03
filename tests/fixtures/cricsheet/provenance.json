@@ -1,0 +1,26 @@
+[
+  {
+    "file": "1043989.json",
+    "archive": "t20s_female_json.zip",
+    "source": "https://cricsheet.org/downloads/t20s_female_json.zip",
+    "original_sha256": "65cbbc06c6fc3a19ddd9daff537da665cd3f0cb9f1df62e2f10909dd26069949",
+    "trim": "info and meta unchanged; only first over of first innings retained; not a full-match record",
+    "expected": {
+      "deliveries": 6,
+      "runs": 3,
+      "legal_balls": 6
+    }
+  },
+  {
+    "file": "1000887.json",
+    "archive": "odis_male_json.zip",
+    "source": "https://cricsheet.org/downloads/odis_male_json.zip",
+    "original_sha256": "a1efd3e8711a611a6b28ee5dc61f0c111ff44a12606d02d1cc980899754df548",
+    "trim": "info and meta unchanged; only first over of first innings retained; not a full-match record",
+    "expected": {
+      "deliveries": 7,
+      "runs": 1,
+      "legal_balls": 6
+    }
+  }
+]

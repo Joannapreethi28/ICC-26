@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "data_version": "1.2.0",
+    "created": "2017-02-17",
+    "revision": 1
+  },
+  "info": {
+    "balls_per_over": 6,
+    "dates": [
+      "2017-02-17"
+    ],
+    "event": {
+      "match_number": 1,
+      "name": "New Zealand Women in Australia T20I Series"
+    },
+    "gender": "female",
+    "match_type": "T20",
+    "match_type_number": 381,
+    "officials": {
+      "match_referees": [
+        "SR Bernard"
+      ],
+      "reserve_umpires": [
+        "AJ Barrow"
+      ],
+      "tv_umpires": [
+        "JD Ward"
+      ],
+      "umpires": [
+        "GA Abood",
+        "SAJ Craig"
+      ]
+    },
+    "outcome": {
+      "by": {
+        "runs": 40
+      },
+      "winner": "Australia"
+    },
+    "overs": 20,
+    "player_of_match": [
+      "EJ Villani"
+    ],
+    "players": {
+      "Australia": [
+        "MM Lanning",
+        "BL Mooney",
+        "A Gardner",
+        "EJ Villani",
+        "AJ Blackwell",
+        "AJ Healy",
+        "JL Jonassen",
+        "M Strano",
+        "ML Schutt",
+        "A Wellington",
+        "KM Beams"
+      ],
+      "New Zealand": [
+        "SW Bates",
+        "RH Priest",
+        "AM Peterson",
+        "AE Satterthwaite",
+        "KJ Martin",
+        "EM Bermingham",
+        "KT Perkins",
+        "EC Perry",
+        "HR Huddleston",
+        "LMM Tahuhu",
+        "LM Kasperek"
+      ]
+    },
+    "registry": {
+      "people": {
+        "A Gardner": "bc969efb",
+        "A Wellington": "9b3bcca4",
+        "AE Satterthwaite": "72b7ed1e",
+        "AJ Barrow": "a67aa9df",
+        "AJ Blackwell": "b9164a9b",
+        "AJ Healy": "321644de",
+        "AM Peterson": "ae2c396f",
+        "BL Mooney": "52d1dbc8",
+        "EC Perry": "0de3060f",
+        "EJ Villani": "cde96d97",
+        "EM Bermingham": "180240d4",
+        "GA Abood": "a4af5528",
+        "HR Huddleston": "8d6b36e3",
+        "JD Ward": "511299c1",
+        "JL Jonassen": "0475a86b",
+        "KJ Martin": "cf75a839",
+        "KM Beams": "fa8f9dc3",
+        "KT Perkins": "78ad3258",
+        "LM Kasperek": "9b73d523",
+        "LMM Tahuhu": "60471339",
+        "M Strano": "f57d5dbb",
+        "ML Schutt": "17608a6f",
+        "MM Lanning": "27e003ce",
+        "RH Priest": "e6f0408a",
+        "SAJ Craig": "689f2eed",
+        "SR Bernard": "800187dc",
+        "SW Bates": "89bbc67a"
+      }
+    },
+    "season": "2016/17",
+    "team_type": "international",
+    "teams": [
+      "Australia",
+      "New Zealand"
+    ],
+    "toss": {
+      "decision": "field",
+      "winner": "New Zealand"
+    },
+    "venue": "Melbourne Cricket Ground"
+  },
+  "innings": [
+    {
+      "team": "Australia",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "actual_delivery": "0.1",
+              "batter": "MM Lanning",
+              "bowler": "LMM Tahuhu",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "actual_delivery": "0.2",
+              "batter": "BL Mooney",
+              "bowler": "LMM Tahuhu",
+              "non_striker": "MM Lanning",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "actual_delivery": "0.3",
+              "batter": "BL Mooney",
+              "bowler": "LMM Tahuhu",
+              "non_striker": "MM Lanning",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "actual_delivery": "0.4",
+              "batter": "BL Mooney",
+              "bowler": "LMM Tahuhu",
+              "non_striker": "MM Lanning",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "actual_delivery": "0.5",
+              "batter": "MM Lanning",
+              "bowler": "LMM Tahuhu",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "actual_delivery": "0.6",
+              "batter": "MM Lanning",
+              "bowler": "LMM Tahuhu",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        }
+      ],
+      "powerplays": [
+        {
+          "from": 0.1,
+          "to": 5.6,
+          "type": "mandatory"
+        }
+      ]
+    }
+  ]
+}
