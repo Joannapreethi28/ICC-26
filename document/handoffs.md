@@ -43,6 +43,26 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sat 03 Oct, 22:21 IST | FROM Joanna TO Jabin | DONE | merge repair + training-v2 overlap recheck
+**What:** integrated your main through `57c5fa2`, retaining both tracks' handoff entries. Combined tests: **451 passed in 19.42s**, no skips; all **65 frozen K-P2 hashes** still verify. Joanna's original push was rejected because your main advanced; the merged work is ready for a normal fast-forward push.
+**Your requested audit:** re-ran the unchanged opaque comparator on all **810** released classifier/transfer rows against training v2 train/calib/messy_calib. **CLEAN: 0 exact/near flags at 0.92**, measured 34.17 seconds. New versioned evidence: `eval_data/overlap_audit_training_v2.json`, with exact input hashes. No corpus text, classifier predictions or scores were shown to the reviewer. String hygiene is not proof against semantic/pretraining overlap.
+**Freeze integrity:** deliberately retained `eval_data/preparation/final_overlap_audit.json` as the original frozen v1 evidence; replacing it would invalidate the published manifest. The v2 report is additional evidence, not a re-freeze or altered evaluation set. No exclusions or label changes were made. This recheck occurred after your 22:06 test-run authorization; actual scoring timing was not inspected. The revised validation test already distinguishes frozen-release verification from attempted rebuilding against changed training data.
+
+---
+
+### Sat 03 Oct, 22:06 IST | FROM Jabin TO Joanna | DECISION (Sir Jabin) | test scoring tonight, before your audit re-run
+**What:** Sir Jabin decided I score the frozen test sets tonight (single run, results/classifier/TEST_RUN.lock) instead of waiting for your overlap re-audit against training data v2, because neither of you is free before Sun 10:30. Basis: my leakage_check.py on v2 = 0 exact, 0 near (>= 0.92) after dropping 4 rows unseen. Threshold and merge policy are fixed on calibration data BEFORE the test run.
+**I need (after 10:30, ~5 min):** please still re-run your opaque overlap audit vs v2 and update final_overlap_audit.json. If it flags any test rows, I will exclude them and disclose it as a post-hoc exclusion in results/classifier/report.md; the test run is never repeated.
+**Also:** resolve() at 10:30 is now the critical path for E1 layer arms (~1.5-2 h GPU). Plain + prompt_only arms run overnight on my machine.
+
+### Sat 03 Oct, 21:47 IST | FROM Jabin TO Joanna | BLOCKED-ON-YOU (small) | K-P2 overlap audit vs training data v2
+**What:** training data changed to v2 (Sir Jabin's decision, see my previous message and training/DATA_FROZEN.md v2: train 10760 / calib 2982 / messy_calib 2982, LF hashes). Your guard in eval_data/tools/build_release.py:197 now correctly raises "Training snapshot changed since the overlap audit", so tests/unit/test_eval_release.py fails on main. I did NOT touch your files.
+**My side:** training/generate_data/leakage_check.py on v2 vs testsets/*.csv: exact 0; near-duplicates (>= 0.92) 4 in train -> dropped without displaying -> re-check 0/0/0 (train/calib/messy_calib). The 4 came from new English slang phrasings written without seeing tests.
+**I need:** please re-run your opaque overlap audit against the v2 training files and update eval_data/preparation/final_overlap_audit.json (training_sha256) so the release check and test are green again. No test file needs to change if your audit is also clean. I will not score the test sets until you confirm.
+**Watch out:** duckdb and rapidfuzz are not installed on my machine, so 6 of your test files cannot run here (not failures).
+
+---
+
 ### Sat 03 Oct | FROM Joanna TO Jabin | FYI | K-P3 final integration update
 Integrated your additional `0370810` / `4a9d864` in `8f8c3b6` while preparing publication. Final combined validation: **451 tests passed in 7.90s**, no skips; all **65 frozen hashes** verify. K-P3 code and the review caveats in the DONE entry below are unchanged. This agent's GitHub push socket is blocked; Joanna has the single prepared `git push origin main` command for normal PowerShell. Do not infer publication from a local commit alone.
 

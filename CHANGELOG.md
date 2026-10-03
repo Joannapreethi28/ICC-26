@@ -1,5 +1,7 @@
 # CHANGELOG (build)
 
+- 2026-10-03 22:21 IST: resolved concurrent main updates through `57c5fa2` while publishing K-P3; preserved both handoff entries. 451 tests passed in 19.42s and 65 frozen hashes verified. Additional opaque audit against training v2: 810 released classifier/transfer rows, 0 exact/near flags at 0.92, 34.17s. Saved separately as `eval_data/overlap_audit_training_v2.json`; original v1 freeze/audit and all evaluation labels remain unchanged.
+
 - 2026-10-03 21:40 IST: K-P3 integrated with Jabin's `0bd6055` (training v2 and evaluation runners). **450 tests passed in 7.97s**, no skips. Preserved both handoff entries; changed the old release-assembly test to validate frozen v1 and separately prove rejection of a changed training snapshot. Frozen release tools/data/audit unchanged. Implementation `76cb7ce`, integration `857b1cd`; phase handoff records native wording review and one identity caveat.
 
 - 2026-10-03 IST: K-P3 (Joanna): 50-intent catalogue; 34 covered-match record computations plus player career lines and team latest results; golden-first facts with native labels/provenance; exhaustive deterministic category policy; English/Hindi/Tamil answer templates packaged in the wheel. Reconciliation: 26 computable golden rows, 5 matches / 20 coverage explanations / 1 unresolved holder identity. **441 tests passed in 7.86s**, no skips, after review fixed missing-format reporting and comparison guards; 65 K-P2 freeze hashes unchanged; offline wheel includes all templates. Self-review complete; native-speaker wording review remains pending. See `docs/phase3-facts.md`, `docs/phase3-examples.md` and `results/reconciliation.md`. API/UI/resolve integration remains K-P4.
@@ -39,3 +41,9 @@
 - 2026-10-03 merge policy made switchable (understand.MERGE_POLICY v1 default; v2 = confident Laya beats rules on topic/family/stat; gender identical) + eval arm d2_shipped_laya_first + test; choice by dev ablation BEFORE the single test run. training/calibrate/fit_temperature.py: fits GENDER_THRESHOLD on calib only (rows without a rules cue, >= 98% accepted accuracy in every language). Ollama pull of llama3.1:8b-instruct-q4_K_M approved by SJ and running (to %USERPROFILE%\.ollama\models).
 
 - 2026-10-03 moved training/train_laya.py -> training/finetune/train_laya.py (buildplan T2.2 path); docs/09 reference updated.
+
+- 2026-10-03 verification: 14 test files pass here (155 tests); 6 need duckdb/rapidfuzz (not installed here); Joanna's test_eval_release fails by design because her overlap audit pins v1 training hashes -> handoff posted asking her to re-run it vs v2; test scoring waits for her confirmation.
+
+- 2026-10-03 src/mak/eval/run_e1.py: E1 launcher; writes run_manifest (model digest, Ollama version, licence line, hardware, options, seeds, prompts, git commit, frozen-input hashes) before generating; resumable; keeps Windows awake only while running (process-scoped). SJ OK'd overnight runs.
+
+- 2026-10-03 ~22:15 SJ: run the single test scoring tonight (Joanna re-audits after 10:30; post-hoc exclusion if she flags rows). Handoff posted; docs/05 logged.
