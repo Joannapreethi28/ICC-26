@@ -65,7 +65,7 @@ def option_sets(rows):
 
 
 def encode_rows(rows, opts, tok):
-    enc = tok([r["state"] for r in rows], truncation=True, max_length=MAX_LEN)
+    enc = tok([" ".join(r["state"].lower().split()) for r in rows], truncation=True, max_length=MAX_LEN)
     out = []
     for i, r in enumerate(rows):
         labels = {}
@@ -149,7 +149,7 @@ def predict(model, items, qids, pad_id, dev):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="FacebookAI/xlm-roberta-base")
-    ap.add_argument("--name", default="xlmr-mak-v1")
+    ap.add_argument("--name", default="xlmr-mak-v2")
     ap.add_argument("--smoke", action="store_true")
     ap.add_argument("--epochs", type=int, default=EPOCHS)
     a = ap.parse_args()

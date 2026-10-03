@@ -11,11 +11,14 @@ release = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(release)
 
 
-def test_release_preserves_reviewed_rows_and_exact_golden_answers(tmp_path):
-    report = release.assemble(tmp_path)
+def test_frozen_release_preserves_reviewed_rows_and_exact_golden_answers():
+    # K-P2 is a published v1 snapshot. Later training versions must not rebuild
+    # its original overlap audit; validate its committed bytes and truths.
+    release.main(['--check'])
+    report = json.loads((ROOT / 'eval_data/release_manifest.json').read_text(encoding='utf-8'))
     expected = {"nlu_en.csv": 337, "nlu_hi.csv": 203, "nlu_ta.csv": 210, "xsport.csv": 60}
     for name, count in expected.items():
-        with (tmp_path / "testsets" / name).open(encoding="utf-8", newline="") as stream:
+        with (ROOT / "testsets" / name).open(encoding="utf-8", newline="") as stream:
             rows = list(csv.DictReader(stream))
         assert len(rows) == count
         assert all(row["adjudicated"] == "" for row in rows)
@@ -24,7 +27,7 @@ def test_release_preserves_reviewed_rows_and_exact_golden_answers(tmp_path):
             assert all(not row[k] for row in rows for k in ("family", "stat", "format", "expected_decision"))
     with release.build_benchmark.GOLDEN.open(encoding="utf-8-sig", newline="") as stream:
         truth = {(r["intent_id"], r["gender"]): r for r in csv.DictReader(stream)}
-    with (tmp_path / "eval_data/benchmark_v1.csv").open(encoding="utf-8", newline="") as stream:
+    with (ROOT / "eval_data/benchmark_v1.csv").open(encoding="utf-8", newline="") as stream:
         benchmark = list(csv.DictReader(stream))
     assert len(benchmark) == 188
     for row in benchmark:
@@ -34,6 +37,22 @@ def test_release_preserves_reviewed_rows_and_exact_golden_answers(tmp_path):
         else:
             assert row["women_answer"] == row["men_answer"] == ""
     assert report["files"]["eval_data/provenance_v1.jsonl"]["rows"] == 998
+
+
+def test_rebuilding_old_release_rejects_a_different_training_snapshot(tmp_path, monkeypatch):
+    # Use a tiny isolated stand-in, not the real training corpus. Preparation
+    # evidence still refers to its original paths; rejection happens before
+    # publication, regardless of the contents of a future training version.
+    root = tmp_path / 'different_snapshot'
+    corpus = root / 'training/data/train.jsonl'
+    corpus.parent.mkdir(parents=True)
+    corpus.write_text('changed training version\n', encoding='utf-8')
+    monkeypatch.setattr(release, 'ROOT', root)
+    destination = tmp_path / 'draft'
+    destination.mkdir()
+    with pytest.raises(ValueError, match='Training snapshot changed since the overlap audit'):
+        release.assemble(destination)
+    assert not (destination / 'eval_data/release_manifest.json').exists()
 
 
 def test_release_rejects_rewritten_source_or_fake_translation():

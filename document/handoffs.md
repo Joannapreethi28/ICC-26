@@ -31,7 +31,7 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 | 3 | Registry table (people + hi/ta labels) | Joanna → Jabin | Sat 20:30 | **DONE Sat 17:20 IST (K-P1)** |
 | 4 | Frozen test sets + xsport.csv | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
 | 5 | Benchmark v1 + PREREGISTRATION | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
-| 6 | `LayaHead` + weights | Jabin → Joanna | Sun 10:30 | pending |
+| 6 | `LayaHead` + weights | Jabin → Joanna | Sun 10:30 | in progress (LayaHead code merged; v2 training; model choice after test scoring) |
 | 7 | `resolve()` + API + demo | Joanna → Jabin | Sun 10:30 | pending |
 | 8 | Captured plain-arm hero answer | Jabin → Joanna | Sun 12:30 | pending |
 | 9 | Live Space + MCP + record-pages URLs | Joanna → both | Sun 13:30 | pending |
@@ -39,6 +39,15 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 ---
 
 # Messages (newest first)
+
+---
+
+### Sat 03 Oct, 21:30 IST | FROM Jabin TO Joanna | IN PROGRESS | J-P3/J-P4 (replaces my earlier IN PROGRESS note, moved here to the top per rule 2)
+**What:** read your K-P2 DONE entry; pulled 7ddbd5c. Sir Jabin decided **data v2 first, then score the test sets exactly once**. v2 was built ONLY from calibration-set errors (cricket slang: knock / team innings total / tons / bowling average; abbreviations wkts/avg/SR/econ; all text lowercased for every model; Laya 2 epochs + label smoothing). No test item was opened or scored before the v2 freeze (only testsets/FROZEN.md counts/hashes). training/DATA_FROZEN.md v2 has LF hashes.
+**Leakage:** exact 0. My near-duplicate screen (>= 0.92) flagged 4 NEW v2 train rows (from the added slang phrasings, written without seeing tests); dropped automatically without displaying them; re-check 0/0/0 on train/calib/messy_calib. Same caveat as yours: string hygiene, not semantic proof.
+**Now:** Laya v2 -> xlm-roberta v2 -> Qwen2.5-1.5B LoRA v2 training back to back on my GPU (~75-90 min). Then one scoring run of all arms (a)-(e) + xlm-r on nlu_en/hi/ta.csv, reported per language, slice and SOURCE with Wilson intervals.
+**Your notes, acknowledged:** (1) label-convention mismatch: my training templates use weak cue -> none, mixed-gender pair -> both_named, injection keeps underlying gender; your evaluation labels follow the product policy. I will document the mismatch in results/classifier/report.md and NOT relabel frozen data. (2) The model family WILL be chosen using these test scores, so the report will disclose that selection use; it is not an untouched confirmation test. No retune-and-rerun will be presented as the original held-out result.
+**Watch out:** eval_data/tools/build_release.py --check fails on my machine with "No module named mak" unless run with PYTHONPATH=src (path setup, not a hash problem).
 
 ---
 
@@ -192,10 +201,3 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 **What:** Sir Jabin asked to replace Laya with a more popular, verifiable base model. Proposal in icc-make-ai-know-her/docs/05_decisions_log.md (xlm-roberta-base primary; mmBERT, MuRIL, Laya as comparison arms). Training data and its labels are unchanged.
 **You can now:** nothing blocked. The test-set format does not change.
 **I need:** nothing yet. I will post the CLAUDE.md/AGENTS.md wording change once Sir Jabin confirms.
-
-
-### Sat 03 Oct, 20:29 | FROM Jabin TO Joanna | IN PROGRESS | J-P3/J-P4 (updates the 23:40 DECISION PENDING message)
-**What:** model choice is NOT made. Decision (Sir Jabin): keep Laya and compare on identical frozen data: Laya fine-tuned (training now, local GPU), xlm-roberta-base (downloaded, hash-verified, trains next), Qwen2.5-1.5B LoRA = baseline (e) (downloaded, hash-verified). Winner by held-out per-language results on YOUR frozen test sets. CLAUDE.md/AGENTS.md unchanged unless a non-Laya model wins.
-**Built:** src/mak/eval/classifier_eval.py (T2.3 interface, reads testsets/*.csv in labels.TESTSET_COLUMNS format, reports per language/slice/SOURCE), src/mak/nlu/laya_head.py (T2.5 interface, candidate backend), understand.py merge policy v1 (config.USE_LAYA still False; config.py unchanged, no contract change yet), training/generate_data/leakage_check.py, dev-only messy slice training/data/messy_calib.jsonl.
-**I need:** testsets/*.csv when frozen (FROZEN.md). I will run leakage_check.py first (0 overlaps required), then the five baselines. Native-speaker review of hi/ta banks still requested.
-**Watch out:** duckdb is not installed on my machine, so tests that import it are not run here; please keep them green on yours. Dev numbers in results/classifier/dev/ are template-labelled calibration data, NOT test results; do not quote them.

@@ -27,8 +27,11 @@ def default_path() -> str:
     env = os.environ.get("MAK_LAYA_PATH")
     if env:
         return env
-    local = config.ROOT / "models" / "laya-mak-v1"
-    return str(local) if local.exists() else config.LAYA_MODEL_ID
+    for name in ("laya-mak-v2", "laya-mak-v1"):
+        local = config.ROOT / "models" / name
+        if local.exists():
+            return str(local)
+    return config.LAYA_MODEL_ID
 
 
 class LayaHead:
