@@ -1,49 +1,32 @@
-"""Question -> labels. OWNER: Jabin.
+"""Question -> labels. OWNER: Jabin. The signature below is FIXED (shared contract).
 
-PHASE 0 STUB: a tiny English keyword parser so Joanna's pipeline can be built and tested now.
-Jabin replaces the body in J-P1 (rules) and J-P4 (Laya). The signature below is FIXED.
+J-P1: rules only (lexicons + language detection). J-P4 adds the fine-tuned Laya head behind use_laya=True;
+the rules stay as the explicit-cue override and as the baseline measurement.
+Never raises: any internal failure degrades to a neutral, non-intervening parse.
 """
 from __future__ import annotations
 
-import re
-
+from mak import config
+from mak.nlu.lang import detect_lang
+from mak.nlu.rules import rules_parse
 from mak.types import Lang, Parse
-
-_STAT_WORDS = {
-    "runs": ("career_record", "runs"),
-    "wickets": ("career_record", "wickets"),
-    "highest score": ("career_record", "highest_score"),
-    "team total": ("career_record", "team_total"),
-    "best bowling": ("career_record", "best_bowling"),
-    "matches": ("career_record", "matches"),
-    "centuries": ("career_record", "centuries"),
-}
-_CRICKET_GENERAL = ("pitch", "lbw", "powerplay", "how many players")
 
 
 def understand(text: str, lang: Lang | None = None, use_laya: bool | None = None) -> Parse:
-    """Turn a question into labels. Stub: English keywords only, never raises."""
-    t = (text or "").lower()
-    if re.search(r"\b(women|woman|female|ladies)('s)?\b", t) and re.search(r"\bmen('s)?\b", t):
-        signal, conf = "both_named", 1.0
-    elif re.search(r"\b(women|woman|female|ladies)('s)?\b", t):
-        signal, conf = "women", 1.0
-    elif re.search(r"\b(men|male)('s)?\b", t):
-        signal, conf = "men", 1.0
-    else:
-        signal, conf = "none", 0.0
-    fmt = "T20I" if re.search(r"t20", t) else "ODI" if re.search(r"\bodi|one.day", t) else "unspecified"
-    family = stat = None
-    for word, (fam, st) in _STAT_WORDS.items():
-        if word in t:
-            family, stat = fam, st
-            break
-    if family:
-        topic = "cricket_stat"
-    elif any(w in t for w in _CRICKET_GENERAL) or "cricket" in t:
-        topic = "cricket_general"
-    else:
-        topic = "non_sport"
-    return Parse(lang=lang or "en", gender_signal=signal, gender_conf=conf, topic=topic,
-                 family=family, stat=stat, format=fmt if family else None,
-                 trace=("understand: PHASE 0 STUB (English keywords only)",))
+    """Turn a question into labels. `lang=None` means detect it. `use_laya=None` follows config.USE_LAYA."""
+    try:
+        query = text if isinstance(text, str) else ""
+        resolved_lang: Lang = lang or detect_lang(query)
+        parse = rules_parse(query, resolved_lang)
+        if (config.USE_LAYA if use_laya is None else use_laya):
+            parse = _with_note(parse, "laya requested but not available yet: rules-only result")
+        return parse
+    except Exception as exc:  # noqa: BLE001 - the pipeline must always get a Parse
+        return Parse(lang=lang or "en", gender_signal="none", gender_conf=0.0, topic="non_sport",
+                     family=None, stat=None, format=None,
+                     trace=(f"understand: internal error {type(exc).__name__}; neutral fail-safe parse",))
+
+
+def _with_note(parse: Parse, note: str) -> Parse:
+    from dataclasses import replace
+    return replace(parse, trace=parse.trace + (note,))

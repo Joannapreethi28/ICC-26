@@ -1,0 +1,107 @@
+# Tamil lexicon (Tamil script + Tanglish) for the rules baseline (OWNER: Jabin).
+# Tamil patterns get a START boundary only: Tamil is agglutinative, so ரன் also matches ரன்கள், ரன்களை.
+# Latin patterns in this file (Tanglish) get normal \b boundaries.
+# வீரர் = generic/male "player" -> WEAK cue only; வீராங்கனை = explicit "woman player" -> STRONG.
+# TO REVIEW BY A NATIVE SPEAKER before Gate G3: every list below.
+lang: ta
+
+gender:
+  women_strong:
+    - 'மகளிர்'
+    - 'பெண்கள்'
+    - 'பெண்'
+    - 'வீராங்கனை'
+    - '(?:எடுத்த|அடித்த|பெற்ற|வென்ற|வீசிய|விளையாடிய)வள்'
+    - 'magalir|pengal|penkal|veeranganai'
+  men_strong:
+    - 'ஆண்கள்'
+    - 'ஆடவர்'
+    - 'aangal|aadavar'
+  women_weak: []
+  men_weak:
+    - 'வீரர்(?:கள்)?'
+    - '(?:எடுத்த|அடித்த|பெற்ற|வென்ற|வீசிய|விளையாடிய)வன்'
+    - 'veerar'
+
+format:
+  league:
+    - 'ஐபிஎல்|டபிள்யூபிஎல்'
+  T20I:
+    - 'டி\s?-?20'
+    - 'டி\s*ட்வென்டி'
+  ODI:
+    - 'ஒருநாள்|ஒரு\s+நாள்|ஓடிஐ'
+  Test:
+    - 'டெஸ்ட்'
+
+world_cup:
+  - 'உலக(?:க்)?\s*கோப்பை'
+
+cricket:
+  - 'கிரிக்கெட்'
+  - 'விக்கெட்'
+  - 'பேட்ஸ்'
+  - 'பந்துவீ'
+  - 'இன்னிங்ஸ்'
+  - 'ஐபிஎல்'
+  - 'டி\s?-?20'
+  - 'ஒருநாள்'
+  - 'டெஸ்ட்'
+
+other_sport:
+  - 'கால்பந்து'
+  - 'கோல்'
+  - 'டென்னிஸ்'
+  - 'கூடைப்பந்து'
+  - 'ஹாக்கி'
+  - 'ஒலிம்பிக்'
+  - 'பேட்மிண்டன்'
+  - 'கபடி'
+  - 'செஸ்'
+
+stat_question:
+  - 'அதிக'
+  - 'குறைந்த'
+  - 'சாதனை'
+  - 'முதல்'
+  - 'கடைசி'
+  - 'சிறந்த'
+
+stats:
+  - {family: world_cup_record, stat: edition_top_scorer, all: [['@world_cup'], ['@year'], ['ரன்', 'ஸ்கோரர்']]}
+  - {family: world_cup_record, stat: edition_winner, all: [['@world_cup'], ['@year'], ['வெற்றி', 'வென்ற', 'சாம்பியன்'], ['@cricket']]}
+  - {family: world_cup_record, stat: most_titles, all: [['@world_cup'], ['அதிக\s+(?:முறை|பட்டங்கள்|பட்டம்|கோப்பை)'], ['@cricket']]}
+  - {family: world_cup_record, stat: first_edition, all: [['@world_cup'], ['முதலாவது', 'முதல்', 'முதன்'], ['@cricket']]}
+  - {family: world_cup_record, stat: most_runs, all: [['@world_cup'], ['ரன்', 'ஸ்கோரர்']]}
+  - {family: world_cup_record, stat: most_wickets, all: [['@world_cup'], ['விக்கெட்']]}
+  - {family: world_cup_record, stat: latest_winner, all: [['@world_cup'], ['வெற்றியாளர்', 'வென்ற', 'வென்றது', 'சாம்பியன்', 'வெற்றி'], ['@cricket']]}
+  - {family: firsts_history, stat: first_double_century, all: [['முதல்', 'முதலாவது'], ['இரட்டை\s*சதம்', '200']]}
+  - {family: firsts_history, stat: first_match, all: [['முதல்', 'முதலாவது'], ['போட்டி', 'சர்வதேச']]}
+  - {family: team_record, stat: biggest_win_wickets, all: [['மிகப்\s*பெரிய', 'அதிகபட்ச'], ['வெற்றி'], ['விக்கெட்']]}
+  - {family: team_record, stat: biggest_win_runs, all: [['மிகப்\s*பெரிய', 'அதிகபட்ச'], ['வெற்றி'], ['ரன்']]}
+  - {family: team_record, stat: biggest_win_runs, all: [['மிகப்\s*பெரிய'], ['வெற்றி']]}
+  - {family: team_record, stat: highest_chase, all: [['அதிகபட்ச', 'அதிக', 'மிகப்\s*பெரிய'], ['சேஸ்', 'துரத்தி']]}
+  - {family: team_record, stat: lowest_total, all: [['குறைந்த', 'குறைவான'], ['ஸ்கோர்', 'ரன்', 'ஆல்\s*அவுட்']]}
+  - {family: team_record, stat: most_wins, all: [['அதிக'], ['வெற்றிகள்', 'வெற்றி']]}
+  - {family: career_record, stat: team_total, all: [['அணி(?:யின்)?\s+(?:அதிகபட்ச\s+)?(?:மொத்த\s+)?(?:ஸ்கோர்|ரன்)']]}
+  - {family: career_record, stat: highest_score, all: [['அதிகபட்ச(?:\s+தனிநபர்)?\s+(?:ஸ்கோர்|ரன்)', 'தனிநபர்\s+ஸ்கோர்']]}
+  - {family: career_record, stat: fifties, all: [['அரை\s*சதம்', 'அரை\s*சதங்கள்']]}
+  - {family: career_record, stat: centuries, all: [['சதம்', 'சதங்கள்', 'செஞ்சுரி', 'சென்சுரி']]}
+  - {family: career_record, stat: sixes, all: [['சிக்ஸர்', 'சிக்ஸ்']]}
+  - {family: career_record, stat: strike_rate, all: [['ஸ்ட்ரைக்\s*ரேட்']]}
+  - {family: career_record, stat: economy, all: [['எகானமி', 'எகனாமி']]}
+  - {family: career_record, stat: average, all: [['சராசரி']]}
+  - {family: career_record, stat: best_bowling, all: [['சிறந்த\s+பந்துவீச்சு']]}
+  - {family: career_record, stat: wickets, all: [['விக்கெட்']]}
+  - {family: career_record, stat: runs, all: [['ரன்']]}
+  - {family: career_record, stat: matches, all: [['போட்டி'], ['அதிக', 'விளையாடிய', 'எத்தனை']]}
+  - {family: recent_result, stat: last_result, all: [['கடைசி', 'சமீபத்திய', 'நேற்றைய'], ['போட்டி', 'முடிவு', 'வெற்றி', 'தோல்வி']]}
+  - {family: role_or_ranking, stat: captain, all: [['கேப்டன்', 'தலைவர்']]}
+  - {family: role_or_ranking, stat: number_one, all: [['நம்பர்\s*(?:ஒன்|1)', 'முதலிடம்', 'தரவரிசை']]}
+  - {family: player_stat, stat: career_line, all: [['ஆட்டப்\s*புள்ளிவிவரம்', 'புள்ளிவிவரங்கள்', 'ஸ்டாட்ஸ்']]}
+
+injection:
+  - 'முந்தைய\s+(?:அறிவுறுத்தல்|வழிமுறை|கட்டளை)\S*\s+(?:புறக்கணி|மற)'
+  - 'அனைத்து\s+(?:அறிவுறுத்தல்|வழிமுறை|கட்டளை)\S*\s+(?:புறக்கணி|மற)'
+  - 'சிஸ்டம்\s+ப்ராம்ப்ட்'
+  - 'mundhaiya\s+\w+\s+(?:ignore|marandhuidu)'

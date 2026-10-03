@@ -97,3 +97,12 @@ It failed on tab-group errors after 12 answers and was dropped. **Rule:** before
 ### G-014 | Commit identity on Sir Jabin's machine | OPEN (rule active) | 3 Oct | Claude Code
 **Rule (Sir Jabin, 3 Oct):** everything pushed to https://github.com/Joannapreethi28/ICC-26 from Sir Jabin's machine is authored as `jabssyyy` (global git config already set; email jabsherwin7@gmail.com) with **no Claude co-author trailer**. Check `git log -1 --format='%an <%ae>%n%b'` before every push.
 **Where it is enforced:** handoffs.md rule 6; this entry.
+
+### G-015 | A broken lexicon silently disables the rules | FIXED (guard test) | 3 Oct | Claude Code
+**What happened:** while editing `data/lexicons/en.yaml` a bad quote made the YAML invalid. `understand()` is built to never raise, so it returned a neutral parse; 43 tests failed, but a deployed system would have quietly stopped using the rules.
+**Rule:** fail-safe code hides its own bugs, so every fail-safe path needs a test that proves the happy path still loads. `test_all_lexicons_load_and_compile` now guards this. In YAML patterns use `'` for an apostrophe and single-quoted strings.
+**Where it is enforced:** `tests/nlu/test_rules.py`.
+
+### G-016 | Rules cannot tell a sport from a generic word | OPEN (by design, Laya's job) | 3 Oct | Claude Code
+**Known rules misses (kept for J-P4 comparison):** "How many runs are in an over" -> runs stat; "Who won the women's world cup in 2017?" -> non_sport (no cricket word); "Who is Mithali Raj?" -> non_sport (needs entities); Punjabi etc. -> English/non_sport.
+

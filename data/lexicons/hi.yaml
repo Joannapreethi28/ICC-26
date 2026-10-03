@@ -1,0 +1,114 @@
+# Hindi lexicon (Devanagari + Hinglish) for the rules baseline (OWNER: Jabin).
+# Devanagari patterns get BOTH-sided script boundaries (so write inflections explicitly, e.g. रन(?:ों)?).
+# Latin patterns in this file (Hinglish) get normal \b boundaries. Text and patterns are NFC-normalised, so
+# ज़ / ड़ may be typed either precomposed or with a separate nukta.
+# TO REVIEW BY A NATIVE SPEAKER before Gate G3: every list below.
+lang: hi
+
+gender:
+  women_strong:
+    - 'महिला(?:ओं|एं|एँ)?'
+    - 'स्त्री(?:यों)?'
+    - 'लड़कि(?:यों|याँ|यां)|लड़की'
+    - 'वाली'
+    - 'विमेंस|विमेन|वीमेन|वुमेन|वूमेन'
+    - 'mahila(?:on|en)?'
+    - 'ladki(?:yon|ya|yan)?'
+    - 'waali|vaali|wali'
+  men_strong:
+    - 'पुरुष(?:ों)?'
+    - 'लड़कों'
+    - 'मेन्स|मेंस|मैन्स'
+    - 'purush(?:on)?'
+  women_weak: []
+  men_weak:
+    - 'वाला'
+    - 'wala|waala|vaala'
+
+format:
+  league:
+    - 'आईपीएल|डब्ल्यूपीएल|आई\s*पी\s*एल'
+  T20I:
+    - 'टी\s?-?20(?:\s*इंटरनेशनल)?'
+    - 'टी\s?-?ट्वेंटी'
+  ODI:
+    - 'वनडे|वन\s+डे|एकदिवसीय|ओडीआई'
+  Test:
+    - 'टेस्ट(?:\s+(?:मैच|क्रिकेट))?'
+
+world_cup:
+  - 'विश्व\s*कप|वर्ल्ड\s*कप'
+
+cricket:
+  - 'क्रिकेट'
+  - 'विकेट(?:ों)?'
+  - 'बल्लेबाज़?(?:ों)?'
+  - 'गेंदबाज़?(?:ों)?'
+  - 'पारी'
+  - 'आईपीएल'
+  - 'टी\s?-?20'
+  - 'वनडे'
+  - 'टेस्ट\s+मैच'
+
+other_sport:
+  - 'फुटबॉल|फ़ुटबॉल'
+  - 'गोल(?:ों)?'
+  - 'टेनिस'
+  - 'बास्केटबॉल'
+  - 'हॉकी'
+  - 'ओलंपिक'
+  - 'फीफा'
+  - 'ग्रैंड\s*स्लैम'
+  - 'बैडमिंटन'
+  - 'कबड्डी'
+  - 'शतरंज'
+
+stat_question:
+  - 'सबसे'
+  - 'सर्वाधिक'
+  - 'उच्चतम'
+  - 'न्यूनतम'
+  - 'रिकॉर्ड'
+  - 'पहला|पहली|पहले'
+  - 'आखिरी|अंतिम'
+  - 'किसने'
+
+stats:
+  - {family: world_cup_record, stat: edition_top_scorer, all: [['@world_cup'], ['@year'], ['टॉप\s*स्कोरर', 'रन(?:ों)?']]}
+  - {family: world_cup_record, stat: edition_winner, all: [['@world_cup'], ['@year'], ['विजेता', 'जीता', 'जीती', 'चैंपियन', 'खिताब'], ['@cricket']]}
+  - {family: world_cup_record, stat: most_titles, all: [['@world_cup'], ['सबसे\s+ज़?्यादा', 'सबसे\s+अधिक', 'सर्वाधिक'], ['खिताब', 'ख़िताब', 'टाइटल', 'ट्रॉफी', 'ट्रॉफ़ी', 'बार', 'चैंपियन'], ['@cricket']]}
+  - {family: world_cup_record, stat: first_edition, all: [['@world_cup'], ['पहला', 'पहली', 'पहले', 'शुरुआत'], ['@cricket']]}
+  - {family: world_cup_record, stat: most_runs, all: [['@world_cup'], ['रन(?:ों)?', 'स्कोरर']]}
+  - {family: world_cup_record, stat: most_wickets, all: [['@world_cup'], ['विकेट(?:ों)?', 'विकेट\s*टेकर']]}
+  - {family: world_cup_record, stat: latest_winner, all: [['@world_cup'], ['विजेता', 'जीता', 'जीती', 'चैंपियन', 'जीतने'], ['@cricket']]}
+  - {family: firsts_history, stat: first_double_century, all: [['पहला', 'पहली', 'पहले'], ['दोहरा\s*शतक', 'डबल\s*सेंचुरी', '200']]}
+  - {family: firsts_history, stat: first_match, all: [['पहला', 'पहली', 'पहले'], ['मैच', 'अंतर्?राष्ट्रीय']]}
+  - {family: team_record, stat: biggest_win_wickets, all: [['सबसे\s+बड़ी', 'सबसे\s+बड़ा'], ['जीत'], ['विकेट(?:ों)?']]}
+  - {family: team_record, stat: biggest_win_runs, all: [['सबसे\s+बड़ी', 'सबसे\s+बड़ा'], ['जीत'], ['रन(?:ों)?']]}
+  - {family: team_record, stat: biggest_win_runs, all: [['सबसे\s+बड़ी', 'सबसे\s+बड़ा'], ['जीत']]}
+  - {family: team_record, stat: highest_chase, all: [['सबसे\s+बड़ा', 'सबसे\s+ज़?्यादा', 'सर्वाधिक', 'उच्चतम'], ['चेज़?', 'पीछा', 'लक्ष्य']]}
+  - {family: team_record, stat: lowest_total, all: [['सबसे\s+कम', 'न्यूनतम'], ['स्कोर', 'टोटल', 'रन(?:ों)?', 'ऑल\s*आउट']]}
+  - {family: team_record, stat: most_wins, all: [['सबसे\s+ज़?्यादा', 'सबसे\s+अधिक', 'सर्वाधिक'], ['जीत(?:ें|ों|े)?']]}
+  - {family: career_record, stat: team_total, all: [['टीम(?:\s+का)?\s+(?:सर्वाधिक|उच्चतम|सबसे\s+ज़?्यादा|सबसे\s+बड़ा)\s+(?:स्कोर|टोटल)', 'टीम\s+(?:स्कोर|टोटल)', '(?:उच्चतम|सर्वाधिक)\s+टीम\s+(?:स्कोर|टोटल)']]}
+  - {family: career_record, stat: highest_score, all: [['सर्वाधिक\s+(?:व्यक्तिगत\s+)?स्कोर', 'उच्चतम\s+(?:व्यक्तिगत\s+)?स्कोर', 'सर्वोच्च\s+स्कोर', 'सबसे\s+बड़ी\s+पारी', 'हाईएस्ट\s+स्कोर', 'सर्वश्रेष्ठ\s+पारी', 'एक\s+पारी\s+में']]}
+  - {family: career_record, stat: fifties, all: [['अर्धशतक(?:ों)?', 'हाफ\s*सेंचुरी']]}
+  - {family: career_record, stat: centuries, all: [['शतक(?:ों)?', 'सेंचुरी(?:यां|याँ)?']]}
+  - {family: career_record, stat: sixes, all: [['छक्के', 'छक्कों', 'सिक्स(?:र|ेस)?']]}
+  - {family: career_record, stat: strike_rate, all: [['स्ट्राइक\s*रेट']]}
+  - {family: career_record, stat: economy, all: [['इकॉनमी', 'इकोनॉमी', 'इकॉनोमी']]}
+  - {family: career_record, stat: average, all: [['औसत', 'एवरेज']]}
+  - {family: career_record, stat: best_bowling, all: [['सर्वश्रेष्ठ\s+(?:गेंदबाज़ी|बॉलिंग)', 'बेस्ट\s+(?:बॉलिंग|गेंदबाज़ी)', 'सबसे\s+अच्छी\s+गेंदबाज़ी']]}
+  - {family: career_record, stat: wickets, all: [['विकेट(?:ों)?', 'विकेट\s*टेकर']]}
+  - {family: career_record, stat: runs, all: [['रन(?:ों)?', 'रन\s*स्कोरर']]}
+  - {family: career_record, stat: matches, all: [['मैच(?:ों)?'], ['सबसे\s+ज़?्यादा', 'सर्वाधिक', 'खेले', 'खेला', 'कितने']]}
+  - {family: recent_result, stat: last_result, all: [['आखिरी', 'अंतिम', 'पिछला', 'पिछले', 'ताज़ा', 'हाल\s+का'], ['मैच', 'नतीजा', 'परिणाम', 'जीता', 'जीती', 'हराया']]}
+  - {family: role_or_ranking, stat: captain, all: [['कप्तान(?:ी)?']]}
+  - {family: role_or_ranking, stat: number_one, all: [['नंबर\s*(?:वन|1|एक)', 'शीर्ष\s+रैंक', 'रैंकिंग']]}
+  - {family: player_stat, stat: career_line, all: [['करियर\s+(?:स्टैट्स|आंकड़े|रिकॉर्ड)', 'आंकड़े', 'स्टैट्स']]}
+
+injection:
+  - 'पिछले\s+निर्देश\S*\s+(?:को\s+)?(?:अनदेखा|नज़रअंदाज़|नजरअंदाज|भूल)'
+  - 'सभी\s+निर्देश\S*\s+(?:को\s+)?(?:अनदेखा|नज़रअंदाज़|नजरअंदाज|भूल)'
+  - 'सिस्टम\s+प्रॉम्प्ट'
+  - 'pichle\s+nirdesh\w*\s+(?:ko\s+)?(?:ignore|bhool|andekha)'
+  - 'sabhi\s+nirdesh\w*\s+(?:ko\s+)?(?:ignore|bhool|andekha)'

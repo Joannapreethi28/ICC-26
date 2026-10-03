@@ -1,0 +1,192 @@
+# English lexicon for the rules baseline (OWNER: Jabin).
+# Every entry is a regex WITHOUT word boundaries; the loader wraps it (\b for Latin, script-aware for Indic).
+# \x27 = apostrophe. Always matched case-insensitively. Stat entries are tried top to bottom, first match wins.
+# `all:` = list of groups; an entry fires only when EVERY group has at least one match.
+# Tokens: @world_cup, @cricket, @year expand to the union of all loaded lexicons.
+lang: en
+
+gender:
+  # strong = explicit cue, overrides everything (gender_conf = 1.0)
+  women_strong:
+    - 'women(?:\x27s|s)?'
+    - 'woman(?:\x27s)?'
+    - 'females?'
+    - 'ladies'
+    - 'lady'
+    - 'girls?(?:\x27s)?'
+    - 'wt20i?s?'
+    - 'wodis?'
+    - 'wpl'
+    - 'wbbl'
+    - 'batswom[ae]n'
+    - 'sportswom[ae]n'
+  men_strong:
+    - 'men(?:\x27s)?'
+    - 'males?'
+    - 'boys?'
+    - 'gents'
+    - 'ipl'
+    - 'psl'
+    - 'bbl'
+    - 'cpl'
+  # weak = recorded in the trace only, never an override
+  women_weak:
+    - 'she'
+    - 'her'
+    - 'hers'
+  men_weak:
+    - 'he'
+    - 'his'
+    - 'him'
+    - 'batsm[ae]n'
+
+format:
+  league:
+    - 'ipl'
+    - 'wpl'
+    - 'wbbl'
+    - 'bbl'
+    - 'psl'
+    - 'cpl'
+    - 'the hundred'
+    - 'big bash'
+    - 'sa20'
+    - 'ilt20'
+  T20I:
+    - 'w?t20i?s?'
+    - 't20 international'
+    - 'twenty-?20'
+    - 'twenty-?twenty'
+  ODI:
+    - 'w?odis?'
+    - 'one.day(?: internationals?)?'
+    - '50.over'
+    - 'fifty.over'
+  Test:
+    - 'test (?:match(?:es)?|cricket|series|format|score|runs|wickets|record|innings)'
+    - 'tests'
+    - '(?:in|for|of) tests?'
+
+world_cup:
+  - 'world cups?'
+  - 'world t20'
+  - 'wc'
+
+cricket:
+  - 'cricket(?:ers?)?'
+  - 'wickets?'
+  - 'batters?'
+  - 'batsm[ae]n'
+  - 'batswom[ae]n'
+  - 'bowlers?'
+  - 'innings'
+  - 'lbw'
+  - 'powerplay'
+  - 'run.?chase'
+  - 'w?t20i?s?'
+  - 'w?odis?'
+  - 'one.day'
+  - 'test (?:match(?:es)?|cricket)'
+  - 'ipl'
+  - 'wpl'
+  - 'wbbl'
+  - 'bbl'
+  - 'psl'
+  - 'icc'
+  - 'bcci'
+  - 'crease'
+  - 'all.?rounders?'
+  - 'googly'
+  - 'yorker'
+
+other_sport:
+  - 'football(?:er|ers)?'
+  - 'soccer'
+  - 'fifa'
+  - 'goals?'
+  - 'tennis'
+  - 'wimbledon'
+  - 'grand slams?'
+  - 'basketball'
+  - 'nba'
+  - 'hockey'
+  - 'rugby'
+  - 'baseball'
+  - 'olympics?'
+  - 'formula (?:1|one)'
+  - 'f1'
+  - 'golf'
+  - 'marathon'
+  - 'boxing'
+  - 'badminton'
+  - 'kabaddi'
+  - 'chess'
+  - 'premier league'
+  - 'la liga'
+  - 'champions league'
+
+stat_question:
+  - 'most'
+  - 'highest'
+  - 'lowest'
+  - 'biggest'
+  - 'largest'
+  - 'smallest'
+  - 'best'
+  - 'fastest'
+  - 'slowest'
+  - 'youngest'
+  - 'oldest'
+  - 'longest'
+  - 'first'
+  - 'last'
+  - 'latest'
+  - 'record'
+  - 'top'
+  - 'leading'
+  - 'who (?:has|have|holds|scored|took|won)'
+
+stats:
+  - {family: world_cup_record, stat: edition_top_scorer, all: [['@world_cup'], ['@year'], ['top.?scorer', 'most runs', 'runs?', 'leading (?:run )?scorer', 'highest scorer']]}
+  - {family: world_cup_record, stat: edition_winner, all: [['@world_cup'], ['@year'], ['who won', 'winners?', 'champions?', 'won', 'title', 'victors?'], ['@cricket']]}
+  - {family: world_cup_record, stat: most_titles, all: [['@world_cup'], ['most (?:titles|world cups|wins|trophies|championships)', 'times (?:won|champions)', 'most successful', 'won the most'], ['@cricket']]}
+  - {family: world_cup_record, stat: first_edition, all: [['@world_cup'], ['first', 'inaugural', '1st', 'began', 'started'], ['@cricket']]}
+  - {family: world_cup_record, stat: most_runs, all: [['@world_cup'], ['runs?', 'run.?scorers?', 'top.?scorers?', 'leading scorers?', 'highest scorers?']]}
+  - {family: world_cup_record, stat: most_wickets, all: [['@world_cup'], ['wickets?', 'wicket.?takers?', 'leading bowlers?']]}
+  - {family: world_cup_record, stat: latest_winner, all: [['@world_cup'], ['who won', 'winners?', 'champions?', 'reigning', 'defending', 'holders?', 'last', 'latest', 'recent', 'current', 'won'], ['@cricket']]}
+  - {family: firsts_history, stat: first_double_century, all: [['first', 'inaugural'], ['double.?centur(?:y|ies)', 'double.?hundreds?', '200']]}
+  - {family: firsts_history, stat: first_match, all: [['first', 'inaugural'], ['match(?:es)?', 'games?', 'internationals?']]}
+  - {family: team_record, stat: biggest_win_wickets, all: [['biggest', 'largest', 'greatest', 'highest', 'record'], ['wins?', 'victory', 'victories', 'won', 'margin'], ['wickets?']]}
+  - {family: team_record, stat: biggest_win_runs, all: [['biggest', 'largest', 'greatest', 'highest', 'record'], ['wins?', 'victory', 'victories', 'won', 'margin'], ['runs?']]}
+  - {family: team_record, stat: biggest_win_runs, all: [['biggest', 'largest', 'greatest'], ['wins?', 'victory', 'victories']]}
+  - {family: team_record, stat: highest_chase, all: [['highest', 'biggest', 'greatest', 'record', 'successful', 'most'], ['chase', 'chased', 'run.?chase', 'chasing']]}
+  - {family: team_record, stat: lowest_total, all: [['lowest', 'smallest', 'least', 'worst', 'minimum'], ['total', 'score', 'all.?out', 'innings']]}
+  - {family: team_record, stat: most_wins, all: [['most', 'highest', 'record'], ['wins', 'victories', 'matches won', 'games won', 'won']]}
+  - {family: career_record, stat: team_total, all: [['highest', 'biggest', 'maximum', 'record', 'largest', 'most'], ['team (?:total|score)s?', 'total score', '(?:highest|biggest|record|largest|maximum) (?:team )?total', 'score by a team', 'total by a team', 'innings total']]}
+  - {family: career_record, stat: highest_score, all: [['(?:highest|top|best|biggest|maximum|record)(?: \w+){0,2} (?:score|innings|knock)', '(?:runs|score) in (?:an|a|one|single) (?:innings|match)', 'individual score', 'hs']]}
+  - {family: career_record, stat: fifties, all: [['fifties', 'half.?centur(?:y|ies)', '50s']]}
+  - {family: career_record, stat: centuries, all: [['centur(?:y|ies)', '(?<!the )hundreds?', 'tons?', '100s']]}
+  - {family: career_record, stat: sixes, all: [['sixes', 'sixers', 'six.hitting', 'maximums']]}
+  - {family: career_record, stat: strike_rate, all: [['strike.?rate']]}
+  - {family: career_record, stat: economy, all: [['economy']]}
+  - {family: career_record, stat: average, all: [['averages?']]}
+  - {family: career_record, stat: best_bowling, all: [['best', 'top', 'record', 'most'], ['bowling', 'figures', 'bbi']]}
+  - {family: career_record, stat: wickets, all: [['wickets?', 'wicket.?takers?', 'wkts']]}
+  - {family: career_record, stat: runs, all: [['runs?', 'run.?scorers?', 'run.?getters?', 'top.?scorers?', 'leading (?:run )?scorers?', 'highest (?:run )?scorers?', 'scored the most']]}
+  - {family: career_record, stat: matches, all: [['matches', 'games', 'appearances', 'caps', 'capped'], ['most', 'played', 'appearances', 'caps', 'capped', 'highest', 'number of', 'how many']]}
+  - {family: recent_result, stat: last_result, all: [['last', 'latest', 'most recent', 'recent', 'yesterday', 'today', 'previous'], ['match(?:es)?', 'games?', 'results?', 'fixtures?', 'score', 'won', 'beat']]}
+  - {family: role_or_ranking, stat: captain, all: [['captains?', 'skippers?', 'captaincy']]}
+  - {family: role_or_ranking, stat: number_one, all: [['number one', 'number 1', 'no\.? ?1', 'top.?ranked', 'world number', 'ranked first', 'rank(?:ing|ed)?', 'best (?:batter|bowler|player|batsman|all.?rounder)s?', 'greatest', 'goat']]}
+  - {family: player_stat, stat: career_line, all: [['career (?:stats|statistics|record|numbers|figures)', 'stats', 'statistics']]}
+
+injection:
+  - 'ignore\s+(?:all\s+|the\s+|any\s+|your\s+)*(?:previous\s+|above\s+|prior\s+|earlier\s+)*(?:instructions?|rules|prompts?|guidelines)'
+  - 'system\s+prompt'
+  - 'you\s+are\s+now'
+  - 'disregard'
+  - 'override'
+  - 'forget\s+(?:all|everything|previous|your)'
+  - 'jailbreak'
+  - 'pretend\s+(?:to\s+be|you)'
+  - 'developer\s+mode'
+  - 'new\s+instructions'

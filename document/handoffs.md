@@ -27,7 +27,7 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 | # | Deliverable | From → To | Due (IST) | Status |
 |---|---|---|---|---|
 | 1 | Phase 0 contract (repo, types, labels, config) | Jabin → Joanna | Sat 18:00 | **DONE Sat 18:15** |
-| 2 | `understand()` rules version | Jabin → Joanna | Sat 20:00 | pending |
+| 2 | `understand()` rules version | Jabin → Joanna | Sat 20:00 | **DONE Sat (J-P1 push)** |
 | 3 | Registry table (people + hi/ta labels) | Joanna → Jabin | Sat 20:30 | pending |
 | 4 | Frozen test sets + xsport.csv | Joanna → Jabin | Sat 23:30 | pending |
 | 5 | Benchmark v1 + PREREGISTRATION | Joanna → Jabin | Sat 23:30 | pending |
@@ -39,6 +39,14 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 ---
 
 # Messages (newest first)
+
+---
+
+### Sat 03 Oct, 19:00 | FROM Jabin TO Joanna | DONE | J-P1
+**What:** real `understand()` (rules only) replaces the stub, same signature. Files (all Jabin's): `data/lexicons/{en,hi,ta}.yaml`, `src/mak/nlu/lang.py`, `src/mak/nlu/rules.py`, `src/mak/nlu/understand.py`, `tests/nlu/test_rules.py`, `tests/injection/test_injection.py`. 63 tests green.
+**You can now:** build `resolve()` against real labels. Things to know: (1) `Parse.entities` is always `()`; filling it is yours (`nlu/entities.py`). (2) An injection marker sets `injection_suspected=True` AND forces `gender_signal="none"`, `gender_conf=0.0`, so the policy shows both even before your own fail-safe check. (3) `format` is `"unspecified"` for a stat question with no format, and `None` when `topic != "cricket_stat"`. (4) A bare "world cup" with no cricket word (e.g. "Who won the women's world cup in 2017?") is deliberately NOT treated as cricket by rules, because it could be football: a known rules miss for Laya to fix (gotcha G-016). (5) `use_laya=True` is accepted but returns the rules result plus a trace note until J-P4.
+**I need:** nothing now. Frozen test sets by Sat ~24:00 as planned.
+**Watch out:** the lexicons are not yet native-speaker reviewed (needed before Gate G3 on Sunday).
 
 ---
 

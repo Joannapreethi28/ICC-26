@@ -30,10 +30,10 @@ Only two real meeting points: **Sat ~24:00** (Joanna's frozen test sets, for you
 - [x] Repo = this folder; remote `https://github.com/Joannapreethi28/ICC-26.git`; scaffold [T0.2]; `types.py`, `labels.py`, `config.py`, stubs for `understand()` and `resolve()`, `OWNERS.md`, `pyproject.toml`, `.gitignore`, `pytest` green; golden CSV copied with the D2 fix.
 - [x] Pushed as `jabssyyy` (no AI co-author). Handoff "Phase 0 DONE".
 
-## J-P1: rules baseline + language detection (Sat 18:45-21:00)
+## J-P1: rules baseline + language detection (Sat 18:45-21:00) [x] DONE Sat 17:00 (code); learn questions pending
 
-- [ ] `data/lexicons/{en,hi,ta}.yaml` (strong vs weak gender cues, stat/format phrases, injection markers), `src/mak/nlu/lang.py`, `src/mak/nlu/rules.py`, real `understand(use_laya=False)` replacing the stub (same signature) [T1.5, minus entities which are Joanna's].
-- [ ] Tests: the 14 rule cases + 3 injection cases in buildplan T1.5 (the two entity cases move to Joanna's pipeline tests) + Review Focus 1-2.
+- [x] `data/lexicons/{en,hi,ta}.yaml` (strong vs weak gender cues, stat/format phrases, injection markers), `src/mak/nlu/lang.py`, `src/mak/nlu/rules.py`, real `understand(use_laya=False)` replacing the stub (same signature) [T1.5, minus entities which are Joanna's].
+- [x] Tests: the 14 rule cases + 3 injection cases in buildplan T1.5 (the two entity cases move to Joanna's pipeline tests) + Review Focus 1-2.
 
 **Done when:** `python -c "from mak.nlu.understand import understand as u; print(u('அதிக விக்கெட்டுகள் எடுத்த வீராங்கனை யார்?'))"` → lang ta, women, wickets; NLU tests green; merged; handoff "real understand() on main".
 
