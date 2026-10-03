@@ -135,3 +135,9 @@ It failed on tab-group errors after 12 answers and was dropped. **Rule:** before
 **Rule:** ask before downloading any new model or package. Sir Jabin decides whether to keep Laya or switch to a more popular base (for example xlm-roberta-base or mmBERT-base) for comparison.
 
 **Update to G-023 (3 Oct):** the 0-downloads warning was overstated. Both Laya repos lack a root config.json, so Hugging Face's counter probably never counts them (inference, unverified). Do not cite 0 downloads as a risk. Comparison plan: fine-tune Laya and xlm-roberta-base on the same data, pick by held-out results.
+
+**Update 2 to G-023 (3 Oct):** Sir Jabin's screenshot of the Laya page shows 'Downloads are not tracked for this model', confirming the counting artefact (no longer just an inference). Laya's identity/track record is still unverified; our own audit and test results decide trust.
+
+### G-024 | Built J-P3/J-P4 code before re-reading the task text; assumed the model choice | HANDLED | 3 Oct | Jabin
+**Observed:** train_laya.py and laya_head.py were written from memory of the plan: file paths and interfaces differed from buildplan T2.2/T2.5 (training/finetune/, calibrate/, qwen_parser/; LayaHead.load/predict returning {question: (label, prob)}; tests/nlu/test_understand.py), and I described laya_head as 'the' classifier although Laya vs xlm-roberta-base is undecided. Sir Jabin: 'never assume anything'.
+**Rule:** before writing code for a task, read its exact task text in document/buildplan.md and the matching docs section (docs/09 §5-6 gates, docs/11 E2). Never describe a candidate as chosen. Fixed: laya_head.py now follows T2.5 (candidate backend), test file renamed, stale docs/09 line corrected. Still to do after the training run ends: move scripts to the buildplan paths.
