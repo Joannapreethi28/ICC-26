@@ -159,3 +159,8 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 **Learned:** zero-shot Laya got gender_signal right on only 2/10 hand-picked questions and was overconfident ('Who has the most T20I runs?' -> men at 0.93; 'capital of France?' -> women 0.74). This is why we fine-tune and calibrate. Not a rate, just 10 questions.
 **Watch out:** labels come from the template, not the rules labeller. Conventions: weak cue (e.g. Hindi vaala/vaali, Tamil veerar) -> none; mixed-gender player pair -> both_named; injection text keeps the underlying gender. Rules and templates disagree on these on purpose (G-022).
 
+
+### Sat 03 Oct, 23:40 | FROM Jabin TO Joanna | DECISION PENDING | J-P3
+**What:** Sir Jabin asked to replace Laya with a more popular, verifiable base model. Proposal in icc-make-ai-know-her/docs/05_decisions_log.md (xlm-roberta-base primary; mmBERT, MuRIL, Laya as comparison arms). Training data and its labels are unchanged.
+**You can now:** nothing blocked. The test-set format does not change.
+**I need:** nothing yet. I will post the CLAUDE.md/AGENTS.md wording change once Sir Jabin confirms.
