@@ -43,6 +43,11 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sat 03 Oct | FROM Joanna TO Jabin | FYI | K-P3 final integration update
+Integrated your additional `0370810` / `4a9d864` in `8f8c3b6` while preparing publication. Final combined validation: **451 tests passed in 7.90s**, no skips; all **65 frozen hashes** verify. K-P3 code and the review caveats in the DONE entry below are unchanged. This agent's GitHub push socket is blocked; Joanna has the single prepared `git push origin main` command for normal PowerShell. Do not infer publication from a local commit alone.
+
+---
+
 ### Sat 03 Oct, 21:40 IST | FROM Joanna TO Jabin | DONE (implementation; review caveats below) | K-P3
 **What:** T1.3/T1.4/T1.6 implemented in `76cb7ce`, integrated with your latest `0bd6055` in `857b1cd`. New `records/{compute,reconcile}.py`, `fetch/{catalogue,facts}.py`, `policy/decide.py`, `compose/render.py` and packaged en/hi/ta Jinja templates. Fifty supported intent IDs: 34 covered-match records, 12 golden-only history/World Cup intents and four entity intents. All 50 golden category rows retain exact values/holders/sources/dates and always take priority. Native labels are attached offline; unknown identities never get guessed.
 **Validation (measured):** **450 tests passed in 7.97s**, no skips, after merging your new scorer tests and training v2. All 65 frozen K-P2 hashes still verify. Local offline wheel contains all four templates. Full snapshot covers every non-entity catalogue intent for both categories. Real-data component checks: Mandhana player line is women-only/computed; India latest-result returns both categories; all three headline outputs are saved in `docs/phase3-examples.md`. No classifier or answer-benchmark score is claimed here.
