@@ -69,3 +69,5 @@ Disclosure (Joanna's K-P2 note): the winning model family will be selected using
 
 ### Test scoring before Joanna's overlap re-audit (3 Oct 2026 ~22:15 IST, SJ decided)
 Neither SJ nor Joanna is available before Sun 10:30. SJ chose to run the single test scoring tonight on the basis of Jabin's own v2 leakage screen (0 exact, 0 near >= 0.92 after dropping 4 unseen rows). Order: GENDER_THRESHOLD + merge policy fixed on calibration data first, then one test run (TEST_RUN.lock). If Joanna's re-audit later flags rows, they are excluded and disclosed as post-hoc; the run is not repeated.
+
+### Pre-test decision rules (fixed 3 Oct ~22:30 IST, before any result): GENDER_THRESHOLD = calib fit (none found -> 0.85); merge v2 only if it beats v1 by >= 0.005 mean topic/family/stat accuracy on calib+messy; outcome in results/calibration/pre_test_decision.json; CONTRACT CHANGE posted after. Laya v2 calib: en .959/hi .970/ta .943; ta gender .969 (13/31 errors are injection rows the pipeline forces neutral; real misses: veeranganai x6, mixed pairs x3).
