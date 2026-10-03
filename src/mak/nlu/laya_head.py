@@ -48,12 +48,18 @@ class LayaHead:
 
     def predict(self, text: str) -> dict[str, tuple[str, float]]:
         """{question: (top label, calibrated probability)}. Raises on failure; understand() degrades to rules."""
+        text = normalise_for_model(text)
         first = self._agent.predict_batch([text], {q: _QUESTIONS[q] for q in FIRST_PASS})[0]["answers"]
         out = {q: _top(first[q]) for q in FIRST_PASS}
         stat_q = f"stat_{out['family'][0]}"
         if out["topic"][0] == "cricket_stat" and stat_q in _QUESTIONS:
             out["stat"] = _top(self._agent.predict_batch([text], {stat_q: _QUESTIONS[stat_q]})[0]["answers"][stat_q])
         return out
+
+
+def normalise_for_model(text: str) -> str:
+    """Casing carries no label information; ALL-CAPS text made the cased tokenizer miss WOMENS/MENS (G-026)."""
+    return " ".join(text.lower().split())
 
 
 def _top(answer: dict) -> tuple[str, float]:
