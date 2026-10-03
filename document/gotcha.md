@@ -129,3 +129,7 @@ It failed on tab-group errors after 12 answers and was dropped. **Rule:** before
 ### G-022 | Template labels differ from rules labels, and shell heredocs break on this path | HANDLED | 3 Oct | Jabin
 **Observed:** the audit shows the rules labeller disagrees with template labels on mixed-gender players, weak cues, injection rows and Hinglish/Tanglish topics. Separately, Git Bash heredocs fail ('unexpected EOF') when the content has apostrophes and the path contains ICC'26. Also, typos corrupted gender cue words (e.g. 'putush'), which would be label noise.
 **Rule:** model labels come from the template that wrote the text, never from rules. Typo noise must skip the `_PROTECT` gender-cue set. Use the Write tool for files with apostrophes, not heredocs.
+
+### G-023 | Laya provenance: popularity and identity not verified | OPEN | 3 Oct | Jabin
+**Observed:** 358 likes (not downloads), HF API shows 0 downloads, model created 19 Sep 2026. Files and package audited clean (docs/09). I downloaded it before Sir Jabin had seen the model page; he should have been asked first.
+**Rule:** ask before downloading any new model or package. Sir Jabin decides whether to keep Laya or switch to a more popular base (for example xlm-roberta-base or mmBERT-base) for comparison.
