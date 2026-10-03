@@ -66,3 +66,6 @@ Context: v1 Laya and xlm-roberta were trained and checked on the calibration set
 Options shown to SJ: v2 first then test once / score v1 now / no v2. **SJ chose "v2 first, then test once".**
 v2: English slang phrasings in train and calib positions; 'abbrev' noise op; all text lowercased for every arm at train + inference; Laya 2 epochs + label smoothing 0.05 (CE only). Hindi/Tamil banks unchanged (no native review). Frozen in training/DATA_FROZEN.md v2; leakage screen dropped 4 near-duplicate train rows unseen.
 Disclosure (Joanna's K-P2 note): the winning model family will be selected using the frozen test scores, so that run is a selection run, not an untouched confirmation test; the report says so. No retune-and-rerun is presented as the original held-out result.
+
+### Test scoring before Joanna's overlap re-audit (3 Oct 2026 ~22:15 IST, SJ decided)
+Neither SJ nor Joanna is available before Sun 10:30. SJ chose to run the single test scoring tonight on the basis of Jabin's own v2 leakage screen (0 exact, 0 near >= 0.92 after dropping 4 unseen rows). Order: GENDER_THRESHOLD + merge policy fixed on calibration data first, then one test run (TEST_RUN.lock). If Joanna's re-audit later flags rows, they are excluded and disclosed as post-hoc; the run is not repeated.

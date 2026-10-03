@@ -39,3 +39,5 @@
 - 2026-10-03 verification: 14 test files pass here (155 tests); 6 need duckdb/rapidfuzz (not installed here); Joanna's test_eval_release fails by design because her overlap audit pins v1 training hashes -> handoff posted asking her to re-run it vs v2; test scoring waits for her confirmation.
 
 - 2026-10-03 src/mak/eval/run_e1.py: E1 launcher; writes run_manifest (model digest, Ollama version, licence line, hardware, options, seeds, prompts, git commit, frozen-input hashes) before generating; resumable; keeps Windows awake only while running (process-scoped). SJ OK'd overnight runs.
+
+- 2026-10-03 ~22:15 SJ: run the single test scoring tonight (Joanna re-audits after 10:30; post-hoc exclusion if she flags rows). Handoff posted; docs/05 logged.

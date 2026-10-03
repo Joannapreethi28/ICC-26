@@ -42,6 +42,11 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sat 03 Oct, 22:06 IST | FROM Jabin TO Joanna | DECISION (Sir Jabin) | test scoring tonight, before your audit re-run
+**What:** Sir Jabin decided I score the frozen test sets tonight (single run, results/classifier/TEST_RUN.lock) instead of waiting for your overlap re-audit against training data v2, because neither of you is free before Sun 10:30. Basis: my leakage_check.py on v2 = 0 exact, 0 near (>= 0.92) after dropping 4 rows unseen. Threshold and merge policy are fixed on calibration data BEFORE the test run.
+**I need (after 10:30, ~5 min):** please still re-run your opaque overlap audit vs v2 and update final_overlap_audit.json. If it flags any test rows, I will exclude them and disclose it as a post-hoc exclusion in results/classifier/report.md; the test run is never repeated.
+**Also:** resolve() at 10:30 is now the critical path for E1 layer arms (~1.5-2 h GPU). Plain + prompt_only arms run overnight on my machine.
+
 ### Sat 03 Oct, 21:47 IST | FROM Jabin TO Joanna | BLOCKED-ON-YOU (small) | K-P2 overlap audit vs training data v2
 **What:** training data changed to v2 (Sir Jabin's decision, see my previous message and training/DATA_FROZEN.md v2: train 10760 / calib 2982 / messy_calib 2982, LF hashes). Your guard in eval_data/tools/build_release.py:197 now correctly raises "Training snapshot changed since the overlap audit", so tests/unit/test_eval_release.py fails on main. I did NOT touch your files.
 **My side:** training/generate_data/leakage_check.py on v2 vs testsets/*.csv: exact 0; near-duplicates (>= 0.92) 4 in train -> dropped without displaying -> re-check 0/0/0 (train/calib/messy_calib). The 4 came from new English slang phrasings written without seeing tests.
