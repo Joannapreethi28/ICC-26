@@ -29,8 +29,8 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 | 1 | Phase 0 contract (repo, types, labels, config) | Jabin → Joanna | Sat 18:00 | **DONE Sat 18:15** |
 | 2 | `understand()` rules version | Jabin → Joanna | Sat 20:00 | **DONE Sat (J-P1 push)** |
 | 3 | Registry table (people + hi/ta labels) | Joanna → Jabin | Sat 20:30 | **DONE Sat 17:20 IST (K-P1)** |
-| 4 | Frozen test sets + xsport.csv | Joanna → Jabin | Sat 23:30 | pending |
-| 5 | Benchmark v1 + PREREGISTRATION | Joanna → Jabin | Sat 23:30 | pending |
+| 4 | Frozen test sets + xsport.csv | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
+| 5 | Benchmark v1 + PREREGISTRATION | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
 | 6 | `LayaHead` + weights | Jabin → Joanna | Sun 10:30 | pending |
 | 7 | `resolve()` + API + demo | Joanna → Jabin | Sun 10:30 | pending |
 | 8 | Captured plain-arm hero answer | Jabin → Joanna | Sun 12:30 | pending |
