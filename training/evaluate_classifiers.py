@@ -50,6 +50,11 @@ def shipped_arm(path: str):
     return ce.shipped_predict
 
 
+def shipped_arm_v2(path: str):
+    os.environ["MAK_LAYA_PATH"] = path
+    return lambda text, lang: ce.shipped_predict(text, lang, policy="v2")
+
+
 def xlmr_arm(path: pathlib.Path):
     import torch
     sys.path.insert(0, str(ROOT / "training"))
@@ -92,6 +97,7 @@ ARMS = {
     "b_laya_zeroshot": lambda: laya_arm(laya_base_path()),
     "c_laya_ft": lambda: laya_arm(str(LAYA_V2)),
     "d_shipped": lambda: shipped_arm(str(LAYA_V2)),
+    "d2_shipped_laya_first": lambda: shipped_arm_v2(str(LAYA_V2)),
     "e_qwen_lora": qwen_arm,
     "f_xlmr_ft": lambda: xlmr_arm(XLMR_V2),
 }
@@ -100,6 +106,7 @@ NOTES = {
     "b_laya_zeroshot": "Base Laya, no fine-tuning, default temperatures (expected near chance).",
     "c_laya_ft": "Fine-tuned Laya v2, calibrated per option-count bucket on calib.jsonl.",
     "d_shipped": "understand(use_laya=True): rules override + Laya v2, merge policy v1; non-gender confidences reported as 1.0.",
+    "d2_shipped_laya_first": "Same as d but merge policy v2 (confident Laya beats rules on topic/family/stat; gender rules unchanged).",
     "e_qwen_lora": "Qwen2.5-1.5B + LoRA v2; confidence = product of generated token probabilities, NOT calibrated; invalid JSON = error.",
     "f_xlmr_ft": "xlm-roberta-base v2, per-question temperature on calib.jsonl.",
 }

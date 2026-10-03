@@ -20,6 +20,9 @@ from mak.nlu.rules import rules_parse
 from mak.types import Lang, Parse
 
 LABEL_MIN_PROB = 0.5
+# "v1": a rules lexicon stat match beats Laya on topic/family/stat. "v2": a confident Laya label (>= LABEL_MIN_PROB)
+# beats the rules on topic/family/stat. Gender handling is identical in both. Chosen by the dev ablation BEFORE test.
+MERGE_POLICY = "v1"
 
 
 def understand(text: str, lang: Lang | None = None, use_laya: bool | None = None) -> Parse:
@@ -50,7 +53,7 @@ def _add_laya(query: str, parse: Parse) -> Parse:
     return merge(parse, pred)
 
 
-def merge(parse: Parse, pred: dict[str, tuple[str, float]]) -> Parse:
+def merge(parse: Parse, pred: dict[str, tuple[str, float]], policy: str | None = None) -> Parse:
     """pred = {question: (label, calibrated probability)} from any backend (LayaHead.predict)."""
     trace = list(parse.trace)
 
@@ -70,6 +73,8 @@ def merge(parse: Parse, pred: dict[str, tuple[str, float]]) -> Parse:
 
     topic, family, stat, fmt = parse.topic, parse.family, parse.stat, parse.format
     rules_found_stat = parse.topic == "cricket_stat" and parse.family not in (None, "other_stat")
+    if (policy or MERGE_POLICY) == "v2":
+        rules_found_stat = False
     if not rules_found_stat:
         t, tp = pred["topic"]
         if tp >= LABEL_MIN_PROB:

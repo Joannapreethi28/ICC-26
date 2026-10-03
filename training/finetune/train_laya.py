@@ -8,8 +8,8 @@ Adapted from Laya's official Kaggle notebook recipe (policy-gradient reward + so
 Never reads testsets/ or eval_data/.
 
 Run from repo root:
-  python training/train_laya.py --smoke          # 15 optimiser steps, prints speed + memory, saves nothing
-  python training/train_laya.py                  # full run -> models/laya-mak-v1/
+  python training/finetune/train_laya.py --smoke          # 15 optimiser steps, prints speed + memory, saves nothing
+  python training/finetune/train_laya.py                  # full run -> models/laya-mak-v1/
 """
 from __future__ import annotations
 
@@ -31,7 +31,7 @@ import torch
 from safetensors.torch import load_file, save_file
 from transformers import AutoTokenizer
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT / "src")]
 
 from laya.agent import _fix_tokenizer_config  # noqa: E402
