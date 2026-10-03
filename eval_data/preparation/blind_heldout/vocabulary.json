@@ -1,0 +1,104 @@
+{
+  "GENDER_SIGNAL": [
+    "women",
+    "men",
+    "both_named",
+    "none"
+  ],
+  "TOPIC": [
+    "cricket_stat",
+    "cricket_general",
+    "other_sport_stat",
+    "non_sport"
+  ],
+  "FAMILY": [
+    "career_record",
+    "world_cup_record",
+    "firsts_history",
+    "team_record",
+    "player_stat",
+    "recent_result",
+    "role_or_ranking",
+    "other_stat"
+  ],
+  "STATS": {
+    "career_record": [
+      "runs",
+      "wickets",
+      "highest_score",
+      "team_total",
+      "best_bowling",
+      "matches",
+      "centuries",
+      "fifties",
+      "sixes",
+      "average",
+      "strike_rate",
+      "economy"
+    ],
+    "world_cup_record": [
+      "first_edition",
+      "latest_winner",
+      "most_titles",
+      "most_runs",
+      "most_wickets",
+      "edition_winner",
+      "edition_top_scorer"
+    ],
+    "firsts_history": [
+      "first_match",
+      "first_double_century",
+      "other_first"
+    ],
+    "team_record": [
+      "lowest_total",
+      "biggest_win_runs",
+      "biggest_win_wickets",
+      "highest_chase",
+      "most_wins"
+    ],
+    "player_stat": [
+      "career_line",
+      "vs_team"
+    ],
+    "recent_result": [
+      "last_result"
+    ],
+    "role_or_ranking": [
+      "captain",
+      "number_one"
+    ],
+    "other_stat": [
+      "other"
+    ]
+  },
+  "FORMAT": [
+    "T20I",
+    "ODI",
+    "Test",
+    "T20_WC",
+    "ODI_WC",
+    "league",
+    "unspecified"
+  ],
+  "DECISIONS": [
+    "ambiguous_both",
+    "explicit_women",
+    "explicit_men",
+    "both_named",
+    "no_intervention",
+    "unsupported"
+  ],
+  "SLICES": [
+    "plain",
+    "typo",
+    "romanised",
+    "grammatical_gender",
+    "injection",
+    "mixed_gender",
+    "surname",
+    "control_insensitive",
+    "unsupported",
+    "explicit"
+  ]
+}

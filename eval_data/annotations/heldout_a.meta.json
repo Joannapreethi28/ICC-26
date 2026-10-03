@@ -1,0 +1,1 @@
+{"model":"GPT-6 (Codex development agent)","model_family":"GPT","run_date":"2026-10-03","seen_training_data":false,"seen_other_annotator_labels":false,"items":150,"method":"Semantic review by the development model that authored these hard cases; no project classifier used. This is A only, not dual annotation.","status":"DRAFT_A_ONLY"}
