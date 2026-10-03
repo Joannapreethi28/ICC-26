@@ -1,0 +1,26 @@
+{% if decision == 'unsupported' %}
+{{ words.unsupported }}
+{% else %}
+{% if fmt_unspecified %}
+{{ words.formats }}
+{% endif %}
+{% for f in facts %}
+{{ categories[f.gender] }} {{ f.format }}: {{ f.holder_local or f.holder }}{% if f.country %} ({{ f.country }}){% endif %}, {{ f.value }} {{ units.get(f.unit, f.unit) }} ({{ words.as_of }} {{ f.as_of }}; {{ trust[f.trust] }})
+{% if f.context %}
+  {{ words.context }}: {{ f.context }}
+{% endif %}
+  {{ words.sources }}: {{ f.sources | join(' | ') }}
+{% if f.computed_delta %}
+  {{ words.coverage }}: {{ f.computed_delta }}
+{% endif %}
+{% endfor %}
+{% if missing %}
+{{ words.missing }}
+{% endif %}
+{% if overall %}
+{{ words.overall }}: {{ categories[overall.gender] }} — {{ overall.holder_local or overall.holder }}. {{ words.comparison }}
+{% endif %}
+{% if narrow and facts %}
+{{ words.narrow }}
+{% endif %}
+{% endif %}

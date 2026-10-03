@@ -28,6 +28,9 @@ ml = ["laya>=0.1.6", "transformers>=4.48", "torch", "datasets>=3.0", "safetensor
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+"mak.compose" = ["templates/*.j2"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]

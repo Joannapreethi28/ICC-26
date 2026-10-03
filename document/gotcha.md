@@ -23,6 +23,11 @@ Rules:
 
 ## Live traps found during planning (3 Oct 2026)
 
+### G-027 | Record-value guards must distinguish sourced metadata; equal figures do not prove identity | HANDLED / identity open | 3 Oct | Joanna
+**Observed:** T1.6 requires dates, formats and source links while literally requiring every digit to occur in `Fact.value`; dates and URL digits cannot satisfy both. HTML escaping also turns an apostrophe into `&#39;` under attribute-style escaping, creating a misleading numeric-test failure in plain text. Separately, the men's best-bowling values agree at 8/7 but golden `Sonam Yeshey` and registry `S Yeshi` have no established shared identity in our cached labels.
+**Rule:** insert statistical values directly from Fact.value, and validate metadata digits against their source fields. Render plain text with markup escaping without attribute quote escaping. Keep unresolved identity comparisons flagged; do not equate players from equal figures alone. Golden records remain unchanged. Coverage explanations do not prove every numerical difference.
+**Enforced:** `tests/unit/test_render.py`, `records/reconcile.py`, `results/reconciliation.md`, `docs/phase3-facts.md`. Hindi/Tamil templates still need native-speaker review; self-review is not that evidence.
+
 ### G-022 | HF CLI imports venv on embedded Python | FIXED locally | 3 Oct | Joanna
 **Observed:** Hugging Face Hub 2.1.1 installed successfully, but `hf auth login` failed with `ModuleNotFoundError: No module named 'venv'`. The CLI's top-level extension-dispatch hook imports its extension manager, which imports `venv`; Windows embedded Python omits that standard-library module.
 **Fix:** the prepared setup helper now calls the official public `interpreter_login()` Python API. It runs the same browser authorization without the unrelated CLI extension manager. A regression check reaches the browser boundary with `venv` unavailable, without making network calls or reading credentials. No change to login scopes or Git credentials.

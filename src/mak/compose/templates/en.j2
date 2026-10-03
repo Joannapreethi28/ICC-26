@@ -1,0 +1,5 @@
+{% set categories = {'women': "Women's", 'men': "Men's"} %}
+{% set trust = {'verified': 'verified snapshot', 'computed': 'computed from available matches'} %}
+{% set units = {'runs': 'runs', 'wickets': 'wickets', 'score': 'runs', 'total': '(runs/wickets)', 'figures': '(wickets/runs)', 'matches': 'matches', 'centuries': 'centuries', 'fifties': 'fifties', 'sixes': 'sixes', 'average': 'batting average', 'strike_rate': 'strike rate', 'economy': 'economy rate', 'titles': 'titles', 'wins': 'wins', 'year': '', 'result': '', 'career_line': '(matches / runs / wickets)'} %}
+{% set words = {'as_of': 'as of', 'sources': 'Sources', 'context': 'Context', 'coverage': 'Coverage comparison', 'overall': 'Overall', 'comparison': 'Comparison of the listed records at their stated dates.', 'formats': 'Format not specified: showing T20I and ODI records.', 'missing': 'Requested facts are unavailable for one or more categories; no result has been guessed.', 'unsupported': 'This question is unsupported by the available verified record catalogue.', 'narrow': "Ask for women's or men's records to narrow the answer."} %}
+{% include '_answer.j2' %}

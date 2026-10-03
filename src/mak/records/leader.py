@@ -16,10 +16,16 @@ KIND = {
     "WC_ODI_WKTS": "higher", "WC_T20_WKTS": "higher", "FIRST_T20I": "earlier",
     "FIRST_ODI_200": "earlier",
 }
+for _fmt in ('T20I', 'ODI'):
+    for _suffix in ('100S', '50S', '6S', 'AVG', 'SR', 'WIN_RUNS', 'WIN_WKTS', 'MOST_WINS'):
+        KIND[f'{_fmt}_{_suffix}'] = 'higher'
+    KIND[f'{_fmt}_CHASE'] = 'higher_runs'
+    KIND[f'{_fmt}_LOWEST'] = 'lower'
+    KIND[f'{_fmt}_ECON'] = 'lower'
 
 
 def _num(value: str) -> Decimal:
-    text = value.split("/")[0].replace(",", "").rstrip("*").strip()
+    text = value.split(' = ')[0].split("/")[0].replace(",", "").rstrip("*").strip()
     if not re.fullmatch(r"\d+(?:\.\d+)?", text):
         raise ValueError(f"Invalid cricket number: {value!r}")
     return Decimal(text)
@@ -41,9 +47,13 @@ def compute_leader(intent_id: str, women: Fact, men: Fact) -> Leader:
         raise ValueError("Comparison requires women then men")
     if women.intent_id != intent_id or men.intent_id != intent_id:
         raise ValueError("Cannot compare different intents")
-    kind = KIND[intent_id]
-    if kind in ("higher", "higher_runs"):
+    kind = KIND.get(intent_id)
+    if kind is None:
+        return 'none'
+    if kind in ("higher", "higher_runs", "lower"):
         a, b = _num(women.value), _num(men.value)
+        if kind == 'lower':
+            a, b = -a, -b
     elif kind == "bowling":
         a, b = _bowling(women.value), _bowling(men.value)
     else:
