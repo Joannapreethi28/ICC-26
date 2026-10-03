@@ -1,4 +1,5 @@
-"""Noise for training queries: typos, casing, dropped question marks, SMS spelling, filler words. OWNER: Jabin.
+"""Noise for training queries: typos, casing, dropped question marks, SMS spelling, filler words, cricket abbreviations
+(data v2). OWNER: Jabin.
 
 Noise never changes a label. Typos touch only Latin-script tokens of 5+ letters and keep the first letter, so the
 meaning stays recoverable (a native reader would still know the word). Hindi/Tamil script is never corrupted.
@@ -72,6 +73,22 @@ def drop_qmark(text: str) -> tuple[str, bool]:
     return text, False
 
 
+_ABBREV = [(r"\bwickets\b", ("wkts", "wkt")), (r"\bcenturies\b", ("100s", "tons")), (r"\bhundreds\b", ("100s",)),
+           (r"\bhalf centuries\b", ("50s",)), (r"\bfifties\b", ("50s",)), (r"\baverage\b", ("avg",)),
+           (r"\bstrike rate\b", ("SR", "s/r")), (r"\beconomy rate\b", ("econ", "eco")), (r"\beconomy\b", ("econ",)),
+           (r"\binternationals?\b", ("intl",)), (r"\bmatches\b", ("games",)), (r"\bhighest\b", ("top",))]
+
+
+def abbreviate(text: str, rng: random.Random) -> tuple[str, bool]:
+    """Cricket abbreviations fans type (wkts, 100s, avg, SR, econ). Same meaning, so labels are unchanged."""
+    changed = False
+    for pat, alts in _ABBREV:
+        if re.search(pat, text, flags=re.I) and rng.random() < 0.7:
+            text = re.sub(pat, rng.choice(alts), text, count=1, flags=re.I)
+            changed = True
+    return text, changed
+
+
 def add_filler(text: str, bank: dict, rng: random.Random) -> tuple[str, bool]:
     if rng.random() < 0.6:
         pre = rng.choice(bank["fillers_prefix"])
@@ -82,7 +99,7 @@ def add_filler(text: str, bank: dict, rng: random.Random) -> tuple[str, bool]:
 def apply_noise(text: str, bank: dict, rng: random.Random) -> tuple[str, list[str]]:
     """Apply 1-3 random noise operations; returns (noisy text, names of operations applied)."""
     variant, applied = bank["variant"], []
-    ops = ["typo", "case", "qmark", "sms", "filler"]
+    ops = ["typo", "case", "qmark", "sms", "filler", "abbrev"]
     rng.shuffle(ops)
     for op in ops[: rng.choice((1, 1, 2, 3))]:
         if op == "typo" and bank["script"] == "latin":
@@ -93,6 +110,8 @@ def apply_noise(text: str, bank: dict, rng: random.Random) -> tuple[str, list[st
             text, ok = drop_qmark(text)
         elif op == "sms" and bank["script"] == "latin":
             text, ok = sms_spelling(text, variant, rng)
+        elif op == "abbrev" and bank["script"] == "latin":
+            text, ok = abbreviate(text, rng)
         elif op == "filler":
             text, ok = add_filler(text, bank, rng)
         else:

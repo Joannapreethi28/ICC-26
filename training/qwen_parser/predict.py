@@ -23,7 +23,7 @@ def load(adapter: str | None = None):
     if "model" not in _state:
         from peft import PeftModel
         from transformers import AutoModelForCausalLM, AutoTokenizer
-        adapter = adapter or str(ROOT / "models" / "qwen-mak-lora-v1")
+        adapter = adapter or str(ROOT / "models" / "qwen-mak-lora-v2")
         tok = AutoTokenizer.from_pretrained(BASE_MODEL, revision=BASE_REVISION)
         base = AutoModelForCausalLM.from_pretrained(BASE_MODEL, revision=BASE_REVISION, dtype=torch.bfloat16,
                                                     use_safetensors=True).to("cuda" if torch.cuda.is_available() else "cpu")

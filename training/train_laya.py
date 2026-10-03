@@ -35,13 +35,15 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "src")]
 
 from laya.agent import _fix_tokenizer_config  # noqa: E402
+from mak.nlu.laya_head import normalise_for_model  # noqa: E402
 from laya.common import (QTYPES, TEMP_MAX, TEMP_MIN, build_model, build_sequence, ece_score,  # noqa: E402
                          proper_reward, render_options, temp_bucket)
 
 MODEL_ID = "convaiinnovations/laya-multilingual"
 DATA = ROOT / "training" / "data"
 SEED = 20261003
-EPOCHS = 3
+EPOCHS = 2  # v2: 3 epochs saturated the logits (G-026)
+LABEL_SMOOTHING = 0.05  # v2: on the cross-entropy target only; the reward keeps the hard target
 MICRO_BATCH = 8
 GRAD_ACCUM = 4
 GROUP_SIZE = 4
@@ -78,7 +80,7 @@ def load_items(path, tok, cfg, limit=None):
             row = json.loads(line)
             lang = row["meta"]["lang"]
             for qid, q in row["questions"].items():
-                it = build_item(tok, cfg, row["state"], q, row["gold"][qid], qid, lang)
+                it = build_item(tok, cfg, normalise_for_model(row["state"]), q, row["gold"][qid], qid, lang)
                 if it is None:
                     dropped += 1
                 else:
@@ -180,7 +182,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--smoke", action="store_true")
     ap.add_argument("--epochs", type=int, default=EPOCHS)
-    ap.add_argument("--out", default=str(ROOT / "models" / "laya-mak-v1"))
+    ap.add_argument("--out", default=str(ROOT / "models" / "laya-mak-v2"))
     args = ap.parse_args()
     assert torch.cuda.is_available(), "CUDA not available"
     device = torch.device("cuda")
@@ -253,7 +255,8 @@ def main():
                 adv = adv / (adv.std() + 1e-6)
             logp = -(((z - logits.unsqueeze(0)) ** 2) * mask).sum(-1) / (2 * sigma ** 2)
             loss_rl = -(adv * logp).mean()
-            loss_ce = -(target * torch.log_softmax(logits.masked_fill(~mask, -1e4), -1)).sum(-1).mean()
+            smooth = (target * (1 - LABEL_SMOOTHING) + LABEL_SMOOTHING / k) * mask
+            loss_ce = -(smooth * torch.log_softmax(logits.masked_fill(~mask, -1e4), -1)).sum(-1).mean()
             loss = (loss_rl + loss_ce) / GRAD_ACCUM + 0.0 * act.sum()
             loss.backward()
             nb += 1
@@ -295,7 +298,7 @@ def main():
     save_file({k: v.half().contiguous().cpu() for k, v in model.state_dict().items()}, str(out / "model.safetensors"))
     model.encoder.config.save_pretrained(str(out / "encoder"))
     tok.save_pretrained(str(out / "tokenizer"))
-    cfg.update(fine_tuned=True, model_name="laya-mak-v1", temperature=[base_t, 1.0, 1.0], temperature_by_options=temps)
+    cfg.update(fine_tuned=True, model_name=pathlib.Path(args.out).name, temperature=[base_t, 1.0, 1.0], temperature_by_options=temps)
     (out / "rl_agent_config.json").write_text(json.dumps(cfg, indent=2), encoding="utf-8")
 
     res = ROOT / "results"
@@ -307,7 +310,8 @@ def main():
                 f"calibration: calib.jsonl ({len(calib_items)} sequences); see training/DATA_FROZEN.md for hashes\n")
         f.write(f"- epochs {epochs}, micro-batch {MICRO_BATCH} x accum {GRAD_ACCUM} (effective {MICRO_BATCH * GRAD_ACCUM}), "
                 f"LR encoder {LR_ENCODER} / head {LR_HEAD}, AdamW wd 0.01, cosine to 1e-6, grad clip 1.0, bf16, "
-                f"max_len {MAX_LEN}, head_max_len {HEAD_MAX_LEN}, reward group {GROUP_SIZE}, sigma {SIGMA_START}->{SIGMA_END}, seed {SEED}\n")
+                f"max_len {MAX_LEN}, head_max_len {HEAD_MAX_LEN}, reward group {GROUP_SIZE}, sigma {SIGMA_START}->{SIGMA_END}, seed {SEED}, "
+                f"label smoothing {LABEL_SMOOTHING} (CE only), text lowercased (normalise_for_model), out {out.name}\n")
         f.write(f"- wall time {time.time() - t0:.0f}s on {torch.cuda.get_device_name(0)}, peak GPU {torch.cuda.max_memory_allocated() / 1e9:.2f} GB\n")
         f.write(f"- zero-shot accuracy per question on first 600 calib sequences (MEASURED): {', '.join(zs_lines)}\n")
         f.write(f"- fitted temperatures (clamped {TEMP_MIN}-{TEMP_MAX}): {json.dumps({b: round(t, 3) for b, t in temps.items()})}\n\n")

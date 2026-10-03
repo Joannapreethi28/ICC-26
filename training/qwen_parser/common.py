@@ -30,7 +30,7 @@ def target(meta: dict) -> dict:
 
 
 def prompt_messages(text: str) -> list[dict]:
-    return [{"role": "system", "content": SYSTEM}, {"role": "user", "content": text}]
+    return [{"role": "system", "content": SYSTEM}, {"role": "user", "content": " ".join(text.lower().split())}]
 
 
 def to_example(row: dict) -> dict:

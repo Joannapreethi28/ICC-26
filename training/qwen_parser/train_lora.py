@@ -34,7 +34,7 @@ def main():
         ds = ds.select(range(200))
     tok = AutoTokenizer.from_pretrained(BASE_MODEL, revision=BASE_REVISION)
     model = AutoModelForCausalLM.from_pretrained(BASE_MODEL, revision=BASE_REVISION, dtype=torch.bfloat16, use_safetensors=True)
-    out = ROOT / "models" / "qwen-mak-lora-v1"
+    out = ROOT / "models" / "qwen-mak-lora-v2"
     cfg = SFTConfig(
         output_dir=str(out), num_train_epochs=a.epochs, max_steps=10 if a.smoke else -1,
         per_device_train_batch_size=8, gradient_accumulation_steps=4, learning_rate=2e-4, lr_scheduler_type="cosine",
