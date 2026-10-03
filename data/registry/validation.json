@@ -1,0 +1,107 @@
+{
+  "measured_at": "2026-10-03T11:50:05.304121+00:00",
+  "python": "3.11.9",
+  "package_versions": {
+    "duckdb": "1.5.6",
+    "pandas": "3.0.6",
+    "rapidfuzz": "3.14.6",
+    "requests": "2.34.2",
+    "pyyaml": "6.0.3",
+    "pytest": "9.1.1"
+  },
+  "tables": {
+    "matches": 8916,
+    "innings": 17783,
+    "deliveries": 2982599,
+    "wickets": 118359,
+    "match_players": 196288,
+    "people": 18554,
+    "teams_i18n": 201
+  },
+  "coverage": [
+    {
+      "gender": "men",
+      "match_type": "ODI",
+      "matches": 2576,
+      "first_date": "2002-06-27",
+      "last_date": "2026-09-15"
+    },
+    {
+      "gender": "men",
+      "match_type": "T20I",
+      "matches": 3558,
+      "first_date": "2005-02-17",
+      "last_date": "2026-09-17"
+    },
+    {
+      "gender": "women",
+      "match_type": "ODI",
+      "matches": 611,
+      "first_date": "2007-01-22",
+      "last_date": "2026-09-06"
+    },
+    {
+      "gender": "women",
+      "match_type": "T20I",
+      "matches": 2171,
+      "first_date": "2009-06-18",
+      "last_date": "2026-09-17"
+    }
+  ],
+  "checked_players": [
+    [
+      "ba607b88",
+      "V Kohli",
+      "men",
+      "253802",
+      429
+    ],
+    [
+      "740742ef",
+      "RG Sharma",
+      "men",
+      "34102",
+      434
+    ],
+    [
+      "5d2eda89",
+      "S Mandhana",
+      "women",
+      "597806",
+      258
+    ]
+  ],
+  "category_collisions": [
+    [
+      "26a8b2fe",
+      "Hassan Nawaz",
+      27
+    ],
+    [
+      "3a54c25b",
+      "N Magagula",
+      4
+    ],
+    [
+      "5597338d",
+      "S Ravikumar",
+      14
+    ],
+    [
+      "f6ba97c6",
+      "Dilum Fernando",
+      5
+    ]
+  ],
+  "tests": {
+    "command": "python -m pytest -q --tb=short --basetemp <fresh-workspace-temp-directory>",
+    "result": "131 passed in 4.02s",
+    "network": "not used",
+    "full_database": "not required by tests"
+  },
+  "review": {
+    "spec_findings": 0,
+    "standards_finding_fixed": "Duplicate golden-holder fallback rows; preserve ambiguous homonyms",
+    "changelog": "updated before phase publication"
+  }
+}

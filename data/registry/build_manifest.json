@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-10-03T11:47:53.514001+00:00",
+  "inputs": {
+    "t20s_male_json.zip": {
+      "url": "https://cricsheet.org/downloads/t20s_male_json.zip",
+      "bytes": 14214702,
+      "sha256": "e098ad15622ac9e31da60e5e2ecd793c3d33352eb25b2a286b3cf08ffe98fa9e",
+      "fetched_at": "2026-10-03T11:25:44.657812+00:00",
+      "validated_at": "2026-10-03T11:47:14.250284+00:00"
+    },
+    "t20s_female_json.zip": {
+      "url": "https://cricsheet.org/downloads/t20s_female_json.zip",
+      "bytes": 8536330,
+      "sha256": "4f66501702589db71917ef3f8386fa6ff99850d695f397dfd262cbc1d7eaf764",
+      "fetched_at": "2026-10-03T11:25:48.011597+00:00",
+      "validated_at": "2026-10-03T11:47:14.575836+00:00"
+    },
+    "odis_male_json.zip": {
+      "url": "https://cricsheet.org/downloads/odis_male_json.zip",
+      "bytes": 17456180,
+      "sha256": "b6a1d6b683f19110ada34191183db55c03e09acb386d0f4b9bf0be2fb75bbac0",
+      "fetched_at": "2026-10-03T11:25:53.848386+00:00",
+      "validated_at": "2026-10-03T11:47:15.393307+00:00"
+    },
+    "odis_female_json.zip": {
+      "url": "https://cricsheet.org/downloads/odis_female_json.zip",
+      "bytes": 4039766,
+      "sha256": "355f1f5a93d8861942a6d285196362595119ff68c754095b590e23434ecbceb3",
+      "fetched_at": "2026-10-03T11:25:56.929710+00:00",
+      "validated_at": "2026-10-03T11:47:15.600676+00:00"
+    },
+    "people.csv": {
+      "url": "https://cricsheet.org/register/people.csv",
+      "bytes": 1178979,
+      "sha256": "71d2bf507f8bde92ca4fe8bcaac4b1bce85e74d432633e8b1667a0594f66405b",
+      "fetched_at": "2026-10-03T11:25:58.807142+00:00",
+      "validated_at": "2026-10-03T11:47:15.604423+00:00"
+    },
+    "names.csv": {
+      "url": "https://cricsheet.org/register/names.csv",
+      "bytes": 162433,
+      "sha256": "864bb683c219249194a7dabf4be4086ce97c7f2e351bcee31c026ed46d308601",
+      "fetched_at": "2026-10-03T11:25:59.784529+00:00",
+      "validated_at": "2026-10-03T11:47:15.606435+00:00"
+    }
+  },
+  "tables": {
+    "matches": 8916,
+    "innings": 17783,
+    "deliveries": 2982599,
+    "match_players": 196288,
+    "wickets": 118359
+  },
+  "coverage": [
+    {
+      "gender": "men",
+      "match_type": "ODI",
+      "matches": 2576,
+      "first_date": "2002-06-27",
+      "last_date": "2026-09-15"
+    },
+    {
+      "gender": "men",
+      "match_type": "T20I",
+      "matches": 3558,
+      "first_date": "2005-02-17",
+      "last_date": "2026-09-17"
+    },
+    {
+      "gender": "women",
+      "match_type": "ODI",
+      "matches": 611,
+      "first_date": "2007-01-22",
+      "last_date": "2026-09-06"
+    },
+    {
+      "gender": "women",
+      "match_type": "T20I",
+      "matches": 2171,
+      "first_date": "2009-06-18",
+      "last_date": "2026-09-17"
+    }
+  ]
+}

@@ -61,6 +61,22 @@ Example cross-checks: Smriti Mandhana `5d2eda89` -> women, Virat Kohli `ba607b88
 -> men, Rohit Sharma `740742ef` -> men. Mandhana maps to `Q16224802`,
 Hindi `स्मृति मंधाना`, Tamil `ஸ்மிருதி மந்தனா`.
 
+The final label lookup requested 1,012 ESPNcricinfo IDs, all 27 distinct golden
+player holders, and all 112 team names in this database. It found 860 Wikidata
+player identities. The 1,125 exported entities per language contain 829 native
+Hindi labels and 510 native Tamil labels; the remaining 296/615 entries explicitly
+fall back to English. Ninety-five team names have native labels in each language.
+Name-only golden lookup remains ambiguous for Rashid Khan and Rohit Sharma, and
+unmatched for Sonam Yeshey; distinct source IDs for the homonyms remain available
+in the registry. Lucia Taylor has a unique Cricsheet identity but no Wikidata
+label in this lookup. These gaps are recorded, not guessed.
+
+Validation: **131 tests passed in 4.02 seconds** on Python 3.11.9. The full database
+was rebuilt from the downloaded archives after the final code fixes. Package
+versions, table counts and checked player IDs are in `data/registry/validation.json`.
+The code review found no spec violations; the duplicate golden-fallback reporting
+issue was fixed and covered by a regression test.
+
 ## Public interfaces
 
 ```python

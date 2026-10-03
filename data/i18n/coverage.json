@@ -1,0 +1,29 @@
+{
+  "requested_player_ids": 1012,
+  "golden_holders_requested": 27,
+  "golden_holders_not_mapped": [
+    "Rashid Khan",
+    "Rohit Sharma",
+    "Sonam Yeshey"
+  ],
+  "golden_holders_without_wikidata": [
+    "Lucia Taylor",
+    "Rashid Khan",
+    "Rohit Sharma",
+    "Sonam Yeshey"
+  ],
+  "players_found": 860,
+  "teams_requested": 112,
+  "labels": {
+    "hi": {
+      "native": 829,
+      "english_fallback": 296,
+      "teams_native": 95
+    },
+    "ta": {
+      "native": 510,
+      "english_fallback": 615,
+      "teams_native": 95
+    }
+  }
+}

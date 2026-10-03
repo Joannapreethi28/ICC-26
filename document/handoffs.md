@@ -28,7 +28,7 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 |---|---|---|---|---|
 | 1 | Phase 0 contract (repo, types, labels, config) | Jabin → Joanna | Sat 18:00 | **DONE Sat 18:15** |
 | 2 | `understand()` rules version | Jabin → Joanna | Sat 20:00 | **DONE Sat (J-P1 push)** |
-| 3 | Registry table (people + hi/ta labels) | Joanna → Jabin | Sat 20:30 | pending |
+| 3 | Registry table (people + hi/ta labels) | Joanna → Jabin | Sat 20:30 | **DONE Sat 17:20 IST (K-P1)** |
 | 4 | Frozen test sets + xsport.csv | Joanna → Jabin | Sat 23:30 | pending |
 | 5 | Benchmark v1 + PREREGISTRATION | Joanna → Jabin | Sat 23:30 | pending |
 | 6 | `LayaHead` + weights | Jabin → Joanna | Sun 10:30 | pending |
@@ -39,6 +39,15 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 ---
 
 # Messages (newest first)
+
+---
+
+### Sat 03 Oct, 17:20 IST | FROM Joanna TO Jabin | DONE | K-P1
+**What:** data layer implemented and full snapshot built. `records/golden.py`, `records/leader.py`, `ingest/cricsheet.py`, `registry/{people,wikidata}.py`, `nlu/entities.py`, `scripts/download_data.py`; tests and tiny real/synthetic fixtures. **131 tests passed in 4.02s**, Python 3.11.9. Spec/standards review completed; duplicate fallback reporting fixed. Measured: **8,916 matches** (women: T20I 2,171 / ODI 611; men: T20I 3,558 / ODI 2,576), 2,982,599 delivery events, 18,554 registry people. Evidence and exact package versions: `data/registry/{build_manifest,validation}.json`. Details and rebuild commands: `docs/phase1-data.md`.
+**You can now:** consume **`data/registry/people.csv`** and **`teams_i18n.csv`** immediately for names/IDs/categories, without the DuckDB or network. `aliases` is a JSON array in one CSV field; keep external IDs as strings. Hindi/Tamil exports are `data/i18n/entities_{hi,ta}.csv`, with source/date and explicit `fallback`. Queried 1,012 player IDs, all 27 golden player holders and 112 teams. Native labels: hi 829, ta 510; 95 team names per language. Mandhana: `5d2eda89`, `597806`, `Q16224802`, `स्मृति मंधाना`, `ஸ்மிருதி மந்தனா`. `resolve_entities(text)` works from CSV alone. No held-out evaluation queries have been created or exposed in K-P1.
+**I need:** nothing from your track for K-P1. Joanna will start K-P2 when ready; test sets are not frozen yet. Full raw ZIPs/DB are deliberately gitignored; rebuild with `python scripts/download_data.py --build --labels`. All shared contracts and your NLU implementation remain unchanged; entity integration into `resolve()` is K-P4.
+**Learned (stop-and-learn answers):** (1) JSON: category/type in `info.gender` / `info.match_type`, rosters in `info.players`, IDs in `info.registry.people`, deliveries in `innings[].overs[].deliveries[]`. (2) Cricsheet withholds Afghanistan men's matches; computed Rashid Khan career wickets cannot replace the verified headline record. (3) Golden wins because Cricsheet also omits early careers and recent matches; women's ODI coverage starts 2007 and T20I 2009 in this snapshot. (4) Checked Mandhana -> women, Kohli -> men, Rohit Sharma ID `740742ef` -> men. Officials, reused IDs, missing rosters, or name collisions can misassign categories; use roster IDs, not names/P21.
+**Watch out:** four real source IDs appear in both categories and stay NULL (G-018); empty gender is unknown. Full names Rohit Sharma/Rashid Khan also collide across IDs, so entity lookup stays ambiguous. Only the plan's reviewed Kohli/Mandhana shorthand examples override the general surname-unknown rule (G-021). `wickets` is the authoritative dismissal table; exclude super overs for standard career totals. Golden audit flags 25 V1 rows plus four V2 rows with repeated URLs (G-019); tests do not freshly certify those cricket facts. Missing translations remain English; see `data/i18n/coverage.json`. No paid runtime services used.
 
 ---
 

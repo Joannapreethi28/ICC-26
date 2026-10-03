@@ -106,3 +106,22 @@ It failed on tab-group errors after 12 answers and was dropped. **Rule:** before
 ### G-016 | Rules cannot tell a sport from a generic word | OPEN (by design, Laya's job) | 3 Oct | Claude Code
 **Known rules misses (kept for J-P4 comparison):** "How many runs are in an over" -> runs stat; "Who won the women's world cup in 2017?" -> non_sport (no cricket word); "Who is Mithali Raj?" -> non_sport (needs entities); Punjabi etc. -> English/non_sport.
 
+### G-017 | Windows Store Python and shell quoting | FIXED locally | 3 Oct | Joanna
+**Observed:** the sandbox could not execute Store Python, and direct download sockets were blocked. Joanna ran a project-local official Python setup in normal PowerShell. Its final inline Python check initially hit PowerShell/native quote stripping (`SyntaxError`); changed the check to a script file. Python 3.11.9 and K-P1 dependencies now run locally. Pytest's default user temp directory was also inaccessible; local runs use a fresh `--basetemp` under the workspace.
+**Rule:** do not report tests as passed when Python or fixture setup did not run. No environment binaries, credentials or local setup scripts are committed.
+
+### G-018 | Roster-derived categories can conflict | HANDLED, source issue unresolved | 3 Oct | Joanna
+**Observed in all four archives:** `26a8b2fe`, `5597338d`, `3a54c25b`, `f6ba97c6` occur in both women's and men's rosters. Their derived category is NULL. The source evidence does not establish why the assignments conflict.
+**Rule:** derive categories from `info.players`, joined to `info.registry.people`, not from every registry entry (officials are included there). Never use Wikidata P21, names or a majority vote to override conflicting/missing roster evidence. Training must handle empty gender fields.
+
+### G-019 | Duplicate source URLs and incomplete career coverage | OPEN evidence caveats | 3 Oct | Joanna
+**Observed:** four women's V2 golden rows repeat the same URL twice (`WC_T20_LAST`, `WC_T20_TITLES`, `WC_T20_RUNS`, `WC_T20_WKTS`); 25 other rows are already V1. `audit_golden()` flags these, and Facts deduplicate source URLs. No cricket value was changed or freshly certified by the loader.
+**Rule:** parsing/comparison tests are not independent factual verification. Cricsheet also lacks early careers, not just Afghanistan matches or recent updates. Use the golden set for headlines and record gaps explicitly during K-P3 reconciliation. The Register's ODC-BY notice does not by itself establish a licence for every match archive.
+
+### G-020 | Full holder names do not always exist in the raw registry | HANDLED with explicit lookup | 3 Oct | Joanna
+**Observed:** the first translation pass found top-ranked players but reported some golden holders as unmapped because Cricsheet often stores initials; historical players may be absent altogether.
+**Rule:** query every full golden-holder name against Wikidata labels/aliases and P2697, reject ambiguous identities, then fetch/cache labels by the external ID. Keep missing names in English. Supplemental historical IDs in the translation exports use `cricinfo:<id>`; never fabricate a Cricsheet ID or match category.
+
+### G-021 | Surname examples in the plan require a bounded interpretation | HANDLED | 3 Oct | Joanna
+**Observed:** T1.5 says surname-only matches are unknown but also explicitly requires "Kohli vs Mandhana" to resolve both categories.
+**Implementation:** only those two named shorthand examples are reviewed exceptions tied to source ESPNcricinfo IDs. Other surnames, including a currently unique surname, stay `gender=None`. Shared country names are always neutral. Fuzzy matching requires equal token counts and character similarity as well as token-set similarity, preventing partial-name matches from bypassing the ambiguity rule.

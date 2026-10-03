@@ -161,11 +161,28 @@ def populate_labels(db_path: Path = DB_PATH, output_dir: Path = I18N_DIR) -> dic
     golden_ids = fetch_golden_ids(holder_names, output_dir / "golden_players.csv")
     ids.update(row["cricinfo_id"] for row in golden_ids.values() if row["cricinfo_id"])
     holders = {name.casefold() for name in holder_names}
+    registry_candidates = defaultdict(set)
     for _, name, aliases, cricinfo in people:
         hits = ({name.casefold()} | {alias.casefold() for alias in json.loads(aliases)}) & holders
         if hits and cricinfo:
             ids.add(cricinfo)
+            for holder in hits:
+                registry_candidates[holder].add(cricinfo)
     labels = fetch_labels(sorted(ids), cache_path=output_dir / "wikidata_players.csv")
+    # The name-based query may be missing an English label while the Register has
+    # a unique full alias. Preserve the original query cache; reconcile separately.
+    reconciled = {}
+    for holder, identity in golden_ids.items():
+        candidates = registry_candidates[holder.casefold()]
+        if identity["status"] == "found":
+            reconciled[holder] = identity
+        elif len(candidates) == 1:
+            cricinfo = next(iter(candidates))
+            label = labels[cricinfo]
+            reconciled[holder] = {**identity, "cricinfo_id": cricinfo, "qid": label["qid"],
+                                  "status": "found", "source": "https://cricsheet.org/register/"}
+        else:
+            reconciled[holder] = identity
     team_labels = fetch_team_labels(teams, cache_path=output_dir / "wikidata_teams.csv")
     exports = {lang: [] for lang in ("hi", "ta")}
     exported_ids = set()
@@ -196,9 +213,13 @@ def populate_labels(db_path: Path = DB_PATH, output_dir: Path = I18N_DIR) -> dic
         except Exception:
             conn.execute("ROLLBACK")
             raise
-    for holder, identity in golden_ids.items():
+    for holder, identity in reconciled.items():
         cricinfo = identity["cricinfo_id"]
         if cricinfo and cricinfo in exported_ids:
+            continue
+        if not cricinfo and registry_candidates[holder.casefold()]:
+            # Existing homonyms are already exported with their distinct IDs. An
+            # extra same-name row would obscure those identities in downstream joins.
             continue
         label = labels.get(cricinfo, {})
         for lang in exports:
@@ -212,7 +233,8 @@ def populate_labels(db_path: Path = DB_PATH, output_dir: Path = I18N_DIR) -> dic
         write_csv(output_dir / f"entities_{lang}.csv", rows, fields)
     report = {"requested_player_ids": len(ids),
               "golden_holders_requested": len(holder_names),
-              "golden_holders_not_mapped": sorted(name for name, row in golden_ids.items() if row["status"] != "found"),
+              "golden_holders_not_mapped": sorted(name for name, row in reconciled.items() if row["status"] != "found"),
+              "golden_holders_without_wikidata": sorted(name for name, row in reconciled.items() if not row["qid"]),
               "players_found": sum(row["status"] == "found" for row in labels.values()),
               "teams_requested": len(teams),
               "labels": {lang: {"native": sum(not r["fallback"] for r in rows),
