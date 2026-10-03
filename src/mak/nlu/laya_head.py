@@ -1,4 +1,8 @@
-"""Fine-tuned Laya classifier head. OWNER: Jabin. Picks categories only; never writes a fact.
+"""Laya backend for the category classifier. OWNER: Jabin. Picks categories only; never writes a fact.
+
+CANDIDATE, not a decision: Laya vs xlm-roberta-base (and others) is decided by held-out per-language results in J-P4.
+If another model wins, add a sibling backend with the same classify(text) -> LayaOutput; merge() and the tests are
+model-neutral (they only read probabilities).
 
 Two-step hierarchy: pass 1 asks gender_signal, topic, family, format; pass 2 asks the stat question of the predicted
 family (families without a stat question give stat=None). Probabilities are already temperature-calibrated by the
