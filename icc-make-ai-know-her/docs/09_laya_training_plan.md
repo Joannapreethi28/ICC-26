@@ -73,3 +73,9 @@ Baselines to run (all must be reported): (a) rules-only; (b) Laya zero-shot (exp
 
 ## 7. Serving
 Export for CPU (ONNX via `laya[onnx]` if it works), load once, batch the typed questions in a single call. Measure p50/p95 latency on the free Space. If too slow, shrink max length, quantise, or cache.
+
+## Verified facts on Jabin's machine (3 Oct 2026, checked by command, not from memory)
+- `laya` 0.3.24 (Apache-2.0, Convai Innovations) is pip-installed in system Python 3.10 (`...\Python310\Lib\site-packages`), not a venv. torch 2.11.0+cu128, CUDA available, GPU RTX 5060 Laptop 8 GB.
+- Model `convaiinnovations/laya-multilingual` is cached in `%USERPROFILE%\.cache\huggingface\hub` (model.safetensors about 614 MB, tokenizer 33 MB). Page: https://huggingface.co/convaiinnovations/laya-multilingual . Public, not gated, Apache-2.0, 358 likes, created 19 Sep 2026, last modified 24 Sep 2026. No Hugging Face account or token was used (no token on this machine); public models download anonymously.
+- Legitimacy is only partly verified: licence, public status and file contents are confirmed; the publisher's identity is not independently confirmed. The API reported 0 downloads, which is odd for a new model. Mitigation: load only `.safetensors` (no pickle), no remote code, and our own fine-tune plus test sets decide whether it is trusted.
+- Fine-tune hyperparameters are NOT chosen yet (J-P3). Constraints from this doc: short max length, bf16/fp16, small batch, under 8 GB VRAM. Final values will be logged in `results/training_log.md`.
