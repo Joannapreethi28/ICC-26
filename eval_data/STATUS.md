@@ -7,7 +7,7 @@ publishing `training/DATA_FROZEN.md`.
 
 Current preparation: 150 generated hard-case queries with documented same-agent
 self-review (all original labels retained; no independent agreement claimed);
-120 English benchmark drafts with exact source-row answer keys; blind packet,
+120 English benchmark questions with recorded semantic self-review and exact source-row answer keys; blind packet,
 review validator and preregistration draft. See [PREPARATION.md](PREPARATION.md)
 for measured progress and the pending source-download, self-review and
 IndicTrans2 access steps. These are not frozen test sets.

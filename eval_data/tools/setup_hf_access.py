@@ -76,7 +76,7 @@ def inspect_model(api, downloader):
 
 
 def main():
-    # Pin the official CLI. No remote shell installer, global PATH change or Git credential change.
+    # Pin the official SDK. No remote shell installer, global PATH change or Git credential change.
     os.environ["HF_HOME"] = str(WORKSPACE / ".icc-tools/hf-home")
     os.environ["HF_HUB_DISABLE_UPDATE_CHECK"] = "1"
     os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
@@ -86,13 +86,15 @@ def main():
     except PackageNotFoundError:
         installed = None
     if installed != CLI_VERSION:
-        print("Installing the official Hugging Face CLI into the project Python environment...", flush=True)
+        print("Installing the official Hugging Face library into the project Python environment...", flush=True)
         subprocess.run([sys.executable, "-m", "pip", "install", "--disable-pip-version-check",
                         f"huggingface_hub=={CLI_VERSION}"], check=True)
     print("Choose 'Log in with your browser' if asked. Follow the URL/code in this terminal.", flush=True)
     print("Keep login codes and tokens in your browser/terminal; do not paste them into chat.", flush=True)
-    subprocess.run([sys.executable, "-m", "huggingface_hub.cli.hf", "auth", "login", "--format", "human"], check=True)
-    from huggingface_hub import HfApi, hf_hub_download
+    # The CLI imports its extension manager and venv even for login. Windows embedded
+    # Python has no venv; the public SDK supports the same browser flow without it.
+    from huggingface_hub import HfApi, hf_hub_download, interpreter_login
+    interpreter_login(skip_if_logged_in=True)
     inspect_model(HfApi(), hf_hub_download)
 
 
@@ -100,7 +102,7 @@ if __name__ == "__main__":
     try:
         main()
     except subprocess.CalledProcessError:
-        print("CLI setup/login did not finish. Share the error text, not tokens or login codes.", file=sys.stderr)
+        print("Package setup did not finish. Share the error text, not tokens or login codes.", file=sys.stderr)
         raise SystemExit(1)
     except Exception as exc:
         # Do not dump HTTP headers, token-bearing request objects or raw auth exceptions.

@@ -1,0 +1,20 @@
+{
+  "model": "GPT-6 (Codex development agent)",
+  "model_family": "GPT",
+  "reviewed_at": "2026-10-03T14:05:16.464625+00:00",
+  "review_method": "same_agent_self_review",
+  "reviewer_count": 1,
+  "independent": false,
+  "prior_labels_visible": true,
+  "seen_training_data": false,
+  "items": 120,
+  "corrections": 0,
+  "seeds_sha256": "87b9556eefa8e3e443b67a53dc4d986ca42ca782d7d3d29246a3ff58f44befa6",
+  "golden_sha256": "7300afb9a18a438f07d0185d97b7cf85ec3018a5ce9f16f17b4507b5a48ce6f7",
+  "scope": "Read all 120 English prompts and their proposed interpretations, categories and support against the rubric and the 50 stored golden rows. Retained all design labels. This checks semantic alignment and answer-key copying, not fresh external verification of cricket facts.",
+  "limitations": [
+    "Same agent authored and reviewed the design; no independent agreement or human review.",
+    "Golden source caveats and individual as_of dates remain; 25 underlying intents have correlated paraphrases.",
+    "Hindi and Tamil translation and review are still pending."
+  ]
+}

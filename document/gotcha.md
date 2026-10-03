@@ -23,6 +23,11 @@ Rules:
 
 ## Live traps found during planning (3 Oct 2026)
 
+### G-022 | HF CLI imports venv on embedded Python | FIXED locally | 3 Oct | Joanna
+**Observed:** Hugging Face Hub 2.1.1 installed successfully, but `hf auth login` failed with `ModuleNotFoundError: No module named 'venv'`. The CLI's top-level extension-dispatch hook imports its extension manager, which imports `venv`; Windows embedded Python omits that standard-library module.
+**Fix:** the prepared setup helper now calls the official public `interpreter_login()` Python API. It runs the same browser authorization without the unrelated CLI extension manager. A regression check reaches the browser boundary with `venv` unavailable, without making network calls or reading credentials. No change to login scopes or Git credentials.
+**Rule:** exercise setup entry points on the actual embedded interpreter before asking Joanna to run network steps. Do not treat an import-only check or a downloaded package as a completed login.
+
 ### G-001 | Cricsheet has no Afghanistan matches | OPEN | 3 Oct | Claude Code
 **What happened:** the docs said Cricsheet withholds "about 161 T20Is". The downloads page (checked 3 Oct) says 377 matches are withheld, and all of them involve Afghanistan or the Afghanistan Premier League.
 **Cost / risk:** Rashid Khan (Afghanistan) holds the men's T20I wickets record (197). It can never be computed from Cricsheet, so a naive "computed record" would name the wrong man and Gate G1 would look failed.

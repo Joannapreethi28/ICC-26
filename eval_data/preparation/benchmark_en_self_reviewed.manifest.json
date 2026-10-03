@@ -1,0 +1,201 @@
+{
+  "status": "SELF-REVIEWED DRAFT \u2014 NOT FROZEN",
+  "rows": 120,
+  "source_snapshot": "2026-10-03",
+  "golden_sha256": "7300afb9a18a438f07d0185d97b7cf85ec3018a5ce9f16f17b4507b5a48ce6f7",
+  "seeds_sha256": "87b9556eefa8e3e443b67a53dc4d986ca42ca782d7d3d29246a3ff58f44befa6",
+  "category_counts": {
+    "A": 59,
+    "D": 49,
+    "B": 2,
+    "C": 2,
+    "F": 2,
+    "G": 6
+  },
+  "scoring_set_counts": {
+    "A": 48,
+    "B": 58,
+    "C": 4,
+    "men": 2,
+    "both_named": 2,
+    "G": 4,
+    "D": 2
+  },
+  "support_counts": {
+    "golden": 108,
+    "unsupported": 4,
+    "unresolved_entity": 2,
+    "no_intervention": 6
+  },
+  "source_caveats": [
+    {
+      "intent_id": "T20I_MATCHES",
+      "gender": "women",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "T20I_MATCHES",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_RUNS",
+      "gender": "women",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_WKTS",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_HS",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_HS",
+      "gender": "women",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_TEAM",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_TEAM",
+      "gender": "women",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_BBI",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_BBI",
+      "gender": "women",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_MATCHES",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_MATCHES",
+      "gender": "women",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "ODI_100S",
+      "gender": "women",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_ODI_FIRST",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_T20_FIRST",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_ODI_LAST",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_T20_LAST",
+      "gender": "women",
+      "issue": "V2 has fewer than two distinct URLs"
+    },
+    {
+      "intent_id": "WC_ODI_TITLES",
+      "gender": "women",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_ODI_TITLES",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_T20_TITLES",
+      "gender": "women",
+      "issue": "V2 has fewer than two distinct URLs"
+    },
+    {
+      "intent_id": "WC_ODI_RUNS",
+      "gender": "women",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_ODI_RUNS",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_T20_RUNS",
+      "gender": "women",
+      "issue": "V2 has fewer than two distinct URLs"
+    },
+    {
+      "intent_id": "WC_T20_RUNS",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_ODI_WKTS",
+      "gender": "women",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_ODI_WKTS",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "WC_T20_WKTS",
+      "gender": "women",
+      "issue": "V2 has fewer than two distinct URLs"
+    },
+    {
+      "intent_id": "WC_T20_WKTS",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    },
+    {
+      "intent_id": "FIRST_ODI_200",
+      "gender": "men",
+      "issue": "Single-source record; recheck before demo"
+    }
+  ],
+  "translation_status": "not run",
+  "annotation_status": "same_agent_self_review",
+  "review": {
+    "model": "GPT-6 (Codex development agent)",
+    "model_family": "GPT",
+    "reviewed_at": "2026-10-03T14:05:16.464625+00:00",
+    "review_method": "same_agent_self_review",
+    "reviewer_count": 1,
+    "independent": false,
+    "prior_labels_visible": true,
+    "seen_training_data": false,
+    "items": 120,
+    "corrections": 0,
+    "seeds_sha256": "87b9556eefa8e3e443b67a53dc4d986ca42ca782d7d3d29246a3ff58f44befa6",
+    "golden_sha256": "7300afb9a18a438f07d0185d97b7cf85ec3018a5ce9f16f17b4507b5a48ce6f7",
+    "scope": "Read all 120 English prompts and their proposed interpretations, categories and support against the rubric and the 50 stored golden rows. Retained all design labels. This checks semantic alignment and answer-key copying, not fresh external verification of cricket facts.",
+    "limitations": [
+      "Same agent authored and reviewed the design; no independent agreement or human review.",
+      "Golden source caveats and individual as_of dates remain; 25 underlying intents have correlated paraphrases.",
+      "Hindi and Tamil translation and review are still pending."
+    ],
+    "review_sha256": "5fef0585c8e320ae87071099730d7f858cd07a71741be5eab654fac0298a2770",
+    "metadata_sha256": "a908364a5995009c7231b5266633a94ed4ec2326dfd9f215a49a55b32db7ad77"
+  }
+}

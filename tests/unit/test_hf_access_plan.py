@@ -1,4 +1,5 @@
 import importlib.util
+import sys
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -37,3 +38,26 @@ def test_oversized_metadata_and_unsafe_paths_stop_before_download():
         access.plan_files([file("model.safetensors", 1_100_000_000), file("large.txt", 60 * 1024 * 1024)])
     with pytest.raises(ValueError, match="Unsafe"):
         access.plan_files([file("../outside.py", 20)])
+
+
+def test_setup_reaches_browser_login_without_venv_or_cli(tmp_path, monkeypatch):
+    pytest.importorskip("huggingface_hub")
+    import huggingface_hub._login as hub_login
+    import importlib.metadata
+
+    calls = []
+    monkeypatch.setattr(access, "WORKSPACE", tmp_path)
+    monkeypatch.setattr(importlib.metadata, "version", lambda name: access.CLI_VERSION)
+    monkeypatch.setitem(sys.modules, "venv", None)  # Windows embedded Python omits it.
+    # Run the real SDK terminal-login entry point, stopping at the browser/network boundary.
+    monkeypatch.setattr(hub_login, "get_token", lambda: None)
+    monkeypatch.setattr(hub_login, "_prompt_login_method", lambda: "browser")
+    monkeypatch.setattr(hub_login, "_device_code_login", lambda: calls.append("browser"))
+    monkeypatch.setattr(access, "inspect_model", lambda api, downloader: calls.append("inspect"))
+
+    def no_cli(*args, **kwargs):
+        raise AssertionError("Login must not launch the CLI extension loader")
+
+    monkeypatch.setattr(access, "subprocess", SimpleNamespace(run=no_cli))
+    access.main()
+    assert calls == ["browser", "inspect"]

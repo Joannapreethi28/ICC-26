@@ -16,6 +16,11 @@ Jabin must respect the firewall in `OWNERS.md` before opening this directory.
 - 120 English benchmark draft questions: 100 neutral paraphrases across 25
   golden intents and 20 controls/unsupported/ambiguous cases. Golden answer fields
   copy the source CSV rows exactly, including evidence limitations and dates.
+- All 120 English benchmark prompts now have recorded semantic self-review;
+  original design labels were retained. The reviewed draft is separate from the
+  unreviewed checkpoint. Input hashes reject stale reviews after question or
+  golden-source changes. This checks meaning and answer-key alignment, not fresh
+  external verification of the underlying cricket records.
 - No natural-query sources have been downloaded in this session yet; no source
   selection counts, IndicTrans2 translations, or frozen results are claimed.
 - The full first-phase snapshot is on `main` at `7076416`. Phase 2 remains on the
@@ -34,8 +39,10 @@ Jabin must respect the firewall in `OWNERS.md` before opening this directory.
 | `ANNOTATION_RUBRIC.md` | Semantic labelling instructions, planned support scope and disagreement rules. |
 | `tools/review.py` | Validate the selected self-review method and log corrections without false agreement claims. The original dual-review validator is retained separately. Neither route automatically freezes data. |
 | `preparation/benchmark_seeds.jsonl` | Designed English prompts; proposed interpretations still require semantic review. |
-| `tools/build_benchmark.py` | Rebuild the unreviewed benchmark draft and exact golden answer key. |
+| `tools/build_benchmark.py` | Rebuild the unreviewed draft; `--reviewed` validates review coverage and input hashes before building the separate reviewed draft. |
 | `preparation/benchmark_en_draft.csv` and `.manifest.json` | English draft with source hashes, counts and source-evidence caveats. |
+| `annotations/benchmark_self_review.jsonl` and `.meta.json` | 120 semantic review notes, exact input hashes and the single-reviewer limitation. |
+| `preparation/benchmark_en_self_reviewed.csv` and `.manifest.json` | Reviewed English draft with exact source-row answer keys; translations and final freeze still pending. |
 | `PREREGISTRATION.md` | Draft prompts, settings, scoring denominators and bootstrap design; no results. |
 
 ## Resume the public-source step
@@ -107,7 +114,7 @@ raw output and translation-review notes.
 ## Remaining work before K-P2 DONE
 
 Select real NQ/Aya queries semantically and log exclusions; finish annotation and
-self-review for all sets, including the benchmark; run actual IndicTrans2
+self-review for the remaining natural and translated sets; run actual IndicTrans2
 translations; record corrections; publish the required CSVs and provenance; validate counts,
 hash and freeze all final inputs before any evaluation output is inspected. Post
 the final handoff and push only with an accurate completion status. No measured

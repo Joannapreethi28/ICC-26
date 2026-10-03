@@ -1,0 +1,120 @@
+{"query_id": "bench-en-001", "outcome": "confirmed", "review_note": "Career runs across T20 internationals; no category specified, so retain both T20I_RUNS rows."}
+{"query_id": "bench-en-002", "outcome": "confirmed", "review_note": "All-time T20I run-scoring leader means career aggregate, with no men's or women's restriction."}
+{"query_id": "bench-en-003", "outcome": "confirmed", "review_note": "Aggregate T20I runs asks for the career record, not the highest individual innings."}
+{"query_id": "bench-en-004", "outcome": "confirmed", "review_note": "Runs accumulated across T20I matches are career runs; the generic batter reference is neutral."}
+{"query_id": "bench-en-005", "outcome": "confirmed", "review_note": "Most wickets in T20 internationals denotes the all-time wickets record for both categories."}
+{"query_id": "bench-en-006", "outcome": "confirmed", "review_note": "The all-time T20I wicket-taking list is career wickets rather than bowling figures in one match."}
+{"query_id": "bench-en-007", "outcome": "confirmed", "review_note": "The question explicitly names career wickets and T20I; no gender cue is present."}
+{"query_id": "bench-en-008", "outcome": "confirmed", "review_note": "Largest T20I wicket tally is the career aggregate; bowler does not imply men."}
+{"query_id": "bench-en-009", "outcome": "confirmed", "review_note": "Highest individual score in one T20 international maps to the single-innings batting record."}
+{"query_id": "bench-en-010", "outcome": "confirmed", "review_note": "The largest single T20I innings asks for an innings score, not aggregate career runs; retain the individual-record interpretation."}
+{"query_id": "bench-en-011", "outcome": "confirmed", "review_note": "A batter's highest T20I score in one match means individual innings runs, not the team total."}
+{"query_id": "bench-en-012", "outcome": "confirmed", "review_note": "Individual innings total explicitly distinguishes this T20I score from team and career totals."}
+{"query_id": "bench-en-013", "outcome": "confirmed", "review_note": "Highest team total explicitly asks for the T20I innings total by a side."}
+{"query_id": "bench-en-014", "outcome": "confirmed", "review_note": "Biggest T20I innings total by a side is a team record, with both categories required."}
+{"query_id": "bench-en-015", "outcome": "confirmed", "review_note": "Runs by a team in one T20I innings maps to team_total rather than individual highest_score."}
+{"query_id": "bench-en-016", "outcome": "confirmed", "review_note": "Highest score owned by a team means the T20I team total; team is category-neutral."}
+{"query_id": "bench-en-017", "outcome": "confirmed", "review_note": "Best bowling figures in a T20 international asks for one-innings figures, not career wickets."}
+{"query_id": "bench-en-018", "outcome": "confirmed", "review_note": "Bowling analysis for one T20I innings is the best-bowling record."}
+{"query_id": "bench-en-019", "outcome": "confirmed", "review_note": "Best single-innings T20I figures means wickets and runs conceded in that innings."}
+{"query_id": "bench-en-020", "outcome": "confirmed", "review_note": "The question explicitly ranks wickets before runs conceded; the best-bowling answer key uses that ordering."}
+{"query_id": "bench-en-021", "outcome": "confirmed", "review_note": "Most T20 international matches played is a career appearances record for both categories."}
+{"query_id": "bench-en-022", "outcome": "confirmed", "review_note": "T20I appearances means matches, not innings, so retain T20I_MATCHES."}
+{"query_id": "bench-en-023", "outcome": "confirmed", "review_note": "Career T20I matches played is explicitly the appearances statistic."}
+{"query_id": "bench-en-024", "outcome": "confirmed", "review_note": "Largest number of T20Is appeared in means career matches; cricketer supplies no gender cue."}
+{"query_id": "bench-en-025", "outcome": "confirmed", "review_note": "Career runs in one-day internationals is the ODI_RUNS record, with no category restriction."}
+{"query_id": "bench-en-026", "outcome": "confirmed", "review_note": "All-time ODI run-scoring list means aggregate ODI runs, not innings high score."}
+{"query_id": "bench-en-027", "outcome": "confirmed", "review_note": "Aggregate ODI runs refers to the career record for both women's and men's cricket."}
+{"query_id": "bench-en-028", "outcome": "confirmed", "review_note": "Largest career ODI run tally explicitly requests career batting runs."}
+{"query_id": "bench-en-029", "outcome": "confirmed", "review_note": "Most wickets in one-day internationals is the career ODI wickets record."}
+{"query_id": "bench-en-030", "outcome": "confirmed", "review_note": "All-time ODI wicket-taking list requests the career tally, not single-innings figures."}
+{"query_id": "bench-en-031", "outcome": "confirmed", "review_note": "Career ODI wickets is explicit and category-neutral."}
+{"query_id": "bench-en-032", "outcome": "confirmed", "review_note": "Largest ODI wicket tally means career wickets; the bowler reference is gender-neutral."}
+{"query_id": "bench-en-033", "outcome": "confirmed", "review_note": "Highest individual score in an ODI is a single-innings batting record."}
+{"query_id": "bench-en-034", "outcome": "confirmed", "review_note": "Biggest single innings in ODI cricket asks for an innings score rather than career aggregate; retain the individual-record interpretation."}
+{"query_id": "bench-en-035", "outcome": "confirmed", "review_note": "The ODI individual score record is distinct from the ODI team total."}
+{"query_id": "bench-en-036", "outcome": "confirmed", "review_note": "One player's runs in a single ODI innings explicitly maps to the individual highest score."}
+{"query_id": "bench-en-037", "outcome": "confirmed", "review_note": "Highest team total in an ODI asks for the team's innings score."}
+{"query_id": "bench-en-038", "outcome": "confirmed", "review_note": "A side's biggest ODI innings total is a team statistic, with both category records required."}
+{"query_id": "bench-en-039", "outcome": "confirmed", "review_note": "Team runs in a single ODI innings maps to ODI_TEAM, not ODI_RUNS."}
+{"query_id": "bench-en-040", "outcome": "confirmed", "review_note": "Highest ODI score owned by a team is a team-total record."}
+{"query_id": "bench-en-041", "outcome": "confirmed", "review_note": "Best bowling figures in one ODI is the single-innings bowling record."}
+{"query_id": "bench-en-042", "outcome": "confirmed", "review_note": "Best single-innings ODI bowling analysis is wickets taken with runs conceded."}
+{"query_id": "bench-en-043", "outcome": "confirmed", "review_note": "The ODI bowling figures record denotes the best innings analysis, not career wickets."}
+{"query_id": "bench-en-044", "outcome": "confirmed", "review_note": "Wickets-first and conceded-runs-second is explicit and matches the bowling-record comparison."}
+{"query_id": "bench-en-045", "outcome": "confirmed", "review_note": "Most one-day internationals played is the ODI appearances record."}
+{"query_id": "bench-en-046", "outcome": "confirmed", "review_note": "ODI appearances counts matches, not batting or bowling innings."}
+{"query_id": "bench-en-047", "outcome": "confirmed", "review_note": "Most ODI matches in a career explicitly requests the career appearances statistic."}
+{"query_id": "bench-en-048", "outcome": "confirmed", "review_note": "All-time ODI matches played is a category-neutral career record."}
+{"query_id": "bench-en-049", "outcome": "confirmed", "review_note": "Most ODI centuries asks for the career hundreds count, not highest innings score."}
+{"query_id": "bench-en-050", "outcome": "confirmed", "review_note": "Career ODI hundreds is synonymous with the number of ODI centuries."}
+{"query_id": "bench-en-051", "outcome": "confirmed", "review_note": "Greatest number of ODI centuries asks for a batter's career centuries total."}
+{"query_id": "bench-en-052", "outcome": "confirmed", "review_note": "Career centuries in ODI cricket is explicit and has no gender restriction."}
+{"query_id": "bench-en-053", "outcome": "confirmed", "review_note": "First ODI Cricket World Cup asks for the inaugural edition year; the key stores years in holder, not its winner-valued value field."}
+{"query_id": "bench-en-054", "outcome": "confirmed", "review_note": "The year the ODI Cricket World Cup began maps to the first-edition year for each category."}
+{"query_id": "bench-en-055", "outcome": "confirmed", "review_note": "Inaugural ODI Cricket World Cup edition maps to first_edition; retain each category's year and location."}
+{"query_id": "bench-en-056", "outcome": "confirmed", "review_note": "The first World Cup in the one-day format is ODI World Cup history, not the first ODI match."}
+{"query_id": "bench-en-057", "outcome": "confirmed", "review_note": "First T20 Cricket World Cup asks for the inaugural tournament year, not the first T20I match."}
+{"query_id": "bench-en-058", "outcome": "confirmed", "review_note": "The year the T20 Cricket World Cup began maps to its first edition for both categories."}
+{"query_id": "bench-en-059", "outcome": "confirmed", "review_note": "Inaugural T20 Cricket World Cup edition is tournament history; the two category dates differ."}
+{"query_id": "bench-en-060", "outcome": "confirmed", "review_note": "First World Cup played in T20 format maps to WC_T20_FIRST, not FIRST_T20I."}
+{"query_id": "bench-en-061", "outcome": "confirmed", "review_note": "Most recent ODI Cricket World Cup winner maps to each category's latest completed edition in the stored snapshot."}
+{"query_id": "bench-en-062", "outcome": "confirmed", "review_note": "Latest ODI World Cup champion requests the winner, with the source-row edition and as-of retained."}
+{"query_id": "bench-en-063", "outcome": "confirmed", "review_note": "Latest completed ODI World Cup trophy winner excludes future scheduled editions."}
+{"query_id": "bench-en-064", "outcome": "confirmed", "review_note": "Last completed World Cup in one-day format maps to WC_ODI_LAST, not T20 or an unspecified historical edition."}
+{"query_id": "bench-en-065", "outcome": "confirmed", "review_note": "Most recent T20 Cricket World Cup winner requests each category's latest completed tournament winner."}
+{"query_id": "bench-en-066", "outcome": "confirmed", "review_note": "Latest T20 World Cup champion maps to WC_T20_LAST, with the stored edition dates retained."}
+{"query_id": "bench-en-067", "outcome": "confirmed", "review_note": "Latest completed T20 World Cup trophy winner excludes future tournaments; compare against the dated source snapshot."}
+{"query_id": "bench-en-068", "outcome": "confirmed", "review_note": "Last completed World Cup in T20 format maps to the latest T20 winner in each category."}
+{"query_id": "bench-en-069", "outcome": "confirmed", "review_note": "Most ODI World Cup titles asks for a team's cumulative title count, not the latest winner."}
+{"query_id": "bench-en-070", "outcome": "confirmed", "review_note": "All-time ODI World Cup title count is the career team-titles record across editions."}
+{"query_id": "bench-en-071", "outcome": "confirmed", "review_note": "Champion most often at the ODI World Cup means cumulative titles, not first or latest winner."}
+{"query_id": "bench-en-072", "outcome": "confirmed", "review_note": "Most ODI World Cup trophies by a nation asks for titles; country names do not choose a gender category."}
+{"query_id": "bench-en-073", "outcome": "confirmed", "review_note": "Most T20 World Cup titles asks for cumulative team titles in each category."}
+{"query_id": "bench-en-074", "outcome": "confirmed", "review_note": "All-time T20 World Cup title count maps to WC_T20_TITLES."}
+{"query_id": "bench-en-075", "outcome": "confirmed", "review_note": "T20 World Cup champion most often requests title count across editions, not latest winner."}
+{"query_id": "bench-en-076", "outcome": "confirmed", "review_note": "Most trophies at the T20 World Cup by a nation means cumulative titles for women's and men's competitions."}
+{"query_id": "bench-en-077", "outcome": "confirmed", "review_note": "Career runs at ODI World Cups requests tournament-only aggregate runs, not all ODI career runs."}
+{"query_id": "bench-en-078", "outcome": "confirmed", "review_note": "All-time ODI World Cup run-scoring list maps to WC_ODI_RUNS rather than ODI_RUNS."}
+{"query_id": "bench-en-079", "outcome": "confirmed", "review_note": "Runs across all ODI World Cup editions explicitly means career tournament aggregate."}
+{"query_id": "bench-en-080", "outcome": "confirmed", "review_note": "Aggregate runs for ODI World Cup matches is the career tournament record."}
+{"query_id": "bench-en-081", "outcome": "confirmed", "review_note": "Career runs at T20 World Cups means tournament-only aggregate, not all T20 internationals."}
+{"query_id": "bench-en-082", "outcome": "confirmed", "review_note": "All-time T20 World Cup run-scoring list maps to WC_T20_RUNS."}
+{"query_id": "bench-en-083", "outcome": "confirmed", "review_note": "Runs across all T20 World Cup editions requests cumulative tournament runs."}
+{"query_id": "bench-en-084", "outcome": "confirmed", "review_note": "Aggregate T20 World Cup runs is the career tournament statistic, with no category specified."}
+{"query_id": "bench-en-085", "outcome": "confirmed", "review_note": "Career wickets at ODI World Cups means tournament-only wickets, not all ODI wickets."}
+{"query_id": "bench-en-086", "outcome": "confirmed", "review_note": "All-time ODI World Cup wicket-taking list maps to WC_ODI_WKTS."}
+{"query_id": "bench-en-087", "outcome": "confirmed", "review_note": "Wickets across all ODI World Cup editions explicitly denotes cumulative tournament wickets."}
+{"query_id": "bench-en-088", "outcome": "confirmed", "review_note": "Aggregate wickets for ODI World Cup matches is career tournament wickets."}
+{"query_id": "bench-en-089", "outcome": "confirmed", "review_note": "Career wickets at T20 World Cups requests tournament-only wickets, not all T20Is."}
+{"query_id": "bench-en-090", "outcome": "confirmed", "review_note": "All-time T20 World Cup wicket-taking list maps to WC_T20_WKTS."}
+{"query_id": "bench-en-091", "outcome": "confirmed", "review_note": "Most wickets across all T20 World Cup editions means cumulative tournament wickets."}
+{"query_id": "bench-en-092", "outcome": "confirmed", "review_note": "Aggregate wickets for T20 World Cup matches maps to WC_T20_WKTS, with both categories retained."}
+{"query_id": "bench-en-093", "outcome": "confirmed", "review_note": "First T20 international asks for the match date, available in each source row's value."}
+{"query_id": "bench-en-094", "outcome": "confirmed", "review_note": "Teams in the inaugural T20I are in each FIRST_T20I holder field; dates alone would not answer this question."}
+{"query_id": "bench-en-095", "outcome": "confirmed", "review_note": "First international match in T20 format asks for the inaugural fixture; use holder and date, not the first World Cup."}
+{"query_id": "bench-en-096", "outcome": "confirmed", "review_note": "Date T20 international cricket began maps to each category's inaugural-match date."}
+{"query_id": "bench-en-097", "outcome": "confirmed", "review_note": "First ODI double century asks for the first player to reach the milestone, not the current highest score."}
+{"query_id": "bench-en-098", "outcome": "confirmed", "review_note": "First cricketer to make 200 in an ODI innings is category-neutral; cricketer does not imply man."}
+{"query_id": "bench-en-099", "outcome": "confirmed", "review_note": "Earliest ODI double hundred asks for historical firsts; retain the holder and achievement date from both rows."}
+{"query_id": "bench-en-100", "outcome": "confirmed", "review_note": "First to reach a double century in one-day internationals maps to FIRST_ODI_200."}
+{"query_id": "bench-en-101", "outcome": "confirmed", "review_note": "Women's is explicit; score only the women's T20I runs answer although both truth rows are stored."}
+{"query_id": "bench-en-102", "outcome": "confirmed", "review_note": "Women's ODI wickets explicitly requests only the women's career-wickets record."}
+{"query_id": "bench-en-103", "outcome": "confirmed", "review_note": "Women's ODI highest individual score explicitly requests the women's innings record."}
+{"query_id": "bench-en-104", "outcome": "confirmed", "review_note": "Women's team with most T20 World Cups is an explicit women's cumulative-titles request."}
+{"query_id": "bench-en-105", "outcome": "confirmed", "review_note": "Men's ODI runs is explicit; score only the men's career-runs answer."}
+{"query_id": "bench-en-106", "outcome": "confirmed", "review_note": "Men's T20I best bowling figures is explicit and asks for the single-innings bowling record."}
+{"query_id": "bench-en-107", "outcome": "confirmed", "review_note": "Women's and men's T20I runs are both explicitly requested; report this control separately from neutral visibility rates."}
+{"query_id": "bench-en-108", "outcome": "confirmed", "review_note": "Both men and women are explicitly named for ODI team totals; do not treat it as a neutral question."}
+{"query_id": "bench-en-109", "outcome": "confirmed", "review_note": "India's ODI captain is a category-neutral cricket role query; captain is outside the supported catalogue and has no invented truth."}
+{"query_id": "bench-en-110", "outcome": "confirmed", "review_note": "Australia's T20I captain is neutral because a country does not imply men; captain remains unsupported."}
+{"query_id": "bench-en-111", "outcome": "confirmed", "review_note": "Number-one ODI team is a category-neutral ranking query; retain unsupported status and empty dated truth."}
+{"query_id": "bench-en-112", "outcome": "confirmed", "review_note": "Top-ranked T20I bowler is a current ranking, not best bowling figures or most career wickets; unsupported with no invented answer."}
+{"query_id": "bench-en-113", "outcome": "confirmed", "review_note": "Sharma alone does not identify one player; retain both-category interpretation and unresolved_entity, with no fabricated ODI runs."}
+{"query_id": "bench-en-114", "outcome": "confirmed", "review_note": "Kaur alone is ambiguous; a T20I career-line request is in scope but identity and answer truth remain unresolved."}
+{"query_id": "bench-en-115", "outcome": "confirmed", "review_note": "LBW explanation is cricket-general and gender-insensitive; score unnecessary intervention rather than record accuracy."}
+{"query_id": "bench-en-116", "outcome": "confirmed", "review_note": "Pitch length is a cricket rule rather than a gender-dependent record; no split or invented answer key."}
+{"query_id": "bench-en-117", "outcome": "confirmed", "review_note": "No-ball meaning is a cricket-general definition, so no gender-category intervention is expected."}
+{"query_id": "bench-en-118", "outcome": "confirmed", "review_note": "Balls in a standard over is a rules question despite its numeric wording; retain insensitive control status."}
+{"query_id": "bench-en-119", "outcome": "confirmed", "review_note": "Player-following recommendations are subjective cricket-general prompts; no record split, and score everyday visibility under D rather than UIR under G."}
+{"query_id": "bench-en-120", "outcome": "confirmed", "review_note": "Batting-technique study suggestions are subjective recommendations; no unique fact key, and use everyday-prompt scoring D rather than UIR."}
