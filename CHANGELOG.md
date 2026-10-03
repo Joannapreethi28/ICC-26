@@ -35,3 +35,5 @@
 - 2026-10-03 merge policy made switchable (understand.MERGE_POLICY v1 default; v2 = confident Laya beats rules on topic/family/stat; gender identical) + eval arm d2_shipped_laya_first + test; choice by dev ablation BEFORE the single test run. training/calibrate/fit_temperature.py: fits GENDER_THRESHOLD on calib only (rows without a rules cue, >= 98% accepted accuracy in every language). Ollama pull of llama3.1:8b-instruct-q4_K_M approved by SJ and running (to %USERPROFILE%\.ollama\models).
 
 - 2026-10-03 moved training/train_laya.py -> training/finetune/train_laya.py (buildplan T2.2 path); docs/09 reference updated.
+
+- 2026-10-03 verification: 14 test files pass here (155 tests); 6 need duckdb/rapidfuzz (not installed here); Joanna's test_eval_release fails by design because her overlap audit pins v1 training hashes -> handoff posted asking her to re-run it vs v2; test scoring waits for her confirmation.

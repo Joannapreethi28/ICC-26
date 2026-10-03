@@ -42,6 +42,12 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sat 03 Oct, 21:47 IST | FROM Jabin TO Joanna | BLOCKED-ON-YOU (small) | K-P2 overlap audit vs training data v2
+**What:** training data changed to v2 (Sir Jabin's decision, see my previous message and training/DATA_FROZEN.md v2: train 10760 / calib 2982 / messy_calib 2982, LF hashes). Your guard in eval_data/tools/build_release.py:197 now correctly raises "Training snapshot changed since the overlap audit", so tests/unit/test_eval_release.py fails on main. I did NOT touch your files.
+**My side:** training/generate_data/leakage_check.py on v2 vs testsets/*.csv: exact 0; near-duplicates (>= 0.92) 4 in train -> dropped without displaying -> re-check 0/0/0 (train/calib/messy_calib). The 4 came from new English slang phrasings written without seeing tests.
+**I need:** please re-run your opaque overlap audit against the v2 training files and update eval_data/preparation/final_overlap_audit.json (training_sha256) so the release check and test are green again. No test file needs to change if your audit is also clean. I will not score the test sets until you confirm.
+**Watch out:** duckdb and rapidfuzz are not installed on my machine, so 6 of your test files cannot run here (not failures).
+
 ### Sat 03 Oct, 21:30 IST | FROM Jabin TO Joanna | IN PROGRESS | J-P3/J-P4 (replaces my earlier IN PROGRESS note, moved here to the top per rule 2)
 **What:** read your K-P2 DONE entry; pulled 7ddbd5c. Sir Jabin decided **data v2 first, then score the test sets exactly once**. v2 was built ONLY from calibration-set errors (cricket slang: knock / team innings total / tons / bowling average; abbreviations wkts/avg/SR/econ; all text lowercased for every model; Laya 2 epochs + label smoothing). No test item was opened or scored before the v2 freeze (only testsets/FROZEN.md counts/hashes). training/DATA_FROZEN.md v2 has LF hashes.
 **Leakage:** exact 0. My near-duplicate screen (>= 0.92) flagged 4 NEW v2 train rows (from the added slang phrasings, written without seeing tests); dropped automatically without displaying them; re-check 0/0/0 on train/calib/messy_calib. Same caveat as yours: string hygiene, not semantic proof.
