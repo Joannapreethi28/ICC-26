@@ -44,3 +44,11 @@ def test_laya_fills_what_rules_miss():
     p = rules_parse("hu is da topp scorrer in t20", "en")
     p = u.merge(p, out(("none", 0.9)))
     assert p.topic == "cricket_stat" and p.family == "career_record"
+
+
+def test_merge_v2_lets_confident_laya_beat_rules_family():
+    p = rules_parse("kohli vs mandhana runs", "en")
+    pred = {"gender_signal": ("both_named", 0.98), "topic": ("cricket_stat", 0.98), "family": ("player_stat", 0.95),
+            "format": ("unspecified", 0.95), "stat": ("career_line", 0.99)}
+    assert u.merge(p, pred, policy="v2").family == "player_stat"
+    assert u.merge(p, pred, policy="v1").family == p.family

@@ -168,9 +168,16 @@ def rules_predict(text: str, lang: str) -> Pred:
             "topic": (p.topic, 1.0), "family": (p.family, 1.0), "stat": (p.stat, 1.0), "format": (p.format, 1.0)}
 
 
-def shipped_predict(text: str, lang: str) -> Pred:
-    """Baseline (d): understand(use_laya=True), i.e. fine-tuned model + rules override."""
-    from mak.nlu.understand import understand
-    p = understand(text, lang, use_laya=True)
+def shipped_predict(text: str, lang: str, policy: str | None = None) -> Pred:
+    """Baseline (d): understand(use_laya=True), i.e. fine-tuned model + rules override (merge policy v1/v2)."""
+    from mak.nlu import understand as u
+    if policy:
+        old, u.MERGE_POLICY = u.MERGE_POLICY, policy
+        try:
+            p = u.understand(text, lang, use_laya=True)
+        finally:
+            u.MERGE_POLICY = old
+    else:
+        p = u.understand(text, lang, use_laya=True)
     return {"gender_signal": (p.gender_signal, p.gender_conf), "topic": (p.topic, 1.0), "family": (p.family, 1.0),
             "stat": (p.stat, 1.0), "format": (p.format, 1.0)}
