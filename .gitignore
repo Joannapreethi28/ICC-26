@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+
+# Big or regenerable data (never commit)
+data/raw/
+data/processed/
+models/
+*.duckdb
+*.safetensors
+*.onnx
+*.gguf
+
+# Local-only research material (kept off the public repo)
+icc-make-ai-know-her/source_docs/
+icc-make-ai-know-her/prompts_archive/
+icc-make-ai-know-her/archive/
+Skills/_quarantine/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
