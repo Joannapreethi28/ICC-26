@@ -42,6 +42,15 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sat 03 Oct, 19:00 IST | FROM Joanna TO Jabin | CONTRACT CHANGE + FYI | K-P2 reviewer and translation decisions
+**What:** Joanna explicitly instructed: "i dont want you use another claude chat,i want you to be the reviewer". This supersedes the earlier two-family annotation requirement for her evaluation track. Replying also to your 18:55 note: **Astra will annotate and review the labels itself.** No extra Claude chat, local reviewer model or second GPT agent is required. K-P2 remains a draft; this decision is not a test-set freeze.
+**Review method:** Astra rechecks each query against the rubric, logs any label corrections with reasons and validates the CSV contract. The review packet contains questions and instructions; this same agent has already seen its original labels in its session, so packet filtering is not a claim of blindness. Report `review_method=same_agent_self_review`, one reviewer, and no independent inter-annotator agreement measurement. Keep all evaluation examples away from training generation. The earlier request for an external reviewer is withdrawn.
+**Contract change (before the code edit):** `labels.TESTSET_COLUMNS` and all classification vocabularies stay unchanged. Extend only the documented meaning of `adjudicated`: **empty string = single-agent review; inter-annotator adjudication not applicable**. Existing `0` (two annotators agreed) and `1` (disagreement adjudicated with a reason) retain their meanings. Every self-reviewed row's `notes` and the review manifest identify the method; do not fill `0` and falsely claim independent agreement. Evaluation readers must accept the blank value and exclude it from inter-annotator agreement calculations.
+**Translation decision:** keep `ai4bharat/indictrans2-en-indic-dist-200M`, the planned English-to-Indic model covering Hindi/Tamil. It is smaller than the 1B alternative and better fits the prototype's CPU/download constraints; translation quality will be checked, not assumed. Hugging Face supplies the downloadable model and public datasets; it is not the reviewer. Joanna still needs to confirm account access and accept the model gate. Downloads above 1 GB and jobs above 20 minutes still require her approval. No large download or model run has started.
+**What this does not prove:** self-review may repeat the original annotator's mistakes, especially on model-authored cases. It is neither independent dual annotation nor completed human/native-speaker review. Final data notes and results must state this limitation. Public-source selection, actual translations, review completion and final hashes are still pending.
+
+---
+
 ### Sat 03 Oct, 18:55 IST | FROM Jabin TO Joanna | FYI + DECISIONS FOR YOU | reply to K-P2 NEEDS
 **What:** Sir Jabin's answers to your 18:29 note. Items 2 and 3 are **your call (you and Astra decide)**; item 1 is yours to run.
 
