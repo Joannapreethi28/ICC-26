@@ -1,0 +1,116 @@
+{
+ "gender_signal": {
+  "type": "choice",
+  "instructions": "Does the cricket question explicitly say women's or men's?",
+  "criteria": {
+   "women": "the question explicitly asks about women's cricket (women, female, WPL, WT20I, feminine wording)",
+   "men": "the question explicitly asks about men's cricket (men, male, IPL, masculine wording)",
+   "both_named": "the question names both women's and men's cricket",
+   "none": "no explicit gender is stated; the question does not say women's or men's"
+  }
+ },
+ "topic": {
+  "type": "choice",
+  "instructions": "What is this question about?",
+  "criteria": {
+   "cricket_stat": "asks for a cricket record, statistic, result, winner or ranking",
+   "cricket_general": "a cricket question that is not a record (rules, pitch length, how the game works)",
+   "other_sport_stat": "asks for a record or statistic in a sport other than cricket",
+   "non_sport": "not about sport"
+  }
+ },
+ "family": {
+  "type": "choice",
+  "instructions": "Which kind of cricket record does the question ask for?",
+  "criteria": {
+   "career_record": "a player's career total or best, such as most runs, wickets or centuries",
+   "world_cup_record": "about the World Cup: winners, titles, top scorers, first edition",
+   "firsts_history": "a first in cricket history, such as the first match or first double century",
+   "team_record": "a team record: lowest total, biggest win, highest chase, most wins",
+   "player_stat": "stats or a career summary for one named player",
+   "recent_result": "the latest or most recent match result",
+   "role_or_ranking": "a captain or a number-one ranking",
+   "other_stat": "a cricket statistic that fits none of the other families"
+  }
+ },
+ "format": {
+  "type": "choice",
+  "instructions": "Which cricket format does the question mean?",
+  "criteria": {
+   "T20I": "T20 international matches",
+   "ODI": "one-day international matches",
+   "Test": "Test matches",
+   "T20_WC": "the T20 World Cup",
+   "ODI_WC": "the ODI (50-over) World Cup",
+   "league": "a franchise league such as IPL, WPL, BBL or WBBL",
+   "unspecified": "no format is stated"
+  }
+ },
+ "stat_career_record": {
+  "type": "choice",
+  "instructions": "Which exact career record statistic is asked?",
+  "criteria": {
+   "runs": "most career runs",
+   "wickets": "most career wickets",
+   "highest_score": "highest individual score",
+   "team_total": "highest team total",
+   "best_bowling": "best bowling figures",
+   "matches": "most matches played",
+   "centuries": "most centuries",
+   "fifties": "most fifties",
+   "sixes": "most sixes",
+   "average": "best batting or bowling average",
+   "strike_rate": "best strike rate",
+   "economy": "best economy rate"
+  }
+ },
+ "stat_role_or_ranking": {
+  "type": "choice",
+  "instructions": "Which exact role or ranking statistic is asked?",
+  "criteria": {
+   "captain": "who is or was captain",
+   "number_one": "who is ranked number one or the best"
+  }
+ },
+ "stat_player_stat": {
+  "type": "choice",
+  "instructions": "Which exact player stat statistic is asked?",
+  "criteria": {
+   "career_line": "a player's career stats summary",
+   "vs_team": "a player's record against one team"
+  }
+ },
+ "stat_world_cup_record": {
+  "type": "choice",
+  "instructions": "Which exact world cup record statistic is asked?",
+  "criteria": {
+   "first_edition": "when or where the first World Cup was played",
+   "latest_winner": "who won the most recent World Cup",
+   "most_titles": "which team has won the most World Cups",
+   "most_runs": "most runs in World Cups",
+   "most_wickets": "most wickets in World Cups",
+   "edition_winner": "who won a World Cup in a named year",
+   "edition_top_scorer": "top run scorer of a World Cup in a named year"
+  }
+ },
+ "stat_firsts_history": {
+  "type": "choice",
+  "instructions": "Which exact firsts history statistic is asked?",
+  "criteria": {
+   "first_match": "the first match played",
+   "first_double_century": "the first double century",
+   "other_first": "any other first in cricket history"
+  }
+ },
+ "stat_team_record": {
+  "type": "choice",
+  "instructions": "Which exact team record statistic is asked?",
+  "criteria": {
+   "lowest_total": "lowest team total",
+   "biggest_win_runs": "biggest win by runs",
+   "biggest_win_wickets": "biggest win by wickets",
+   "highest_chase": "highest successful run chase",
+   "most_wins": "most match wins"
+  }
+ }
+}
