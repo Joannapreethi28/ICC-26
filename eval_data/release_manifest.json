@@ -1,0 +1,1228 @@
+{
+  "version": "1",
+  "date": "2026-10-03",
+  "status": "FROZEN",
+  "files": {
+    "testsets/nlu_en.csv": {
+      "sha256": "18e1a05b5a23feae870d024e02d86dc76663d9aa0d1808c9b772a53bd4da2c4a",
+      "rows": 337,
+      "counts": {
+        "lang": {
+          "en": 337
+        },
+        "source": {
+          "heldout_gen": 50,
+          "nq_open": 287
+        },
+        "slice": {
+          "injection": 12,
+          "typo": 17,
+          "grammatical_gender": 2,
+          "explicit": 12,
+          "plain": 27,
+          "surname": 5,
+          "mixed_gender": 7,
+          "control_insensitive": 43,
+          "unsupported": 212
+        },
+        "gender_signal": {
+          "none": 292,
+          "men": 16,
+          "women": 22,
+          "both_named": 7
+        },
+        "topic": {
+          "cricket_stat": 294,
+          "cricket_general": 23,
+          "non_sport": 20
+        },
+        "expected_decision": {
+          "ambiguous_both": 53,
+          "explicit_men": 6,
+          "explicit_women": 9,
+          "both_named": 7,
+          "no_intervention": 43,
+          "unsupported": 219
+        }
+      }
+    },
+    "testsets/nlu_hi.csv": {
+      "sha256": "4555f1ba80beead6a2e464917fd8957b9d895285a478f48e6e7abd93d59df240",
+      "rows": 203,
+      "counts": {
+        "lang": {
+          "hi": 203
+        },
+        "source": {
+          "heldout_gen": 45,
+          "aya": 8,
+          "indictrans2": 150
+        },
+        "slice": {
+          "injection": 12,
+          "romanised": 6,
+          "mixed_gender": 8,
+          "surname": 6,
+          "grammatical_gender": 5,
+          "plain": 20,
+          "explicit": 6,
+          "control_insensitive": 16,
+          "unsupported": 123,
+          "typo": 1
+        },
+        "gender_signal": {
+          "none": 167,
+          "men": 14,
+          "both_named": 8,
+          "women": 14
+        },
+        "topic": {
+          "cricket_stat": 186,
+          "cricket_general": 12,
+          "non_sport": 5
+        },
+        "expected_decision": {
+          "ambiguous_both": 44,
+          "explicit_men": 3,
+          "no_intervention": 17,
+          "both_named": 8,
+          "explicit_women": 7,
+          "unsupported": 124
+        }
+      }
+    },
+    "testsets/nlu_ta.csv": {
+      "sha256": "ea8d7dd8fc61dbe5d5f8ff55cbe373c15f5b8574cca28b528186d38c6cf86168",
+      "rows": 210,
+      "counts": {
+        "lang": {
+          "ta": 210
+        },
+        "source": {
+          "heldout_gen": 47,
+          "aya": 21,
+          "indictrans2": 142
+        },
+        "slice": {
+          "injection": 12,
+          "romanised": 6,
+          "mixed_gender": 8,
+          "surname": 6,
+          "grammatical_gender": 5,
+          "plain": 18,
+          "explicit": 6,
+          "control_insensitive": 20,
+          "unsupported": 128,
+          "typo": 1
+        },
+        "gender_signal": {
+          "none": 174,
+          "women": 16,
+          "men": 12,
+          "both_named": 8
+        },
+        "topic": {
+          "cricket_stat": 189,
+          "cricket_general": 16,
+          "non_sport": 5
+        },
+        "expected_decision": {
+          "ambiguous_both": 40,
+          "explicit_women": 9,
+          "explicit_men": 3,
+          "no_intervention": 21,
+          "both_named": 8,
+          "unsupported": 129
+        }
+      }
+    },
+    "testsets/xsport.csv": {
+      "sha256": "8a151f3cb0a5ca6f2471d7089656a6f64b5d2aa69f75469ecbe6e31a8b0cb220",
+      "rows": 60,
+      "counts": {
+        "lang": {
+          "ta": 1,
+          "en": 59
+        },
+        "source": {
+          "aya": 1,
+          "nq_open": 59
+        },
+        "slice": {
+          "plain": 37,
+          "explicit": 23
+        },
+        "gender_signal": {
+          "none": 37,
+          "women": 10,
+          "men": 13
+        },
+        "topic": {
+          "other_sport_stat": 60
+        },
+        "expected_decision": {
+          "": 60
+        }
+      }
+    },
+    "eval_data/benchmark_v1.csv": {
+      "sha256": "3487b18ea3358bde1f8ee314fa3c638531589a3697093b7481cca93e34c6a076",
+      "rows": 188,
+      "counts": {
+        "language": {
+          "en": 120,
+          "hi": 34,
+          "ta": 34
+        },
+        "source": {
+          "heldout_gen": 120,
+          "indictrans2": 68
+        },
+        "category": {
+          "A": 91,
+          "D": 73,
+          "B": 4,
+          "C": 4,
+          "F": 4,
+          "G": 12
+        },
+        "scoring_set": {
+          "A": 72,
+          "B": 90,
+          "C": 6,
+          "men": 4,
+          "both_named": 4,
+          "G": 8,
+          "D": 4
+        },
+        "support": {
+          "golden": 164,
+          "unsupported": 8,
+          "unresolved_entity": 4,
+          "no_intervention": 12
+        }
+      }
+    },
+    "eval_data/provenance_v1.jsonl": {
+      "sha256": "7d3e857e9f56ef9a4a3cbb5fa6916b726ebaaefd2997c5dabb7719464a6fa82a",
+      "rows": 998
+    }
+  },
+  "evidence_sha256": {
+    "data/golden/records_v1.csv": "7300afb9a18a438f07d0185d97b7cf85ec3018a5ce9f16f17b4507b5a48ce6f7",
+    "eval_data/ANNOTATION_RUBRIC.md": "2d1ce1c4562a2041b92cac83f5ad6bc6bd0beb065b1c8e24ddb0fb335b116c5d",
+    "eval_data/annotations/benchmark_self_review.jsonl": "5fef0585c8e320ae87071099730d7f858cd07a71741be5eab654fac0298a2770",
+    "eval_data/annotations/benchmark_self_review.meta.json": "a908364a5995009c7231b5266633a94ed4ec2326dfd9f215a49a55b32db7ad77",
+    "eval_data/annotations/benchmark_translations_a.jsonl": "21c003dd497d3970b8c7c427b71757d5236229cf933fe1d99c69213af79279e3",
+    "eval_data/annotations/benchmark_translations_self_review.jsonl": "6dab68db415e22ee874db912c65a9a0885a454f481a7c00692e7263fc679d868",
+    "eval_data/annotations/benchmark_translations_self_review.meta.json": "14d106a907d83d4bfdbdb8fea275cd38ed4aff3907429d8ae7f75fcba85519c8",
+    "eval_data/annotations/heldout_a.jsonl": "821fb0c42e71b7daff74ee0754854a085caa20c0ecc7387d06316177ff1139c5",
+    "eval_data/annotations/heldout_self_review.jsonl": "3a944fba9940b15817771994f2033e79ede5938e19b466a747025e0ab5abfc44",
+    "eval_data/annotations/heldout_self_review.meta.json": "e0e4bb99f9793b6ec9eb98d80410f990fbf0b465c28f3c1a7a4e53a3cb78f8a9",
+    "eval_data/annotations/native_a.jsonl": "530115370440b44cf9c5a85dde60883000dbaf9b5461ea767a066685660ec967",
+    "eval_data/annotations/native_self_review.jsonl": "225a741a02b2da1f0267514e87bf7c4b1002dfe550d9e827a65aebe2373c9d8d",
+    "eval_data/annotations/native_self_review.meta.json": "5f4a6ec760945a5b16094163b2b50e67f4141da990e51f488a7d992927e5db65",
+    "eval_data/annotations/nq_controls_a.jsonl": "72d27b525e6da989c03b126130eac3a57e6b89390464db38be52b9f53e92b77d",
+    "eval_data/annotations/nq_controls_self_review.jsonl": "288e27e0f3b7fb1cc75b8960e3063c1d041c3496e8a12aef0abdea049f6c1e42",
+    "eval_data/annotations/nq_controls_self_review.meta.json": "804fbf92b05d0d3685e21b10ffcdebebd09dd7e38924f077cd569f462ef4ce9c",
+    "eval_data/annotations/nq_stats_a.jsonl": "4c65e936613a38976d09ff3c02d0bc2defd117d805bd6b20ef3f382687725642",
+    "eval_data/annotations/nq_stats_self_review.jsonl": "5dc2b3d900a1fa3929fd085a2abb9b631f7289e9f487d7601f66d7969aa633ac",
+    "eval_data/annotations/nq_stats_self_review.meta.json": "8727bae0bdf848c18ba8066d0abbb9efae375531d264438801a9e8a5c8eaf39c",
+    "eval_data/annotations/translated_a.jsonl": "d1d6833f1e71dac0b1c28d7c32d39949624d3c7578582e660332e4833b84b99d",
+    "eval_data/annotations/translated_self_review.jsonl": "488d241cad1785e28149a01bc95c2219aba090b7d7668e7e60248c94d8c48fef",
+    "eval_data/annotations/translated_self_review.meta.json": "4f1bea95eed1948b8a7ddaeac93b0e25a2100a65ba709b1548060b13d0616281",
+    "eval_data/annotations/xsport_a.jsonl": "7dd5c354ab76a663a2949717403b9d763d140709a7ec7dd78981dc515fdf255f",
+    "eval_data/annotations/xsport_self_review.jsonl": "f5ed0e6147d2815a8e80e666e33b6741ac1aea2912bc9c054f2e206fe58106e0",
+    "eval_data/annotations/xsport_self_review.meta.json": "2f43c48cbdf56e5be68b742d7363c955ddcb3263e7bf14f4ef8dad20d4d0eb3c",
+    "eval_data/DATA_CARD.md": "9a79c47d9d96d47e87b5c26423c215069023c79ad75f0a9edc53959b48466a26",
+    "eval_data/preparation/benchmark_seeds.jsonl": "87b9556eefa8e3e443b67a53dc4d986ca42ca782d7d3d29246a3ff58f44befa6",
+    "eval_data/preparation/benchmark_translation_exclusions.jsonl": "7b094e091d1b9ef042014bdecf49517a6864caa347c23bb9b7f4e37a98de803b",
+    "eval_data/preparation/benchmark_translation_items.jsonl": "066c872ab973b9cfb523699dbe8cfda4209e14e2c45b34329e078ebea6cb8209",
+    "eval_data/preparation/control_candidates.jsonl": "402446afb120df59a165a806bf9958e33f7b0bc5cd278e675007b652bebfc1f9",
+    "eval_data/preparation/final_overlap_audit.json": "7ecd042d6a2cb79197aac3eae5eecace0c71e96b24b01095633becf37abc21f7",
+    "eval_data/preparation/heldout_candidates.jsonl": "9d09bb96e70283adc5e3951870cc88c838afd7c4a08fc8e548bba84625608552",
+    "eval_data/preparation/indictrans2_install.json": "fbf2e3e6d7ddacfbc6306345bf50c74bf2e1215ff5c38dc44a9d283c96207fd2",
+    "eval_data/preparation/native_exclusions.jsonl": "0ada418d5330fc87d8ea9e6fbb80dbc1f28a17796c174cecccb99d157e07c702",
+    "eval_data/preparation/native_items.jsonl": "91e17de9aaa2c834996444d588bd232eadb5d294ca52d46f610d63ccc62a873b",
+    "eval_data/preparation/nq_control_items.jsonl": "07b5bb29eae348b896c1be6f0723edd502426e530ef9887591a916d658f24e2b",
+    "eval_data/preparation/nq_selected_indices.json": "4a0ae1785100df39a69a20ac32d859d8cfe699903f8d901d3f7dbdfcc26aab4f",
+    "eval_data/preparation/nq_stats_items.jsonl": "40534aff11cd39268e604194d414b8512e9bfbebba7edb98ea4914c3f94c1c28",
+    "eval_data/preparation/pre_freeze_overlap_screen.json": "ceb15cac96bff59211e4c22c8448f42fda34fa7a1f9d2c7d69bf8ca5e61164ca",
+    "eval_data/preparation/raw_source_verification.json": "5ce9cb079c749128b63d5f9f470e57bc848c4823077e18a07ffd07e07dfcd5cd",
+    "eval_data/preparation/release_exclusions.jsonl": "71b9d0dd384ac984df4f31822536cd02e370f78c8a3e035e34184a06a08ad3b0",
+    "eval_data/preparation/source_candidates.jsonl": "3d6681e784b906d223a210413bbc3afa5885ccaef5ec5508c4675ceebfa67d25",
+    "eval_data/preparation/source_manifest.json": "b9ff7994005eba6873bd802d2b092fb9e256dcc0cabd1431693c351c02ba89ea",
+    "eval_data/preparation/translated_items.jsonl": "9622b1e06001d28104c4f9f8f4d4f9a7a1e3a6e38914b5412a20c60734432b70",
+    "eval_data/preparation/translation_exclusions.jsonl": "b2c4e46d498888ed95212d53bfd31b75107e0babf81694cf8a535d0a33223a49",
+    "eval_data/preparation/translation_output.jsonl": "9e592235e22a7efd50bd961eed964f8f80cf8b5e9d2f105e40e9fe69cfa0787e",
+    "eval_data/preparation/translation_requests.jsonl": "d6291e8be1b478872a05a739215c998c30905d862d37b0872fdfd57962a4d640",
+    "eval_data/preparation/translation_reserve_output.jsonl": "00317f8241ff7b7caa8249db5826d987cdeca0947d4ca2f8edd4c0c741dcb826",
+    "eval_data/preparation/translation_reserve_requests.jsonl": "6e2ce0cc1469299936ffbcb0c583fabb481a88d10672080f45fae756f2c398f0",
+    "eval_data/preparation/xsport_items.jsonl": "081e5b2599f26fbbac97145998483fb3a7406d1aea6af772b08bb88ffb1191de",
+    "eval_data/PREREGISTRATION.md": "3d9b97dc5fc95a259b6010ec07c35c38371e11e5b0502e1dd575c60e7258e1a3",
+    "eval_data/tools/build_benchmark.py": "44cd2c9094e65edbfa505bc180668f43d3c88a1bec8bb0ee52252f494f3f28af",
+    "eval_data/tools/build_release.py": "0bea7acb9b78d2777f766e8d0040dc77112894c58780a37808f41dc810037bc2",
+    "eval_data/tools/check_overlap.py": "b55ca1cf210506ca8e52f7242d8511e726cd30a7d4c85c32a5b31cb68c9740f4",
+    "eval_data/tools/fetch_sources.py": "eda2579dfc4ec7cd341c8fe389bac1adc782ecc3635e1f978af85e09581a127d",
+    "eval_data/tools/review.py": "d5012672a0200c29fe8d9d8657360b6a5abbaa1dc0aaeb62c03119cd9f810f22",
+    "eval_data/tools/translate.py": "6f75dfe5f120db2e7a951883d4d23380d1f8963f07482a657e6a6044fa76b1d4",
+    "eval_data/TRANSLATION_SETUP.md": "35f46a3a9a3a359e97bcf4433185a8d9d86ce6ed0df54e615a208780221fbfc1",
+    "src/mak/labels.py": "8604187e4a83faab33b29ddae0c4d510a8685cf020332bb9578bac873500c6f6"
+  },
+  "review_method": "same_agent_self_review",
+  "reviewer_count": 1,
+  "independent_review": false,
+  "human_review": false,
+  "review_reports": {
+    "heldout": {
+      "status": "SELF-REVIEWED DRAFT — NOT FROZEN",
+      "items": 150,
+      "review_method": "same_agent_self_review",
+      "reviewers": 1,
+      "independent": false,
+      "metadata": {
+        "model": "GPT-6 (Codex development agent)",
+        "model_family": "GPT",
+        "run_date": "2026-10-03",
+        "review_method": "same_agent_self_review",
+        "seen_training_data": false,
+        "prior_labels_visible": true,
+        "independent": false,
+        "items": 150,
+        "scope": "Each original generated query was read alongside its labels and checked against the rubric. Original labels retained; no second annotator or human review claimed.",
+        "instruction": "Joanna selected Astra as reviewer on 2026-10-03."
+      },
+      "corrections": [],
+      "limitation": "The author reviewed its own labels and may repeat its mistakes. No independent agreement or human review is claimed.",
+      "counts": {
+        "lang": {
+          "en": 50,
+          "hi": 50,
+          "ta": 50
+        },
+        "source": {
+          "heldout_gen": 150
+        },
+        "slice": {
+          "injection": 36,
+          "typo": 10,
+          "grammatical_gender": 13,
+          "explicit": 16,
+          "plain": 7,
+          "surname": 17,
+          "mixed_gender": 23,
+          "control_insensitive": 6,
+          "unsupported": 6,
+          "romanised": 16
+        },
+        "evaluation_set": {
+          "nlu": 150
+        }
+      }
+    },
+    "nq_stats": {
+      "status": "SELF-REVIEWED DRAFT — NOT FROZEN",
+      "items": 260,
+      "review_method": "same_agent_self_review",
+      "reviewers": 1,
+      "independent": false,
+      "metadata": {
+        "model": "GPT-6 (Codex development agent)",
+        "model_family": "GPT",
+        "run_date": "2026-10-03",
+        "review_method": "same_agent_self_review",
+        "independent": false,
+        "prior_labels_visible": true,
+        "seen_training_data": false,
+        "items": 260,
+        "scope": "Original source questions and prior labels were read for a second semantic pass; no classifier/rules predictions or training data were used.",
+        "items_sha256": "40534aff11cd39268e604194d414b8512e9bfbebba7edb98ea4914c3f94c1c28",
+        "first_pass_sha256": "4c65e936613a38976d09ff3c02d0bc2defd117d805bd6b20ef3f382687725642"
+      },
+      "corrections": [
+        {
+          "id": "en-nq-train-7070589b-031319",
+          "fields": [
+            "family",
+            "stat"
+          ],
+          "reason": "Corrected: this is a team head-to-head win count, not a named player line; opponent filtering remains unsupported.",
+          "before": {
+            "family": "player_stat",
+            "stat": "vs_team"
+          },
+          "after": {
+            "family": "other_stat",
+            "stat": "other"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-032647",
+          "fields": [
+            "slice"
+          ],
+          "reason": "The original spelling centuary is a typo; the unsupported first triple-century intent is unchanged.",
+          "before": {
+            "slice": "unsupported"
+          },
+          "after": {
+            "slice": "typo"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-035696",
+          "fields": [
+            "topic",
+            "family",
+            "stat",
+            "format",
+            "expected_decision",
+            "slice"
+          ],
+          "reason": "The number of matches per IPL team asks about competition structure; corrected to non-statistical cricket general under the rules/format rubric.",
+          "before": {
+            "topic": "cricket_stat",
+            "family": "other_stat",
+            "stat": "other",
+            "format": "league",
+            "expected_decision": "unsupported",
+            "slice": "unsupported"
+          },
+          "after": {
+            "topic": "cricket_general",
+            "family": "",
+            "stat": "",
+            "format": "",
+            "expected_decision": "no_intervention",
+            "slice": "control_insensitive"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-035839",
+          "fields": [
+            "slice"
+          ],
+          "reason": "Removed the typo slice: there is no clear spelling corruption requiring typo treatment. Unsupported statistical scope remains unchanged.",
+          "before": {
+            "slice": "typo"
+          },
+          "after": {
+            "slice": "unsupported"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-035945",
+          "fields": [
+            "slice"
+          ],
+          "reason": "Removed the typo slice: there is no clear spelling corruption requiring typo treatment. Unsupported statistical scope remains unchanged.",
+          "before": {
+            "slice": "typo"
+          },
+          "after": {
+            "slice": "unsupported"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-040752",
+          "fields": [
+            "slice"
+          ],
+          "reason": "Removed the typo slice: there is no clear spelling corruption requiring typo treatment. Unsupported statistical scope remains unchanged.",
+          "before": {
+            "slice": "typo"
+          },
+          "after": {
+            "slice": "unsupported"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-042992",
+          "fields": [
+            "slice"
+          ],
+          "reason": "Removed the typo slice: there is no clear spelling corruption requiring typo treatment. Unsupported statistical scope remains unchanged.",
+          "before": {
+            "slice": "typo"
+          },
+          "after": {
+            "slice": "unsupported"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-045526",
+          "fields": [
+            "slice"
+          ],
+          "reason": "Removed the typo slice: there is no clear spelling corruption requiring typo treatment. Unsupported statistical scope remains unchanged.",
+          "before": {
+            "slice": "typo"
+          },
+          "after": {
+            "slice": "unsupported"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-047996",
+          "fields": [
+            "slice"
+          ],
+          "reason": "Removed the typo slice: there is no clear spelling corruption requiring typo treatment. Unsupported statistical scope remains unchanged.",
+          "before": {
+            "slice": "typo"
+          },
+          "after": {
+            "slice": "unsupported"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-048168",
+          "fields": [
+            "family",
+            "stat"
+          ],
+          "reason": "Corrected: South Africa is the team whose highest total is requested; opponent-specific team totals are unsupported.",
+          "before": {
+            "family": "player_stat",
+            "stat": "vs_team"
+          },
+          "after": {
+            "family": "career_record",
+            "stat": "team_total"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-068020",
+          "fields": [
+            "slice"
+          ],
+          "reason": "Removed the typo slice: there is no clear spelling corruption requiring typo treatment. Unsupported statistical scope remains unchanged.",
+          "before": {
+            "slice": "typo"
+          },
+          "after": {
+            "slice": "unsupported"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-068368",
+          "fields": [
+            "family",
+            "stat"
+          ],
+          "reason": "Corrected: asks for the leading run scorer across a bilateral Test rivalry, not a named player line; Test and opponent filters remain unsupported.",
+          "before": {
+            "family": "player_stat",
+            "stat": "vs_team"
+          },
+          "after": {
+            "family": "career_record",
+            "stat": "runs"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-085047",
+          "fields": [
+            "slice"
+          ],
+          "reason": "Removed the typo slice: there is no clear spelling corruption requiring typo treatment. Unsupported statistical scope remains unchanged.",
+          "before": {
+            "slice": "typo"
+          },
+          "after": {
+            "slice": "unsupported"
+          }
+        }
+      ],
+      "limitation": "The author reviewed its own labels and may repeat its mistakes. No independent agreement or human review is claimed.",
+      "counts": {
+        "lang": {
+          "en": 260
+        },
+        "source": {
+          "nq_open": 260
+        },
+        "slice": {
+          "unsupported": 215,
+          "plain": 32,
+          "typo": 7,
+          "explicit": 5,
+          "control_insensitive": 1
+        },
+        "evaluation_set": {
+          "nlu": 260
+        }
+      }
+    },
+    "nq_controls": {
+      "status": "SELF-REVIEWED DRAFT — NOT FROZEN",
+      "items": 40,
+      "review_method": "same_agent_self_review",
+      "reviewers": 1,
+      "independent": false,
+      "metadata": {
+        "model": "GPT-6 (Codex development agent)",
+        "model_family": "GPT",
+        "run_date": "2026-10-03",
+        "review_method": "same_agent_self_review",
+        "independent": false,
+        "prior_labels_visible": true,
+        "seen_training_data": false,
+        "items": 40,
+        "scope": "Original source questions and prior labels were read for a second semantic pass; no classifier/rules predictions or training data were used.",
+        "items_sha256": "07b5bb29eae348b896c1be6f0723edd502426e530ef9887591a916d658f24e2b",
+        "first_pass_sha256": "72d27b525e6da989c03b126130eac3a57e6b89390464db38be52b9f53e92b77d"
+      },
+      "corrections": [],
+      "limitation": "The author reviewed its own labels and may repeat its mistakes. No independent agreement or human review is claimed.",
+      "counts": {
+        "lang": {
+          "en": 40
+        },
+        "source": {
+          "nq_open": 40
+        },
+        "slice": {
+          "control_insensitive": 40
+        },
+        "evaluation_set": {
+          "nlu": 40
+        }
+      }
+    },
+    "native": {
+      "status": "SELF-REVIEWED DRAFT — NOT FROZEN",
+      "items": 30,
+      "review_method": "same_agent_self_review",
+      "reviewers": 1,
+      "independent": false,
+      "metadata": {
+        "model": "GPT-6 (Codex development agent)",
+        "model_family": "GPT",
+        "run_date": "2026-10-03",
+        "review_method": "same_agent_self_review",
+        "independent": false,
+        "prior_labels_visible": true,
+        "seen_training_data": false,
+        "items": 30,
+        "scope": "Original source questions and prior labels were read for a second semantic pass; no classifier/rules predictions or training data were used.",
+        "items_sha256": "91e17de9aaa2c834996444d588bd232eadb5d294ca52d46f610d63ccc62a873b",
+        "first_pass_sha256": "530115370440b44cf9c5a85dde60883000dbaf9b5461ea767a066685660ec967"
+      },
+      "corrections": [],
+      "limitation": "The author reviewed its own labels and may repeat its mistakes. No independent agreement or human review is claimed.",
+      "counts": {
+        "lang": {
+          "ta": 22,
+          "hi": 8
+        },
+        "source": {
+          "aya": 30
+        },
+        "slice": {
+          "control_insensitive": 18,
+          "plain": 2,
+          "unsupported": 10
+        },
+        "evaluation_set": {
+          "nlu": 29,
+          "xsport": 1
+        }
+      }
+    },
+    "xsport": {
+      "status": "SELF-REVIEWED DRAFT — NOT FROZEN",
+      "items": 60,
+      "review_method": "same_agent_self_review",
+      "reviewers": 1,
+      "independent": false,
+      "metadata": {
+        "model": "GPT-6 (Codex development agent)",
+        "model_family": "GPT",
+        "run_date": "2026-10-03",
+        "review_method": "same_agent_self_review",
+        "independent": false,
+        "prior_labels_visible": true,
+        "seen_training_data": false,
+        "items": 60,
+        "scope": "Original source questions and prior labels were read for a second semantic pass; no classifier/rules predictions or training data were used.",
+        "items_sha256": "081e5b2599f26fbbac97145998483fb3a7406d1aea6af772b08bb88ffb1191de",
+        "first_pass_sha256": "7dd5c354ab76a663a2949717403b9d763d140709a7ec7dd78981dc515fdf255f"
+      },
+      "corrections": [
+        {
+          "id": "en-nq-train-7070589b-019138",
+          "fields": [
+            "slice"
+          ],
+          "reason": "Corrected slice: the source contains a valid Unicode apostrophe in men?s; the apparent corruption was terminal encoding, not a source typo.",
+          "before": {
+            "slice": "typo"
+          },
+          "after": {
+            "slice": "explicit"
+          }
+        },
+        {
+          "id": "en-nq-train-7070589b-051214",
+          "fields": [
+            "slice"
+          ],
+          "reason": "Corrected slice: the source contains a valid Unicode apostrophe in men?s; the apparent corruption was terminal encoding, not a source typo.",
+          "before": {
+            "slice": "typo"
+          },
+          "after": {
+            "slice": "explicit"
+          }
+        }
+      ],
+      "limitation": "The author reviewed its own labels and may repeat its mistakes. No independent agreement or human review is claimed.",
+      "counts": {
+        "lang": {
+          "en": 60
+        },
+        "source": {
+          "nq_open": 60
+        },
+        "slice": {
+          "plain": 36,
+          "explicit": 24
+        },
+        "evaluation_set": {
+          "xsport": 60
+        }
+      }
+    },
+    "translated": {
+      "status": "SELF-REVIEWED DRAFT — NOT FROZEN",
+      "items": 300,
+      "review_method": "same_agent_self_review",
+      "reviewers": 1,
+      "independent": false,
+      "metadata": {
+        "model": "GPT-6 (Codex development agent)",
+        "model_family": "GPT",
+        "run_date": "2026-10-03",
+        "review_method": "same_agent_self_review",
+        "independent": false,
+        "prior_labels_visible": true,
+        "seen_training_data": false,
+        "items": 300,
+        "items_sha256": "9622b1e06001d28104c4f9f8f4d4f9a7a1e3a6e38914b5412a20c60734432b70",
+        "first_pass_sha256": "d1d6833f1e71dac0b1c28d7c32d39949624d3c7578582e660332e4833b84b99d",
+        "scope": "All 300 retained actual Hindi/Tamil translations read again alongside assigned labels; one non-independent reviewer."
+      },
+      "corrections": [],
+      "limitation": "The author reviewed its own labels and may repeat its mistakes. No independent agreement or human review is claimed.",
+      "counts": {
+        "lang": {
+          "hi": 150,
+          "ta": 150
+        },
+        "source": {
+          "indictrans2": 300
+        },
+        "slice": {
+          "unsupported": 242,
+          "control_insensitive": 16,
+          "plain": 36,
+          "typo": 2,
+          "explicit": 4
+        },
+        "evaluation_set": {
+          "nlu": 300
+        }
+      }
+    }
+  },
+  "benchmark_review": {
+    "status": "SELF-REVIEWED DRAFT — NOT FROZEN",
+    "rows": 120,
+    "source_snapshot": "2026-10-03",
+    "golden_sha256": "7300afb9a18a438f07d0185d97b7cf85ec3018a5ce9f16f17b4507b5a48ce6f7",
+    "seeds_sha256": "87b9556eefa8e3e443b67a53dc4d986ca42ca782d7d3d29246a3ff58f44befa6",
+    "category_counts": {
+      "A": 59,
+      "D": 49,
+      "B": 2,
+      "C": 2,
+      "F": 2,
+      "G": 6
+    },
+    "scoring_set_counts": {
+      "A": 48,
+      "B": 58,
+      "C": 4,
+      "men": 2,
+      "both_named": 2,
+      "G": 4,
+      "D": 2
+    },
+    "support_counts": {
+      "golden": 108,
+      "unsupported": 4,
+      "unresolved_entity": 2,
+      "no_intervention": 6
+    },
+    "source_caveats": [
+      {
+        "intent_id": "T20I_MATCHES",
+        "gender": "women",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "T20I_MATCHES",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_RUNS",
+        "gender": "women",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_WKTS",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_HS",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_HS",
+        "gender": "women",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_TEAM",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_TEAM",
+        "gender": "women",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_BBI",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_BBI",
+        "gender": "women",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_MATCHES",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_MATCHES",
+        "gender": "women",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "ODI_100S",
+        "gender": "women",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_ODI_FIRST",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_T20_FIRST",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_ODI_LAST",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_T20_LAST",
+        "gender": "women",
+        "issue": "V2 has fewer than two distinct URLs"
+      },
+      {
+        "intent_id": "WC_ODI_TITLES",
+        "gender": "women",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_ODI_TITLES",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_T20_TITLES",
+        "gender": "women",
+        "issue": "V2 has fewer than two distinct URLs"
+      },
+      {
+        "intent_id": "WC_ODI_RUNS",
+        "gender": "women",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_ODI_RUNS",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_T20_RUNS",
+        "gender": "women",
+        "issue": "V2 has fewer than two distinct URLs"
+      },
+      {
+        "intent_id": "WC_T20_RUNS",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_ODI_WKTS",
+        "gender": "women",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_ODI_WKTS",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "WC_T20_WKTS",
+        "gender": "women",
+        "issue": "V2 has fewer than two distinct URLs"
+      },
+      {
+        "intent_id": "WC_T20_WKTS",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      },
+      {
+        "intent_id": "FIRST_ODI_200",
+        "gender": "men",
+        "issue": "Single-source record; recheck before demo"
+      }
+    ],
+    "translation_status": "not run",
+    "annotation_status": "same_agent_self_review",
+    "review": {
+      "model": "GPT-6 (Codex development agent)",
+      "model_family": "GPT",
+      "reviewed_at": "2026-10-03T14:05:16.464625+00:00",
+      "review_method": "same_agent_self_review",
+      "reviewer_count": 1,
+      "independent": false,
+      "prior_labels_visible": true,
+      "seen_training_data": false,
+      "items": 120,
+      "corrections": 0,
+      "seeds_sha256": "87b9556eefa8e3e443b67a53dc4d986ca42ca782d7d3d29246a3ff58f44befa6",
+      "golden_sha256": "7300afb9a18a438f07d0185d97b7cf85ec3018a5ce9f16f17b4507b5a48ce6f7",
+      "scope": "Read all 120 English prompts and their proposed interpretations, categories and support against the rubric and the 50 stored golden rows. Retained all design labels. This checks semantic alignment and answer-key copying, not fresh external verification of cricket facts.",
+      "limitations": [
+        "Same agent authored and reviewed the design; no independent agreement or human review.",
+        "Golden source caveats and individual as_of dates remain; 25 underlying intents have correlated paraphrases.",
+        "Hindi and Tamil translation and review are still pending."
+      ],
+      "review_sha256": "5fef0585c8e320ae87071099730d7f858cd07a71741be5eab654fac0298a2770",
+      "metadata_sha256": "a908364a5995009c7231b5266633a94ed4ec2326dfd9f215a49a55b32db7ad77"
+    }
+  },
+  "pre_freeze_overlap_exclusions": [
+    {
+      "id": "en-nq-train-7070589b-010502",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-train-7070589b-014794",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-train-7070589b-015251",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "calib"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-train-7070589b-017978",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-train-7070589b-019667",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "calib",
+        "messy_calib"
+      ],
+      "exact": true
+    },
+    {
+      "id": "en-nq-train-7070589b-029073",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-train-7070589b-036156",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "calib",
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-train-7070589b-061015",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-train-7070589b-065037",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-train-7070589b-065148",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": true
+    },
+    {
+      "id": "en-nq-train-7070589b-072762",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "calib",
+        "messy_calib",
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-train-7070589b-080435",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-validation-b50a30e5-000525",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": true
+    },
+    {
+      "id": "hi-heldout-015",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "hi-heldout-022",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "hi-heldout-024",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "hi-heldout-047",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "hi-heldout-050",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "ta-heldout-019",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "calib",
+        "messy_calib"
+      ],
+      "exact": false
+    },
+    {
+      "id": "ta-heldout-022",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": true
+    },
+    {
+      "id": "ta-heldout-047",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": true
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-033700",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-025801",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "calib",
+        "messy_calib"
+      ],
+      "exact": false
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-019669",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-028792",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": true
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-061015",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "calib",
+        "messy_calib"
+      ],
+      "exact": false
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-020368",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": true
+    },
+    {
+      "id": "ta-it2-en-nq-validation-b50a30e5-003269",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "train"
+      ],
+      "exact": false
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-032433",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "calib",
+        "messy_calib"
+      ],
+      "exact": false
+    },
+    {
+      "id": "en-nq-train-7070589b-037569",
+      "reason": "Excluded before freeze by opaque comparison with already-frozen train/calib/messy data: exact or character similarity >=0.92. Conservative hygiene exclusion; no classifier result used and no training text exposed.",
+      "matching_splits": [
+        "calib",
+        "messy_calib"
+      ],
+      "exact": false
+    }
+  ],
+  "overlap_audit": {
+    "status": "CLEAN",
+    "date": "2026-10-03",
+    "rows_checked": 810,
+    "flagged": 0,
+    "threshold": 0.92,
+    "training_content_exposed_to_reviewer": false,
+    "method": "punctuation-normalized lowercase exact/character SequenceMatcher comparison; all eligible lengths",
+    "training_sha256": {
+      "training/data/train.jsonl": "e781a2ea4d30b6a5ff602c95f2e0e562ad93f47058472517ddef6beba6695afd",
+      "training/data/calib.jsonl": "243f03296a7309de1c6da5e7d1f68ac6c07f95163f1942bc303bf3e0574e0527",
+      "training/data/messy_calib.jsonl": "b0f7685b89ce1c9d74c5a8ccb0538a495ef0558149ff0cdc7a96008c302d1af9"
+    },
+    "testset_sha256": {
+      "nlu_en.csv": "18e1a05b5a23feae870d024e02d86dc76663d9aa0d1808c9b772a53bd4da2c4a",
+      "nlu_hi.csv": "4555f1ba80beead6a2e464917fd8957b9d895285a478f48e6e7abd93d59df240",
+      "nlu_ta.csv": "ea8d7dd8fc61dbe5d5f8ff55cbe373c15f5b8574cca28b528186d38c6cf86168",
+      "xsport.csv": "8a151f3cb0a5ca6f2471d7089656a6f64b5d2aa69f75469ecbe6e31a8b0cb220"
+    },
+    "seconds": 18.33711009984836,
+    "items": []
+  },
+  "benchmark_translation_review": {
+    "model": "GPT-6 (Codex development agent)",
+    "model_family": "GPT",
+    "run_date": "2026-10-03",
+    "review_method": "same_agent_self_review",
+    "independent": false,
+    "prior_labels_visible": true,
+    "seen_training_data": false,
+    "items": 68,
+    "items_sha256": "066c872ab973b9cfb523699dbe8cfda4209e14e2c45b34329e078ebea6cb8209",
+    "first_pass_sha256": "21c003dd497d3970b8c7c427b71757d5236229cf933fe1d99c69213af79279e3",
+    "english_review_sha256": "5fef0585c8e320ae87071099730d7f858cd07a71741be5eab654fac0298a2770"
+  },
+  "native_shortfall": "8 Hindi and 21 Tamil NLU prompts retained after semantic eligibility and duplicate review; approximate source targets are not padded.",
+  "measurement_status": "No held-out classifier evaluation or answer-benchmark outputs inspected or claimed. Dev-only handoff observations were read after semantic labels were fixed. Training strings were compared opaquely for overlap after annotation; no corpus or prediction-file contents entered the reviewer context."
+}

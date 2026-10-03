@@ -1,7 +1,7 @@
 # K-P2 evaluation release v1
 
-Final reviewed composition: 350 English, 208 Hindi and 221 Tamil NLU rows;
-61 cross-sport rows; 188 answer-benchmark questions (120 en / 34 hi / 34 ta).
+Final reviewed composition: 337 English, 203 Hindi and 210 Tamil NLU rows;
+60 cross-sport rows; 188 answer-benchmark questions (120 en / 34 hi / 34 ta).
 Actual IndicTrans2 inference and semantic self-review are complete. See
 [DATA_CARD.md](DATA_CARD.md) for provenance, exclusions, licences and limitations.
 
@@ -14,6 +14,8 @@ Joanna selected Astra as annotator and reviewer: one reviewer, prior labels visi
 no independent agreement or completed human/native-speaker validation. No classifier
 accuracy or answer-benchmark results are claimed. All source and translation rows
 retain their original text; raw model output and review corrections are preserved.
+Thirty exact/near training-overlap candidates were removed before the freeze;
+the retained inputs pass the recorded opaque string-overlap check.
 
 **Training firewall:** Jabin must publish `training/DATA_FROZEN.md` before opening
 `testsets/` or `eval_data/`. Never send these inputs to a training-data generator.

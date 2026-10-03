@@ -19,6 +19,12 @@ This directory contains evaluation material; it must never enter training genera
   reserve is an additional quality-replacement pool, not a second evaluation model.
 - `preparation/translated_items.jsonl`, `benchmark_translation_items.jsonl`: selected
   raw model outputs, unchanged. Separate exclusion logs retain rejected/unused IDs.
+- `preparation/release_exclusions.jsonl`: 30 reviewed rows removed before freeze
+  following an opaque exact/near comparison with already-frozen development data.
+  `final_overlap_audit.json` records zero flags for the 810 retained rows, with
+  source-corpus and final-CSV hashes. No training text was shown to the reviewer.
+- `tools/check_overlap.py`: read-only hygiene comparison that prints counts only;
+  it never assigns labels, runs a classifier, or modifies either dataset.
 - `tools/review.py`: label and self-review validator; never uses the project NLU.
 - `tools/build_benchmark.py`: original English benchmark answer-key builder.
 - `tools/build_release.py`: combines reviewed evidence, rejects mismatched sources,

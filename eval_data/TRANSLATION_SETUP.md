@@ -42,7 +42,8 @@ Joanna approved the large download/install. A four-output compatibility/speed pi
 passed, followed by 370 main outputs (248.98 seconds generation, 1.58 seconds model
 load) and 85 reserve outputs (56.08 seconds generation, 1.30 seconds model load).
 Both jobs were estimated below 20 minutes; no long-job approval was needed.
-Final semantic selection retains 300 NLU and 68 benchmark translations. Raw outputs
+Semantic review accepted 300 NLU and 68 benchmark translations; the final overlap
+screen removed eight Tamil NLU rows, leaving 292 NLU and 68 benchmark translations. Raw outputs
 and rejected/unused candidates remain in preparation files. No output was rewritten
 and mislabelled as model output. One same-agent reviewer; no native-speaker review.
 

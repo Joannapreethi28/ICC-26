@@ -1,0 +1,565 @@
+{
+  "status": "PRE-FREEZE OVERLAP SCREEN",
+  "method": "case-folded punctuation-normalized exact match and character SequenceMatcher >= 0.92, all mathematically eligible length pairs",
+  "training_content_exposed_to_reviewer": false,
+  "rows_checked": 840,
+  "flagged": 30,
+  "by_source": {
+    "nq_open": 14,
+    "heldout_gen": 8,
+    "indictrans2": 8
+  },
+  "by_language": {
+    "en": 14,
+    "hi": 5,
+    "ta": 11
+  },
+  "seconds": 36.00449710013345,
+  "items": [
+    {
+      "id": "en-nq-train-7070589b-010502",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.926316
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-014794",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.923077
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-015251",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.931507
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-017978",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.936709
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-019667",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "messy_calib",
+          "kind": "near",
+          "ratio": 0.952381
+        },
+        {
+          "split": "calib",
+          "kind": "exact",
+          "ratio": 1.0
+        },
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.93617
+        },
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.926316
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-029073",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.938272
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-036156",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.944444
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.935065
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-061015",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.95
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.925
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-065037",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.925
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-065148",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "exact",
+          "ratio": 1.0
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.97561
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.931818
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-072762",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.945055
+        },
+        {
+          "split": "messy_calib",
+          "kind": "near",
+          "ratio": 0.924731
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.9375
+        },
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.948454
+        },
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.941176
+        },
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.932039
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-080435",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.94382
+        }
+      ]
+    },
+    {
+      "id": "en-nq-validation-b50a30e5-000525",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.945055
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.926316
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.9375
+        },
+        {
+          "split": "train",
+          "kind": "exact",
+          "ratio": 1.0
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.929293
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.941176
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.923077
+        }
+      ]
+    },
+    {
+      "id": "hi-heldout-015",
+      "source": "heldout_gen",
+      "lang": "hi",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.950495
+        }
+      ]
+    },
+    {
+      "id": "hi-heldout-022",
+      "source": "heldout_gen",
+      "lang": "hi",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.933333
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.926316
+        }
+      ]
+    },
+    {
+      "id": "hi-heldout-024",
+      "source": "heldout_gen",
+      "lang": "hi",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.921053
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.921053
+        }
+      ]
+    },
+    {
+      "id": "hi-heldout-047",
+      "source": "heldout_gen",
+      "lang": "hi",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.92
+        }
+      ]
+    },
+    {
+      "id": "hi-heldout-050",
+      "source": "heldout_gen",
+      "lang": "hi",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.921053
+        }
+      ]
+    },
+    {
+      "id": "ta-heldout-019",
+      "source": "heldout_gen",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.921053
+        },
+        {
+          "split": "messy_calib",
+          "kind": "near",
+          "ratio": 0.921053
+        }
+      ]
+    },
+    {
+      "id": "ta-heldout-022",
+      "source": "heldout_gen",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.94382
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.924731
+        },
+        {
+          "split": "train",
+          "kind": "exact",
+          "ratio": 1.0
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.947368
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.927835
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.921569
+        }
+      ]
+    },
+    {
+      "id": "ta-heldout-047",
+      "source": "heldout_gen",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "exact",
+          "ratio": 1.0
+        }
+      ]
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-033700",
+      "source": "indictrans2",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.93617
+        }
+      ]
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-025801",
+      "source": "indictrans2",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.926829
+        },
+        {
+          "split": "messy_calib",
+          "kind": "near",
+          "ratio": 0.926829
+        }
+      ]
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-019669",
+      "source": "indictrans2",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.931507
+        }
+      ]
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-028792",
+      "source": "indictrans2",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "exact",
+          "ratio": 1.0
+        }
+      ]
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-061015",
+      "source": "indictrans2",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.926829
+        },
+        {
+          "split": "messy_calib",
+          "kind": "near",
+          "ratio": 0.926829
+        }
+      ]
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-020368",
+      "source": "indictrans2",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "exact",
+          "ratio": 1.0
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.931507
+        }
+      ]
+    },
+    {
+      "id": "ta-it2-en-nq-validation-b50a30e5-003269",
+      "source": "indictrans2",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.926829
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.921348
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.93617
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.93617
+        },
+        {
+          "split": "train",
+          "kind": "near",
+          "ratio": 0.926316
+        }
+      ]
+    },
+    {
+      "id": "ta-it2-en-nq-train-7070589b-032433",
+      "source": "indictrans2",
+      "lang": "ta",
+      "matches": [
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.925
+        },
+        {
+          "split": "messy_calib",
+          "kind": "near",
+          "ratio": 0.925
+        }
+      ]
+    },
+    {
+      "id": "en-nq-train-7070589b-037569",
+      "source": "nq_open",
+      "lang": "en",
+      "matches": [
+        {
+          "split": "messy_calib",
+          "kind": "near",
+          "ratio": 0.934783
+        },
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.959184
+        },
+        {
+          "split": "messy_calib",
+          "kind": "near",
+          "ratio": 0.929293
+        },
+        {
+          "split": "calib",
+          "kind": "near",
+          "ratio": 0.94
+        }
+      ]
+    }
+  ]
+}

@@ -9,10 +9,10 @@ not training data. Jabin must publish `training/DATA_FROZEN.md` before opening
 
 | File | Total | Natural source | Actual IndicTrans2 | Designed hard cases |
 |---|---:|---:|---:|---:|
-| `testsets/nlu_en.csv` | 350 | 300 NQ-open | 0 | 50 |
-| `testsets/nlu_hi.csv` | 208 | 8 Aya | 150 | 50 |
-| `testsets/nlu_ta.csv` | 221 | 21 Aya | 150 | 50 |
-| `testsets/xsport.csv` | 61 | 60 NQ-open + 1 Tamil Aya | 0 | 0 |
+| `testsets/nlu_en.csv` | 337 | 287 NQ-open | 0 | 50 |
+| `testsets/nlu_hi.csv` | 203 | 8 Aya | 150 | 45 |
+| `testsets/nlu_ta.csv` | 210 | 21 Aya | 142 | 47 |
+| `testsets/xsport.csv` | 60 | 59 NQ-open + 1 Tamil Aya | 0 | 0 |
 
 The answer benchmark has **188** questions: **120 English, 34 Hindi, 34 Tamil**.
 The English design covers 25 golden intents with four neutral paraphrases each,
@@ -21,7 +21,7 @@ benchmark covers all 25 intents and nine controls. Tamil uses a different retain
 bowling-record paraphrase and both-category control after translation review.
 Compare paired arms within a question, and use origin/intent clusters when pooling.
 
-The 840 classifier/transfer rows and 188 answer questions have provenance in
+The 810 classifier/transfer rows and 188 answer questions have provenance in
 `provenance_v1.jsonl`. Counts are dataset composition, **not model accuracy**.
 `release_manifest.json` records counts by language, source, slice and decision,
 all final-file hashes, annotation reports and evidence hashes. `testsets/FROZEN.md`
@@ -55,15 +55,16 @@ about native-user performance. Aya is contributed task prompts, not a measured
 sample of real cricket fans' requests. Many retained Hindi examples concern one
 player, and many Tamil examples are school-style questions.
 
-Cross-sport selection has 20 English football, 20 tennis, 20 basketball and one
+Cross-sport selection has 20 English football, 19 tennis, 20 basketball and one
 Tamil FIFA question. Only `gender_signal` and `topic` are scored. All cricket
 family/stat/format/decision fields are empty. Event or country names alone do not
 force men under the rubric. This is a narrow transfer check, not other-sport
 factual accuracy or demonstrated fairness across all sports.
 
-All **390 retained original NQ/Aya rows** were checked against their downloaded
+All **390 reviewed original NQ/Aya rows** were checked against their downloaded
 parquet bytes and exact recorded source-row text. The four parquet hashes and
-matched counts are in `preparation/raw_source_verification.json`. Raw parquet is
+matched counts are in `preparation/raw_source_verification.json`. Of these, 376
+remain after the overlap screen below. Raw parquet is
 gitignored; the manifest and source-preserving selected items are committed.
 
 ## Translation provenance and review
@@ -79,7 +80,8 @@ then reserve queries supplied replacements for failures and exact duplicates.
 After a four-output pilot, the main job generated 370 outputs in **248.98 seconds**
 of measured generation time; a reserve job generated 85 in **56.08 seconds**.
 These are generation timings for this laptop/run, not an end-user latency claim.
-Final retention is 300 NLU and 68 benchmark translations. Raw outputs, token IDs,
+Final retention is 292 NLU and 68 benchmark translations after overlap screening.
+Raw outputs, token IDs,
 preprocessed inputs, source IDs, timestamps, model revision and settings are kept.
 
 Every retained target text was compared with its original and read again with
@@ -104,8 +106,21 @@ semantic correctness; a model can repeat its own mistakes.
 
 After labels and second passes were recorded, a newly fetched Jabin handoff was
 read for integration. It included aggregate dev-only observations and illustrative
-pilot examples. No training/calibration corpus or prediction file was opened;
-those handoff observations did not change any evaluation question or label.
+pilot examples. No corpus or prediction-file contents entered the reviewer's
+context; those handoff observations did not change any question or label.
+
+An automated, read-only comparison then treated the already-frozen training,
+calibration and messy-calibration strings opaquely. Seven evaluation questions
+had exact normalized overlaps; a broader character-similarity screen flagged 30
+rows in total at 0.92 or above. All 30 were excluded **before evaluation freeze**,
+without changing their labels or seeing any classifier output. The screen reports
+only evaluation IDs/counts, never training text. `preparation/release_exclusions.jsonl`
+records the exclusions; `preparation/final_overlap_audit.json` binds the final CSV
+hashes and corpus hashes to a clean check. This reduced the approximate 50 hard-case
+and 150 translation targets slightly; the measured counts above are authoritative.
+It also introduces a conservative similarity-based selection bias: near matches
+can be valid contrastive questions, not true leakage. Zero string matches does not
+prove absence of semantic overlap or pretraining exposure.
 
 `ANNOTATION_RUBRIC.md` fixes the closed labels and conservative support decisions.
 Explicit country/season/opponent filters are not answered with unrestricted

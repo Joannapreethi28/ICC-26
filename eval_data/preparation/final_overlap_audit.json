@@ -1,0 +1,22 @@
+{
+  "status": "CLEAN",
+  "date": "2026-10-03",
+  "rows_checked": 810,
+  "flagged": 0,
+  "threshold": 0.92,
+  "training_content_exposed_to_reviewer": false,
+  "method": "punctuation-normalized lowercase exact/character SequenceMatcher comparison; all eligible lengths",
+  "training_sha256": {
+    "training/data/train.jsonl": "e781a2ea4d30b6a5ff602c95f2e0e562ad93f47058472517ddef6beba6695afd",
+    "training/data/calib.jsonl": "243f03296a7309de1c6da5e7d1f68ac6c07f95163f1942bc303bf3e0574e0527",
+    "training/data/messy_calib.jsonl": "b0f7685b89ce1c9d74c5a8ccb0538a495ef0558149ff0cdc7a96008c302d1af9"
+  },
+  "testset_sha256": {
+    "nlu_en.csv": "18e1a05b5a23feae870d024e02d86dc76663d9aa0d1808c9b772a53bd4da2c4a",
+    "nlu_hi.csv": "4555f1ba80beead6a2e464917fd8957b9d895285a478f48e6e7abd93d59df240",
+    "nlu_ta.csv": "ea8d7dd8fc61dbe5d5f8ff55cbe373c15f5b8574cca28b528186d38c6cf86168",
+    "xsport.csv": "8a151f3cb0a5ca6f2471d7089656a6f64b5d2aa69f75469ecbe6e31a8b0cb220"
+  },
+  "seconds": 18.33711009984836,
+  "items": []
+}

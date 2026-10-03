@@ -13,7 +13,7 @@ SPEC.loader.exec_module(release)
 
 def test_release_preserves_reviewed_rows_and_exact_golden_answers(tmp_path):
     report = release.assemble(tmp_path)
-    expected = {"nlu_en.csv": 350, "nlu_hi.csv": 208, "nlu_ta.csv": 221, "xsport.csv": 61}
+    expected = {"nlu_en.csv": 337, "nlu_hi.csv": 203, "nlu_ta.csv": 210, "xsport.csv": 60}
     for name, count in expected.items():
         with (tmp_path / "testsets" / name).open(encoding="utf-8", newline="") as stream:
             rows = list(csv.DictReader(stream))
@@ -33,7 +33,7 @@ def test_release_preserves_reviewed_rows_and_exact_golden_answers(tmp_path):
                 assert json.loads(row[f"{gender}_answer"]) == truth[row["intent_id"], gender]
         else:
             assert row["women_answer"] == row["men_answer"] == ""
-    assert report["files"]["eval_data/provenance_v1.jsonl"]["rows"] == 1028
+    assert report["files"]["eval_data/provenance_v1.jsonl"]["rows"] == 998
 
 
 def test_release_rejects_rewritten_source_or_fake_translation():
