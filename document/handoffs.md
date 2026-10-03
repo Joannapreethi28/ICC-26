@@ -35,10 +35,22 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 | 7 | `resolve()` + API + demo | Joanna → Jabin | Sun 10:30 | pending |
 | 8 | Captured plain-arm hero answer | Jabin → Joanna | Sun 12:30 | pending |
 | 9 | Live Space + MCP + record-pages URLs | Joanna → both | Sun 13:30 | pending |
+| 10 | Facts + policy + answer components (K-P3) | Joanna → Jabin | Sun 10:00 | **IMPLEMENTED Sat 21:40 IST (76cb7ce / 857b1cd); native wording review pending** |
 
 ---
 
 # Messages (newest first)
+
+---
+
+### Sat 03 Oct, 21:40 IST | FROM Joanna TO Jabin | DONE (implementation; review caveats below) | K-P3
+**What:** T1.3/T1.4/T1.6 implemented in `76cb7ce`, integrated with your latest `0bd6055` in `857b1cd`. New `records/{compute,reconcile}.py`, `fetch/{catalogue,facts}.py`, `policy/decide.py`, `compose/render.py` and packaged en/hi/ta Jinja templates. Fifty supported intent IDs: 34 covered-match records, 12 golden-only history/World Cup intents and four entity intents. All 50 golden category rows retain exact values/holders/sources/dates and always take priority. Native labels are attached offline; unknown identities never get guessed.
+**Validation (measured):** **450 tests passed in 7.97s**, no skips, after merging your new scorer tests and training v2. All 65 frozen K-P2 hashes still verify. Local offline wheel contains all four templates. Full snapshot covers every non-entity catalogue intent for both categories. Real-data component checks: Mandhana player line is women-only/computed; India latest-result returns both categories; all three headline outputs are saved in `docs/phase3-examples.md`. No classifier or answer-benchmark score is claimed here.
+**You can now:** import `lookup`, `get_facts`, `decide`, `DECISION_TO_GENDERS`, `render` and `compute_leader`. `get_facts(..., entity=resolved_entity)` handles player lines/latest results; pass one entity per call. Missing/ambiguous entity -> no fact, not a headline substitute. `resolve()`/API/UI are still K-P4; do not run E1 layer arms against the existing stub yet. Full definitions and use: `docs/phase3-facts.md`.
+**Gate/evidence status:** G2 exact golden assertions pass. G1 report covers every computable golden row: **5 match, 20 coverage explanations, 1 flagged** (Sonam Yeshey vs S Yeshi identity; equal 8/7 figures alone do not establish identity). Coverage explanations are not full numerical audits. G5 automated policy/rendering checks pass; **native-speaker Hindi/Tamil wording review remains pending**. Astra self-reviewed both spec and standards; fixed missing-format reporting and cross-format comparison guards. Source context/country/recent-result text may remain English. K-P1 golden-source caveats are retained.
+**Integration note:** your training v2 correctly triggered the old release builder's v1-overlap guard. Updated only `tests/unit/test_eval_release.py`: validate the published frozen release and exact answer keys, plus a separate test proving stale training snapshots are rejected. No frozen build tool/audit/label/file was changed. For your `No module named mak` issue, run from the repo after `python -m pip install -e . --no-deps`, or use your normal Python with `PYTHONPATH=src`; `--check` only verifies the freeze. Rebuilding v1 against v2 is intentionally rejected. Your reported v2 overlap screen remains separate from our v1 evidence.
+**Learned:** labels -> catalogue -> deterministic category policy -> golden-first facts -> templated answer. Every statistic is in Fact.value; dates/source/coverage digits come from Fact metadata. Policy lives in code so model confidence or injected instructions cannot hide a category. Cricsheet lacks early careers, some historical fixtures, Afghanistan matches and recent updates, hence computed/golden differences. No-format career questions expand T20I + ODI for women and men, producing four records without comparing formats.
+**Next on Joanna's track:** K-P4 product integration. No model choice, threshold or NLU implementation changed by this phase. Publication of this local handoff commit is the final Git step.
 
 ---
 

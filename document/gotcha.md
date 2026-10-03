@@ -23,6 +23,11 @@ Rules:
 
 ## Live traps found during planning (3 Oct 2026)
 
+### G-028 | A frozen evaluation release cannot be rebuilt against a new training version | HANDLED | 3 Oct | Joanna
+**Observed:** merging Jabin's training v2 made the old assembly-based K-P2 test fail with `Training snapshot changed since the overlap audit`. The immutable release's audit belongs to training v1; its guard was correct.
+**Rule:** validate published frozen bytes and exact answer keys in routine tests. Test rejection of a different training snapshot separately. Do not rewrite a frozen audit, disable its guard or regenerate evaluation files to make a test pass. New training versions require their own overlap evidence.
+**Enforced:** `tests/unit/test_eval_release.py`; the frozen `build_release.py` remains unchanged. Jabin's v2 overlap report is distinct from K-P2 v1 evidence.
+
 ### G-027 | Record-value guards must distinguish sourced metadata; equal figures do not prove identity | HANDLED / identity open | 3 Oct | Joanna
 **Observed:** T1.6 requires dates, formats and source links while literally requiring every digit to occur in `Fact.value`; dates and URL digits cannot satisfy both. HTML escaping also turns an apostrophe into `&#39;` under attribute-style escaping, creating a misleading numeric-test failure in plain text. Separately, the men's best-bowling values agree at 8/7 but golden `Sonam Yeshey` and registry `S Yeshi` have no established shared identity in our cached labels.
 **Rule:** insert statistical values directly from Fact.value, and validate metadata digits against their source fields. Render plain text with markup escaping without attribute quote escaping. Keep unresolved identity comparisons flagged; do not equate players from equal figures alone. Golden records remain unchanged. Coverage explanations do not prove every numerical difference.
