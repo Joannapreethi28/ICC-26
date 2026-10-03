@@ -1,0 +1,974 @@
+{
+ "model": "C:\\Users\\Jabin M\\OneDrive\\Desktop\\ICC'26\\models\\laya-mak-v2",
+ "target": 0.98,
+ "n_calib": 2982,
+ "per_lang": {
+  "en": {
+   "gender_acc_all": 0.9989969909729187,
+   "gender_ece_all": 0.024898294884654226
+  },
+  "hi": {
+   "gender_acc_all": 0.9879032258064516,
+   "gender_ece_all": 0.01997066532258182
+  },
+  "ta": {
+   "gender_acc_all": 0.9687814702920443,
+   "gender_ece_all": 0.005091641490431589
+  }
+ },
+ "no_rule_cue_rows": 854,
+ "chosen_threshold": 0.98,
+ "grid": [
+  {
+   "t": 0.5,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.51,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.52,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.53,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.54,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.55,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.56,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.57,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.58,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.59,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.6,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.61,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.62,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.63,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.64,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.65,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.66,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.67,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.68,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.69,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.7,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.71,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.72,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.73,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.74,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.75,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.76,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.77,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.78,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.79,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.8,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.81,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.82,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.83,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.84,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.85,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.86,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.87,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.88,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.89,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.9,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.91,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.92,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.93,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.94,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.95,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.96,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 40,
+    "accuracy": 0.625,
+    "accept_rate": 0.1434
+   },
+   "meets": false
+  },
+  {
+   "t": 0.97,
+   "en": {
+    "accepted": 25,
+    "accuracy": 0.96,
+    "accept_rate": 0.0909
+   },
+   "hi": {
+    "accepted": 21,
+    "accuracy": 0.9048,
+    "accept_rate": 0.07
+   },
+   "ta": {
+    "accepted": 38,
+    "accuracy": 0.6579,
+    "accept_rate": 0.1362
+   },
+   "meets": false
+  },
+  {
+   "t": 0.98,
+   "en": {
+    "accepted": 0,
+    "accuracy": 1.0,
+    "accept_rate": 0.0
+   },
+   "hi": {
+    "accepted": 0,
+    "accuracy": 1.0,
+    "accept_rate": 0.0
+   },
+   "ta": {
+    "accepted": 0,
+    "accuracy": 1.0,
+    "accept_rate": 0.0
+   },
+   "meets": true
+  },
+  {
+   "t": 0.99,
+   "en": {
+    "accepted": 0,
+    "accuracy": 1.0,
+    "accept_rate": 0.0
+   },
+   "hi": {
+    "accepted": 0,
+    "accuracy": 1.0,
+    "accept_rate": 0.0
+   },
+   "ta": {
+    "accepted": 0,
+    "accuracy": 1.0,
+    "accept_rate": 0.0
+   },
+   "meets": true
+  }
+ ],
+ "note": "fit on calibration data only; if None, no threshold reaches the target -> keep the safe default and report"
+}

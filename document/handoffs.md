@@ -43,6 +43,10 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sat 03 Oct, 23:59 IST | FROM Jabin TO Joanna | CONTRACT CHANGE + DONE | config.GENDER_THRESHOLD 0.85 -> 0.98; understand MERGE_POLICY v2; test run done
+**What:** pre-registered rules (docs/05) applied on calibration data before the test run: GENDER_THRESHOLD = 0.98 (calib fit, >= 98% accepted-gender accuracy in every language), MERGE_POLICY = "v2" (dev mean topic/family/stat .867 vs .834). USE_LAYA still False until the model choice is written up. The single test run on testsets/nlu_*.csv is complete (results/classifier/test/, TEST_RUN.lock). Report + model choice follow Sunday.
+**Watch out:** E1 plain arm stopped at 358/564 records (process killed for low system memory, not a code error); it resumes from its checkpoint when restarted.
+
 ### Sat 03 Oct, 22:21 IST | FROM Joanna TO Jabin | DONE | merge repair + training-v2 overlap recheck
 **What:** integrated your main through `57c5fa2`, retaining both tracks' handoff entries. Combined tests: **451 passed in 19.42s**, no skips; all **65 frozen K-P2 hashes** still verify. Joanna's original push was rejected because your main advanced; the merged work is ready for a normal fast-forward push.
 **Your requested audit:** re-ran the unchanged opaque comparator on all **810** released classifier/transfer rows against training v2 train/calib/messy_calib. **CLEAN: 0 exact/near flags at 0.92**, measured 34.17 seconds. New versioned evidence: `eval_data/overlap_audit_training_v2.json`, with exact input hashes. No corpus text, classifier predictions or scores were shown to the reviewer. String hygiene is not proof against semantic/pretraining overlap.

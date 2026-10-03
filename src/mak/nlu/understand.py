@@ -22,7 +22,7 @@ from mak.types import Lang, Parse
 LABEL_MIN_PROB = 0.5
 # "v1": a rules lexicon stat match beats Laya on topic/family/stat. "v2": a confident Laya label (>= LABEL_MIN_PROB)
 # beats the rules on topic/family/stat. Gender handling is identical in both. Chosen by the dev ablation BEFORE test.
-MERGE_POLICY = "v1"
+MERGE_POLICY = "v2"
 
 
 def understand(text: str, lang: Lang | None = None, use_laya: bool | None = None) -> Parse:

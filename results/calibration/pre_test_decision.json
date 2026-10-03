@@ -1,0 +1,7 @@
+{
+ "gender_threshold": 0.98,
+ "threshold_fit_found": true,
+ "merge_policy": "v2",
+ "dev_mean_acc_v1": 0.8335295029690528,
+ "dev_mean_acc_v2": 0.8669789731351221
+}
