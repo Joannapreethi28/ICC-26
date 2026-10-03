@@ -89,9 +89,10 @@ def test_never_raises_on_non_string():
     assert understand(12345).topic == "non_sport"  # type: ignore[arg-type]
 
 
-def test_use_laya_is_accepted_but_rules_only_until_j_p4():
+def test_use_laya_with_unavailable_model_falls_back_to_rules(monkeypatch):
+    monkeypatch.setenv("MAK_LAYA_PATH", "no/such/model/dir")
     p = understand("Who has the most T20I runs?", use_laya=True)
-    assert p.stat == "runs" and any("laya requested" in line for line in p.trace)
+    assert p.stat == "runs" and any("laya unavailable" in line for line in p.trace)
 
 
 def test_explicit_lang_overrides_detection():

@@ -130,3 +130,19 @@ It failed on tab-group errors after 12 answers and was dropped. **Rule:** before
 ### G-021 | Surname examples in the plan require a bounded interpretation | HANDLED | 3 Oct | Joanna
 **Observed:** T1.5 says surname-only matches are unknown but also explicitly requires "Kohli vs Mandhana" to resolve both categories.
 **Implementation:** only those two named shorthand examples are reviewed exceptions tied to source ESPNcricinfo IDs. Other surnames, including a currently unique surname, stay `gender=None`. Shared country names are always neutral. Fuzzy matching requires equal token counts and character similarity as well as token-set similarity, preventing partial-name matches from bypassing the ambiguity rule.
+
+### G-022 | Template labels differ from rules labels, and shell heredocs break on this path | HANDLED | 3 Oct | Jabin
+**Observed:** the audit shows the rules labeller disagrees with template labels on mixed-gender players, weak cues, injection rows and Hinglish/Tanglish topics. Separately, Git Bash heredocs fail ('unexpected EOF') when the content has apostrophes and the path contains ICC'26. Also, typos corrupted gender cue words (e.g. 'putush'), which would be label noise.
+**Rule:** model labels come from the template that wrote the text, never from rules. Typo noise must skip the `_PROTECT` gender-cue set. Use the Write tool for files with apostrophes, not heredocs.
+
+### G-023 | Laya provenance: popularity and identity not verified | OPEN | 3 Oct | Jabin
+**Observed:** 358 likes (not downloads), HF API shows 0 downloads, model created 19 Sep 2026. Files and package audited clean (docs/09). I downloaded it before Sir Jabin had seen the model page; he should have been asked first.
+**Rule:** ask before downloading any new model or package. Sir Jabin decides whether to keep Laya or switch to a more popular base (for example xlm-roberta-base or mmBERT-base) for comparison.
+
+**Update to G-023 (3 Oct):** the 0-downloads warning was overstated. Both Laya repos lack a root config.json, so Hugging Face's counter probably never counts them (inference, unverified). Do not cite 0 downloads as a risk. Comparison plan: fine-tune Laya and xlm-roberta-base on the same data, pick by held-out results.
+
+**Update 2 to G-023 (3 Oct):** Sir Jabin's screenshot of the Laya page shows 'Downloads are not tracked for this model', confirming the counting artefact (no longer just an inference). Laya's identity/track record is still unverified; our own audit and test results decide trust.
+
+### G-024 | Built J-P3/J-P4 code before re-reading the task text; assumed the model choice | HANDLED | 3 Oct | Jabin
+**Observed:** train_laya.py and laya_head.py were written from memory of the plan: file paths and interfaces differed from buildplan T2.2/T2.5 (training/finetune/, calibrate/, qwen_parser/; LayaHead.load/predict returning {question: (label, prob)}; tests/nlu/test_understand.py), and I described laya_head as 'the' classifier although Laya vs xlm-roberta-base is undecided. Sir Jabin: 'never assume anything'.
+**Rule:** before writing code for a task, read its exact task text in document/buildplan.md and the matching docs section (docs/09 §5-6 gates, docs/11 E2). Never describe a candidate as chosen. Fixed: laya_head.py now follows T2.5 (candidate backend), test file renamed, stale docs/09 line corrected. Still to do after the training run ends: move scripts to the buildplan paths.

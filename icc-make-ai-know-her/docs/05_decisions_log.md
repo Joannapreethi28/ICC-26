@@ -45,3 +45,18 @@ Dates are 2-3 Oct 2026. "SJ" = Sir Jabin.
 - Which free local LLM to use for the three-arm test (any open instruct model that fits an 8 GB GPU).
 - Exact free hosting split (Hugging Face Space for demo+MCP+API; static pages host for record pages).
 - Whether to also use ICC official data later (production path; not for the hackathon).
+
+## J-P2 data decisions (3 Oct, Jabin)
+- Generated data goes to `training/data/` and its tests to `tests/nlu/`.
+- Labelling conventions: weak gender cue -> none; mixed-gender player pair -> both_named; injection keeps the underlying gender; labels come from the template, never the rules labeller.
+- Calibration uses template families disjoint from training, so calibration measures unseen phrasings.
+- Sizes: train 3,600 per language, calib about 1,000 per language, seed 20261003. Hindi/Tamil banks are synthetic until native-speaker review (before G3).
+
+## Classifier base model: proposal to replace Laya (3 Oct 2026, Jabin; PROPOSAL until Sir Jabin confirms)
+Trigger: Sir Jabin asked for a more popular, verifiable model. HF numbers pulled by API on 3 Oct 2026 (downloads are the last 30 days): xlm-roberta-base 16.0M downloads / 927 likes / MIT / Meta, 2022; mdeberta-v3-base 5.8M / 243 / MIT; multilingual-e5-base 7.2M / 391; xlm-roberta-large 2.7M / 538; mBERT 1.7M / 607; google/muril-base-cased 52k / 66 / Apache-2.0 (Google, Indian languages); jhu-clsp/mmBERT-base 376k / 259 / MIT (JHU, ICML 2026 poster; this is Laya's backbone); laya-multilingual 0 / 358 / Apache-2.0 (created 19 Sep 2026, vendor: Convai Innovations, founder named on its own site, third-party listings exist but no independent track record).
+Proposal: fine-tune standard encoders with ordinary classification heads (one head per question: gender_signal, topic, family, format, stat_*) on the frozen data. Primary: xlm-roberta-base (most used, best provenance). Comparison arms trained on the identical data: mmBERT-base, MuRIL, and Laya if time allows. The winner is chosen by the held-out per-language test results, not by popularity. Qwen-class LoRA stays as the other comparison arm.
+Why: removes dependence on an unverified vendor and a typed-decision wrapper; the data format (labels per question) is unchanged. Cost: we lose Laya's pretrained calibrated decision head, so we calibrate ourselves (temperature scaling on calib.jsonl).
+Conflict: CLAUDE.md non-negotiable 3 names Laya or Qwen-class; edit CLAUDE.md and AGENTS.md only after Sir Jabin confirms.
+
+### Correction (3 Oct 2026, Jabin): the '0 downloads' signal is likely a counting artefact
+Both Laya repos report 0 downloads (30-day and all-time) while having 358 and 5,042 likes. Neither repo has a root `config.json` (the encoder config is in `encoder/`), and Hugging Face counts downloads from requests to specific files, so the counter probably never increments for this layout. This is an inference, not verified with Hugging Face. So 0 downloads is NOT evidence against Laya; likes show real attention, though likes can be gamed. The safety audit (docs/09) found nothing wrong. Revised proposal: do NOT drop Laya. Fine-tune Laya AND xlm-roberta-base (plus mmBERT-base and MuRIL if time allows) on the identical frozen data; choose by held-out per-language results. This stays inside CLAUDE.md non-negotiable 3 (Laya or Qwen-class), so no edit to CLAUDE.md is needed unless the winner is not Laya.

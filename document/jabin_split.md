@@ -41,10 +41,10 @@ Only two real meeting points: **Sat ~24:00** (Joanna's frozen test sets, for you
 
 ## J-P2: Laya hands-on + training data (Sat 21:00-24:00)
 
-- [ ] 20 min hands-on: `pip install laya`, load `convaiinnovations/laya-multilingual`, zero-shot our typed questions on 10 queries; note the (bad, overconfident) probabilities.
-- [ ] Read `laya.common.build_sequence`, `render_options` and the repo notebook for the gold format (gotcha G-003).
-- [ ] `training/generate_data/{schema,grammar,noise,build_dataset}.py`, `paraphrases/{en,hi,ta}.jsonl` (Claude dev-time; prompts in `PROMPTS.md`) [T2.1]. Sizes: 8-12k train, hi ≥3k, ta ≥3k; calibration ≈1k/lang by template family.
-- [ ] Freeze: hashes in `training/DATA_FROZEN.md`. Only after this may you open `testsets/`; run the leakage test (0 overlaps required).
+- [x] 20 min hands-on: `pip install laya`, load `convaiinnovations/laya-multilingual`, zero-shot our typed questions on 10 queries; note the (bad, overconfident) probabilities.
+- [x] Read `laya.common.build_sequence`, `render_options` and the repo notebook for the gold format (gotcha G-003).
+- [x] `training/generate_data/{schema,grammar,noise,build_dataset}.py`, `paraphrases/{en,hi,ta}.jsonl` (Claude dev-time; prompts in `PROMPTS.md`) [T2.1]. Sizes: 8-12k train, hi ≥3k, ta ≥3k; calibration ≈1k/lang by template family.
+- [x] Freeze: hashes in `training/DATA_FROZEN.md`. Only after this may you open `testsets/`; run the leakage test (0 overlaps required).
 
 **Done when:** per-language/label counts balanced (each gender label ≥15%), leakage test green, merged.
 
