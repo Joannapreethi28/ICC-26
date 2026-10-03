@@ -109,3 +109,9 @@ Method, step by step:
 
 ### Laya downloads counter (confirmed by Sir Jabin's screenshot, 3 Oct)
 The Laya model page itself says "Downloads are not tracked for this model." So 0/blank downloads is a HF counting artefact (no root config.json), not a sign of an unused or fake model. 358 likes is the real popularity signal. This does not by itself prove the model is safe; our hash, header, scan and offline-load checks do.
+
+### Qwen comparison arm provenance (verified 3 Oct 2026, approved by Sir Jabin)
+- Purpose: baseline (e) of §5 / buildplan T2.4: a small instruction model that writes the labels as JSON. Comparison only; nothing at runtime depends on it unless it clearly wins (then reported and decided in docs/05).
+- Model `Qwen/Qwen2.5-1.5B-Instruct`, revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306: author Qwen, 863 likes, ~7.42M downloads last month, Apache-2.0, not gated (MEASURED via HF API).
+- Downloaded: config/tokenizer JSONs, merges.txt, vocab.json, LICENSE, model.safetensors (3,087,467,144 bytes). SHA256 dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee = HF published hash: MATCH. Repo has no pickle (.bin/.pt) files and no custom code (.py), so no trust_remote_code.
+- Packages (pip dry-run first, confirmed torch 2.11.0+cu128 and transformers 5.18.0 unchanged): trl 1.14.1, peft 0.21.2, accelerate 1.15.0, datasets 5.0.1, xxhash 4.0.1.

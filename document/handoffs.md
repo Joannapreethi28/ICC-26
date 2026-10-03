@@ -164,3 +164,10 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 **What:** Sir Jabin asked to replace Laya with a more popular, verifiable base model. Proposal in icc-make-ai-know-her/docs/05_decisions_log.md (xlm-roberta-base primary; mmBERT, MuRIL, Laya as comparison arms). Training data and its labels are unchanged.
 **You can now:** nothing blocked. The test-set format does not change.
 **I need:** nothing yet. I will post the CLAUDE.md/AGENTS.md wording change once Sir Jabin confirms.
+
+
+### Sat 03 Oct, 20:29 | FROM Jabin TO Joanna | IN PROGRESS | J-P3/J-P4 (updates the 23:40 DECISION PENDING message)
+**What:** model choice is NOT made. Decision (Sir Jabin): keep Laya and compare on identical frozen data: Laya fine-tuned (training now, local GPU), xlm-roberta-base (downloaded, hash-verified, trains next), Qwen2.5-1.5B LoRA = baseline (e) (downloaded, hash-verified). Winner by held-out per-language results on YOUR frozen test sets. CLAUDE.md/AGENTS.md unchanged unless a non-Laya model wins.
+**Built:** src/mak/eval/classifier_eval.py (T2.3 interface, reads testsets/*.csv in labels.TESTSET_COLUMNS format, reports per language/slice/SOURCE), src/mak/nlu/laya_head.py (T2.5 interface, candidate backend), understand.py merge policy v1 (config.USE_LAYA still False; config.py unchanged, no contract change yet), training/generate_data/leakage_check.py, dev-only messy slice training/data/messy_calib.jsonl.
+**I need:** testsets/*.csv when frozen (FROZEN.md). I will run leakage_check.py first (0 overlaps required), then the five baselines. Native-speaker review of hi/ta banks still requested.
+**Watch out:** duckdb is not installed on my machine, so tests that import it are not run here; please keep them green on yours. Dev numbers in results/classifier/dev/ are template-labelled calibration data, NOT test results; do not quote them.

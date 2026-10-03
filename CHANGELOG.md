@@ -17,3 +17,5 @@
 - CORRECTION 2026-10-03: laya_head.py is the Laya CANDIDATE backend only; the classifier choice (Laya vs xlm-roberta-base etc.) is NOT made. merge()/tests are model-neutral; a winner other than Laya needs only a sibling backend returning the same output.
 
 - 2026-10-03 T2.3: src/mak/eval/classifier_eval.py built to the T2.3 interface (evaluate(predict_fn, path): per question x language/slice/source, Wilson 95% CI, ECE 15 bins, confusion, confident errors, option-order sensitivity, latency; docs/09 §6 gate check) + tests/unit/test_classifier_eval.py (3 pass). Rules-only baseline (a) on DEV sets (MEASURED, template-labelled calib data, NOT test results): calib gender .956/.938/.927, stat .724/.685/.608 (en/hi/ta); messy gender .954/.944/.920 (flattered: messy slice never corrupts gender cues), stat .379/.601/.505. Files: results/classifier/dev/.
+
+- 2026-10-03 T2.4 setup (approved by Sir Jabin): pip trl 1.14.1 / peft 0.21.2 / accelerate 1.15.0 / datasets 5.0.1 / xxhash 4.0.1 (dry-run: torch+transformers unchanged); downloaded Qwen/Qwen2.5-1.5B-Instruct safetensors, hash MATCH, no pickle/custom code. Details in docs/09.
