@@ -92,6 +92,10 @@ in chat or commit them. The [model files](https://huggingface.co/ai4bharat/indic
 include approximately 1.1 GB of safetensors weights; avoid downloading the duplicate
 PyTorch weights. Runtime packages add further download/storage requirements.
 
+Update: Joanna reports that account creation, email verification and model access
+acceptance are done. The prepared terminal helper is awaiting execution; see
+[HF_ACCESS.md](HF_ACCESS.md). No model weights or translation runtime are installed.
+
 The project instruction in `document/joanna_split.md` §0 is: **"Ask Joanna before
 downloads larger than 1 GB or jobs longer than 20 minutes."** No such download or
 long-running translation job has been authorised or started. Before requesting it,
