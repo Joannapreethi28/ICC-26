@@ -1,4 +1,4 @@
-"""Export blind review packets and reconcile real annotation passes, without labelling.
+"""Validate recorded self-review or independent annotation passes, without labelling.
 
 These tools produce drafts only. They do not certify reviewer independence or
 freeze a benchmark. Metadata is an attestation; retain the original review output.
@@ -157,6 +157,57 @@ def write_packet(items, destination):
     (destination / "vocabulary.json").write_text(json.dumps(vocabulary, indent=2) + "\n", encoding="utf-8")
 
 
+def self_review(items, first_pass, reviewed, metadata):
+    """Validate the single-agent method Joanna selected on 2026-10-03.
+
+    Labels and review notes must come from an actual semantic review. This code
+    checks their structure and records changes; it cannot perform that review.
+    """
+    for field in ("model", "model_family", "run_date"):
+        if not isinstance(metadata.get(field), str) or not metadata[field].strip():
+            raise ValueError(f"Missing actual review metadata: {field}")
+    date.fromisoformat(metadata["run_date"])
+    if metadata.get("review_method") != "same_agent_self_review" or metadata.get("independent") is not False:
+        raise ValueError("Self-review must not claim independent annotation")
+    if metadata.get("prior_labels_visible") is not True or metadata.get("seen_training_data") is not False:
+        raise ValueError("Self-review must disclose prior labels and remain isolated from training data")
+    inputs = indexed(items, "items")
+    if not inputs:
+        raise ValueError("No items to review")
+    original, checked = indexed(first_pass, "first pass"), indexed(reviewed, "self review")
+    for name, annotations in (("first pass", original), ("self review", checked)):
+        missing, extra = inputs.keys() - annotations.keys(), annotations.keys() - inputs.keys()
+        if missing or extra:
+            raise ValueError(f"{name}: missing={sorted(missing)}, extra={sorted(extra)}")
+    rows, corrections = [], []
+    for identity, item in inputs.items():
+        if item.get("lang") not in {"en", "hi", "ta"} or item.get("source") not in labels.SOURCES:
+            raise ValueError(f"Invalid item language/source: {identity}")
+        if item.get("evaluation_set") not in {"nlu", "xsport"} or not isinstance(item.get("text"), str) or not item["text"].strip():
+            raise ValueError(f"Invalid item set/text: {identity}")
+        validate_label(original[identity], item)
+        chosen = checked[identity]
+        validate_label(chosen, item)
+        reason = chosen.get("review_note")
+        if not isinstance(reason, str) or not reason.strip():
+            raise ValueError(f"Missing review_note: {identity}")
+        changed = [field for field in FIELDS if chosen[field] != original[identity][field]]
+        if changed:
+            corrections.append({"id": identity, "fields": changed, "reason": reason,
+                                "before": {f: original[identity][f] for f in changed},
+                                "after": {f: chosen[f] for f in changed}})
+        rows.append({**{field: item[field] for field in ("id", "lang", "text", "source")},
+                     **{field: chosen[field] for field in FIELDS}, "adjudicated": "",
+                     "notes": f"review_method=same_agent_self_review; one reviewer; not independent. {reason} {chosen['reason']}",
+                     "evaluation_set": item["evaluation_set"]})
+    return rows, {"status": "SELF-REVIEWED DRAFT — NOT FROZEN", "items": len(rows),
+                  "review_method": "same_agent_self_review", "reviewers": 1, "independent": False,
+                  "metadata": metadata, "corrections": corrections,
+                  "limitation": "The author reviewed its own labels and may repeat its mistakes. No independent agreement or human review is claimed.",
+                  "counts": {field: dict(Counter(row[field] for row in rows))
+                             for field in ("lang", "source", "slice", "evaluation_set")}}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -166,16 +217,25 @@ def main():
     merge = sub.add_parser("reconcile")
     for name in ("items", "a", "b", "meta-a", "meta-b", "adjudications", "out"):
         merge.add_argument(f"--{name}", type=Path, required=True)
+    single = sub.add_parser("self-review")
+    for name in ("items", "a", "reviewed", "meta", "out"):
+        single.add_argument(f"--{name}", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "packet":
         write_packet(load_jsonl(args.items), args.out)
         print(f"Blind query packet written to {args.out}; no annotation pass has been completed.")
         return
-    rows, report = reconcile(load_jsonl(args.items), load_jsonl(args.a), load_jsonl(args.b),
-        json.loads(args.meta_a.read_text(encoding="utf-8-sig")),
-        json.loads(args.meta_b.read_text(encoding="utf-8-sig")), load_jsonl(args.adjudications))
+    if args.command == "self-review":
+        rows, report = self_review(load_jsonl(args.items), load_jsonl(args.a), load_jsonl(args.reviewed),
+                                  json.loads(args.meta.read_text(encoding="utf-8-sig")))
+        input_names = ("items", "a", "reviewed", "meta")
+    else:
+        rows, report = reconcile(load_jsonl(args.items), load_jsonl(args.a), load_jsonl(args.b),
+            json.loads(args.meta_a.read_text(encoding="utf-8-sig")),
+            json.loads(args.meta_b.read_text(encoding="utf-8-sig")), load_jsonl(args.adjudications))
+        input_names = ("items", "a", "b", "meta_a", "meta_b", "adjudications")
     report["input_sha256"] = {name: hashlib.sha256(getattr(args, name).read_bytes()).hexdigest()
-                              for name in ("items", "a", "b", "meta_a", "meta_b", "adjudications")}
+                              for name in input_names}
     args.out.mkdir(parents=True, exist_ok=True)
     for group in ("en", "hi", "ta", "xsport"):
         selected = [row for row in rows if (row["evaluation_set"] == "xsport" if group == "xsport"

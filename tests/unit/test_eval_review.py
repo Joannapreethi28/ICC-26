@@ -91,3 +91,38 @@ def test_duplicate_ids_and_extra_adjudication_cannot_silently_overwrite():
     with pytest.raises(ValueError, match="Unexpected adjudication"):
         review.reconcile([item()], [label()], [label()], metadata("gpt"), metadata("claude"),
                          [{"id": "fixture-1", "chosen": label(), "reason": "No disagreement existed"}])
+
+
+def self_metadata():
+    return {"model": "fixture-model", "model_family": "GPT", "run_date": "2026-10-03",
+            "review_method": "same_agent_self_review", "seen_training_data": False,
+            "prior_labels_visible": True, "independent": False}
+
+
+def test_self_review_never_claims_two_annotators_agreed():
+    checked = label() | {"review_note": "Rechecked the subject and category wording."}
+    rows, report = review.self_review([item()], [label()], [checked], self_metadata())
+    assert rows[0]["adjudicated"] == ""
+    assert "review_method=same_agent_self_review" in rows[0]["notes"]
+    assert report["reviewers"] == 1
+    assert report["independent"] is False
+    assert "agreements" not in report
+
+
+def test_self_review_records_actual_corrections_without_inter_annotator_adjudication():
+    checked = label("women") | {"review_note": "Corrected a feminine reference missed in the first pass."}
+    rows, report = review.self_review([item()], [label()], [checked], self_metadata())
+    assert rows[0]["gender_signal"] == "women"
+    assert rows[0]["adjudicated"] == ""
+    assert report["corrections"][0]["fields"] == ["gender_signal", "expected_decision"]
+    assert report["corrections"][0]["reason"] == checked["review_note"]
+
+
+def test_self_review_requires_a_complete_review_and_honest_metadata():
+    with pytest.raises(ValueError, match="missing"):
+        review.self_review([item()], [label()], [], self_metadata())
+    with pytest.raises(ValueError, match="review_note"):
+        review.self_review([item()], [label()], [label()], self_metadata())
+    checked = label() | {"review_note": "Checked."}
+    with pytest.raises(ValueError, match="independent"):
+        review.self_review([item()], [label()], [checked], self_metadata() | {"independent": True})

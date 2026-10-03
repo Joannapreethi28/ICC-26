@@ -56,7 +56,7 @@ def build(seeds=SEEDS, golden=GOLDEN, output=OUT):
                      "women_answer": json.dumps(answers["women"], ensure_ascii=False, sort_keys=True) if intent else "",
                      "men_answer": json.dumps(answers["men"], ensure_ascii=False, sort_keys=True) if intent else "",
                      "data_timestamp": "2026-10-03", "ground_truth_source": json.dumps(urls),
-                     "notes": "DRAFT: design labels await independent annotation. Snapshot date is not a fresh source verification; per-fact as_of and verification caveats are retained. Both truth rows are stored; score only the requested category.",
+                     "notes": "DRAFT: design labels await semantic self-review. Snapshot date is not a fresh source verification; per-fact as_of and verification caveats are retained. Both truth rows are stored; score only the requested category.",
                      "intent_id": intent, "scoring_set": scoring_set, "support": seed["support"],
                      "source": seed["source"], "annotation_status": "unreviewed", "golden_sha256": digest})
     output.parent.mkdir(parents=True, exist_ok=True)

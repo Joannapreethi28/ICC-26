@@ -139,7 +139,14 @@ assuming defaults are identical between installed model versions.
 
 ## Review and reporting
 
-Two independent annotation passes are required before freezing the question labels.
+Amendment before results, 3 October 2026: Joanna selected Astra as both annotator
+and reviewer. Before freeze, every question requires a documented semantic
+self-review. Preserve the first pass, final labels and correction reasons. Report
+one reviewer, `review_method=same_agent_self_review` and blank `adjudicated` for
+these rows. No independent inter-annotator agreement rate can be computed. The
+same model authored the hard cases and may repeat its own mistakes during review;
+do not claim independent, human or native-speaker validation from that process.
+This supersedes the earlier two-family question-annotation requirement.
 Answer-scoring instructions are fixed here before outputs exist. Follow the existing
 protocol's human review of at least 20% of scored answers plus borderline cases;
 record actual agreement and reviewer counts. Never invent completed human review.

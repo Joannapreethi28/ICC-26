@@ -1,0 +1,52 @@
+{
+  "status": "SELF-REVIEWED DRAFT — NOT FROZEN",
+  "items": 150,
+  "review_method": "same_agent_self_review",
+  "reviewers": 1,
+  "independent": false,
+  "metadata": {
+    "model": "GPT-6 (Codex development agent)",
+    "model_family": "GPT",
+    "run_date": "2026-10-03",
+    "review_method": "same_agent_self_review",
+    "seen_training_data": false,
+    "prior_labels_visible": true,
+    "independent": false,
+    "items": 150,
+    "scope": "Each original generated query was read alongside its labels and checked against the rubric. Original labels retained; no second annotator or human review claimed.",
+    "instruction": "Joanna selected Astra as reviewer on 2026-10-03."
+  },
+  "corrections": [],
+  "limitation": "The author reviewed its own labels and may repeat its mistakes. No independent agreement or human review is claimed.",
+  "counts": {
+    "lang": {
+      "en": 50,
+      "hi": 50,
+      "ta": 50
+    },
+    "source": {
+      "heldout_gen": 150
+    },
+    "slice": {
+      "injection": 36,
+      "typo": 10,
+      "grammatical_gender": 13,
+      "explicit": 16,
+      "plain": 7,
+      "surname": 17,
+      "mixed_gender": 23,
+      "control_insensitive": 6,
+      "unsupported": 6,
+      "romanised": 16
+    },
+    "evaluation_set": {
+      "nlu": 150
+    }
+  },
+  "input_sha256": {
+    "items": "9d09bb96e70283adc5e3951870cc88c838afd7c4a08fc8e548bba84625608552",
+    "a": "821fb0c42e71b7daff74ee0754854a085caa20c0ecc7387d06316177ff1139c5",
+    "reviewed": "3a944fba9940b15817771994f2033e79ede5938e19b466a747025e0ab5abfc44",
+    "meta": "e0e4bb99f9793b6ec9eb98d80410f990fbf0b465c28f3c1a7a4e53a3cb78f8a9"
+  }
+}

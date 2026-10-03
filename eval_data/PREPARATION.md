@@ -8,8 +8,11 @@ Jabin must respect the firewall in `OWNERS.md` before opening this directory.
 
 - 150 generated hard-case candidates: 50 English, 50 Hindi, 50 Tamil. They are
   designed model-authored examples, not real user queries or native-speaker data.
-- Annotator A has semantically labelled those 150 items. The annotations have
-  passed schema validation. No B review or adjudication has occurred.
+- Astra annotated and then semantically rechecked all 150 generated items under
+  Joanna's selected same-agent method. All original labels were retained; per-item
+  review notes, original/reviewed annotations and input hashes are recorded.
+  This is not independent agreement or human review. The resulting CSVs remain
+  in `preparation/self_reviewed_heldout/`, not the final frozen test sets.
 - 120 English benchmark draft questions: 100 neutral paraphrases across 25
   golden intents and 20 controls/unsupported/ambiguous cases. Golden answer fields
   copy the source CSV rows exactly, including evidence limitations and dates.
@@ -24,11 +27,13 @@ Jabin must respect the firewall in `OWNERS.md` before opening this directory.
 |---|---|
 | `tools/fetch_sources.py` | Download official source parquet under a 900 MiB ceiling; preserve checksums, row references, spelling and duplicate references. Keyword retrieval produces candidates, never labels. |
 | `preparation/heldout_candidates.jsonl` | Model-generated difficult queries with source and generator provenance. |
-| `annotations/heldout_a.jsonl` and `.meta.json` | Actual first annotation pass and declared model/context metadata. Do not show these to B. |
-| `preparation/blind_heldout/` | Query-only packet, rubric and closed vocabulary for the independent reviewer. |
+| `annotations/heldout_a.jsonl` and `.meta.json` | Original annotation pass and declared model/context metadata, retained for comparison. |
+| `annotations/heldout_self_review.jsonl` and `.meta.json` | Actual same-agent review notes and process metadata. |
+| `preparation/self_reviewed_heldout/` | 150 reviewed generated rows as draft CSVs, with blank adjudication values and a correction/provenance manifest. |
+| `preparation/blind_heldout/` | Existing query-only packet and vocabulary; using this does not make same-session self-review blind. |
 | `ANNOTATION_RUBRIC.md` | Semantic labelling instructions, planned support scope and disagreement rules. |
-| `tools/review.py` | Export allowlisted blind packets; reject missing/duplicate labels, invalid contracts, same declared model families, contaminated review declarations and unresolved disagreements. It does not automatically prove independence or freeze data. |
-| `preparation/benchmark_seeds.jsonl` | Designed English prompts; proposed interpretations still require independent annotation. |
+| `tools/review.py` | Validate the selected self-review method and log corrections without false agreement claims. The original dual-review validator is retained separately. Neither route automatically freezes data. |
+| `preparation/benchmark_seeds.jsonl` | Designed English prompts; proposed interpretations still require semantic review. |
 | `tools/build_benchmark.py` | Rebuild the unreviewed benchmark draft and exact golden answer key. |
 | `preparation/benchmark_en_draft.csv` and `.manifest.json` | English draft with source hashes, counts and source-evidence caveats. |
 | `PREREGISTRATION.md` | Draft prompts, settings, scoring denominators and bootstrap design; no results. |
@@ -54,20 +59,29 @@ Official references:
 Project source credits: NQ-open CC BY-SA 3.0; Aya Apache-2.0. Preserve attribution
 in the final benchmark/data card and record the actual source file hashes.
 
-## Independent second review
+## Review method chosen by Joanna
 
-Use a different model family in a fresh context that has never seen Jabin's
-training examples or A's labels. Access is still awaiting Joanna's answer.
-Give that reviewer only `preparation/blind_heldout/` for the generated set.
-Record the exact available model label and actual run date; retain the raw reply.
-Fresh GPT chats still belong to the same family and do not satisfy the requirement.
-Do not ask Jabin's training agent to perform this review.
+On 3 October 2026 Joanna instructed Astra to be the reviewer and declined another
+Claude chat. This supersedes the earlier two-family requirement; the decision and
+the shared CSV clarification are recorded in `document/handoffs.md`. Do not ask
+Joanna for a second reviewer again unless she changes this instruction.
 
-The metadata JSON must identify `model`, `model_family`, ISO `run_date`, and actual
-Boolean `seen_training_data` / `seen_other_annotator_labels`. These are attestations,
-not proof established by the script. Disagreements require an explicit chosen
-annotation and a specific reason in a separate JSONL file; no missing B entries
-may be copied from A. Reconciliation writes drafts and never a `FROZEN.md`.
+Astra semantically rechecks every question and label against the rubric, records
+a `review_note` per item, preserves the first pass and explains corrections.
+The same session has seen its prior labels, so a query-only packet does not make
+this blind. No training-data generator or project NLU classifier labels the data.
+
+Use `tools/review.py self-review` with `--items`, `--a`, `--reviewed`, `--meta` and
+`--out`. Metadata identifies `model`, `model_family`, ISO `run_date`,
+`review_method=same_agent_self_review`, `prior_labels_visible=true`,
+`seen_training_data=false` and `independent=false`. These are honest process
+declarations; the validator cannot independently certify them. Every reviewed
+annotation needs a reason. Output uses blank `adjudicated` (not applicable),
+method-identifying notes and a manifest with actual corrections. It stays a draft
+until all remaining source, translation and freeze requirements are satisfied.
+
+One model can repeat its own mistakes, particularly on questions it authored.
+Report one reviewer and no independent agreement rate or completed human review.
 
 ## Translation requirements still pending
 
@@ -88,9 +102,9 @@ raw output and translation-review notes.
 
 ## Remaining work before K-P2 DONE
 
-Select real NQ/Aya queries semantically and log exclusions; finish both annotation
-passes for all sets, including the benchmark; run actual IndicTrans2 translations;
-adjudicate disagreements; publish the required CSVs and provenance; validate counts,
+Select real NQ/Aya queries semantically and log exclusions; finish annotation and
+self-review for all sets, including the benchmark; run actual IndicTrans2
+translations; record corrections; publish the required CSVs and provenance; validate counts,
 hash and freeze all final inputs before any evaluation output is inspected. Post
 the final handoff and push only with an accurate completion status. No measured
 model accuracy or benchmark outcome exists yet.

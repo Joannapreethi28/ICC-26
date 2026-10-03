@@ -1,0 +1,12 @@
+{
+  "model": "GPT-6 (Codex development agent)",
+  "model_family": "GPT",
+  "run_date": "2026-10-03",
+  "review_method": "same_agent_self_review",
+  "seen_training_data": false,
+  "prior_labels_visible": true,
+  "independent": false,
+  "items": 150,
+  "scope": "Each original generated query was read alongside its labels and checked against the rubric. Original labels retained; no second annotator or human review claimed.",
+  "instruction": "Joanna selected Astra as reviewer on 2026-10-03."
+}
