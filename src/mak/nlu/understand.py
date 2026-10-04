@@ -83,6 +83,10 @@ def merge(parse: Parse, pred: dict[str, tuple[str, float]], policy: str | None =
     rules_found_stat = parse.topic == "cricket_stat" and parse.family not in (None, "other_stat")
     if (policy or MERGE_POLICY) == "v2":
         rules_found_stat = False
+    if parse.topic == "other_sport_stat":
+        # Explicit other-sport words (goals, football, tennis...) are high precision: Laya may not turn them into cricket.
+        trace.append("laya: rules found another sport; topic kept")
+        return replace(parse, gender_signal=signal, gender_conf=conf, trace=tuple(trace))
     if not rules_found_stat:
         t, tp = pred["topic"]
         if tp >= LABEL_MIN_PROB:

@@ -61,3 +61,12 @@ import pytest  # noqa: E402
 def test_junk_input_never_intervenes_even_with_laya_on(text):
     p = u.understand(text, use_laya=True)
     assert p.topic == "non_sport" and p.family is None and p.gender_signal == "none"
+
+
+def test_other_sport_from_rules_is_not_turned_into_cricket():
+    p = rules_parse("Who has the most World Cup goals?", "en")
+    assert p.topic == "other_sport_stat"
+    pred = {"gender_signal": ("none", 0.95), "topic": ("cricket_stat", 0.95), "family": ("world_cup_record", 0.9),
+            "format": ("unspecified", 0.9), "stat": ("most_runs", 0.9)}
+    m = u.merge(p, pred)
+    assert m.topic == "other_sport_stat" and m.family is None

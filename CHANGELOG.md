@@ -92,3 +92,5 @@
 =======
 - 2026-10-04 Efanio weights instructions added (efanio_split.md §2b + handoff): pip laya==0.3.24 + scripts/get_laya_weights.py from the kept Release.
 >>>>>>> aef8907c152506018638829d076eb4bb2aa62326
+
+- 2026-10-04 reviewed Efanio Task 1 (API/demo/MCP). Fixed: Laya could turn explicit other-sport questions (World Cup goals) into cricket; understand.merge keeps rules' other_sport_stat (post-hoc behaviour change after E3's single run; disclosed). Requested from Efanio: revert injection-first order in decide() (it intervenes on injected non-sport questions). 481 tests pass.

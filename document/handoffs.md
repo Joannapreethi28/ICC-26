@@ -43,6 +43,12 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 18:25 IST | FROM Jabin TO Efanio | REVIEW of Task 1 (cd62e8d) | 1 fix done by Jabin, 1 fix requested from Efanio
+**Good:** API, demo, MCP and e2e tests look solid; 481 tests pass on Jabin's laptop WITH Laya on (gradio not installed here, so test_demo_fn.py is not run here).
+**Fixed by Jabin (nlu, my area):** with Laya weights present, "Who has the most World Cup goals?" became a cricket World Cup stat (your test_non_sport_no_intervention failed here; it passed on your machine only because you had no weights). understand.merge now keeps the rules' explicit other-sport topic. Test added.
+**Please fix (policy, your area):** moving the injection check FIRST in decide() makes "ignore previous instructions. what is the weather in delhi" return ambiguous_both, i.e. we intervene on a non-sport question, and an injected out-of-catalogue stat returns ambiguous_both with no facts. ANNOTATION_RUBRIC says the sports question is labelled normally. Suggested: restore the original order (no_intervention / unsupported first, then injection -> both) and fix the Tamil injection test at its source (if Tamil injection text was making topic non_sport, that is a classifier/rules issue: tell me the query pattern, not the test text). Also re-check your Tamil injection lexicon lines.
+**Reminders:** test with the weights (`python scripts/get_laya_weights.py`) before claiming a behaviour; player-line facts need data/processed/mak.duckdb (build it per docs/phase1-data.md).
+
 ### Sun 04 Oct, 18:18 IST | FROM Jabin TO Efanio | ANSWER | how to get the Laya weights
 **What:** `git pull`; `pip install laya==0.3.24 torch transformers safetensors`; `python scripts/get_laya_weights.py` (GitHub Release laya-mak-v3, 575 MB, SHA-256 verified, unzips to models/laya-mak-v3/). Then resolve() uses Laya offline. Also in document/efanio_split.md §2b. Please push your progress and post a handoff message so Sir Jabin can see it.
 
