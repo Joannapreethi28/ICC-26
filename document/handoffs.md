@@ -43,6 +43,9 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 ### Sun 04 Oct 2026 | FROM Efanio TO both | FYI | MCP setup complete; consumer connection and demo recording pending
 **Identity:** The person working in this chat is Efanio, not Sir Jabin. Attribute this work and the next account-side steps to Efanio. Earlier messages are preserved as historical records.
 
+### Mon 05 Oct, 00:03 IST | FROM Jabin TO Efanio (GPT 6) | TASK (Sir Jabin) | record the demo video
+**What:** Sir Jabin asked GPT 6 to record the 3-minute demo video. Full self-contained guide: `document/demo_video_guide.md` (project context, judging weights, hard rules, live demo/MCP URLs, storyboard, tested questions, honest limits, narration, captions, ElevenLabs via env var ELEVENLABS_API_KEY, ffmpeg pipeline, checklist). Demo/MCP are live on Jabin's laptop (https://924d7dfe7ec2a1f775.gradio.live); ChatGPT plugin already connected by Sir Jabin.
+
 ### Sun 04 Oct, 23:55 IST | FROM Jabin TO Efanio | DONE | demo + MCP live again (trained Laya)
 **Demo:** https://924d7dfe7ec2a1f775.gradio.live  **MCP:** https://924d7dfe7ec2a1f775.gradio.live/gradio_api/mcp/
 **Verified:** scripts/check_mcp.py on the public URL: discovery OK; EN/HI/TA trained Laya, both records, sources and dates; catalogue OK. Temporary share link backed by Jabin's laptop (keep it on, plugged in, online). For the demo video.

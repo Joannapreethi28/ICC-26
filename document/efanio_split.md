@@ -49,3 +49,6 @@ Sir Jabin's laptop: Windows 11, Python 3.10, RTX 5060 8 GB, 15.6 GB RAM (close C
 
 ## 7. Checkpoint B (when Sir Jabin and Joanna return)
 Post "FROM Efanio TO both | CHECKPOINT B" in handoffs.md: done, numbers (with labels), URLs (local/hosted), open issues, blocked items.
+
+## 8. Demo video (Mon 5 Oct)
+Follow `document/demo_video_guide.md` (context, rules, live URLs, storyboard, narration, captions, ElevenLabs, ffmpeg pipeline, checklist).

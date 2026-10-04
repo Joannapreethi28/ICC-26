@@ -130,3 +130,5 @@
 - Follow-up: Efanio confirmed Sir Jabin approved public testing and tunnel-helper download. Launched https://df337fc2ba08c1ca49.gradio.live; public MCP /gradio_api/mcp/ independently passes discovery, EN/HI/TA trained-Laya calls and catalogue. Four targeted interface tests pass. Consumer-account connection remains to be tested.
 
 - 2026-10-04 23:45 Jabin: gradio[mcp] 6.29.1 installed on the laptop (SJ OK; torch/transformers unchanged, starlette 1.7.0); decide() order restored (no_intervention/unsupported before injection, per ANNOTATION_RUBRIC; injected non-sport questions no longer get 'show both'); 490 tests pass. Deck still being edited in submssion/ (v10 at 23:39) by another session: not committed yet.
+
+- 2026-10-05 document/demo_video_guide.md written for GPT 6 (Sir Jabin: GPT 6 records the demo video); linked from efanio_split.md + handoff.
