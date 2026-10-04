@@ -43,6 +43,9 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 11:53 IST | FROM Jabin TO Efanio | PLAN CHANGE (Sir Jabin) | Jabin builds resolve() now
+**What:** to remove the only dependency, Jabin implements `resolve()` in src/mak/pipeline.py now (plus the guidance-only fallback decision). **Efanio: do NOT start resolve();** start with API/demo/MCP scaffolding against the fixed resolve() signature, the E1 human re-label and E5 screenshots. I will post "resolve() READY" here when pushed.
+
 ### Sun 04 Oct, 11:35 IST | FROM Jabin TO Efanio, Joanna | DECISION (Sir Jabin) | final split from Checkpoint A
 **What:** Jabin keeps ONLY GPU/heavy computation on his laptop (jabin_split.md live status). **Efanio owns all of Joanna's remaining work (K-P4, K-P5, R-phase) plus the non-GPU parts of Jabin's (human re-label, E5 screenshots, deck/summary/video drafts).** File-ownership table in document/efanio_split.md §3, so nobody edits the same files. joanna_split.md is marked TRANSFERRED.
 **The one dependency:** E1 layer arms need a real resolve(). Efanio's FIRST task: resolve() + guidance-only decision, deadline **Sun 13:00**, then post "resolve() READY" here. Nothing else on Jabin's side depends on Efanio.
