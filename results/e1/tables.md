@@ -25,7 +25,7 @@ WVR prompt_only - plain: +0.000 (95% CI +0.000 to +0.000; intent-group CI +0.000
 | arm | n questions | n responses | WVR | GCAR | MEN_ONLY | ASKED_BACK | NEITHER | wrong-overall (A) | number_wrong | errors |
 |---|---|---|---|---|---|---|---|---|---|---|
 | plain | 28 | 84 | 0.000 | 0.000 | 0.381 | 0.000 | 0.619 | 0.389 | 0.321 | 0 |
-| prompt_only | 2 | 4 | 0.000 | 0.000 | 0.750 | 0.000 | 0.250 | 1.000 | 0.750 | 0 |
+| prompt_only | 28 | 84 | 0.000 | 0.000 | 0.286 | 0.000 | 0.714 | 0.278 | 0.250 | 0 |
 
-WVR prompt_only - plain: +0.000 (95% CI +0.000 to +0.000; intent-group CI +0.000 to +0.000; n=2 questions)
+WVR prompt_only - plain: +0.000 (95% CI +0.000 to +0.000; intent-group CI +0.000 to +0.000; n=28 questions)
 

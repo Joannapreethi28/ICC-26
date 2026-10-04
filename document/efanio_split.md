@@ -14,7 +14,8 @@ Address Sir Jabin as "Sir Jabin". Build freeze: **Sun 4 Oct 20:00 IST**. Submiss
 ## 2. State at Checkpoint A
 - **Classifier (Jabin, done):** Laya v3 shipped (`models/laya-mak-v3`, `config.USE_LAYA = True`, `GENDER_THRESHOLD = 0.85`, merge policy v2). Official held-out run = v2 models (`results/classifier/test/`, locked). v3/v4 numbers are post-hoc (test-informed) and always reported next to the official run. Gate G4 (gender >= 98%/language) is NOT met; say so.
 - **Weights:** on Sir Jabin's laptop only (`models/`, not in git). A GitHub Release `laya-mak-v3` exists; **Sir Jabin decides about publishing at the end. Do not publish, create releases, or post anything public.**
-- **E1 proof:** plain + prompt_only arms done on Llama 3.1 8B (Ollama, laptop only); first-pass automatic labels in `results/e1/tables.md`. **layer + layer_text arms NOT run** (need Joanna's real `resolve()`).
+- **ONNX:** int8 export 318 MB, 96.5% agreement, 51 ms/row CPU (results/onnx_check.json); optional for hosting, needs a wrapper + accuracy check.
+- **E1 proof:** plain + prompt_only arms done (complete, 564 + 564) on Llama 3.1 8B (Ollama, laptop only); first-pass automatic labels in `results/e1/tables.md`. **layer + layer_text arms NOT run** (need Joanna's real `resolve()`).
 - **Joanna's track:** K-P3 (facts, policy, templates) done; K-P4 `resolve()`/API/demo/MCP and K-P5 hosting are hers up to her checkpoint (see her latest handoff).
 
 ## 3. Efanio's tasks after Checkpoint A (in order)

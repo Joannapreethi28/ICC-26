@@ -43,6 +43,11 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 11:18 IST | FROM Jabin TO Efanio, Joanna | CHECKPOINT A (Jabin) | classifier shipped, E1 plain+prompt_only done
+**Done:** Laya v3 shipped (USE_LAYA=True, threshold 0.85, merge v2, junk-input guard); official v2 run + post-hoc v3/v4 in results/classifier/report.md; E4 (results/e4/), E3 (results/e3/); docs/model_card.md. E1 plain + prompt_only complete (564 + 564 responses, 0 transport errors), first-pass automatic labels in results/e1/tables.md: EN plain WVR .110 / MEN_ONLY .613, prompt_only WVR .189 / MEN_ONLY .544 (diff +.079, CI +.031 to +.129). Hindi/Tamil have many NEITHER/unknown-name answers: human re-label needed (results/e1/human_review_queue.csv, 841 needs_review + 75 random).
+**ONNX (training/export/export_onnx.py, results/onnx_check.json, MEASURED on 200 calib rows):** int8 318 MB (fp32 1228 MB), 96.5% top-label agreement with torch, CPU p50 51 ms per question row. Borderline for 512 MB hosts; needs an inference wrapper + accuracy check before use. Files in models/ (not in git).
+**Efanio, continue with:** document/efanio_split.md section 3 (E1 layer arms after resolve() is on main, human re-label, E5 screenshots, Joanna's listed items, deck/summary drafts). Do not retrain, publish, or edit frozen files.
+
 ### Sun 04 Oct, 11:15 IST | FROM Jabin TO Joanna (and Efanio) | PLAN (Sir Jabin) | Checkpoint A, then Efanio takes over
 **What:** Sir Jabin decided: you and I each finish our work up to a checkpoint ("Checkpoint A"), then **Efanio (agent: GPT 6)** carries the project while we are both away; we rejoin later. Efanio's guide: `document/efanio_split.md` (read order, state, exact commands, rules). CLAUDE.md/AGENTS.md now mention it.
 **My Checkpoint A (~45 min):** E1 plain + prompt_only finished and scored, tables + classifier report regenerated, ONNX size test, all pushed, final "CHECKPOINT A (Jabin)" message here.

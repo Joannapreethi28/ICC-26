@@ -60,3 +60,32 @@ $ -m mak.eval.run_e1 --arms plain,prompt_only
 plain: 25 records, 0 transport errors, 100s
 plain: 50 records, 0 transport errors, 180s
 plain: 75 records, 0 transport errors, 261s
+plain: 100 records, 0 transport errors, 355s
+plain: 125 records, 0 transport errors, 459s
+plain: 150 records, 0 transport errors, 546s
+plain: 175 records, 0 transport errors, 635s
+plain: 200 records, 0 transport errors, 754s
+plain DONE: 206 new records, 0 transport errors, 795s
+prompt_only: 25 records, 0 transport errors, 92s
+prompt_only: 50 records, 0 transport errors, 187s
+prompt_only: 75 records, 0 transport errors, 294s
+prompt_only: 100 records, 0 transport errors, 389s
+prompt_only: 125 records, 0 transport errors, 492s
+prompt_only: 150 records, 0 transport errors, 600s
+prompt_only: 175 records, 0 transport errors, 667s
+prompt_only: 200 records, 0 transport errors, 744s
+prompt_only: 225 records, 0 transport errors, 827s
+prompt_only: 250 records, 0 transport errors, 923s
+prompt_only: 275 records, 0 transport errors, 1015s
+prompt_only: 300 records, 0 transport errors, 1082s
+prompt_only: 325 records, 0 transport errors, 1166s
+prompt_only: 350 records, 0 transport errors, 1257s
+prompt_only: 375 records, 0 transport errors, 1390s
+prompt_only: 400 records, 0 transport errors, 1482s
+prompt_only: 425 records, 0 transport errors, 1577s
+prompt_only: 450 records, 0 transport errors, 1674s
+prompt_only: 475 records, 0 transport errors, 1861s
+prompt_only: 500 records, 0 transport errors, 2022s
+prompt_only: 525 records, 0 transport errors, 2164s
+prompt_only: 550 records, 0 transport errors, 2346s
+prompt_only DONE: 564 new records, 0 transport errors, 2442s

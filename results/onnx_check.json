@@ -1,0 +1,8 @@
+{
+ "model": "C:\\Users\\Jabin M\\OneDrive\\Desktop\\ICC'26\\models\\laya-mak-v3",
+ "fp32_mb": 1227.9,
+ "int8_mb": 318.1,
+ "int8_top_label_agreement_vs_torch": 0.965,
+ "int8_cpu_ms_per_question_row_p50": 50.95885001355782,
+ "int8_cpu_ms_p95": 76.35432000388391
+}

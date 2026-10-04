@@ -65,3 +65,5 @@
 - 2026-10-04 E1 scoring: src/mak/eval/e1_tables.py (WVR/GCAR/MEN_ONLY/ASKED_BACK/NEITHER/wrong-overall/number_wrong per arm+language on neutral A+B; paired bootstrap + intent-group sensitivity; human_review_queue.csv = needs_review + random 20%); score.label now matches hi/ta names (data/i18n) and any registry player (data/registry/people.csv). First-pass EN (automatic, NOT final): plain WVR .110 / MEN_ONLY .613; prompt_only WVR .189 / MEN_ONLY .544; diff +.079 (CI +.031 to +.129). E1 prompt_only Tamil still running.
 
 - 2026-10-04 ~11:20 SJ: Checkpoint A then Efanio (GPT 6) takes over; document/efanio_split.md written; CLAUDE.md/AGENTS.md team split mentions Efanio; handoff to Joanna asking for her Checkpoint A message. SJ: no publishing until the end.
+
+- 2026-10-04 CHECKPOINT A (Jabin): E1 plain + prompt_only complete and scored (first pass); ONNX int8 export 318 MB / 96.5% agreement / 51 ms CPU (training/export/export_onnx.py, results/onnx_check.json). Efanio continues per document/efanio_split.md.
