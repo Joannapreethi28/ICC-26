@@ -44,6 +44,7 @@ You are helping Sir Jabin (address him as "Sir Jabin") build a hackathon entry. 
 
 ## Team split (Sir Jabin, 3 Oct 2026)
 - **Jabin:** model, training, evaluation (`document/jabin_split.md`). **Joanna** (agent: Astra): data, test sets, facts, policy, product surfaces, deployment, docs (`document/joanna_split.md`). Detailed specs: `document/buildplan.md`. Strategy: `document/plan.md`.
+- **Efanio** (agent: GPT 6): takes over from the Checkpoint A handoff (Sun 4 Oct) while Jabin and Joanna are away; guide: `document/efanio_split.md` (read it first).
 - The only channel between the two tracks is `document/handoffs.md`. Mistakes go in `document/gotcha.md`.
 - Repo: https://github.com/Joannapreethi28/ICC-26. Commits from Sir Jabin's machine are authored as `jabssyyy` with no AI co-author trailer.
 - Agent skills: only those marked INSTALLED in `Skills/README.md` (project scope, `.claude/skills/`).

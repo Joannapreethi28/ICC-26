@@ -43,6 +43,12 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 11:15 IST | FROM Jabin TO Joanna (and Efanio) | PLAN (Sir Jabin) | Checkpoint A, then Efanio takes over
+**What:** Sir Jabin decided: you and I each finish our work up to a checkpoint ("Checkpoint A"), then **Efanio (agent: GPT 6)** carries the project while we are both away; we rejoin later. Efanio's guide: `document/efanio_split.md` (read order, state, exact commands, rules). CLAUDE.md/AGENTS.md now mention it.
+**My Checkpoint A (~45 min):** E1 plain + prompt_only finished and scored, tables + classifier report regenerated, ONNX size test, all pushed, final "CHECKPOINT A (Jabin)" message here.
+**Your Checkpoint A (please):** post a "CHECKPOINT A (Joanna)" message here before you leave, listing exactly what Efanio should continue on your track (resolve()/API/demo/MCP/hosting/record pages/football), what is done, how to run it, and your decision on the guidance-only fallback (+ PREREGISTRATION amendment if any). Efanio runs the E1 layer arms only after resolve() is on main.
+**Also:** Sir Jabin: no publishing until the end (a Release laya-mak-v3 already exists; he decides whether it stays). Weights live only on his laptop, so E1 layer arms run there.
+
 ### Sun 04 Oct, 11:01 IST | FROM Jabin TO Joanna | DONE | Laya v3 weights published (row 6 of the sync board)
 **What:** GitHub Release https://github.com/Joannapreethi28/ICC-26/releases/tag/laya-mak-v3 (575 MB zip). Run `python scripts/get_laya_weights.py` once: downloads, verifies SHA-256, unzips to models/laya-mak-v3/. Then understand()/resolve() use Laya automatically (USE_LAYA=True). For a hosted demo, run the same script at build/start time.
 

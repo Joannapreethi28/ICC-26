@@ -10,7 +10,9 @@ Owner: Sir Jabin, with Claude Code. Partner track: `joanna_split.md` (Joanna + A
 
 ---
 
-## LIVE STATUS + TIMELINE (updated Sun 4 Oct 10:05 IST; newest state only)
+## LIVE STATUS + TIMELINE (updated Sun 4 Oct 11:20 IST; newest state only)
+
+**Handover:** after Checkpoint A, Efanio (GPT 6) continues using `document/efanio_split.md`. Since 10:05: Laya v3 shipped (USE_LAYA on), junk-input guard, report + model card, E1 plain/prompt_only scored (first pass).
 
 Done: J-P2 data (v1-v4, frozen in training/DATA_FROZEN.md); Laya v1/v2, xlm-r v2, Qwen LoRA v2 trained; OFFICIAL single test run on v2 models (results/classifier/test/, TEST_RUN.lock); model choice = Laya (SJ: smaller/cheaper, fits CLAUDE.md); post-hoc v3 + rules aligned with the rubric (IPL etc. not a men's cue); E4 + E3 built and run; GENDER_THRESHOLD 0.85 (calib grid); MERGE_POLICY v2; E1 plain 358/564.
 Running (auto, training/after_v4.py): Laya v4 training -> threshold fit -> post-hoc v4 -> E4 v4 -> choose v3/v4 (rule in docs/05) -> E1 plain + prompt_only.
