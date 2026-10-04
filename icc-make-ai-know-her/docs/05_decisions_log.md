@@ -74,3 +74,6 @@ Neither SJ nor Joanna is available before Sun 10:30. SJ chose to run the single 
 
 ### 'Guidance-only' fallback (4 Oct, SJ agreed in principle; Joanna implements/decides naming)
 Gender-relevant cricket stat questions outside the catalogue get the gender decision + instruction with no facts (results=[], fallback=guidance_only) instead of a bare 'unsupported'. Verified facts stay the core value. Requires a dated PREREGISTRATION amendment before layer-arm outputs exist. R-phase: expand coverage via Cricsheet-computed stats.
+
+### GENDER_THRESHOLD back to 0.85 (4 Oct, Laya v3)
+Calibration grid for v3 (rows without rules cue/injection): accepted gender accuracy 100% for every t in 0.50-0.95 in all languages; accept rate ~12-13%; 0 accepted above 0.95 (v3 confidences top out ~0.95-0.96). 0.50 rejected (breaks fail-safe tests, non-negotiable 7). 0.85 = original contract value, same calibration outcome as 0.90, keeps Joanna's policy tests green (the overnight 0.98 had broken 4 of them and disabled Laya's gender). Chosen on calibration data only.

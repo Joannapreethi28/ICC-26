@@ -11,7 +11,7 @@ TESTSET_DIR = ROOT / "testsets"
 RESULTS_DIR = ROOT / "results"
 
 # Gender confidence below this -> treat as neutral -> show both (fail-safe). Re-fit by Jabin in J-P3.
-GENDER_THRESHOLD = 0.98
+GENDER_THRESHOLD = 0.85
 # Injection markers in a query -> show both.
 INJECTION_FAILSAFE = True
 
