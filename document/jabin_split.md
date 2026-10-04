@@ -10,27 +10,22 @@ Owner: Sir Jabin, with Claude Code. Partner track: `joanna_split.md` (Joanna + A
 
 ---
 
-## LIVE STATUS + TIMELINE (updated Sat 3 Oct 21:50 IST; update this block, newest state only)
+## LIVE STATUS + TIMELINE (updated Sun 4 Oct 10:05 IST; newest state only)
 
-Ahead of the original plan: J-P3 planned Sun 00:00-02:00 -> v1 done Sat evening, v2 (extra, SJ decision) done ~Sat 23:00; J-P4/J-P5 code (classifier_eval, LayaHead+merge, evaluate_classifiers runner, E1 arms/score/stats) built Sat night, ~10 h early. Only the RUNS remain.
+Done: J-P2 data (v1-v4, frozen in training/DATA_FROZEN.md); Laya v1/v2, xlm-r v2, Qwen LoRA v2 trained; OFFICIAL single test run on v2 models (results/classifier/test/, TEST_RUN.lock); model choice = Laya (SJ: smaller/cheaper, fits CLAUDE.md); post-hoc v3 + rules aligned with the rubric (IPL etc. not a men's cue); E4 + E3 built and run; GENDER_THRESHOLD 0.85 (calib grid); MERGE_POLICY v2; E1 plain 358/564.
+Running (auto, training/after_v4.py): Laya v4 training -> threshold fit -> post-hoc v4 -> E4 v4 -> choose v3/v4 (rule in docs/05) -> E1 plain + prompt_only.
 
-| # | To do | Est. | Blocked on |
-|---|---|---|---|
-| 1 | Train Laya v2 -> xlm-r v2 -> Qwen LoRA v2 (chain running, logs results/train_*_v2.log) | ~1 h GPU | - |
-| 2 | Fit GENDER_THRESHOLD (training/calibrate/fit_temperature.py) + merge v1 vs v2 dev ablation (evaluate_classifiers.py --mode dev) | ~45 min | 1 |
-| 3 | SINGLE test run, all arms (evaluate_classifiers.py --mode test --i-confirm-single-run) | ~30 min | 2 + Joanna re-runs her overlap audit vs v2 (handoff 3 Oct 22:xx) |
-| 4 | results/classifier/report.md, model choice (disclose selection use), CONTRACT CHANGE: GENDER_THRESHOLD, USE_LAYA | ~1 h | 3 |
-| 5 | Push weights to HF Hub, set LAYA_MODEL_ID | ~30 min | D1 (HF account, SJ) |
-| 6 | ONNX + CPU p50/p95; docs/model_card.md | ~1.5 h | 4 |
-| 7 | E1 plain + prompt_only arms (Llama 3.1 8B via Ollama) | ~2-4 h GPU (estimate) | Llama pull (running, slow) |
-| 8 | E1 layer + layer_text arms | ~1.5-2 h GPU | Joanna's real resolve() (due Sun 10:30) |
-| 9 | Human re-label 20% + needs_review E1 answers | ~1 h | people |
-| 10 | E3 xsport + E4 end-to-end decisions | ~1 h | 4, Joanna's policy |
-| 11 | Demo hero answer + consumer-app screenshots | ~30 min | later (SJ) |
+| # | To do | Blocked on |
+|---|---|---|
+| 1 | Flip USE_LAYA + CONTRACT CHANGE (chosen model path) | model_choice.json |
+| 2 | E1 layer + layer_text arms | Joanna's resolve() (+ guidance-only decision, PREREGISTRATION amendment) |
+| 3 | results/classifier/report.md (official v2 + post-hoc v3/v4, label-convention notes, selection disclosure) | 1 |
+| 4 | ONNX int8 export + size/latency for 512 MB hosts; weights as GitHub Release (no HF, SJ) | 1 |
+| 5 | Human re-label 20% of E1 answers | people |
+| 6 | docs/model_card.md, limits | 3 |
+| 7 | R-phase: Cricsheet-computed coverage (fastest century...), Gemini screenshots | SJ / Joanna |
 
-Timeline: Sat 22-24 -> 1, 2, start 7 overnight (laptop on + plugged in). Sun 08:00-10:30 -> 3, 4, 5. Sun 10:30-13:30 -> 8, 6. Sun 13:30-15:00 -> 10, 9, tables; whole tool done 15:00. Sun 15:00-20:00 refinement. Remaining GPU ~5-7 h, mostly overnight.
-Risks: slow Llama download; Joanna dependencies (audit re-run, resolve()); D1 account.
-
+Targets: tool done ~14:00, build freeze 20:00. Risks: RAM (close browser during GPU jobs), resolve() timing.
 ## How we stay independent of each other
 
 | Interface | Owner | Fixed in Phase 0 as | Until the real one lands, the other side uses |

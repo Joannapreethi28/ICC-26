@@ -123,3 +123,6 @@ The Laya model page itself says "Downloads are not tracked for this model." So 0
 4. **Label conventions must match the product policy** (Hindi feminine 'वाली' = women). Mismatched labels look like model errors.
 5. **Lowercasing fixed ALL-CAPS gender misses** (cased tokenizer). Voice-assistant text (no punctuation, spoken numbers, native-script cricket words) now has its own synthetic dev slice; there is no real voice test set, so claims stay "synthetic voice-style".
 6. **Change one thing, measure, disclose.** v3 is test-informed (aggregate counts only); its test numbers are post-hoc and always shown next to the official v2 run.
+
+## Current model status (4 Oct 10:05)
+Shipping Laya (SJ). Official held-out run = v2 models (results/classifier/test/). Post-hoc (test-informed, disclosed): v3 (results/classifier/posthoc_v3*), v4 training now; choice rule in docs/05; final pick in results/calibration/model_choice.json. Settings: lowercase input, 2 epochs, label smoothing 0.05 (CE), temperatures per option-count bucket, GENDER_THRESHOLD 0.85, merge policy v2. Gate G4 (gender >= 98%/language) is NOT met on real queries (best post-hoc ~0.90-0.93); report honestly.
