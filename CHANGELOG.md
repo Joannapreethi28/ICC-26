@@ -1,5 +1,7 @@
 # CHANGELOG (build)
 
+- 2026-10-04: Efanio consolidated the trained-Laya MCP setup, temporary public URLs, prior verification, browser-access limits and proposed before/after video workflow in `document/handoffs.md`; corrected current-chat identity to Efanio and updated hosting sync status. ChatGPT/Gemini account connections and recording remain pending. Documentation only; no fresh runtime verification claimed.
+
 - 2026-10-04: Small demo presentation polish: styled the Full answer disclosure with readable typography and padding; added shaded source-table headers, alternating rows, roomier cells and unbroken snapshot dates. Existing layout and answer content retained. Python syntax and whitespace checks passed; live browser appearance not verified.
 
 - 2026-10-04 12:01 IST: merged the concurrent handoff additions through `2236f11`, preserving both histories. Updated current status: Jabin delivered resolve; Efanio continues API/demo/MCP and remaining integration. Upstream pipeline unchanged. 457 tests passed in 15.19s; 65 frozen hashes verified; headline smoke check returned both records with the local rules fallback (weights absent).
