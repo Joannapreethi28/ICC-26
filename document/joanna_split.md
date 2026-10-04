@@ -6,6 +6,9 @@ Owner: Joanna. Coding agent: **Astra**. Partner track: `jabin_split.md` (Sir Jab
 
 ---
 
+
+> **TRANSFERRED TO EFANIO (Sir Jabin, Sun 4 Oct 11:45 IST):** all remaining K-P4, K-P5 and R-phase tasks below are now owned by Efanio (GPT 6). Guide and ownership table: `document/efanio_split.md`. Joanna's completed work (K-P1..K-P3) stays as is.
+
 ## 0. Brief for Astra (read this section completely before doing anything)
 
 **What we are building.** "Make AI Know Her": when someone asks a cricket statistics question without saying men's or women's ("Who has the most T20I runs?"), AI assistants usually answer with the men's record only. Our tool detects that the question is gender-neutral and answers with BOTH records, each labelled, each with a source and an as-of date, in English, Hindi or Tamil. Explicit "women's" questions get only the women's answer, explicit "men's" only the men's, questions where gender does not matter ("How long is a cricket pitch?") get no intervention. Example answer:

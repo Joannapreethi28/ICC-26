@@ -67,3 +67,5 @@
 - 2026-10-04 ~11:20 SJ: Checkpoint A then Efanio (GPT 6) takes over; document/efanio_split.md written; CLAUDE.md/AGENTS.md team split mentions Efanio; handoff to Joanna asking for her Checkpoint A message. SJ: no publishing until the end.
 
 - 2026-10-04 CHECKPOINT A (Jabin): E1 plain + prompt_only complete and scored (first pass); ONNX int8 export 318 MB / 96.5% agreement / 51 ms CPU (training/export/export_onnx.py, results/onnx_check.json). Efanio continues per document/efanio_split.md.
+
+- 2026-10-04 ~11:45 SJ final split: Jabin = GPU/heavy only; Efanio = all Joanna remaining + non-GPU Jabin items. efanio_split.md rewritten (ownership table, resolve() first by 13:00), jabin_split.md live status rewritten as session start point, joanna_split.md marked TRANSFERRED, handoff + docs/05 logged.

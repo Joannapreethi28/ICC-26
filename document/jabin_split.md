@@ -10,24 +10,20 @@ Owner: Sir Jabin, with Claude Code. Partner track: `joanna_split.md` (Joanna + A
 
 ---
 
-## LIVE STATUS + TIMELINE (updated Sun 4 Oct 11:20 IST; newest state only)
+## LIVE STATUS (updated Sun 4 Oct 11:45 IST; newest state only; a new session starts HERE)
 
-**Handover:** after Checkpoint A, Efanio (GPT 6) continues using `document/efanio_split.md`. Since 10:05: Laya v3 shipped (USE_LAYA on), junk-input guard, report + model card, E1 plain/prompt_only scored (first pass).
+**Split from Checkpoint A (SJ decision):** Jabin = GPU / heavy computation on his laptop ONLY. Efanio (GPT 6) = all of Joanna's remaining work + non-GPU parts of Jabin's (guide: `document/efanio_split.md`, ownership table there). Joanna away.
+**Done:** classifier shipped (Laya v3, USE_LAYA=True, threshold 0.85); official run (v2) + post-hoc v3/v4, E3, E4 in `results/`; report `results/classifier/report.md`; model card `docs/model_card.md`; E1 plain + prompt_only complete (`results/e1/tables.md`, first-pass labels); ONNX int8 318 MB (`results/onnx_check.json`). Weights only in `models/` (gitignored; Release exists, no more publishing until the end).
 
-Done: J-P2 data (v1-v4, frozen in training/DATA_FROZEN.md); Laya v1/v2, xlm-r v2, Qwen LoRA v2 trained; OFFICIAL single test run on v2 models (results/classifier/test/, TEST_RUN.lock); model choice = Laya (SJ: smaller/cheaper, fits CLAUDE.md); post-hoc v3 + rules aligned with the rubric (IPL etc. not a men's cue); E4 + E3 built and run; GENDER_THRESHOLD 0.85 (calib grid); MERGE_POLICY v2; E1 plain 358/564.
-Running (auto, training/after_v4.py): Laya v4 training -> threshold fit -> post-hoc v4 -> E4 v4 -> choose v3/v4 (rule in docs/05) -> E1 plain + prompt_only.
-
-| # | To do | Blocked on |
+| # | Jabin's GPU/heavy queue | Blocked on |
 |---|---|---|
-| 1 | Flip USE_LAYA + CONTRACT CHANGE (chosen model path) | model_choice.json |
-| 2 | E1 layer + layer_text arms | Joanna's resolve() (+ guidance-only decision, PREREGISTRATION amendment) |
-| 3 | results/classifier/report.md (official v2 + post-hoc v3/v4, label-convention notes, selection disclosure) | 1 |
-| 4 | ONNX int8 export + size/latency for 512 MB hosts; weights as GitHub Release (no HF, SJ) | 1 |
-| 5 | Human re-label 20% of E1 answers | people |
-| 6 | docs/model_card.md, limits | 3 |
-| 7 | R-phase: Cricsheet-computed coverage (fastest century...), Gemini screenshots | SJ / Joanna |
+| 1 | Install `duckdb` (ask SJ: G-023) so facts/resolve() run on the laptop | SJ OK |
+| 2 | E1 layer + layer_text: `python -m mak.eval.run_e1 --arms layer,layer_text` then `python -m mak.eval.e1_tables` (~1.5-2 h GPU) | Efanio's "resolve() READY" (deadline Sun 13:00) |
+| 3 | Regenerate `python -m mak.eval.make_report`, update model card numbers | 2 |
+| 4 | Optional: ONNX inference wrapper + accuracy check (only if Efanio picks ONNX hosting) | Efanio's hosting choice |
+| 5 | Final: publish weights / Release decision (SJ, at the end) | SJ |
 
-Targets: tool done ~14:00, build freeze 20:00. Risks: RAM (close browser during GPU jobs), resolve() timing.
+Rules: never read test text; post-hoc numbers always next to the official run; log in handoffs/CHANGELOG/docs/05.
 ## How we stay independent of each other
 
 | Interface | Owner | Fixed in Phase 0 as | Until the real one lands, the other side uses |

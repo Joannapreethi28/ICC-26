@@ -80,3 +80,6 @@ Calibration grid for v3 (rows without rules cue/injection): accepted gender accu
 
 ### v3 vs v4 choice rule (fixed 4 Oct ~10:00, before v4 results)
 Ship v4 if its post-hoc shipped mean accuracy over gender/family/stat (en/hi/ta) >= v3r's, else v3. Outcome: results/calibration/model_choice.json. Then E1 plain + prompt_only start automatically (training/after_v4.py).
+
+### Final split from Checkpoint A (4 Oct ~11:45, SJ)
+Jabin: GPU/heavy computation only (laptop). Efanio (GPT 6): all of Joanna's remaining work + non-GPU parts of Jabin's. Ownership table in document/efanio_split.md. Single dependency: resolve() (Efanio, deadline 13:00) before Jabin's E1 layer arms.

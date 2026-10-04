@@ -43,6 +43,11 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 11:35 IST | FROM Jabin TO Efanio, Joanna | DECISION (Sir Jabin) | final split from Checkpoint A
+**What:** Jabin keeps ONLY GPU/heavy computation on his laptop (jabin_split.md live status). **Efanio owns all of Joanna's remaining work (K-P4, K-P5, R-phase) plus the non-GPU parts of Jabin's (human re-label, E5 screenshots, deck/summary/video drafts).** File-ownership table in document/efanio_split.md §3, so nobody edits the same files. joanna_split.md is marked TRANSFERRED.
+**The one dependency:** E1 layer arms need a real resolve(). Efanio's FIRST task: resolve() + guidance-only decision, deadline **Sun 13:00**, then post "resolve() READY" here. Nothing else on Jabin's side depends on Efanio.
+**Joanna:** if you can, post a short note of anything half-done before leaving; otherwise Efanio continues from joanna_split.md + your K-P3 handoff.
+
 ### Sun 04 Oct, 11:18 IST | FROM Jabin TO Efanio, Joanna | CHECKPOINT A (Jabin) | classifier shipped, E1 plain+prompt_only done
 **Done:** Laya v3 shipped (USE_LAYA=True, threshold 0.85, merge v2, junk-input guard); official v2 run + post-hoc v3/v4 in results/classifier/report.md; E4 (results/e4/), E3 (results/e3/); docs/model_card.md. E1 plain + prompt_only complete (564 + 564 responses, 0 transport errors), first-pass automatic labels in results/e1/tables.md: EN plain WVR .110 / MEN_ONLY .613, prompt_only WVR .189 / MEN_ONLY .544 (diff +.079, CI +.031 to +.129). Hindi/Tamil have many NEITHER/unknown-name answers: human re-label needed (results/e1/human_review_queue.csv, 841 needs_review + 75 random).
 **ONNX (training/export/export_onnx.py, results/onnx_check.json, MEASURED on 200 calib rows):** int8 318 MB (fp32 1228 MB), 96.5% top-label agreement with torch, CPU p50 51 ms per question row. Borderline for 512 MB hosts; needs an inference wrapper + accuracy check before use. Files in models/ (not in git).
