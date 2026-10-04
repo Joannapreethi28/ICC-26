@@ -86,3 +86,7 @@ Jabin: GPU/heavy computation only (laptop). Efanio (GPT 6): all of Joanna's rema
 
 ### Guidance-only implemented as a fallback, not a new decision (4 Oct 12:20)
 Decision stays 'unsupported' so E4 and the E1 preregistration stay valid without amendment; fallback='guidance_only' + answer_text carries the 'give both, unverified' instruction for MCP/API users. resolve() built by Jabin on SJ's instruction.
+
+### 2026-10-04 — Task 1 implementation details (Efanio)
+Use one shared resolver for REST/UI/MCP, with nonblank 1–2,000-character inputs and serialized inference. Only the two intended functions are public MCP tools. Named-player requests cannot substitute global leaders. The demo uses an editorial scorebook layout inspired by Impeccable's restraint principles; no third-party launcher installed. Saved comparison output is matched by exact question/language/seed and labelled with capture date/model. Missing weights and computed data are explicitly disclosed. Public deployment remains unapproved. Gradio 6.29.1 is the validated UI runtime; dependency pinning is deferred to hosting preparation because pyproject.toml is a shared contract.
+Follow-up: posted CONTRACT CHANGE to handoffs and constrained Gradio to >=6.29.1,<7 in pyproject.toml, so the minimum runtime matches the implemented APIs. No installation performed.

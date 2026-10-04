@@ -11,6 +11,7 @@ answer_text telling the assistant to give women's and men's answers, clearly lab
 from __future__ import annotations
 
 import time
+from dataclasses import replace
 from functools import lru_cache
 from typing import Literal
 
@@ -59,12 +60,32 @@ def resolve(query: str, lang: Lang | Literal["auto"] = "auto") -> Resolution:
         p = understand(text, None if lang == "auto" else lang)
         trace = list(p.trace)
         intents = lookup(p.family, p.stat, p.format) if p.topic == "cricket_stat" else []
+        
+        # Resolve entities early to detect both_named gender signal
+        ents = _entities(text) if intents else {}
+        # A named player's numbers must never be substituted with a global leader.
+        if ents and p.family == "career_record":
+            p = replace(p, family="player_stat", stat="career_line")
+            intents = lookup(p.family, p.stat, p.format)
+            trace.append("entities: named player lookup; global records cannot answer this question")
+        if len(ents) == 2 and set(ents.keys()) == {"women", "men"}:
+            # Both genders explicitly named -> both_named signal
+            p = p.__class__(
+                lang=p.lang, gender_signal="both_named", gender_conf=1.0,
+                topic=p.topic, family=p.family, stat=p.stat, format=p.format,
+                entities=p.entities, injection_suspected=p.injection_suspected,
+                trace=p.trace + ("entities: both women and men explicitly named -> both_named",)
+            )
+            trace.append("entities: both women and men explicitly named -> both_named")
+        elif len(ents) == 1 and p.gender_signal == "none" and not p.injection_suspected:
+            p = replace(p, gender_signal=next(iter(ents)), gender_conf=1.0)
+            trace.append("entities: single named player's gender selects the record")
+        
         decision, ptrace = decide(p, bool(intents))
         trace += ptrace
         genders = DECISION_TO_GENDERS[decision]
         facts, fallback, answer = [], None, ""
         if genders:
-            ents = _entities(text) if any(i.endswith("_PLAYER_LINE") for i in intents) else {}
             for intent in intents:
                 for g in genders:
                     if intent.endswith(("_PLAYER_LINE", "_LAST_RESULT")):

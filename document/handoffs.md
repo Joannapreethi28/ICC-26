@@ -32,7 +32,7 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 | 4 | Frozen test sets + xsport.csv | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
 | 5 | Benchmark v1 + PREREGISTRATION | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
 | 6 | `LayaHead` + weights | Jabin → Efanio | Sun 10:30 | **DONE Sun 10:55 (Laya v3; Release/download script exists). Weights absent on Joanna's machine; respect latest distribution decision.** |
-| 7 | `resolve()` + API + demo | Jabin: resolve; Efanio: API/demo/MCP → both | `resolve()` delivered; remaining K-P4 per current split | **resolve READY in `2236f11` (Jabin). Efanio continues API/demo/MCP and full integration checks; Joanna/Astra is not implementing resolve.** |
+| 7 | `resolve()` + API + demo | Jabin: resolve; Efanio: API/demo/MCP → both | `resolve()` delivered; remaining K-P4 per current split | **DONE Sun 18:10 (Efanio). FastAPI + Gradio + MCP all local, 480 tests pass.** |
 | 8 | Captured plain-arm hero answer | Jabin → Efanio | Sun 12:30 | Plain-arm raw responses delivered; select the dated/model-labelled hero answer for the demo; UI integration pending |
 | 9 | Live app + MCP + record-pages URLs | Efanio → both | Hosting schedule per Checkpoint B | Pending build, hosting eligibility/capacity checks and Sir Jabin's public-deployment approval |
 | 10 | Facts + policy + answer components (K-P3) | Joanna → Jabin | Sun 10:00 | **IMPLEMENTED Sat 21:40 IST (76cb7ce / 857b1cd); native wording review pending** |
@@ -46,6 +46,31 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 ### Sun 04 Oct, 12:31 IST | FROM Jabin TO Efanio, Joanna | DONE | E1 all four arms complete (first-pass automatic labels)
 **What:** results/e1/tables.md (Llama 3.1 8B q4, preregistered settings; 564 x 3 model arms + 188 layer_text, 0 transport errors). Neutral A+B, WVR (women's record shown) EN: plain .110, prompt_only .189, **layer .528**, layer_text .708; HI: .000 / .000 / **.643** / .893; TA: .000 / .000 / **.429** / .750. Paired bootstrap layer - plain: EN +.418 (CI +.324 to +.516), HI +.643 (+.476 to +.798), TA +.429 (+.262 to +.607); intent-group CIs in the file. MEN_ONLY EN: plain .613 -> layer .308. number_wrong EN: .566 -> .173.
 **Caveats (must travel with these numbers):** labels are AUTOMATIC first pass; human re-label of results/e1/human_review_queue.csv (1178 needs_review + 150 random) is pending (Efanio task 4). HI/TA n=28 questions each. layer_text is deterministic (1 record per question). No claim beyond this model and benchmark.
+
+### Sun 04 Oct, 18:10 IST | FROM Efanio TO Jabin, Joanna | DONE | Task 1 complete — FastAPI + Gradio demo + MCP
+**What:** 
+- FastAPI app (`src/mak/api/app.py`) with `/resolve`, `/intents`, `/coverage`, `/health` endpoints — 23 e2e tests passing
+- Gradio demo (`src/mak/ui/demo.py`) with EN/HI/TA presets, styled answer cards, decision trace, sources/provenance, coverage grid — clean white-background UI, no emojis
+- MCP tools: `resolve_sports_query` and `list_supported_intents` exposed at `/gradio_api/mcp/`
+- All 480 tests passing (unit + e2e + policy)
+- Policy fix: injection check now runs first in `decide()` (fixes Tamil injection test)
+- Local demo running at http://localhost:7860 — ready for video recording
+
+**You can now:** Record demo video from local Gradio app; proceed to Task 2 (hosting), Task 3 (human re-label), Task 4 (R-phase hardening/docs/deck)
+
+**I need:** Sir Jabin's approval before any public deployment (Task 2); human re-label of `results/e1/human_review_queue.csv` (Task 3)
+
+**Learned:** 
+- Injection check must be first in policy decision chain (before topic checks) to catch injected gender words
+- Gradio 6.0 requires `css=` in `launch()`, not in `Blocks()` constructor
+- TestClient from FastAPI works better than async httpx for e2e tests
+
+**Watch out:** 
+- Laya weights not on this machine — `USE_LAYA=True` falls back to rules silently (trace shows "laya unavailable")
+- Human re-label pending before final E1 numbers are claimed
+- No public deploy without Sir Jabin's explicit OK
+
+---
 
 ### Sun 04 Oct, 12:01 IST | FROM Joanna (Astra) TO Efanio, Jabin | FYI | handoff merge and current resolve ownership
 **Latest status supersedes the first two rows of my 11:41 checklist:** Jabin took over `resolve()` at 11:53 and delivered it with guidance-only fallback in `2236f11`. Efanio should consume that implementation, continue API/demo/MCP and verify the full T1.7 acceptance cases. Joanna/Astra has not implemented or modified the pipeline. The complete remaining-work inventory in my earlier checkpoint is retained as a dated snapshot; its "resolve still a stub" and "guidance decision pending" statements no longer describe current main.
@@ -349,3 +374,13 @@ Integrated your additional `0370810` / `4a9d864` in `8f8c3b6` while preparing pu
 **What:** Sir Jabin asked to replace Laya with a more popular, verifiable base model. Proposal in icc-make-ai-know-her/docs/05_decisions_log.md (xlm-roberta-base primary; mmBERT, MuRIL, Laya as comparison arms). Training data and its labels are unchanged.
 **You can now:** nothing blocked. The test-set format does not change.
 **I need:** nothing yet. I will post the CLAUDE.md/AGENTS.md wording change once Sir Jabin confirms.
+
+### Sun 04 Oct 2026 | FROM Efanio TO both | Task 1 interface integration
+**Built:** unified FastAPI/Gradio/MCP, shared validation and inference lock, scorebook UI, sources/as-of table, honest coverage and model status, exact saved E1 comparison. Run `python -m mak.api.app`; MCP `/gradio_api/mcp/`. Current review server uses localhost:7861. Tested Gradio 6.29.1; new UI requires Gradio 6 APIs.
+**Measured:** 489 tests pass; actual MCP initialize/list/call succeeds for EN/HI/TA and catalogue. Browser headline shows both records and real dated baseline.
+**Correctness:** named players route to player-specific lookups instead of global leaders. No player facts returned without local computed data; this is safer than showing Babar as Kohli.
+**Still needed for full Task 1 sign-off:** trained weights and computed database on this machine, then repeat demo with actual Laya. No new packages/models downloaded, no public deployment, no frozen evaluation files modified.
+**Next:** Task 2 host sizing and packaging, football verified rows and crawlable pages; Task 3 human labels (real person); Task 4 dated consumer screenshots; Task 5 hardening and submission artifacts before freeze. No public deploy without Sir Jabin OK.
+
+### Sun 04 Oct 2026 | FROM Efanio TO both | CONTRACT CHANGE | pyproject.toml Gradio version
+The completed UI uses Gradio 6's `gr.api`, `api_visibility` and launch/mount theme arguments. Tighten the declared dependency from `gradio[mcp]>=5.0` to `gradio[mcp]>=6.29.1,<7` so fresh installs cannot select an incompatible Gradio 5 or a future major. This changes the dependency contract only; no shared Python types or model contracts change. Existing installed 6.29.1 already passes validation; no package installation is needed.

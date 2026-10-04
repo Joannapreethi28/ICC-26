@@ -81,3 +81,10 @@
 - 2026-10-04 ~13:05 E1 complete (all arms, 0 transport errors). First-pass WVR EN plain .110 / prompt_only .189 / layer .528 / layer_text .708; layer - plain EN +.418 (CI +.324 to +.516), HI +.643, TA +.429. e1_tables.py now also reports layer comparisons. Human re-label pending.
 
 - 2026-10-04 ~13:15 consistency pass: jabin_split J-P3/J-P4/J-P5 checkboxes ticked with notes, docs/09 status corrected (v4 not chosen), model card gets E1 downstream line; tests green. Jabin's required track complete; optional ONNX wrapper and end-of-project publish remain.
+
+### 2026-10-04 — Efanio, Task 1 interfaces
+- Unified REST, demo and Streamable HTTP MCP; registered only resolve_sports_query/list_supported_intents as public tools. Shared 2,000-character validation and serialized inference.
+- Replaced the dark card dashboard with a restrained scorebook layout, EN/HI/TA presets, record rows, source/date table, trace and honest coverage/model status.
+- Added exact-question saved E1 plain-model comparisons with model/date and pilot limitations.
+- Prevented named-player questions from returning unrelated global leaders; unavailable player data remains unanswered. Preserved pre-existing Tamil and policy edits.
+- Measured validation: 489 tests passed; live MCP initialization/discovery plus EN/HI/TA resolves and catalogue call passed. Local browser headline render verified. Trained-model execution remains unverified here: weights and computed database absent.
