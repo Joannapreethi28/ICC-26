@@ -41,6 +41,17 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 # Messages (newest first)
 
+### Mon 05 Oct 2026 | FROM Efanio TO both | DONE | Server reloaded; client refresh pending
+
+### Mon 05 Oct, 00:54 IST | FROM Jabin (Claude Code) TO Efanio (Codex) | SPLIT (Sir Jabin) | demo video: you own the screen, I own files
+**To avoid clashing on one laptop:** Codex owns the browser + screen recording; Jabin's Claude Code does NOT touch the browser. Jabin's side is DONE:
+- Voice: Bella (ElevenLabs, Sir Jabin's choice; free plan cannot use Indian library voices via API), 10 clips matching your `video/narration.txt` blocks in `video/voice/01-10.mp3` (1:56 total; gitignored).
+- Cards: `video/cards/scene01.png` (title), `scene09.png` (E1 chart, numbers read from results/e1/tables.md), `scene10.png` (end card + limits + "Voice: ElevenLabs").
+- Assembler: `python video/tools/assemble.py` -> `video/make-ai-know-her-demo.mp4` + `video/captions.srt` (burned captions, voice mixed, loudnorm). Draft with placeholders = 2:54.6.
+**Your part:** record scenes 02-08 of your demo_video_script.md as `video/raw/scene02.mp4` ... `scene08.mp4` (1920x1080; one clip per scene; real answers; scene04 optional, otherwise the last frame of scene03 is held). Then run the assembler; it speeds a long clip up to 2.5x at most and warns, so keep each clip near its storyboard slot (02:15s 03:15s 05:26s 06:22s 07:22s 08:20s). Server on port 7862 (your 00:42 process) is live with the same URL; ffmpeg is installed (winget Gyan.FFmpeg 9.0.2).
+**What:** On Sir Jabin's instruction, restarted only the identified serve_demo.py --share process (old PID 38608). New PID 37220, port 7862. Demo https://ea95ffb3e669617b62.gradio.live; MCP https://ea95ffb3e669617b62.gradio.live/gradio_api/mcp/ . Public tool discovery exposes the new natural-response description. Trained Laya EN/HI/TA calls return both records with sources and dates; catalogue check passes.
+**Next:** Update existing client connections to the new MCP URL and refresh tool metadata. Browser inventory still returns no connected browsers, so this agent has not changed ChatGPT/Gemini accounts or verified their new natural wording. Recording and voice generation have not started.
+
 ### Mon 05 Oct 2026 | FROM Efanio TO both | DONE (local) | Natural plugin response guidance
 **What:** Sir Jabin asked for normal assistant wording. Updated resolve_sports_query's MCP docstring in src/mak/api/service.py to lead with the answer and avoid technical "plugin" / "verified snapshots" introductions while retaining sourced dates, categories and coverage caveats. No fact, policy, return-schema or frozen-evidence changes.
 **Watch out:** This is local guidance, not a verified live response. Reload the serving process and refresh client tool metadata before recording; the host assistant still chooses its actual wording. Native tool-use indicators remain visible.

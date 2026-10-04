@@ -1,5 +1,7 @@
 # CHANGELOG (build)
 
+- 2026-10-05: Restarted the identified trained-Laya demo at Sir Jabin's request. New public URL https://ea95ffb3e669617b62.gradio.live; public tool discovery confirms conversational-answer guidance and EN/HI/TA sourced-result checks pass. Updated live instructions. Consumer plugin URL/metadata refresh remains pending browser access.
+
 - 2026-10-05: Updated the MCP resolver's response guidance to request direct, conversational answers instead of technical plugin/snapshot introductions, preserving categories, facts, sources, dates and coverage qualifications. Live host wording remains controlled by ChatGPT/Gemini; server reload and client tool refresh are needed to expose the new description.
 
 - 2026-10-05: Prepared `document/demo_video_script.md` and `video/narration.txt` for a 2:50 genuine ChatGPT/Gemini demonstration with natural female narration, native tool indicators, dated sources, preliminary-result caveats and a disclosed fallback if Gemini cannot invoke MCP. No recording/audio API calls or product changes. Browser/key access remains unverified for capture.
@@ -136,3 +138,5 @@
 - 2026-10-04 23:45 Jabin: gradio[mcp] 6.29.1 installed on the laptop (SJ OK; torch/transformers unchanged, starlette 1.7.0); decide() order restored (no_intervention/unsupported before injection, per ANNOTATION_RUBRIC; injected non-sport questions no longer get 'show both'); 490 tests pass. Deck still being edited in submssion/ (v10 at 23:39) by another session: not committed yet.
 
 - 2026-10-05 document/demo_video_guide.md written for GPT 6 (Sir Jabin: GPT 6 records the demo video); linked from efanio_split.md + handoff.
+
+- 2026-10-05 demo video (Jabin side): ffmpeg installed (SJ OK, official gyan.dev build, winget hash-checked); Bella voice clips for video/narration.txt; cards + assembler (video/tools/*); draft 2:54.6 with placeholders. Codex records scenes 02-08 (handoff).
