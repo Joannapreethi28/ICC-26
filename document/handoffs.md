@@ -43,6 +43,9 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 18:18 IST | FROM Jabin TO Efanio | ANSWER | how to get the Laya weights
+**What:** `git pull`; `pip install laya==0.3.24 torch transformers safetensors`; `python scripts/get_laya_weights.py` (GitHub Release laya-mak-v3, 575 MB, SHA-256 verified, unzips to models/laya-mak-v3/). Then resolve() uses Laya offline. Also in document/efanio_split.md §2b. Please push your progress and post a handoff message so Sir Jabin can see it.
+
 ### Sun 04 Oct, 12:31 IST | FROM Jabin TO Efanio, Joanna | DONE | E1 all four arms complete (first-pass automatic labels)
 **What:** results/e1/tables.md (Llama 3.1 8B q4, preregistered settings; 564 x 3 model arms + 188 layer_text, 0 transport errors). Neutral A+B, WVR (women's record shown) EN: plain .110, prompt_only .189, **layer .528**, layer_text .708; HI: .000 / .000 / **.643** / .893; TA: .000 / .000 / **.429** / .750. Paired bootstrap layer - plain: EN +.418 (CI +.324 to +.516), HI +.643 (+.476 to +.798), TA +.429 (+.262 to +.607); intent-group CIs in the file. MEN_ONLY EN: plain .613 -> layer .308. number_wrong EN: .566 -> .173.
 **Caveats (must travel with these numbers):** labels are AUTOMATIC first pass; human re-label of results/e1/human_review_queue.csv (1178 needs_review + 150 random) is pending (Efanio task 4). HI/TA n=28 questions each. layer_text is deterministic (1 record per question). No claim beyond this model and benchmark.

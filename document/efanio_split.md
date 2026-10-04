@@ -17,6 +17,14 @@ Address Sir Jabin as "Sir Jabin". Build freeze: **Sun 4 Oct 20:00 IST**. Submiss
 - E1 plain + prompt_only complete and auto-labelled (`results/e1/tables.md`). layer + layer_text NOT run: they need `resolve()`.
 - Joanna finished K-P1, K-P2 (frozen test sets) and K-P3 (facts `src/mak/fetch/`, policy `src/mak/policy/decide.py`, templates `src/mak/compose/`). `src/mak/pipeline.py` `resolve()` is still the PHASE 0 STUB.
 
+## 2b. Getting the Laya weights on your machine (Sir Jabin approved, 4 Oct)
+```
+git pull
+pip install laya==0.3.24 torch transformers safetensors
+python scripts/get_laya_weights.py      # downloads the GitHub Release zip, verifies SHA-256, unzips to models/laya-mak-v3/
+```
+Then `understand()`/`resolve()` load Laya automatically, offline (CPU works, slower). Run `python scripts/get_laya_weights.py`, then the tests, before demo work. Without the weights the product silently uses rules only (check `Parse.trace` for "laya unavailable"). Do not re-upload, rename or delete the Release.
+
 ## 3. Ownership (prevents conflicts; no shared edits)
 | Efanio owns (edit freely) | Jabin owns (do NOT edit) |
 |---|---|
