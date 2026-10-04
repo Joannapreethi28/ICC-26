@@ -1,0 +1,107 @@
+1
+00:00:00,400 --> 00:00:05,357
+Women's cricket should not need an extra keyword to be seen. This is Make AI Know
+
+2
+00:00:05,357 --> 00:00:05,601
+Her.
+
+3
+00:00:10,400 --> 00:00:16,044
+Start with an ordinary fan question: who has the most T20 international runs? Here
+
+4
+00:00:16,044 --> 00:00:18,109
+is ChatGPT, without our layer.
+
+5
+00:00:25,400 --> 00:00:30,526
+Now the same question in Gemini. These are real answers from this recording, not a
+
+6
+00:00:30,526 --> 00:00:33,527
+claim that every assistant always gets it wrong.
+
+7
+00:00:40,400 --> 00:00:45,628
+A neutral question leaves the category open. Our rule is simple: show both women's
+
+8
+00:00:45,628 --> 00:00:47,923
+and men's records, clearly labelled.
+
+9
+00:00:48,920 --> 00:00:54,168
+Here is ChatGPT connected to Make AI Know Her. Watch the actual tool call, then the
+
+10
+00:00:54,168 --> 00:00:59,164
+assistant's answer. It receives both records, with their sources and dates. The
+
+11
+00:00:59,164 --> 00:01:03,084
+answer stays conversational; the facts come from our database.
+
+12
+00:01:14,920 --> 00:01:20,101
+Gemini cannot connect custom tools yet, so here is the same question in our live
+
+13
+00:01:20,101 --> 00:01:25,411
+product: both records, each with its source and as-of date, and a trace of how the
+
+14
+00:01:25,411 --> 00:01:26,576
+answer was chosen.
+
+15
+00:01:36,920 --> 00:01:42,112
+Underneath, Laya is a small multilingual model we fine-tuned to understand
+
+16
+00:01:42,112 --> 00:01:47,795
+questions. It chooses categories, never generates statistics. Here are live Hindi
+
+17
+00:01:47,795 --> 00:01:53,267
+and Tamil examples. The policy runs in plain code, and the model runs locally.
+
+18
+00:01:58,920 --> 00:02:04,066
+Ask for women's records, and the layer respects that choice. Ask a question where
+
+19
+00:02:04,066 --> 00:02:08,895
+gender does not matter, and it stays out of the way. Ask beyond its verified
+
+20
+00:02:08,895 --> 00:02:10,484
+coverage, and it says so.
+
+21
+00:02:18,920 --> 00:02:24,188
+We also tested one free local model under three conditions. In English, women's
+
+22
+00:02:24,188 --> 00:02:29,122
+records appeared in eleven percent of plain answers, nineteen percent with
+
+23
+00:02:29,122 --> 00:02:34,590
+prompting, and fifty-three percent with our layer. These are preliminary automatic
+
+24
+00:02:34,590 --> 00:02:37,124
+labels; human review is still pending.
+
+25
+00:02:38,120 --> 00:02:43,827
+The prototype has bounded cricket coverage, with more validation ahead. Our next
+
+26
+00:02:43,827 --> 00:02:49,676
+step is a pilot in existing fan experiences. Free, open, and available through MCP
+
+27
+00:02:49,676 --> 00:02:53,956
+and an API. So fans can discover her without knowing to ask.

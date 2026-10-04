@@ -59,9 +59,9 @@ def chart():
         d.text((x + (bw - d.textlength(lab, font=font(38))) / 2, base + 24), lab, font=font(38), fill=INK)
     d.line([(300, base), (W - 300, base)], fill="#D1D5DB", width=3)
     n_q = v["layer"][1]
-    d.text((140, 960), f"Preliminary automatic labels; human review pending. {n_q} eligible English questions x 3 samples.",
+    d.text((140, 900), f"Preliminary automatic labels; human review pending. {n_q} eligible English questions x 3 samples.",
            font=font(28), fill=MUTED)
-    d.text((140, 1002), "Measures women's-record visibility, not factual accuracy. Source: results/e1/tables.md",
+    d.text((140, 942), "Measures women's-record visibility, not factual accuracy. Source: results/e1/tables.md",
            font=font(28), fill=MUTED)
     im.save(OUT / "scene09.png")
 

@@ -14,7 +14,7 @@ A neutral question leaves the category open. Our rule is simple: show both women
 Here is ChatGPT connected to Make AI Know Her. Watch the actual tool call, then the assistant's answer. It receives both records, with their sources and dates. The answer stays conversational; the facts come from our database.
 
 06
-Now Gemini, using the same connected layer. The question is unchanged. The tool supplies the category decision and sourced records; Gemini writes its own response.
+Gemini cannot connect custom tools yet, so here is the same question in our live product: both records, each with its source and as-of date, and a trace of how the answer was chosen.
 
 07
 Underneath, Laya is a small multilingual model we fine-tuned to understand questions. It chooses categories, never generates statistics. Here are live Hindi and Tamil examples. The policy runs in plain code, and the model runs locally.
