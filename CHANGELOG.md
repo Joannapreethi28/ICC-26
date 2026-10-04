@@ -1,5 +1,7 @@
 # CHANGELOG (build)
 
+- 2026-10-04: Small demo presentation polish: styled the Full answer disclosure with readable typography and padding; added shaded source-table headers, alternating rows, roomier cells and unbroken snapshot dates. Existing layout and answer content retained. Python syntax and whitespace checks passed; live browser appearance not verified.
+
 - 2026-10-04 12:01 IST: merged the concurrent handoff additions through `2236f11`, preserving both histories. Updated current status: Jabin delivered resolve; Efanio continues API/demo/MCP and remaining integration. Upstream pipeline unchanged. 457 tests passed in 15.19s; 65 frozen hashes verified; headline smoke check returned both records with the local rules fallback (weights absent).
 
 - 2026-10-04 11:41 IST: Joanna's Checkpoint A handoff: confirmed `resolve()` transfers to Efanio under the latest team split; catalogued all remaining K-P4/K-P5/refinement/submission work, human reviews, later-training audit gaps, machine prerequisites and Jabin dependencies. Updated sync-board ownership/status. No Phase 4 implementation was started by Astra; prior test counts remain labelled historical. Original frozen evaluation evidence retained.
@@ -96,3 +98,9 @@
 - 2026-10-04 reviewed Efanio Task 1 (API/demo/MCP). Fixed: Laya could turn explicit other-sport questions (World Cup goals) into cricket; understand.merge keeps rules' other_sport_stat (post-hoc behaviour change after E3's single run; disclosed). Requested from Efanio: revert injection-first order in decide() (it intervenes on injected non-sport questions). 481 tests pass.
 
 - 2026-10-04 18:35 Sir Jabin: Efanio submitted the entry; repo has no record. Requested CHECKPOINT B from Efanio (push submitted materials, Laya on/off, numbers with labels, resubmission possibility).
+
+### 2026-10-04 — Model-backed MCP public-test preparation
+- Verified user-downloaded Laya v3 against approved model SHA-256 and loaded it offline successfully.
+- Added local/public demo launcher with required model warmup, file-serving restrictions and explicit --share; added executable MCP smoke checks and ChatGPT/Gemini connection guide.
+- Measured local MCP initialize/list/call pass for EN/HI/TA with real Laya traces and sources/as-of dates. Public sharing waits for Sir Jabin approval; no download or public tunnel started.
+- Follow-up: Efanio confirmed Sir Jabin approved public testing and tunnel-helper download. Launched https://df337fc2ba08c1ca49.gradio.live; public MCP /gradio_api/mcp/ independently passes discovery, EN/HI/TA trained-Laya calls and catalogue. Four targeted interface tests pass. Consumer-account connection remains to be tested.

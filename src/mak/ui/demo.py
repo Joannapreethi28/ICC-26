@@ -49,6 +49,12 @@ body {background:#f7f5ed!important}
 #masthead p {max-width:610px; font-size:16px; line-height:1.6; color:#536056}
 .paper-answer {padding:24px 0; min-height:190px; border-top:2px solid #234d3c}
 .answer-copy {font-size:17px; line-height:1.8; white-space:pre-line; overflow-wrap:anywhere}
+.full-answer {margin-top:18px; border:1px solid #d8dbd1; border-radius:6px; background:#fffef9}
+.full-answer summary {padding:14px 18px; font:600 15px/1.5 Arial,sans-serif; color:#234d3c; cursor:pointer}
+.full-answer summary::marker {color:#526357}
+.full-answer summary:focus-visible {outline:2px solid #234d3c; outline-offset:3px; border-radius:3px}
+.full-answer[open] summary {border-bottom:1px solid #e3e5dc}
+.full-answer .answer-copy {padding:18px; font:400 16px/1.85 Arial,sans-serif; color:#202c27}
 .record-row {display:flex; justify-content:space-between; gap:20px; padding:18px 0; border-bottom:1px solid #d8dbd1}
 .record-name {font:24px/1.4 Georgia,serif; margin:4px 0; overflow-wrap:anywhere}
 .record-row > div {min-width:0}
@@ -58,11 +64,19 @@ body {background:#f7f5ed!important}
 .status {padding:10px 0; border-bottom:1px solid #c9cec2; font-size:12px; color:#536056}
 .evidence {border-left:2px solid #c9cec2; padding:0 0 0 18px; margin:18px 0}
 .evidence blockquote {margin:12px 0; font:20px/1.6 Georgia,serif; color:#394b40}
-.table-wrap {overflow:auto; width:100%}
-table.sources {border-collapse:collapse; width:100%; font-size:13px; text-align:left}
-.sources th,.sources td {padding:12px 10px; border-bottom:1px solid #d8dbd1; vertical-align:top}
-.sources th {font-weight:600; color:#526357}
-.sources a {color:#23533c; text-decoration:underline; text-underline-offset:3px}
+.table-wrap {overflow:auto; width:100%; border:1px solid #d8dbd1; border-radius:6px; background:#fffef9}
+table.sources {border-collapse:collapse; width:100%; margin:0; font:400 14px/1.6 Arial,sans-serif; color:#202c27; text-align:left}
+.sources th,.sources td {padding:15px 16px; border-bottom:1px solid #e3e5dc; vertical-align:top; text-align:left}
+.sources th {font-size:12px; font-weight:600; letter-spacing:.03em; color:#415747; background:#ecefe5; white-space:nowrap}
+.sources tbody tr:nth-child(even) {background:#f5f5ee}
+.sources tbody tr:last-child td {border-bottom:0}
+.sources td:nth-child(1) {font-weight:600; text-transform:capitalize; color:#234d3c}
+.sources td:nth-child(2) {min-width:140px; font-weight:600}
+.sources td:nth-child(3),.sources td:nth-child(5) {white-space:nowrap}
+.sources td:nth-child(4),.sources td:nth-child(5) {font-variant-numeric:tabular-nums}
+.sources td:last-child {min-width:130px}
+.sources a {display:inline-block; padding:2px 0; color:#23533c; text-decoration:underline; text-underline-offset:3px; white-space:nowrap}
+.sources a:hover {text-decoration-thickness:2px}
 .trace {white-space:pre-wrap; overflow-wrap:anywhere; font:12px/1.8 monospace}
 #ask-button {border-radius:3px!important; background:#234d3c!important; color:#fff!important}
 #language-picker label {background:#efeee5!important; color:#202c27!important; border:1px solid #c9cec2!important}
@@ -155,7 +169,7 @@ def resolve_fn(query: str, lang: str) -> tuple[str, str, str, str]:
         answer = (f'<div class="paper-answer" role="status" lang="{_esc(r["language"])}">'
                   '<p class="result-label">Make AI Know Her · The records</p>' + ''.join(rows)
                   + f'<p class="note">Dated snapshots · {status} · {r["latency_ms"]:.0f} ms</p>'
-                  + '<details><summary>Full answer</summary><div class="answer-copy">'
+                  + '<details class="full-answer"><summary>Full answer</summary><div class="answer-copy">'
                   + _esc(message) + '</div></details></div>')
     trace = '<div class="trace">' + _esc('\n'.join(r['trace'])) + '</div>'
     return answer, trace, _sources(r), baseline_html(query, r['language'])
@@ -200,7 +214,7 @@ def build_demo() -> gr.Blocks:
         preset.change(lambda value: value, preset, query, api_visibility='private', queue=False)
         for event in (submit.click, query.submit):
             event(resolve_fn, [query, lang], outputs, api_visibility='private', concurrency_limit=1, concurrency_id='resolve')
-        gr.api(resolve_sports_query, api_name='resolve_sports_query', concurrency_limit=1, concurrency_id='resolve')
+        gr.api(gr.mcp.tool(structured_output=True)(resolve_sports_query), api_name='resolve_sports_query', concurrency_limit=1, concurrency_id='resolve')
         gr.api(list_supported_intents, api_name='list_supported_intents', queue=False)
     return demo.queue(max_size=16, default_concurrency_limit=1)
 

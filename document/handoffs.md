@@ -40,6 +40,22 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 ---
 
 # Messages (newest first)
+### Sun 04 Oct 2026 | FROM Efanio TO both | DONE | Small demo typography polish
+**What:** Updated only presentation in `src/mak/ui/demo.py`: Full answer disclosure typography, spacing and focus outline; sources table header, row shading, cell spacing and date wrapping. Requested by Sir Jabin; existing design and data retained.
+**Validation:** Python syntax and diff whitespace checks passed. Live browser appearance not verified. Restart the running demo to load these styles.
+
+### Sun 04 Oct 2026 | FROM Efanio TO both | DONE | Temporary public trained-model MCP
+**Demo:** https://df337fc2ba08c1ca49.gradio.live
+**MCP:** https://df337fc2ba08c1ca49.gradio.live/gradio_api/mcp/
+**Approval:** Efanio explicitly confirmed Sir Jabin's approval in chat before the public launch and official Gradio tunnel-helper download.
+**Verified:** actual public HTTPS MCP initialize/list/call passes for EN/HI/TA, sourced dated women+men records, trained Laya traces and catalogue. Four targeted registration/input-validation tests pass. This is real local Laya, not rules-only.
+**Limits:** temporary Gradio share URL; laptop and server must remain running. Computed database absent. ChatGPT/Gemini account-side connection is the next manual test; no claim it already succeeded. Consumer connected-tool checks are distinct from E5 unassisted baselines.
+**Reproduce:** docs/live_mcp_test.md, scripts/serve_demo.py --share, scripts/check_mcp.py URL. Current process PID 4364, port 7862. No weights published or altered. No permanent hosting/submission claims.
+### Sun 04 Oct 2026 | FROM Efanio TO both | FYI | Trained-model public MCP test approved
+**What:** downloaded Laya v3 verified against release SHA-256, loaded offline. Local MCP initialize/list/call succeeded for EN/HI/TA with real laya traces, sourced dated records, and catalogue. Added scripts/serve_demo.py, scripts/check_mcp.py, docs/live_mcp_test.md.
+**Approval:** Efanio explicitly confirmed Sir Jabin approved the temporary public test and official Gradio tunnel-helper download in this chat. Starting the free HTTPS share tunnel; public URL and external verification follow.
+**Measured:** warmup EN/HI/TA request latencies 2290/1442/1432 ms, one observation each, not a benchmark. Computed database still absent; no model weights edited. Public server must load trained Laya successfully before opening the tunnel.
+**Watch out:** this test depends on laptop/process uptime. Consumer account access remains to be tested; do not conflate MCP-connected demos with E5 unassisted observations. Jabin's 18:25 policy review is noted for hardening; no submission status inferred from the 18:32 message.
 
 ---
 
