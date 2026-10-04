@@ -77,3 +77,6 @@ Gender-relevant cricket stat questions outside the catalogue get the gender deci
 
 ### GENDER_THRESHOLD back to 0.85 (4 Oct, Laya v3)
 Calibration grid for v3 (rows without rules cue/injection): accepted gender accuracy 100% for every t in 0.50-0.95 in all languages; accept rate ~12-13%; 0 accepted above 0.95 (v3 confidences top out ~0.95-0.96). 0.50 rejected (breaks fail-safe tests, non-negotiable 7). 0.85 = original contract value, same calibration outcome as 0.90, keeps Joanna's policy tests green (the overnight 0.98 had broken 4 of them and disabled Laya's gender). Chosen on calibration data only.
+
+### v3 vs v4 choice rule (fixed 4 Oct ~10:00, before v4 results)
+Ship v4 if its post-hoc shipped mean accuracy over gender/family/stat (en/hi/ta) >= v3r's, else v3. Outcome: results/calibration/model_choice.json. Then E1 plain + prompt_only start automatically (training/after_v4.py).
