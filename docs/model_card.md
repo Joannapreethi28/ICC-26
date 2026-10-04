@@ -24,3 +24,6 @@
 - Stat accuracy on real queries is ~0.55; outside the 25 supported record types the system says unsupported (or gives guidance only) rather than guessing.
 - Records change (e.g. Mandhana passed Bates on 20 Sep 2026); answers always carry `as_of` and must be re-verified.
 - Prompt-injection text never changes the policy (fail-safe: show both).
+
+## Downstream effect (E1, first-pass automatic labels, human re-label pending)
+With the layer (Laya v3 + policy + verified facts) feeding Llama 3.1 8B, women's-record visibility on neutral questions: EN .528 vs plain .110; HI .643 vs .000; TA .429 vs .000 (results/e1/tables.md, paired bootstrap CIs there).

@@ -19,7 +19,7 @@ Owner: Sir Jabin, with Claude Code. Partner track: `joanna_split.md` (Joanna + A
 |---|---|---|
 | 1 | ~~Install duckdb~~ DONE 11:55 (439 tests pass). rapidfuzz pending SJ OK (needed only if resolve() uses entities.py) | - |
 | 2 | E1 layer + layer_text: `python -m mak.eval.run_e1 --arms layer,layer_text` then `python -m mak.eval.e1_tables` (~1.5-2 h GPU). DONE 13:05: layer WVR EN .528 vs plain .110 (first-pass labels; human re-label pending, Efanio) | - |
-| 3 | Regenerate `python -m mak.eval.make_report`, update model card numbers | 2 |
+| 3 | ~~Regenerate report~~ DONE (classifier report unchanged by E1; E1 numbers in results/e1/tables.md) | - |
 | 4 | Optional: ONNX inference wrapper + accuracy check (only if Efanio picks ONNX hosting) | Efanio's hosting choice |
 | 5 | Final: publish decision at the end (SJ: keep the existing Release until then) | SJ |
 
@@ -66,9 +66,9 @@ Only two real meeting points: **Sat ~24:00** (Joanna's frozen test sets, for you
 
 ## J-P3: fine-tune + calibrate (Sun 00:00-02:00)
 
-- [ ] Tell the team the job (≈650 MB download; minutes of training). RTX 5060 if CUDA works, else Kaggle 2×T4 [T2.2]. Log to `results/training_log.md`.
-- [ ] Temperatures per (question, option count) on `calib.jsonl`; fit `GENDER_THRESHOLD` for ≥98% accepted-gender accuracy; CONTRACT CHANGE message if `config.py` changes [T2.3].
-- [ ] Start Qwen2.5-1.5B LoRA (skill `trl-training`) in the background [T2.4].
+- [x] Tell the team the job (≈650 MB download; minutes of training). RTX 5060 if CUDA works, else Kaggle 2×T4 [T2.2]. Log to `results/training_log.md`. (done: local RTX 5060)
+- [x] Temperatures per (question, option count) on `calib.jsonl`; fit `GENDER_THRESHOLD` for ≥98% accepted-gender accuracy; CONTRACT CHANGE message if `config.py` changes [T2.3]. (done: buckets on calib; threshold 0.85 from the calib grid; docs/05)
+- [x] Start Qwen2.5-1.5B LoRA (skill `trl-training`) in the background [T2.4]. (done: Qwen2.5-1.5B LoRA v2 trained, arm e)
 
 **Done when:** `models/laya-mak-v1/` saved; ECE before/after printed; Qwen job running.
 
@@ -76,9 +76,9 @@ Only two real meeting points: **Sat ~24:00** (Joanna's frozen test sets, for you
 
 ## J-P4: honest evaluation + integration + publish weights (Sun 08:00-10:30)
 
-- [ ] `src/mak/eval/classifier_eval.py`: rules-only (Gate G3), Laya zero-shot, fine-tuned, fine-tuned + rules (shipped), Qwen, on Joanna's frozen sets; per language, slice and source; Wilson intervals; ECE; confident errors; option-order sensitivity [T2.3, T2.4].
-- [ ] `src/mak/nlu/laya_head.py` + `understand(use_laya=True)`: rule override, calibrated gating, two-step hierarchy [T2.5]. ONNX + CPU p50/p95 if feasible.
-- [ ] Push weights to the HF Hub (skill `hf-cli`, CLI via pip) and set `config.LAYA_MODEL_ID`; CONTRACT CHANGE message "Laya on Hub, flip USE_LAYA".
+- [x] `src/mak/eval/classifier_eval.py`: rules-only (Gate G3), Laya zero-shot, fine-tuned, fine-tuned + rules (shipped), Qwen, on Joanna's frozen sets; per language, slice and source; Wilson intervals; ECE; confident errors; option-order sensitivity [T2.3, T2.4]. (done: results/classifier/report.md; ONNX latency in results/onnx_check.json)
+- [x] `src/mak/nlu/laya_head.py` + `understand(use_laya=True)`: rule override, calibrated gating, two-step hierarchy [T2.5]. ONNX + CPU p50/p95 if feasible. (done: Laya v3 shipped, USE_LAYA=True)
+- [x] Push weights to the HF Hub (skill `hf-cli`, CLI via pip) and set `config.LAYA_MODEL_ID`; CONTRACT CHANGE message "Laya on Hub, flip USE_LAYA". (changed: no HF account (SJ); GitHub Release laya-mak-v3 + scripts/get_laya_weights.py; publish decision at the end)
 
 **Done when:** `results/classifier/report.md` complete with n and intervals; Gate G4 checked (misses reported); weights on the Hub.
 
@@ -86,9 +86,9 @@ Only two real meeting points: **Sat ~24:00** (Joanna's frozen test sets, for you
 
 ## J-P5: the proof (Sun 10:30-14:30)
 
-- [ ] Tell the team: `ollama pull llama3.1:8b-instruct-q4_K_M` (≈4.9 GB) and ≈1,500 generations (~1.5-2 h, background). Build `eval/arms.py`, `eval/score.py`, `eval/stats.py` against the `resolve()` stub first (scorer tests from T3.4), then run on the real `resolve()` with Joanna's `eval_data/benchmark_v1.csv` and `PREREGISTRATION.md` [T3.4].
-- [ ] E4: raw query → real `resolve()` → decision accuracy on the frozen sets [T2.5]. E3: gender/topic heads on `testsets/xsport.csv` [T3.5].
-- [ ] `docs/model_card.md`; post the captured plain-arm hero answer for the demo's "before" panel.
+- [x] Tell the team: `ollama pull llama3.1:8b-instruct-q4_K_M` (≈4.9 GB) and ≈1,500 generations (~1.5-2 h, background). Build `eval/arms.py`, `eval/score.py`, `eval/stats.py` against the `resolve()` stub first (scorer tests from T3.4), then run on the real `resolve()` with Joanna's `eval_data/benchmark_v1.csv` and `PREREGISTRATION.md` [T3.4]. (done: E1 all arms complete, results/e1/tables.md; human re-label pending, Efanio)
+- [x] E4: raw query → real `resolve()` → decision accuracy on the frozen sets [T2.5]. E3: gender/topic heads on `testsets/xsport.csv` [T3.5]. (done: results/e4/, results/e3/)
+- [x] `docs/model_card.md`; post the captured plain-arm hero answer for the demo's "before" panel. (model card done; hero "before" answer: pick one from results/e1/raw/plain.jsonl, Efanio for the demo)
 
 **Done when:** `results/e1/tables.md`, `results/e3/`, `results/e4/` exist, each number labelled measured + date + model; model card merged; handoff "proof DONE".
 
