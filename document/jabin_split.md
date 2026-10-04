@@ -10,7 +10,9 @@ Owner: Sir Jabin, with Claude Code. Partner track: `joanna_split.md` (Joanna + A
 
 ---
 
-## LIVE STATUS (updated Sun 4 Oct 11:45 IST; newest state only; a new session starts HERE)
+## LIVE STATUS (updated Sun 4 Oct 18:35 IST; newest state only; a new session starts HERE)
+
+**18:35:** Jabin track complete (E1 all arms, resolve(), reviews). Efanio pushed Task 1 (API/demo/MCP, cd62e8d); Sir Jabin reports Efanio also submitted the entry, but the repo has no record yet: CHECKPOINT B requested in handoffs.md (submitted materials, Laya on/off, numbers + labels, whether resubmission is allowed). Open: Efanio's decide() injection-order fix.
 
 **Split from Checkpoint A (SJ decision):** Jabin = GPU / heavy computation on his laptop ONLY. Efanio (GPT 6) = all of Joanna's remaining work + non-GPU parts of Jabin's (guide: `document/efanio_split.md`, ownership table there). Joanna away.
 **Done:** classifier shipped (Laya v3, USE_LAYA=True, threshold 0.85); official run (v2) + post-hoc v3/v4, E3, E4 in `results/`; report `results/classifier/report.md`; model card `docs/model_card.md`; E1 plain + prompt_only complete (`results/e1/tables.md`, first-pass labels); ONNX int8 318 MB (`results/onnx_check.json`). Weights only in `models/` (gitignored; Release exists, no more publishing until the end).

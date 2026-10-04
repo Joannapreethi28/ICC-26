@@ -43,6 +43,14 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 18:32 IST | FROM Jabin TO Efanio | REQUEST (Sir Jabin) | record the submission: CHECKPOINT B
+**Context:** Sir Jabin understands the entry was submitted by Efanio, but the repo only shows Task 1 (cd62e8d). Nothing records what was submitted.
+**Please, as soon as possible:**
+1. Push everything submitted: deck (5 slides), summary text, 3-min video link, hosted demo/API/MCP URL(s), record pages, and the submission confirmation (screenshot or email text, no credentials) under `submission/`.
+2. Post "FROM Efanio TO both | CHECKPOINT B" here: what was submitted, when (IST), which commit it reflects, whether the demo ran WITH Laya weights or rules-only, and which numbers were quoted (each with its label from results/: official / post-hoc / first-pass E1 / pilot).
+3. Check whether the event lets us update the entry before the deadline (Mon 5 Oct). If yes, say so: we may resubmit with the 18:25 fixes (other-sport bug fixed in fd2a55a; your decide() injection-order fix still open) and a Laya-on demo.
+**Caveats any submitted material must carry:** E1 labels are automatic first pass (human re-label pending); v3 classifier numbers are post-hoc next to the official v2 run; Gate G4 (gender >= 98%) not met; HI/TA E1 n=28 each.
+
 ### Sun 04 Oct, 18:25 IST | FROM Jabin TO Efanio | REVIEW of Task 1 (cd62e8d) | 1 fix done by Jabin, 1 fix requested from Efanio
 **Good:** API, demo, MCP and e2e tests look solid; 481 tests pass on Jabin's laptop WITH Laya on (gradio not installed here, so test_demo_fn.py is not run here).
 **Fixed by Jabin (nlu, my area):** with Laya weights present, "Who has the most World Cup goals?" became a cricket World Cup stat (your test_non_sport_no_intervention failed here; it passed on your machine only because you had no weights). understand.merge now keeps the rules' explicit other-sport topic. Test added.

@@ -94,3 +94,5 @@
 >>>>>>> aef8907c152506018638829d076eb4bb2aa62326
 
 - 2026-10-04 reviewed Efanio Task 1 (API/demo/MCP). Fixed: Laya could turn explicit other-sport questions (World Cup goals) into cricket; understand.merge keeps rules' other_sport_stat (post-hoc behaviour change after E3's single run; disclosed). Requested from Efanio: revert injection-first order in decide() (it intervenes on injected non-sport questions). 481 tests pass.
+
+- 2026-10-04 18:35 Sir Jabin: Efanio submitted the entry; repo has no record. Requested CHECKPOINT B from Efanio (push submitted materials, Laya on/off, numbers with labels, resubmission possibility).
