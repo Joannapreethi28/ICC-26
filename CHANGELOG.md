@@ -53,3 +53,5 @@
 - 2026-10-04 Laya v3 trained (beats v2 on same dev sets: family +5-7 pts, topic +1-2, gender >=); onnx 1.23.1 + onnxruntime 1.23.2 installed (SJ OK; protobuf 5.29->7.36, torch/transformers unaffected); guidance-only fallback proposed to Joanna (docs/05).
 
 - 2026-10-04 GENDER_THRESHOLD 0.98 -> 0.85 (calib grid, docs/05); 262 tests pass. E3 script (src/mak/eval/e3_xsport.py). Running post-hoc v3 test + E4 v3 + E3.
+
+- 2026-10-04 post-hoc v3 (TEST-INFORMED, disclosed; official v2 run unchanged): Laya alone gender en .914/hi .897/ta .919 (v2 .795/.911/.938), family .677/.704/.704 (v2 .599/.640/.624); E4 shipped v3 .751/.675/.762 vs rules .632/.498/.481; E3 xsport gender en laya .949 vs rules .847 (ta n=1). Found: rules men_strong had IPL/PSL/BBL/CPL, contradicting ANNOTATION_RUBRIC ('do not infer gender from competition popularity') -> removed (rules-only en gender .816 -> .941, tag v3r); training banks only paired IPL/BBL/PSL with men rows -> data v4 adds them to neutral rows; Laya v4 training started.

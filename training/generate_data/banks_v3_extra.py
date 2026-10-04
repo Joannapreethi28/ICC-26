@@ -60,3 +60,5 @@ GENERAL = {
     "ta_rom": ["cricket team-la evlo players?", "LBW na enna?", "DRS eppadi work aagudhu?", "super over na enna?", "powerplay na enna?",
                "free hit eppo kudupanga?"],
 }
+
+# v4 (4 Oct): men's league names (IPL/BBL/PSL) also appear in gender-neutral rows: per ANNOTATION_RUBRIC 'do not infer gender from the popularity of a competition'.

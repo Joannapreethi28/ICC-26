@@ -1,0 +1,324 @@
+{
+ "testset": "C:\\Users\\Jabin M\\OneDrive\\Desktop\\ICC'26\\testsets\\xsport.csv",
+ "n_queries": 60,
+ "by_q_lang": [
+  {
+   "q": "gender_signal",
+   "lang": "en",
+   "n": 59,
+   "acc": 0.9491525423728814,
+   "lo": 0.8608327667771333,
+   "hi": 0.9825575988405467,
+   "ece": 0.007899999999999907
+  },
+  {
+   "q": "gender_signal",
+   "lang": "ta",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 0.043200000000000016
+  },
+  {
+   "q": "topic",
+   "lang": "en",
+   "n": 59,
+   "acc": 0.7966101694915254,
+   "lo": 0.6773174503671768,
+   "hi": 0.8796384514558193,
+   "ece": 0.152877966101695
+  },
+  {
+   "q": "topic",
+   "lang": "ta",
+   "n": 1,
+   "acc": 0.0,
+   "lo": 0.0,
+   "hi": 0.7934567085261071,
+   "ece": 0.958
+  }
+ ],
+ "by_q_slice": [
+  {
+   "q": "gender_signal",
+   "slice": "explicit",
+   "n": 23,
+   "acc": 0.8695652173913043,
+   "lo": 0.678721020269818,
+   "hi": 0.954624234856553,
+   "ece": 0.08746086956521759
+  },
+  {
+   "q": "gender_signal",
+   "slice": "plain",
+   "n": 37,
+   "acc": 1.0,
+   "lo": 0.9059390425448564,
+   "hi": 1.0,
+   "ece": 0.04293783783783789
+  },
+  {
+   "q": "topic",
+   "slice": "explicit",
+   "n": 23,
+   "acc": 0.6521739130434783,
+   "lo": 0.4488997690689164,
+   "hi": 0.8118894536301776,
+   "ece": 0.3044043478260866
+  },
+  {
+   "q": "topic",
+   "slice": "plain",
+   "n": 37,
+   "acc": 0.8648648648648649,
+   "lo": 0.7202227252929444,
+   "hi": 0.9408679273749238,
+   "ece": 0.080445945945946
+  }
+ ],
+ "by_q_source": [
+  {
+   "q": "gender_signal",
+   "source": "aya",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 0.043200000000000016
+  },
+  {
+   "q": "gender_signal",
+   "source": "nq_open",
+   "n": 59,
+   "acc": 0.9491525423728814,
+   "lo": 0.8608327667771333,
+   "hi": 0.9825575988405467,
+   "ece": 0.007899999999999907
+  },
+  {
+   "q": "topic",
+   "source": "aya",
+   "n": 1,
+   "acc": 0.0,
+   "lo": 0.0,
+   "hi": 0.7934567085261071,
+   "ece": 0.958
+  },
+  {
+   "q": "topic",
+   "source": "nq_open",
+   "n": 59,
+   "acc": 0.7966101694915254,
+   "lo": 0.6773174503671768,
+   "hi": 0.8796384514558193,
+   "ece": 0.152877966101695
+  }
+ ],
+ "confusion": {
+  "gender_signal": {
+   "none -> none": 37,
+   "men -> men": 11,
+   "women -> women": 9,
+   "men -> none": 2,
+   "women -> none": 1
+  },
+  "topic": {
+   "other_sport_stat -> other_sport_stat": 47,
+   "other_sport_stat -> cricket_stat": 13
+  },
+  "family": {},
+  "stat": {},
+  "format": {}
+ },
+ "confident_errors": [
+  {
+   "id": "ta-aya-train-5a69e8e6-010118",
+   "lang": "ta",
+   "slice": "plain",
+   "source": "aya",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.958,
+   "ok": 0,
+   "text": "\n2022 FIFA உலகக் கோப்பையை வென்ற நாடு எது?\n",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-005130",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.9568,
+   "ok": 0,
+   "text": "who win the under 17 fifa world cup",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-077149",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.9547,
+   "ok": 0,
+   "text": "where will the 2019 fifa mens world cup be held",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-080101",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.9371,
+   "ok": 0,
+   "text": "who is the host of fifa world cup 2026",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-026342",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.9554,
+   "ok": 0,
+   "text": "who won the men's single wimbledon 2017",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-005908",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.9572,
+   "ok": 0,
+   "text": "who won the 2018 women's wimbledon final",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-019138",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.9567,
+   "ok": 0,
+   "text": "who won men’s singles 2018 wimbledon championships",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-073221",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.953,
+   "ok": 0,
+   "text": "when is the last time a british man won wimbledon",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-015852",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.9571,
+   "ok": 0,
+   "text": "who won the 2018 wimbledon women's championship",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-031252",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.9573,
+   "ok": 0,
+   "text": "who won the women's final at wimbledon this year",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-039952",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "women",
+   "pred": "none",
+   "conf": 0.9567,
+   "ok": 0,
+   "text": "when did venus williams win her first wimbledon title",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-039952",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.9556,
+   "ok": 0,
+   "text": "when did venus williams win her first wimbledon title",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-027236",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 0.9575,
+   "ok": 0,
+   "text": "how many nba titles does kobe bryant have",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-083924",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 0.9569,
+   "ok": 0,
+   "text": "when did michael jordan come to the nba",
+   "error": null
+  }
+ ],
+ "errors": 0,
+ "option_order_changed": null,
+ "latency_ms": {
+  "p50": 23.47159991040826,
+  "p95": 44.90049998275936
+ }
+}

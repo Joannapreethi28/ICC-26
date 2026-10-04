@@ -1,6 +1,15 @@
 # DATA_FROZEN
 
-## v3 (current): frozen 2026-10-04 ~09:30 IST (SJ: ship Laya, improve it honestly)
+## v4 (current): frozen 2026-10-04 09:50 IST
+v3 + men's league names (IPL/BBL/PSL) also in gender-neutral rows (ANNOTATION_RUBRIC: do not infer gender from competition popularity). Rules lexicon: IPL/PSL/BBL/CPL removed from men_strong (same reason). Test-informed (aggregate confusion: 49 'none -> men' in shipped EN); disclosed; no test text read. Leakage: exact 0, 3 near-dups dropped unseen, re-check clean.
+
+| file | rows | sha256 |
+|---|---|---|
+| training/data/train.jsonl | 10775 | 5989a495eb7e6a607a9bafaad68d379b335d134f4d773968a39e0d720ad5b30c |
+| training/data/calib.jsonl | 2960 | b1b38ba3dba27d4daa0d2db2faa088da79a53abdf1958fc37e28e9dadaa3e7e0 |
+| training/data/messy_calib.jsonl | 2960 | c0c386f165e26805558fd3b0ce21dd344f92109747c0cd84f0708ac963c6ae1e |
+| training/data/voice_calib.jsonl | 2960 | 1462e60266cf4a7ddee08be7bd061160ba14083fb3059268e05a0c27622d0a28 |
+## v3 (superseded): frozen 2026-10-04 ~09:30 IST (SJ: ship Laya, improve it honestly)
 
 TEST-INFORMED (disclosed): built after the single official test run, from AGGREGATE slice/confusion counts only; no test
 text was read. Results of any v3 model on the test sets are reported as post-hoc, next to the official v2 run.

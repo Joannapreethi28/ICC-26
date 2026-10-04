@@ -1,0 +1,480 @@
+{
+ "testset": "C:\\Users\\Jabin M\\OneDrive\\Desktop\\ICC'26\\testsets\\xsport.csv",
+ "n_queries": 60,
+ "by_q_lang": [
+  {
+   "q": "gender_signal",
+   "lang": "en",
+   "n": 59,
+   "acc": 0.847457627118644,
+   "lo": 0.7348177673118977,
+   "hi": 0.9176162891093264,
+   "ece": 0.15254237288135597
+  },
+  {
+   "q": "gender_signal",
+   "lang": "ta",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 0.0
+  },
+  {
+   "q": "topic",
+   "lang": "en",
+   "n": 59,
+   "acc": 0.7288135593220338,
+   "lo": 0.6040199456171089,
+   "hi": 0.8256317500749166,
+   "ece": 0.27118644067796616
+  },
+  {
+   "q": "topic",
+   "lang": "ta",
+   "n": 1,
+   "acc": 0.0,
+   "lo": 0.0,
+   "hi": 0.7934567085261071,
+   "ece": 1.0
+  }
+ ],
+ "by_q_slice": [
+  {
+   "q": "gender_signal",
+   "slice": "explicit",
+   "n": 23,
+   "acc": 0.6086956521739131,
+   "lo": 0.4078517960374599,
+   "hi": 0.7784262201761787,
+   "ece": 0.3913043478260869
+  },
+  {
+   "q": "gender_signal",
+   "slice": "plain",
+   "n": 37,
+   "acc": 1.0,
+   "lo": 0.9059390425448564,
+   "hi": 1.0,
+   "ece": 0.0
+  },
+  {
+   "q": "topic",
+   "slice": "explicit",
+   "n": 23,
+   "acc": 0.7391304347826086,
+   "lo": 0.5352960945624944,
+   "hi": 0.8745155411075104,
+   "ece": 0.26086956521739135
+  },
+  {
+   "q": "topic",
+   "slice": "plain",
+   "n": 37,
+   "acc": 0.7027027027027027,
+   "lo": 0.5421656082795643,
+   "hi": 0.825106976535918,
+   "ece": 0.29729729729729726
+  }
+ ],
+ "by_q_source": [
+  {
+   "q": "gender_signal",
+   "source": "aya",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 0.0
+  },
+  {
+   "q": "gender_signal",
+   "source": "nq_open",
+   "n": 59,
+   "acc": 0.847457627118644,
+   "lo": 0.7348177673118977,
+   "hi": 0.9176162891093264,
+   "ece": 0.15254237288135597
+  },
+  {
+   "q": "topic",
+   "source": "aya",
+   "n": 1,
+   "acc": 0.0,
+   "lo": 0.0,
+   "hi": 0.7934567085261071,
+   "ece": 1.0
+  },
+  {
+   "q": "topic",
+   "source": "nq_open",
+   "n": 59,
+   "acc": 0.7288135593220338,
+   "lo": 0.6040199456171089,
+   "hi": 0.8256317500749166,
+   "ece": 0.27118644067796616
+  }
+ ],
+ "confusion": {
+  "gender_signal": {
+   "none -> none": 37,
+   "women -> women": 9,
+   "men -> none": 8,
+   "men -> men": 5,
+   "women -> none": 1
+  },
+  "topic": {
+   "other_sport_stat -> other_sport_stat": 43,
+   "other_sport_stat -> non_sport": 17
+  },
+  "family": {},
+  "stat": {},
+  "format": {}
+ },
+ "confident_errors": [
+  {
+   "id": "ta-aya-train-5a69e8e6-010118",
+   "lang": "ta",
+   "slice": "plain",
+   "source": "aya",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "\n2022 FIFA உலகக் கோப்பையை வென்ற நாடு எது?\n",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-080147",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "when did brazil win the soccer world cup",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-069790",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "where is the fifa world cup going on",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-030621",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "when has argentina won the fifa world cup",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-065394",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "when did the women's soccer team win the world cup",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-043188",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "what soccer team beat brazil in the 1998 fifa world cup final",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-005130",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who win the under 17 fifa world cup",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-077149",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "where will the 2019 fifa mens world cup be held",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-077149",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "where will the 2019 fifa mens world cup be held",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-062626",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "which nation is the fifa 2014 world cup holder",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-080101",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who is the host of fifa world cup 2026",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-073221",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "when is the last time a british man won wimbledon",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-062844",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who was the last american man to win wimbledon",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-056641",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who has the most titles in mens tennis",
+   "error": null
+  },
+  {
+   "id": "en-nq-validation-b50a30e5-002788",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who has won the mens singles title in the australian open tennis tournament",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-039952",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "women",
+   "pred": "none",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "when did venus williams win her first wimbledon title",
+   "error": null
+  },
+  {
+   "id": "en-nq-validation-b50a30e5-000071",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "how many games in a row have the uconn women's basketball team won",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-027236",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "how many nba titles does kobe bryant have",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-027236",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "how many nba titles does kobe bryant have",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-048743",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "big 10 women's basketball player of the year",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-025485",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who is the shortest player in the nba 2016",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-083924",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "when did michael jordan come to the nba",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-083924",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "when did michael jordan come to the nba",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-087438",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who won last years ncaa mens basketball championship",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-074485",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who played in the ncaa basketball championship 2018",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-001362",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "non_sport",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who averaged a triple double in the nba",
+   "error": null
+  }
+ ],
+ "errors": 0,
+ "option_order_changed": null,
+ "latency_ms": {
+  "p50": 0.07690000347793102,
+  "p95": 0.14570006169378757
+ }
+}

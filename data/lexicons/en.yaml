@@ -25,10 +25,6 @@ gender:
     - 'males?'
     - 'boys?'
     - 'gents'
-    - 'ipl'
-    - 'psl'
-    - 'bbl'
-    - 'cpl'
   # weak = recorded in the trace only, never an override
   women_weak:
     - 'she'
@@ -42,12 +38,8 @@ gender:
 
 format:
   league:
-    - 'ipl'
     - 'wpl'
     - 'wbbl'
-    - 'bbl'
-    - 'psl'
-    - 'cpl'
     - 'the hundred'
     - 'big bash'
     - 'sa20'

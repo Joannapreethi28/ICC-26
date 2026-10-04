@@ -23,7 +23,7 @@ BANK = {
     "f_adj": {
         "T20I": ["T20I", "T20 international"], "ODI": ["ODI", "one-day international"], "Test": ["Test"],
         "T20_WC": ["T20 World Cup"], "ODI_WC": ["ODI World Cup", "50-over World Cup"],
-        "league": {"women": ["WPL", "WBBL"], "men": ["IPL", "BBL", "PSL"], "none": ["The Hundred", "T20 league"]},
+        "league": {"women": ["WPL", "WBBL"], "men": ["IPL", "BBL", "PSL"], "none": ["The Hundred", "T20 league", "IPL", "BBL", "PSL"]},
     },
     "f_prefix": {
         "T20I": ["In T20Is, ", "In T20 internationals, ", "T20I: "], "ODI": ["In ODIs, ", "In one-day internationals, ", "ODI: "],
