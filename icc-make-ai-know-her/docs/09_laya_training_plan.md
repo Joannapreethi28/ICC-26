@@ -115,3 +115,11 @@ The Laya model page itself says "Downloads are not tracked for this model." So 0
 - Model `Qwen/Qwen2.5-1.5B-Instruct`, revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306: author Qwen, 863 likes, ~7.42M downloads last month, Apache-2.0, not gated (MEASURED via HF API).
 - Downloaded: config/tokenizer JSONs, merges.txt, vocab.json, LICENSE, model.safetensors (3,087,467,144 bytes). SHA256 dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee = HF published hash: MATCH. Repo has no pickle (.bin/.pt) files and no custom code (.py), so no trust_remote_code.
 - Packages (pip dry-run first, confirmed torch 2.11.0+cu128 and transformers 5.18.0 unchanged): trl 1.14.1, peft 0.21.2, accelerate 1.15.0, datasets 5.0.1, xxhash 4.0.1.
+
+## Lessons learned so far (4 Oct 2026, for the team; MEASURED unless marked)
+1. **Template accuracy is not real accuracy.** Laya v2: ~0.95 on calibration templates vs family ~0.6 / stat ~0.5 on real queries (official test, n per language 203-337). Real users ask things outside our catalogue.
+2. **Give out-of-scope its own examples.** Most real-query family errors were 'other cricket stat' questions forced into a known family (other_stat was ~1% of training). Research agrees: out-of-scope needs representative examples (arXiv 2410.13649); diverse augmentation helps small intent models but can add label noise (arXiv 2204.01959).
+3. **Calibration can silently switch a model off.** Confidences topped out near 0.97-0.98; a 0.98 gender threshold meant Laya's gender answer was almost never used, so 'shipped' = 'rules'. Fit thresholds only on the rows where they are used, on a fine grid.
+4. **Label conventions must match the product policy** (Hindi feminine 'वाली' = women). Mismatched labels look like model errors.
+5. **Lowercasing fixed ALL-CAPS gender misses** (cased tokenizer). Voice-assistant text (no punctuation, spoken numbers, native-script cricket words) now has its own synthetic dev slice; there is no real voice test set, so claims stay "synthetic voice-style".
+6. **Change one thing, measure, disclose.** v3 is test-informed (aggregate counts only); its test numbers are post-hoc and always shown next to the official v2 run.

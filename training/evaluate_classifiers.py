@@ -114,12 +114,27 @@ NOTES = {
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=("dev", "test"), required=True)
+    ap.add_argument("--mode", choices=("dev", "test", "posthoc"), required=True)
+    ap.add_argument("--laya", default=None, help="Laya model dir for arms c/d/d2 (default models/laya-mak-v2)")
+    ap.add_argument("--tag", default=None, help="posthoc: model version tag, one run per tag")
     ap.add_argument("--arms", default=",".join(ARMS))
     ap.add_argument("--limit", type=int, default=None, help="dev only: first N rows per set")
     ap.add_argument("--i-confirm-single-run", action="store_true")
     a = ap.parse_args()
-    if a.mode == "test":
+    global LAYA_V2
+    if a.laya:
+        LAYA_V2 = pathlib.Path(a.laya)
+    if a.mode == "posthoc":
+        if not a.tag or a.limit:
+            sys.exit("posthoc needs --tag and no --limit")
+        lock = OUT / f"POSTHOC_{a.tag}.lock"
+        if lock.exists():
+            sys.exit(f"{lock} exists: one post-hoc run per model version")
+        OUT.mkdir(parents=True, exist_ok=True)
+        lock.write_text(json.dumps({"started": time.strftime("%Y-%m-%d %H:%M"), "arms": a.arms, "laya": str(LAYA_V2)}), encoding="utf-8")
+        sets = {lang: ROOT / "testsets" / f"nlu_{lang}.csv" for lang in ("en", "hi", "ta")}
+        out_dir = OUT / f"posthoc_{a.tag}"
+    elif a.mode == "test":
         if not a.i_confirm_single_run:
             sys.exit("test mode needs --i-confirm-single-run (frozen test sets are scored once)")
         if LOCK.exists():
@@ -131,10 +146,15 @@ def main():
         OUT.mkdir(parents=True, exist_ok=True)
         LOCK.write_text(json.dumps({"started": time.strftime("%Y-%m-%d %H:%M"), "arms": a.arms}), encoding="utf-8")
     else:
-        sets = {"calib": ROOT / "training" / "data" / "calib.jsonl", "messy": ROOT / "training" / "data" / "messy_calib.jsonl"}
+        sets = {"calib": ROOT / "training" / "data" / "calib.jsonl", "messy": ROOT / "training" / "data" / "messy_calib.jsonl",
+                "voice": ROOT / "training" / "data" / "voice_calib.jsonl"}
         out_dir = OUT / "dev"
     md = [f"## Classifier evaluation, mode={a.mode}, {time.strftime('%Y-%m-%d %H:%M')}", ""]
-    if a.mode == "dev":
+    if a.mode == "posthoc":
+        md.append("POST-HOC, TEST-INFORMED: this model was changed after the official single test run, using aggregate test "
+                  "slice/confusion counts (no test text). Report next to the official run in results/classifier/test/; "
+                  "this is NOT an untouched held-out result.\n")
+    elif a.mode == "dev":
         md.append("DEVELOPMENT numbers on template-labelled calibration data. NOT test results; do not quote as accuracy.\n")
     else:
         md.append("Frozen test sets (Joanna K-P2, testsets/FROZEN.md). This single run is ALSO the model-selection run "
