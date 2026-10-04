@@ -49,3 +49,5 @@
 - 2026-10-03 ~22:15 SJ: run the single test scoring tonight (Joanna re-audits after 10:30; post-hoc exclusion if she flags rows). Handoff posted; docs/05 logged.
 
 - 2026-10-04 ~09:30 SJ: ship Laya; improve honestly. Data v3 (test-informed from aggregate counts only, disclosed): Hindi 'वाली' -> women (policy alignment), mixed-gender 8%, other_stat ~11% + general cricket, voice-style noise + voice_calib dev slice; threshold fit excludes injection rows, finer grid. Laya v3 training started. D1: no HF account; hosting via an alternative (SJ).
+
+- 2026-10-04 Laya v3 trained (beats v2 on same dev sets: family +5-7 pts, topic +1-2, gender >=); onnx 1.23.1 + onnxruntime 1.23.2 installed (SJ OK; protobuf 5.29->7.36, torch/transformers unaffected); guidance-only fallback proposed to Joanna (docs/05).

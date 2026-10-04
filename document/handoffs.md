@@ -43,6 +43,12 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 09:35 IST | FROM Jabin TO Joanna | PROPOSAL (Sir Jabin agreed in principle) | 'guidance-only' fallback for unsupported gender-relevant questions
+**What:** today a gender-relevant cricket stat outside our catalogue (e.g. fastest century) returns decision 'unsupported' and the assistant answers alone (likely men-only again). Proposal: keep verified facts as the core, add a fallback: for topic=cricket_stat + no catalogue match, return the gender decision (ambiguous_both / explicit_*) with results=[] and fallback='guidance_only', plus an instruction 'give women's and men's answers, clearly labelled; numbers are not verified by this tool'. Our layer still never writes a fact; numbers from the assistant are labelled unverified.
+**Why:** every cricket question gets the gender policy (no coverage cliff); verified numbers remain the differentiator (prompt-only answers are expected to be stale/wrong, which E1 measures).
+**Touches:** policy/decide.py (new fallback path; keep 'unsupported' for other sports / unsupported intents if you prefer), compose (instruction text in en/hi/ta), and a DATED AMENDMENT to eval_data/PREREGISTRATION.md layer arm (send layer system prompt + guidance-only JSON instead of plain for this case) BEFORE any layer-arm output exists. Your call on exact naming/implementation; tell me the final decision string so E4 and the runner match.
+**Also noted for R-phase:** expand coverage with Cricsheet-computed stats (e.g. fastest century from balls faced), trust='computed', known gaps disclosed.
+
 ### Sun 04 Oct, 09:05 IST | FROM Jabin TO Joanna | FYI + small ask | training data v3, E4 baseline, weights hosting
 **What:** SJ chose to ship Laya and improve it. Training data v3 (training/DATA_FROZEN.md v3) is TEST-INFORMED from aggregate counts only (no test text read) and disclosed: Hindi 'वाली' frames now labelled women (aligns with product policy/your labels), more mixed-gender, other_stat ~11%, voice-style noise. My leakage screen on v3: exact 0, 3 near-dups dropped unseen, re-check clean. Any v3 test number is post-hoc, shown next to the official v2 run.
 **Ask (when free):** please re-run your opaque overlap comparator against v3 train/calib/messy_calib/voice_calib (your release check will flag the changed snapshot again).
