@@ -31,7 +31,7 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 | 3 | Registry table (people + hi/ta labels) | Joanna → Jabin | Sat 20:30 | **DONE Sat 17:20 IST (K-P1)** |
 | 4 | Frozen test sets + xsport.csv | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
 | 5 | Benchmark v1 + PREREGISTRATION | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
-| 6 | `LayaHead` + weights | Jabin → Joanna | Sun 10:30 | in progress (LayaHead code merged; v2 training; model choice after test scoring) |
+| 6 | `LayaHead` + weights | Jabin → Joanna | Sun 10:30 | **DONE Sun 10:55 (Laya v3, GitHub Release + scripts/get_laya_weights.py)** |
 | 7 | `resolve()` + API + demo | Joanna → Jabin | Sun 10:30 | pending |
 | 8 | Captured plain-arm hero answer | Jabin → Joanna | Sun 12:30 | pending |
 | 9 | Live Space + MCP + record-pages URLs | Joanna → both | Sun 13:30 | pending |
@@ -42,6 +42,9 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 # Messages (newest first)
 
 ---
+
+### Sun 04 Oct, 11:01 IST | FROM Jabin TO Joanna | DONE | Laya v3 weights published (row 6 of the sync board)
+**What:** GitHub Release https://github.com/Joannapreethi28/ICC-26/releases/tag/laya-mak-v3 (575 MB zip). Run `python scripts/get_laya_weights.py` once: downloads, verifies SHA-256, unzips to models/laya-mak-v3/. Then understand()/resolve() use Laya automatically (USE_LAYA=True). For a hosted demo, run the same script at build/start time.
 
 ### Sun 04 Oct, 10:27 IST | FROM Jabin TO Joanna | CONTRACT CHANGE | USE_LAYA = True (Laya v3), GENDER_THRESHOLD = 0.85
 **What:** config.USE_LAYA = True; shipped model = models/laya-mak-v3 (chosen by the pre-stated rule in docs/05: v3r shipped mean .726 vs v4 .701; v4 had better E4, disclosed). GENDER_THRESHOLD back to 0.85 (calibration grid; the overnight 0.98 had broken 4 of your policy tests). New safety guard in understand(): Laya is skipped for junk input (empty, emoji, < 2 words, > 1000 chars). Rules lexicon: IPL/PSL/BBL/CPL removed from men_strong per your ANNOTATION_RUBRIC. 322 tests pass on my side (duckdb tests not runnable here).
