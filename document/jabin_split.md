@@ -18,7 +18,7 @@ Owner: Sir Jabin, with Claude Code. Partner track: `joanna_split.md` (Joanna + A
 | # | Jabin's GPU/heavy queue | Blocked on |
 |---|---|---|
 | 1 | ~~Install duckdb~~ DONE 11:55 (439 tests pass). rapidfuzz pending SJ OK (needed only if resolve() uses entities.py) | - |
-| 2 | E1 layer + layer_text: `python -m mak.eval.run_e1 --arms layer,layer_text` then `python -m mak.eval.e1_tables` (~1.5-2 h GPU) | Efanio's "resolve() READY" (deadline Sun 13:00) |
+| 2 | E1 layer + layer_text: `python -m mak.eval.run_e1 --arms layer,layer_text` then `python -m mak.eval.e1_tables` (~1.5-2 h GPU). RUNNING from 12:20; resolve() built by Jabin (SJ), so no dependency left | - |
 | 3 | Regenerate `python -m mak.eval.make_report`, update model card numbers | 2 |
 | 4 | Optional: ONNX inference wrapper + accuracy check (only if Efanio picks ONNX hosting) | Efanio's hosting choice |
 | 5 | Final: publish decision at the end (SJ: keep the existing Release until then) | SJ |

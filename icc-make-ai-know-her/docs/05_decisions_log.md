@@ -83,3 +83,6 @@ Ship v4 if its post-hoc shipped mean accuracy over gender/family/stat (en/hi/ta)
 
 ### Final split from Checkpoint A (4 Oct ~11:45, SJ)
 Jabin: GPU/heavy computation only (laptop). Efanio (GPT 6): all of Joanna's remaining work + non-GPU parts of Jabin's. Ownership table in document/efanio_split.md. Single dependency: resolve() (Efanio, deadline 13:00) before Jabin's E1 layer arms.
+
+### Guidance-only implemented as a fallback, not a new decision (4 Oct 12:20)
+Decision stays 'unsupported' so E4 and the E1 preregistration stay valid without amendment; fallback='guidance_only' + answer_text carries the 'give both, unverified' instruction for MCP/API users. resolve() built by Jabin on SJ's instruction.

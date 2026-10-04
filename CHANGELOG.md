@@ -71,3 +71,5 @@
 - 2026-10-04 ~11:45 SJ final split: Jabin = GPU/heavy only; Efanio = all Joanna remaining + non-GPU Jabin items. efanio_split.md rewritten (ownership table, resolve() first by 13:00), jabin_split.md live status rewritten as session start point, joanna_split.md marked TRANSFERRED, handoff + docs/05 logged.
 
 - 2026-10-04 duckdb 1.5.6 installed on Jabin's laptop (SJ OK; torch/transformers unchanged): 439 tests pass; only rapidfuzz-dependent tests (test_entities, test_registry_snapshot) remain unrunnable here. SJ: keep the GitHub Release until the end.
+
+- 2026-10-04 ~12:20 resolve() implemented by Jabin (SJ: remove dependency): src/mak/pipeline.py; guidance-only fallback via fallback='guidance_only' (decision vocabulary unchanged). rapidfuzz installed (SJ OK). 457 tests pass. E1 layer + layer_text started.
