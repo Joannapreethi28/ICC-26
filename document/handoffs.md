@@ -43,6 +43,11 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 10:27 IST | FROM Jabin TO Joanna | CONTRACT CHANGE | USE_LAYA = True (Laya v3), GENDER_THRESHOLD = 0.85
+**What:** config.USE_LAYA = True; shipped model = models/laya-mak-v3 (chosen by the pre-stated rule in docs/05: v3r shipped mean .726 vs v4 .701; v4 had better E4, disclosed). GENDER_THRESHOLD back to 0.85 (calibration grid; the overnight 0.98 had broken 4 of your policy tests). New safety guard in understand(): Laya is skipped for junk input (empty, emoji, < 2 words, > 1000 chars). Rules lexicon: IPL/PSL/BBL/CPL removed from men_strong per your ANNOTATION_RUBRIC. 322 tests pass on my side (duckdb tests not runnable here).
+**Watch out:** the weights are NOT in git. On a machine without models/laya-mak-v3, understand() falls back to rules with a trace note (safe, never crashes). I will publish the weights (proposal: GitHub Release asset, SJ to approve) and post the download step. rules-baseline tests now pin USE_LAYA=False via a fixture.
+**Post-hoc results (disclosed, test-informed):** E4 decision accuracy shipped v3: en .748 / hi .675 / ta .762 (rules .632/.498/.481). Full report coming in results/classifier/report.md.
+
 ### Sun 04 Oct, 09:35 IST | FROM Jabin TO Joanna | PROPOSAL (Sir Jabin agreed in principle) | 'guidance-only' fallback for unsupported gender-relevant questions
 **What:** today a gender-relevant cricket stat outside our catalogue (e.g. fastest century) returns decision 'unsupported' and the assistant answers alone (likely men-only again). Proposal: keep verified facts as the core, add a fallback: for topic=cricket_stat + no catalogue match, return the gender decision (ambiguous_both / explicit_*) with results=[] and fallback='guidance_only', plus an instruction 'give women's and men's answers, clearly labelled; numbers are not verified by this tool'. Our layer still never writes a fact; numbers from the assistant are labelled unverified.
 **Why:** every cricket question gets the gender policy (no coverage cliff); verified numbers remain the differentiator (prompt-only answers are expected to be stale/wrong, which E1 measures).

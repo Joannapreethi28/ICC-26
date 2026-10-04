@@ -1,1199 +1,1199 @@
 {
- "model": "models/laya-mak-v3",
+ "model": "models/laya-mak-v4",
  "target": 0.98,
  "n_calib": 2960,
  "per_lang": {
   "en": {
-   "gender_acc_all": 0.996969696969697,
-   "gender_ece_all": 0.04156717171717353
+   "gender_acc_all": 0.997979797979798,
+   "gender_ece_all": 0.0320424242424272
   },
   "hi": {
-   "gender_acc_all": 0.95,
-   "gender_ece_all": 0.007282142857142064
+   "gender_acc_all": 0.9653061224489796,
+   "gender_ece_all": 0.0012604081632702827
   },
   "ta": {
-   "gender_acc_all": 0.9484848484848485,
-   "gender_ece_all": 0.007429191919190297
+   "gender_acc_all": 0.9646464646464646,
+   "gender_ece_all": 0.001402424242420185
   }
  },
- "no_rule_cue_rows": 817,
- "chosen_threshold": 0.5,
+ "no_rule_cue_rows": 821,
+ "chosen_threshold": 0.94,
  "grid": [
   {
    "t": 0.5,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.51,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.52,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.53,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.54,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.55,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.56,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.57,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.58,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.59,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.6,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.61,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.62,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.63,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.64,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.65,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.66,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.67,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.68,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.69,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.7,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.71,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.72,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.73,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.74,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.75,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.76,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.77,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.78,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.79,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.8,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.81,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.82,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accuracy": 0.9714,
+    "accept_rate": 0.1282
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.83,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.84,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.85,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.86,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.87,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.88,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.89,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.9,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.91,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.92,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.93,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
-    "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accepted": 34,
+    "accuracy": 0.9706,
+    "accept_rate": 0.1245
    },
-   "meets": true
+   "meets": false
   },
   {
    "t": 0.94,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.95,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.951,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.952,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 35,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.1296
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.953,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 34,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.1259
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.954,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 34,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.1259
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.955,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 34,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.1259
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.956,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
     "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.1222
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.957,
    "en": {
-    "accepted": 34,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.1245
+    "accept_rate": 0.1199
    },
    "hi": {
     "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.135
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 32,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.1185
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.958,
    "en": {
-    "accepted": 26,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.0952
+    "accept_rate": 0.1199
    },
    "hi": {
-    "accepted": 24,
+    "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.0876
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 15,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.0556
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.959,
    "en": {
-    "accepted": 0,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1199
    },
    "hi": {
-    "accepted": 0,
+    "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 0,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.96,
    "en": {
-    "accepted": 0,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1199
    },
    "hi": {
-    "accepted": 0,
+    "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 0,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.961,
    "en": {
-    "accepted": 0,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1199
    },
    "hi": {
-    "accepted": 0,
+    "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 0,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.962,
    "en": {
-    "accepted": 0,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1199
    },
    "hi": {
-    "accepted": 0,
+    "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 0,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.963,
    "en": {
-    "accepted": 0,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1199
    },
    "hi": {
-    "accepted": 0,
+    "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 0,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.964,
    "en": {
-    "accepted": 0,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1199
    },
    "hi": {
-    "accepted": 0,
+    "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 0,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.965,
    "en": {
-    "accepted": 0,
+    "accepted": 32,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1199
    },
    "hi": {
-    "accepted": 0,
+    "accepted": 37,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1317
    },
    "ta": {
-    "accepted": 0,
+    "accepted": 33,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1209
    },
    "meets": true
   },
   {
    "t": 0.966,
    "en": {
-    "accepted": 0,
+    "accepted": 31,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.1161
    },
    "hi": {
-    "accepted": 0,
+    "accepted": 26,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.0925
    },
    "ta": {
-    "accepted": 0,
+    "accepted": 17,
     "accuracy": 1.0,
-    "accept_rate": 0.0
+    "accept_rate": 0.0623
    },
    "meets": true
   },

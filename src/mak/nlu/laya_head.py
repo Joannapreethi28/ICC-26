@@ -27,7 +27,7 @@ def default_path() -> str:
     env = os.environ.get("MAK_LAYA_PATH")
     if env:
         return env
-    for name in ("laya-mak-v4", "laya-mak-v3", "laya-mak-v2", "laya-mak-v1"):
+    for name in ("laya-mak-v3",):  # shipped model, chosen by the pre-stated rule (results/calibration/model_choice.json)
         local = config.ROOT / "models" / name
         if local.exists():
             return str(local)

@@ -16,6 +16,6 @@ GENDER_THRESHOLD = 0.85
 INJECTION_FAILSAFE = True
 
 # Classifier switch. False = rules only. Jabin sets LAYA_MODEL_ID and announces "flip USE_LAYA" in handoffs.
-USE_LAYA = False
+USE_LAYA = True
 LAYA_MODEL_ID = ""          # Hugging Face Hub repo id of the fine-tuned model, filled in J-P4
 LAYA_BASE_MODEL = "convaiinnovations/laya-multilingual"

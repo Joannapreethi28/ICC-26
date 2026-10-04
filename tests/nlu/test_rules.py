@@ -4,6 +4,12 @@ import pytest
 from mak.nlu.lang import detect_lang
 from mak.nlu.understand import understand
 
+
+@pytest.fixture(autouse=True)
+def _rules_only(monkeypatch):
+    """These tests pin the RULES baseline; the Laya path is tested in test_understand.py."""
+    monkeypatch.setattr("mak.config.USE_LAYA", False)
+
 # (text, lang, gender_signal, topic, family, stat, format)
 CASES = [
     ("Who has the most T20I runs?", "en", "none", "cricket_stat", "career_record", "runs", "T20I"),

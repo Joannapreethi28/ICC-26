@@ -44,7 +44,15 @@ def _with_note(parse: Parse, note: str) -> Parse:
     return replace(parse, trace=parse.trace + (note,))
 
 
+def _worth_asking_laya(query: str) -> bool:
+    """Laya always picks some label, even for junk. Only ask it about real questions: >= 2 words with letters, sane length."""
+    import re
+    return len(query) <= 1000 and len(re.findall(r"[^\W\d_]{2,}", query)) >= 2
+
+
 def _add_laya(query: str, parse: Parse) -> Parse:
+    if not _worth_asking_laya(query):
+        return _with_note(parse, "laya skipped: input has no real words (empty, emoji, junk or too long); rules result")
     try:
         from mak.nlu.laya_head import LayaHead
         pred = LayaHead.load().predict(query)

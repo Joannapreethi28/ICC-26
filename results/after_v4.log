@@ -1,0 +1,62 @@
+
+$ training/calibrate/fit_temperature.py --model models/laya-mak-v4
+{
+ "model": "models/laya-mak-v4",
+ "target": 0.98,
+ "n_calib": 2960,
+ "per_lang": {
+  "en": {
+   "gender_acc_all": 0.997979797979798,
+   "gender_ece_all": 0.0320424242424272
+  },
+  "hi": {
+   "gender_acc_all": 0.9653061224489796,
+   "gender_ece_all": 0.0012604081632702827
+  },
+  "ta": {
+   "gender_acc_all": 0.9646464646464646,
+   "gender_ece_all": 0.001402424242420185
+  }
+ },
+ "no_rule_cue_rows": 821,
+ "chosen_threshold": 0.94,
+ "note": "fit on calibration data only; if None, no threshold reaches the target -> keep the safe default and report"
+}
+{'t': 0.5, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 35, 'accuracy': 0.9714, 'accept_rate': 0.1282}, 'meets': False}
+{'t': 0.55, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 35, 'accuracy': 0.9714, 'accept_rate': 0.1282}, 'meets': False}
+{'t': 0.6, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 35, 'accuracy': 0.9714, 'accept_rate': 0.1282}, 'meets': False}
+{'t': 0.65, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 35, 'accuracy': 0.9714, 'accept_rate': 0.1282}, 'meets': False}
+{'t': 0.7, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 35, 'accuracy': 0.9714, 'accept_rate': 0.1282}, 'meets': False}
+{'t': 0.75, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 35, 'accuracy': 0.9714, 'accept_rate': 0.1282}, 'meets': False}
+{'t': 0.8, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 35, 'accuracy': 0.9714, 'accept_rate': 0.1282}, 'meets': False}
+{'t': 0.85, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 34, 'accuracy': 0.9706, 'accept_rate': 0.1245}, 'meets': False}
+{'t': 0.9, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 34, 'accuracy': 0.9706, 'accept_rate': 0.1245}, 'meets': False}
+{'t': 0.95, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 33, 'accuracy': 1.0, 'accept_rate': 0.1209}, 'meets': True}
+{'t': 0.955, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 33, 'accuracy': 1.0, 'accept_rate': 0.1209}, 'meets': True}
+{'t': 0.96, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 33, 'accuracy': 1.0, 'accept_rate': 0.1209}, 'meets': True}
+{'t': 0.965, 'en': {'accepted': 32, 'accuracy': 1.0, 'accept_rate': 0.1199}, 'hi': {'accepted': 37, 'accuracy': 1.0, 'accept_rate': 0.1317}, 'ta': {'accepted': 33, 'accuracy': 1.0, 'accept_rate': 0.1209}, 'meets': True}
+{'t': 0.97, 'en': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'hi': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'ta': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'meets': True}
+{'t': 0.975, 'en': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'hi': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'ta': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'meets': True}
+{'t': 0.98, 'en': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'hi': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'ta': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'meets': True}
+{'t': 0.985, 'en': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'hi': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'ta': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'meets': True}
+{'t': 0.99, 'en': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'hi': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'ta': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'meets': True}
+{'t': 0.995, 'en': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'hi': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'ta': {'accepted': 0, 'accuracy': 1.0, 'accept_rate': 0.0}, 'meets': True}
+
+$ training/evaluate_classifiers.py --mode posthoc --tag v4 --laya models/laya-mak-v4 --arms c_laya_ft,d_shipped
+c_laya_ft en {'family/en': 0.66, 'format/en': 0.884, 'gender_signal/en': 0.926, 'stat/en': 0.473, 'topic/en': 0.947}
+c_laya_ft hi {'family/hi': 0.688, 'format/hi': 0.817, 'gender_signal/hi': 0.906, 'stat/hi': 0.527, 'topic/hi': 0.956}
+c_laya_ft ta {'family/ta': 0.677, 'format/ta': 0.81, 'gender_signal/ta': 0.933, 'stat/ta': 0.466, 'topic/ta': 0.933}
+d_shipped en {'family/en': 0.663, 'format/en': 0.884, 'gender_signal/en': 0.929, 'stat/en': 0.531, 'topic/en': 0.947}
+d_shipped hi {'family/hi': 0.694, 'format/hi': 0.817, 'gender_signal/hi': 0.892, 'stat/hi': 0.543, 'topic/hi': 0.961}
+d_shipped ta {'family/ta': 0.672, 'format/ta': 0.82, 'gender_signal/ta': 0.924, 'stat/ta': 0.466, 'topic/ta': 0.933}
+wrote C:\Users\Jabin M\OneDrive\Desktop\ICC'26\results\classifier\posthoc_v4\report.md
+
+$ -m mak.eval.decision_eval --arm shipped --laya models/laya-mak-v4 --tag v4_posthoc
+shipped v4_posthoc en: decision accuracy 0.789 (95% CI 0.743-0.829, n=337)
+shipped v4_posthoc hi: decision accuracy 0.739 (95% CI 0.674-0.795, n=203)
+shipped v4_posthoc ta: decision accuracy 0.762 (95% CI 0.700-0.814, n=210)
+
+$ -m mak.eval.run_e1 --arms plain,prompt_only
+plain: 25 records, 0 transport errors, 100s
+plain: 50 records, 0 transport errors, 180s
+plain: 75 records, 0 transport errors, 261s

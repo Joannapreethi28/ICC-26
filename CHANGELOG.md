@@ -55,3 +55,5 @@
 - 2026-10-04 GENDER_THRESHOLD 0.98 -> 0.85 (calib grid, docs/05); 262 tests pass. E3 script (src/mak/eval/e3_xsport.py). Running post-hoc v3 test + E4 v3 + E3.
 
 - 2026-10-04 post-hoc v3 (TEST-INFORMED, disclosed; official v2 run unchanged): Laya alone gender en .914/hi .897/ta .919 (v2 .795/.911/.938), family .677/.704/.704 (v2 .599/.640/.624); E4 shipped v3 .751/.675/.762 vs rules .632/.498/.481; E3 xsport gender en laya .949 vs rules .847 (ta n=1). Found: rules men_strong had IPL/PSL/BBL/CPL, contradicting ANNOTATION_RUBRIC ('do not infer gender from competition popularity') -> removed (rules-only en gender .816 -> .941, tag v3r); training banks only paired IPL/BBL/PSL with men rows -> data v4 adds them to neutral rows; Laya v4 training started.
+
+- 2026-10-04 ~10:30 SHIP: Laya v3 per pre-stated rule (v4 not chosen; better E4 disclosed). USE_LAYA=True, laya_head pinned to laya-mak-v3. Junk-input guard in understand() (Laya skipped for empty/emoji/<2 words/>1000 chars) after Laya-on tests showed empty input classified as cricket_stat. Rules tests pinned to USE_LAYA=False; new junk-input tests with Laya on. 322 tests pass. CONTRACT CHANGE posted.

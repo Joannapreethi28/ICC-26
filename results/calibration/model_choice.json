@@ -1,0 +1,6 @@
+{
+ "rule": "v4 if shipped mean(gender,family,stat) >= v3r",
+ "v3r": 0.7258703841544725,
+ "v4": 0.70135792785932,
+ "chosen": "laya-mak-v3"
+}

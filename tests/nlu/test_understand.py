@@ -52,3 +52,12 @@ def test_merge_v2_lets_confident_laya_beat_rules_family():
             "format": ("unspecified", 0.95), "stat": ("career_line", 0.99)}
     assert u.merge(p, pred, policy="v2").family == "player_stat"
     assert u.merge(p, pred, policy="v1").family == p.family
+
+
+import pytest  # noqa: E402
+
+
+@pytest.mark.parametrize("text", ["", "   ", "\U0001f3cf\U0001f3cf\U0001f3cf", "x" * 5000, None, 12345])
+def test_junk_input_never_intervenes_even_with_laya_on(text):
+    p = u.understand(text, use_laya=True)
+    assert p.topic == "non_sport" and p.family is None and p.gender_signal == "none"
