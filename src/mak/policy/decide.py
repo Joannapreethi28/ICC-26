@@ -14,13 +14,14 @@ DECISION_TO_GENDERS: dict[str, tuple[Gender, ...]] = {
 
 
 def decide(p: Parse, supported: bool) -> tuple[Decision, list[str]]:
-    # Injection check MUST come first - it overrides everything
-    if p.injection_suspected:
-        return 'ambiguous_both', ['policy: injection suspected -> fail-safe both']
     if p.topic in ('cricket_general', 'non_sport'):
         return 'no_intervention', ['policy: gender-insensitive or non-sport -> stay silent']
     if not supported:
         return 'unsupported', ['policy: stats question outside catalogue -> unsupported (never invent)']
+    # Injection only changes the gender decision of a supported stat question (ANNOTATION_RUBRIC: the sports question is
+    # labelled normally); it never makes us intervene on a non-sport or out-of-catalogue question.
+    if p.injection_suspected:
+        return 'ambiguous_both', ['policy: injection suspected -> fail-safe both']
     signal, trace = p.gender_signal, []
     # A NaN or invalid confidence must not bypass the fail-safe.
     if signal in ('women', 'men') and not GENDER_THRESHOLD <= p.gender_conf <= 1:

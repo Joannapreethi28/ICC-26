@@ -15,13 +15,11 @@ def test_policy_precedence_and_purity(topic, supported, injection, signal, confi
               injection_suspected=injection)
     before = replace(p)
     result, trace = decide(p, supported)
-    if injection:
-        expected = 'ambiguous_both'
-    elif topic in ('cricket_general', 'non_sport'):
+    if topic in ('cricket_general', 'non_sport'):
         expected = 'no_intervention'
     elif not supported:
         expected = 'unsupported'
-    elif signal in ('women', 'men') and confidence < 0.85:
+    elif injection or (signal in ('women', 'men') and confidence < 0.85):
         expected = 'ambiguous_both'
     else:
         expected = {'women': 'explicit_women', 'men': 'explicit_men',

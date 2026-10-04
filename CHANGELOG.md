@@ -1,8 +1,33 @@
 # CHANGELOG (build)
 
+- 2026-10-04: Pitch v10 moves Jabin Joseph and Efanio Jens closer to Joanna Preethi on the closing slide, with other slide content unchanged. Final package validated and closing slide visually checked.
+
+- 2026-10-04: Pitch v9 removes the minimized screenshots at user request, retains clearly labelled enlarged original excerpts, rebalances slide 1, enlarges/aligns slide 2 record comparison and improves slide 4 bottom spacing. Audited all five final renders against template clarity and recorded findings in `submssion/presentation-audit.md`. Five slides, no notes, chart and font checks passed.
+
 - 2026-10-04: Efanio consolidated the trained-Laya MCP setup, temporary public URLs, prior verification, browser-access limits and proposed before/after video workflow in `document/handoffs.md`; corrected current-chat identity to Efanio and updated hosting sync status. ChatGPT/Gemini account connections and recording remain pending. Documentation only; no fresh runtime verification claimed.
 
 - 2026-10-04: Small demo presentation polish: styled the Full answer disclosure with readable typography and padding; added shaded source-table headers, alternating rows, roomier cells and unbroken snapshot dates. Existing layout and answer content retained. Python syntax and whitespace checks passed; live browser appearance not verified.
+- 2026-10-04: Pitch v8 adds researched cross-sport potential on slide 5, with clickable UNESCO and IOC sources, football/tennis/athletics explicitly framed as future expansion, and verified data/testing requirements. Added `submssion/cross-sport-evidence.md` to separate the documented visibility need from proposed product impact and limited classifier-transfer evidence. Five-slide limit and all latest screenshot/typography/name changes retained.
+
+- 2026-10-04: Pitch v7 includes clearly labelled magnified screenshot excerpts on slides 1-2 alongside complete original captures. The opening answer text is about 2.9x larger than v5 on slide 1 and 2.65x larger on slide 2. ChatGPT acknowledgement of women remains intact. Added Presented by and aligned team names on slide 5 (v5 change retained). Original image bytes verified in the final package, no notes parts, five slides and final renders reviewed.
+
+- 2026-10-04: Pitch v5 adds Presented by above the aligned names on the closing slide, preserving Joanna Preethi (Team Lead), Jabin Joseph and Efanio Jens. Five-slide package finalized and closing slide visually reviewed.
+
+- 2026-10-04: Pitch v4 enlarges the full first screenshot from 1040 to 1320 display pixels and increases slide-four typography: chart labels 43px, values 58px, supporting copy 32-36px. Adjusted spacing and preserved five slides, hyperlinks and no speaker notes. Final package checks passed and final deck reopened for visual review.
+
+- 2026-10-04: Created pitch v3 with a clearer opening problem and consequence, three clickable project links on slide one, full screenshots and consistent spacing. Removed every speaker-notes part and track/category labels. Moved evidence references to clickable slide text and retained visible result qualifications. Five-slide package validated and reopened for visual review. Earlier versions preserved.
+
+- 2026-10-04: Created five-slide pitch v2 in `submssion/final/Make AI Know Her - ICC Pitch v2.pptx`: full uncropped Google AI Mode and ChatGPT screenshots, rubric-aligned wording tied to evidence, and preserved team names. Verified both embedded screenshots match original bytes and have zero crop. Reopened and visually checked all five final renders; package, fonts, slide count and native chart checks passed. Added judging alignment and updated screenshot documentation. Previous deck and source assets retained. No screening guarantee, account-ownership verification or native PowerPoint execution claimed.
+
+- 2026-10-04: Created `submssion/final/Make AI Know Her - ICC Pitch.pptx`, exactly five slides, adapting the supplied design deck with reference Calibri typography. Included accurate native crops of the supplied Google/ChatGPT screenshots, an editable three-condition results chart with embedded data, Laya/MCP feasibility and business value, dated record examples, and speaker-note sources/limits. Team names: Joanna Preethi (Team Lead), Jabin Joseph, Efanio Jens; functional roles removed. Final package/slide-count/font/chart checks passed; reopened and visually reviewed all five final slide renders. Source PPTX files and screenshots unchanged. Native Microsoft PowerPoint was not used for verification.
+
+- 2026-10-04: Strengthened pitch slides 3 and 5 around Laya's compact CPU inference, MCP/API adoption, women's discovery and the business case for ICC/cricket platforms. Added explicit cost and adoption reasoning in speaker notes without inventing numerical savings, deployment readiness or revenue outcomes. Five-slide limit retained.
+
+- 2026-10-04: Reviewed the two supplied consumer-assistant screenshots and revised slides 1–2 in `submssion/pitch-content.md`. Added `submssion/screenshot-placement.md` with native PowerPoint crop rectangles, layout sizes and evidence captions. Preserved ChatGPT's reference to women and distinguished incomplete answers from unproven stale-statistic claims. The plan remains five slides; source screenshots are unchanged.
+
+- 2026-10-04: Refined Sir Jabin's supplied pitch skeleton into exactly five slides in `submssion/pitch-content.md`, including concise slide copy, design direction, speaker notes and source/claim limits. Corrected preliminary visibility metrics and removed unverified deployment, football-adapter and end-to-end latency claims. Presentation content only; no PPTX changes in this step.
+
+- 2026-10-04: Submission context review for Sir Jabin: reviewed project documentation/research/results, supplied official website screenshots, and all 15 slides of `submssion/template.pptx`; inspected the additional generic `Untitled design.pptx`. Added `submssion/context-review.md` with judging alignment, evidence limits, typography findings and a proposed five-slide story. Saved inspection previews under `test-results/submission-review/`. No product code or reference deck changed; no fresh model evaluation or submission performed.
 
 - 2026-10-04 12:01 IST: merged the concurrent handoff additions through `2236f11`, preserving both histories. Updated current status: Jabin delivered resolve; Efanio continues API/demo/MCP and remaining integration. Upstream pipeline unchanged. 457 tests passed in 15.19s; 65 frozen hashes verified; headline smoke check returned both records with the local rules fallback (weights absent).
 
@@ -86,16 +111,13 @@
 
 - 2026-10-04 ~13:15 consistency pass: jabin_split J-P3/J-P4/J-P5 checkboxes ticked with notes, docs/09 status corrected (v4 not chosen), model card gets E1 downstream line; tests green. Jabin's required track complete; optional ONNX wrapper and end-of-project publish remain.
 
-<<<<<<< HEAD
 ### 2026-10-04 — Efanio, Task 1 interfaces
 - Unified REST, demo and Streamable HTTP MCP; registered only resolve_sports_query/list_supported_intents as public tools. Shared 2,000-character validation and serialized inference.
 - Replaced the dark card dashboard with a restrained scorebook layout, EN/HI/TA presets, record rows, source/date table, trace and honest coverage/model status.
 - Added exact-question saved E1 plain-model comparisons with model/date and pilot limitations.
 - Prevented named-player questions from returning unrelated global leaders; unavailable player data remains unanswered. Preserved pre-existing Tamil and policy edits.
 - Measured validation: 489 tests passed; live MCP initialization/discovery plus EN/HI/TA resolves and catalogue call passed. Local browser headline render verified. Trained-model execution remains unverified here: weights and computed database absent.
-=======
 - 2026-10-04 Efanio weights instructions added (efanio_split.md §2b + handoff): pip laya==0.3.24 + scripts/get_laya_weights.py from the kept Release.
->>>>>>> aef8907c152506018638829d076eb4bb2aa62326
 
 - 2026-10-04 reviewed Efanio Task 1 (API/demo/MCP). Fixed: Laya could turn explicit other-sport questions (World Cup goals) into cricket; understand.merge keeps rules' other_sport_stat (post-hoc behaviour change after E3's single run; disclosed). Requested from Efanio: revert injection-first order in decide() (it intervenes on injected non-sport questions). 481 tests pass.
 
@@ -106,3 +128,5 @@
 - Added local/public demo launcher with required model warmup, file-serving restrictions and explicit --share; added executable MCP smoke checks and ChatGPT/Gemini connection guide.
 - Measured local MCP initialize/list/call pass for EN/HI/TA with real Laya traces and sources/as-of dates. Public sharing waits for Sir Jabin approval; no download or public tunnel started.
 - Follow-up: Efanio confirmed Sir Jabin approved public testing and tunnel-helper download. Launched https://df337fc2ba08c1ca49.gradio.live; public MCP /gradio_api/mcp/ independently passes discovery, EN/HI/TA trained-Laya calls and catalogue. Four targeted interface tests pass. Consumer-account connection remains to be tested.
+
+- 2026-10-04 23:45 Jabin: gradio[mcp] 6.29.1 installed on the laptop (SJ OK; torch/transformers unchanged, starlette 1.7.0); decide() order restored (no_intervention/unsupported before injection, per ANNOTATION_RUBRIC; injected non-sport questions no longer get 'show both'); 490 tests pass. Deck still being edited in submssion/ (v10 at 23:39) by another session: not committed yet.
