@@ -1,0 +1,291 @@
+{
+ "testset": "C:\\Users\\Jabin M\\OneDrive\\Desktop\\ICC'26\\training\\data\\messy_calib.jsonl",
+ "n_queries": 20,
+ "by_q_lang": [
+  {
+   "q": "family",
+   "lang": "en",
+   "n": 13,
+   "acc": 0.7692307692307693,
+   "lo": 0.49743126004873084,
+   "hi": 0.918206209075343,
+   "ece": 0.19518041610717773
+  },
+  {
+   "q": "format",
+   "lang": "en",
+   "n": 13,
+   "acc": 1.0,
+   "lo": 0.7718981569447083,
+   "hi": 1.0,
+   "ece": 0.058077096939086914
+  },
+  {
+   "q": "gender_signal",
+   "lang": "en",
+   "n": 20,
+   "acc": 1.0,
+   "lo": 0.8388698745050667,
+   "hi": 1.0,
+   "ece": 0.051796293258667025
+  },
+  {
+   "q": "stat",
+   "lang": "en",
+   "n": 13,
+   "acc": 0.6923076923076923,
+   "lo": 0.4236888781333764,
+   "hi": 0.8731950283838191,
+   "ece": 0.24961521075322077
+  },
+  {
+   "q": "topic",
+   "lang": "en",
+   "n": 20,
+   "acc": 0.95,
+   "lo": 0.7638641064874331,
+   "hi": 0.9911187805671268,
+   "ece": 0.08611360192298893
+  }
+ ],
+ "by_q_slice": [
+  {
+   "q": "family",
+   "slice": "messy_hard",
+   "n": 13,
+   "acc": 0.7692307692307693,
+   "lo": 0.49743126004873084,
+   "hi": 0.918206209075343,
+   "ece": 0.19518041610717773
+  },
+  {
+   "q": "format",
+   "slice": "messy_hard",
+   "n": 13,
+   "acc": 1.0,
+   "lo": 0.7718981569447083,
+   "hi": 1.0,
+   "ece": 0.058077096939086914
+  },
+  {
+   "q": "gender_signal",
+   "slice": "messy_hard",
+   "n": 20,
+   "acc": 1.0,
+   "lo": 0.8388698745050667,
+   "hi": 1.0,
+   "ece": 0.051796293258667025
+  },
+  {
+   "q": "stat",
+   "slice": "messy_hard",
+   "n": 13,
+   "acc": 0.6923076923076923,
+   "lo": 0.4236888781333764,
+   "hi": 0.8731950283838191,
+   "ece": 0.24961521075322077
+  },
+  {
+   "q": "topic",
+   "slice": "messy_hard",
+   "n": 20,
+   "acc": 0.95,
+   "lo": 0.7638641064874331,
+   "hi": 0.9911187805671268,
+   "ece": 0.08611360192298893
+  }
+ ],
+ "by_q_source": [
+  {
+   "q": "family",
+   "source": "grammar",
+   "n": 10,
+   "acc": 0.9,
+   "lo": 0.5958436145024278,
+   "hi": 0.9821242504842788,
+   "ece": 0.0904606461524964
+  },
+  {
+   "q": "family",
+   "source": "noise",
+   "n": 3,
+   "acc": 0.3333333333333333,
+   "lo": 0.0614903152761605,
+   "hi": 0.7923450448735121,
+   "ece": 0.5442463159561157
+  },
+  {
+   "q": "format",
+   "source": "grammar",
+   "n": 10,
+   "acc": 1.0,
+   "lo": 0.7224598312333834,
+   "hi": 1.0,
+   "ece": 0.03711483478546147
+  },
+  {
+   "q": "format",
+   "source": "noise",
+   "n": 3,
+   "acc": 1.0,
+   "lo": 0.43849391955098227,
+   "hi": 1.0,
+   "ece": 0.12795130411783853
+  },
+  {
+   "q": "gender_signal",
+   "source": "grammar",
+   "n": 16,
+   "acc": 1.0,
+   "lo": 0.8063865817272802,
+   "hi": 1.0,
+   "ece": 0.04031459987163542
+  },
+  {
+   "q": "gender_signal",
+   "source": "noise",
+   "n": 4,
+   "acc": 1.0,
+   "lo": 0.5100999795960008,
+   "hi": 1.0,
+   "ece": 0.09772306680679321
+  },
+  {
+   "q": "stat",
+   "source": "grammar",
+   "n": 10,
+   "acc": 0.8,
+   "lo": 0.49015684672072335,
+   "hi": 0.9433190520193067,
+   "ece": 0.16288516521453858
+  },
+  {
+   "q": "stat",
+   "source": "noise",
+   "n": 3,
+   "acc": 0.3333333333333333,
+   "lo": 0.0614903152761605,
+   "hi": 0.7923450448735121,
+   "ece": 0.5442463159561157
+  },
+  {
+   "q": "topic",
+   "source": "grammar",
+   "n": 16,
+   "acc": 0.9375,
+   "lo": 0.7167073163197013,
+   "hi": 0.9888809426916687,
+   "ece": 0.09350205212831496
+  },
+  {
+   "q": "topic",
+   "source": "noise",
+   "n": 4,
+   "acc": 1.0,
+   "lo": 0.5100999795960008,
+   "hi": 1.0,
+   "ece": 0.09772306680679321
+  }
+ ],
+ "confusion": {
+  "gender_signal": {
+   "none -> none": 13,
+   "both_named -> both_named": 4,
+   "men -> men": 2,
+   "women -> women": 1
+  },
+  "topic": {
+   "cricket_stat -> cricket_stat": 13,
+   "cricket_general -> cricket_general": 4,
+   "other_sport_stat -> cricket_stat": 1,
+   "other_sport_stat -> other_sport_stat": 1,
+   "non_sport -> non_sport": 1
+  },
+  "family": {
+   "player_stat -> player_stat": 3,
+   "career_record -> career_record": 3,
+   "team_record -> team_record": 2,
+   "recent_result -> recent_result": 2,
+   "career_record -> player_stat": 1,
+   "world_cup_record -> career_record": 1,
+   "other_stat -> career_record": 1
+  },
+  "stat": {
+   "career_line -> career_line": 3,
+   "most_wins -> most_wins": 2,
+   "last_result -> last_result": 2,
+   "runs -> career_line": 1,
+   "most_wickets -> wickets": 1,
+   "other -> sixes": 1,
+   "economy -> economy": 1,
+   "centuries -> centuries": 1,
+   "team_total -> highest_score": 1
+  },
+  "format": {
+   "unspecified -> unspecified": 10,
+   "T20_WC -> T20_WC": 1,
+   "ODI_WC -> ODI_WC": 1,
+   "ODI -> ODI": 1
+  }
+ },
+ "confident_errors": [
+  {
+   "id": "messy_calib-0",
+   "lang": "en",
+   "slice": "messy_hard",
+   "source": "grammar",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 0.9254996180534363,
+   "ok": 0,
+   "text": "Who won the mostt Wimbledn singlles ttles?",
+   "error": null
+  },
+  {
+   "id": "messy_calib-1",
+   "lang": "en",
+   "slice": "messy_hard",
+   "source": "noise",
+   "q": "family",
+   "gold": "career_record",
+   "pred": "player_stat",
+   "conf": 0.9176734685897827,
+   "ok": 0,
+   "text": "WHIcH PlAyer Has mAdemoStRuns?",
+   "error": null
+  },
+  {
+   "id": "messy_calib-1",
+   "lang": "en",
+   "slice": "messy_hard",
+   "source": "noise",
+   "q": "stat",
+   "gold": "runs",
+   "pred": "career_line",
+   "conf": 0.9176734685897827,
+   "ok": 0,
+   "text": "WHIcH PlAyer Has mAdemoStRuns?",
+   "error": null
+  },
+  {
+   "id": "messy_calib-17",
+   "lang": "en",
+   "slice": "messy_hard",
+   "source": "grammar",
+   "q": "stat",
+   "gold": "team_total",
+   "pred": "highest_score",
+   "conf": 0.983869194984436,
+   "ok": 0,
+   "text": "BIGGEST SCORE IN A SINGLE MEN'S & WOMEN'S INNINGS?! 🤔",
+   "error": null
+  }
+ ],
+ "errors": 0,
+ "option_order_changed": null,
+ "latency_ms": {
+  "p50": 2155.713999993168,
+  "p95": 2266.9825999764726
+ }
+}

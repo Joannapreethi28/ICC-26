@@ -1,0 +1,113 @@
+﻿train rows 10760 calib rows 2982 questions 10
+python : 
+At line:1 char:440
++ ... aya_v2.log; python training/train_encoder_baseline.py *> results/trai ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:  20%|██        | 40/199 [00:00<00:00, 376.97it/s]
+Loading weights:  39%|███▉      | 78/199 [00:00<00:00, 367.89it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 665.46it/s]
+[transformers] [1mXLMRobertaModel LOAD REPORT[0m from: FacebookAI/xlm-roberta-base
+Key                       | Status     |  | 
+--------------------------+------------+--+-
+lm_head.dense.bias        | UNEXPECTED |  | 
+lm_head.layer_norm.bias   | UNEXPECTED |  | 
+lm_head.dense.weight      | UNEXPECTED |  | 
+lm_head.layer_norm.weight | UNEXPECTED |  | 
+lm_head.bias              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+  ep 1/3 upd 20/1008 loss 1.7884 | 4s | peak 5.57 GB
+  ep 1/3 upd 40/1008 loss 1.5034 | 8s | peak 5.57 GB
+  ep 1/3 upd 60/1008 loss 1.4492 | 12s | peak 5.57 GB
+  ep 1/3 upd 80/1008 loss 1.3867 | 16s | peak 5.57 GB
+  ep 1/3 upd 100/1008 loss 1.2266 | 20s | peak 5.57 GB
+  ep 1/3 upd 120/1008 loss 0.8337 | 23s | peak 5.57 GB
+  ep 1/3 upd 140/1008 loss 0.6516 | 27s | peak 5.57 GB
+  ep 1/3 upd 160/1008 loss 0.5875 | 32s | peak 5.57 GB
+  ep 1/3 upd 180/1008 loss 0.5545 | 36s | peak 5.57 GB
+  ep 1/3 upd 200/1008 loss 0.3289 | 41s | peak 5.57 GB
+  ep 1/3 upd 220/1008 loss 0.2595 | 45s | peak 5.57 GB
+  ep 1/3 upd 240/1008 loss 0.1941 | 49s | peak 5.57 GB
+  ep 1/3 upd 260/1008 loss 0.0787 | 53s | peak 5.57 GB
+  ep 1/3 upd 280/1008 loss 0.1090 | 57s | peak 5.57 GB
+  ep 1/3 upd 300/1008 loss 0.0499 | 61s | peak 5.57 GB
+  ep 1/3 upd 320/1008 loss 0.0526 | 65s | peak 5.57 GB
+  ep 2/3 upd 340/1008 loss 0.0327 | 69s | peak 5.57 GB
+  ep 2/3 upd 360/1008 loss 0.0474 | 74s | peak 5.57 GB
+  ep 2/3 upd 380/1008 loss 0.0185 | 78s | peak 5.57 GB
+  ep 2/3 upd 400/1008 loss 0.0450 | 83s | peak 5.57 GB
+  ep 2/3 upd 420/1008 loss 0.0239 | 87s | peak 5.57 GB
+  ep 2/3 upd 440/1008 loss 0.0395 | 92s | peak 5.57 GB
+  ep 2/3 upd 460/1008 loss 0.0124 | 97s | peak 5.57 GB
+  ep 2/3 upd 480/1008 loss 0.0176 | 102s | peak 5.57 GB
+  ep 2/3 upd 500/1008 loss 0.0123 | 107s | peak 5.57 GB
+  ep 2/3 upd 520/1008 loss 0.0088 | 113s | peak 5.57 GB
+  ep 2/3 upd 540/1008 loss 0.0147 | 118s | peak 5.57 GB
+  ep 2/3 upd 560/1008 loss 0.0217 | 123s | peak 5.57 GB
+  ep 2/3 upd 580/1008 loss 0.0134 | 128s | peak 5.57 GB
+  ep 2/3 upd 600/1008 loss 0.0127 | 133s | peak 5.57 GB
+  ep 2/3 upd 620/1008 loss 0.0144 | 137s | peak 5.57 GB
+  ep 2/3 upd 640/1008 loss 0.0033 | 142s | peak 5.57 GB
+  ep 2/3 upd 660/1008 loss 0.0025 | 147s | peak 5.57 GB
+  ep 3/3 upd 680/1008 loss 0.0022 | 152s | peak 5.57 GB
+  ep 3/3 upd 700/1008 loss 0.0027 | 157s | peak 5.57 GB
+  ep 3/3 upd 720/1008 loss 0.0077 | 162s | peak 5.57 GB
+  ep 3/3 upd 740/1008 loss 0.0026 | 167s | peak 5.57 GB
+  ep 3/3 upd 760/1008 loss 0.0031 | 172s | peak 5.57 GB
+  ep 3/3 upd 780/1008 loss 0.0037 | 176s | peak 5.57 GB
+  ep 3/3 upd 800/1008 loss 0.0031 | 180s | peak 5.57 GB
+  ep 3/3 upd 820/1008 loss 0.0062 | 185s | peak 5.57 GB
+  ep 3/3 upd 840/1008 loss 0.0048 | 189s | peak 5.57 GB
+  ep 3/3 upd 860/1008 loss 0.0012 | 193s | peak 5.57 GB
+  ep 3/3 upd 880/1008 loss 0.0075 | 198s | peak 5.57 GB
+  ep 3/3 upd 900/1008 loss 0.0018 | 202s | peak 5.57 GB
+  ep 3/3 upd 920/1008 loss 0.0013 | 206s | peak 5.57 GB
+  ep 3/3 upd 940/1008 loss 0.0026 | 210s | peak 5.57 GB
+  ep 3/3 upd 960/1008 loss 0.0016 | 213s | peak 5.57 GB
+  ep 3/3 upd 980/1008 loss 0.0010 | 217s | peak 5.57 GB
+  ep 3/3 upd 1000/1008 loss 0.0024 | 221s | peak 5.57 GB
+C:\Users\Jabin M\OneDrive\Desktop\ICC'26\training\train_encoder_baseline.py:122: UserWarning: Converting a tensor with 
+requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at 
+C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\autograd\generated\python_variable_methods.cpp:837.)
+  return float(torch.clamp(lt.exp(), TEMP_MIN, TEMP_MAX))
+| lang | question | n | accuracy | ECE before | ECE after |
+|---|---|---|---|---|---|
+| en | gender_signal | 997 | 1.000 | 0.003 | 0.002 |
+| en | topic | 997 | 0.969 | 0.020 | 0.015 |
+| en | family | 820 | 0.917 | 0.020 | 0.044 |
+| en | format | 820 | 0.999 | 0.006 | 0.003 |
+| en | stat_career_record | 309 | 0.819 | 0.095 | 0.075 |
+| en | stat_role_or_ranking | 47 | 1.000 | 0.001 | 0.000 |
+| en | stat_team_record | 72 | 1.000 | 0.008 | 0.005 |
+| en | stat_world_cup_record | 134 | 1.000 | 0.004 | 0.032 |
+| en | stat_player_stat | 104 | 1.000 | 0.000 | 0.000 |
+| en | stat_firsts_history | 65 | 0.615 | 0.335 | 0.269 |
+| hi | gender_signal | 992 | 0.997 | 0.004 | 0.004 |
+| hi | topic | 992 | 0.958 | 0.024 | 0.013 |
+| hi | family | 847 | 0.911 | 0.065 | 0.045 |
+| hi | format | 847 | 0.999 | 0.002 | 0.001 |
+| hi | stat_career_record | 337 | 0.878 | 0.056 | 0.051 |
+| hi | stat_role_or_ranking | 68 | 1.000 | 0.000 | 0.000 |
+| hi | stat_team_record | 82 | 0.939 | 0.041 | 0.056 |
+| hi | stat_world_cup_record | 125 | 0.824 | 0.115 | 0.080 |
+| hi | stat_player_stat | 100 | 1.000 | 0.000 | 0.000 |
+| hi | stat_firsts_history | 63 | 0.730 | 0.217 | 0.201 |
+| ta | gender_signal | 993 | 0.991 | 0.005 | 0.005 |
+| ta | topic | 993 | 0.922 | 0.057 | 0.027 |
+| ta | family | 838 | 0.872 | 0.061 | 0.036 |
+| ta | format | 838 | 0.999 | 0.001 | 0.001 |
+| ta | stat_career_record | 316 | 0.870 | 0.062 | 0.040 |
+| ta | stat_role_or_ranking | 54 | 1.000 | 0.001 | 0.000 |
+| ta | stat_team_record | 92 | 0.978 | 0.040 | 0.022 |
+| ta | stat_world_cup_record | 117 | 0.906 | 0.067 | 0.082 |
+| ta | stat_player_stat | 114 | 1.000 | 0.000 | 0.000 |
+| ta | stat_firsts_history | 63 | 0.841 | 0.127 | 0.127 |
+
+Overall accuracy per language (calibration set): en=0.959, hi=0.954, ta=0.942

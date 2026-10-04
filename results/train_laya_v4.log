@@ -1,0 +1,191 @@
+train sequences 47173 (dropped 0) | calib sequences 12867 (dropped 0)
+sequence length tokens: mean 123, p95 183, max 233
+zero-shot (before training) calibration-set accuracy:
+  family=0.26, format=0.38, gender_signal=0.43, stat_career_record=0.68, stat_firsts_history=0.90, stat_player_stat=0.74, stat_role_or_ranking=1.00, stat_team_record=0.86, stat_world_cup_record=0.38, topic=0.33
+epochs 2 | micro-batch 8 x accum 4 = effective 32 | updates/epoch 1474 | LR enc 2.5e-05 head 0.0001
+  epoch 1/2 update 20/2948 loss 1.7522 ce 1.4306 | 12s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 40/2948 loss 1.0840 ce 1.2577 | 23s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 60/2948 loss 0.1449 ce 0.4539 | 34s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 80/2948 loss 0.3881 ce 0.6274 | 46s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 100/2948 loss 0.7102 ce 0.4523 | 58s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 120/2948 loss 0.9632 ce 0.5425 | 69s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 140/2948 loss 0.7066 ce 0.8508 | 81s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 160/2948 loss 0.7683 ce 0.7704 | 93s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 180/2948 loss 1.3135 ce 1.1912 | 104s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 200/2948 loss 1.8568 ce 1.6328 | 116s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 220/2948 loss 2.5647 ce 2.6030 | 127s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 240/2948 loss 2.9376 ce 3.1674 | 139s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 260/2948 loss 2.4721 ce 1.7490 | 150s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 280/2948 loss 1.9177 ce 1.7677 | 160s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 300/2948 loss 0.9166 ce 0.8093 | 171s elapsed | peak GPU 6.50 GB
+  epoch 1/2 update 320/2948 loss 0.7899 ce 0.7279 | 182s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 340/2948 loss 0.7852 ce 0.7756 | 193s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 360/2948 loss 0.7811 ce 0.8053 | 204s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 380/2948 loss 1.4052 ce 1.7474 | 215s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 400/2948 loss 0.0082 ce 0.6987 | 226s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 420/2948 loss 0.5650 ce 0.5887 | 237s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 440/2948 loss 0.7409 ce 0.7793 | 248s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 460/2948 loss 0.6878 ce 0.6878 | 259s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 480/2948 loss 0.7707 ce 0.6170 | 270s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 500/2948 loss 0.7294 ce 0.7294 | 281s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 520/2948 loss 0.5996 ce 0.6286 | 292s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 540/2948 loss 2.4534 ce 2.4935 | 303s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 560/2948 loss 0.7367 ce 0.7367 | 314s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 580/2948 loss 0.7250 ce 0.7785 | 325s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 600/2948 loss 0.6302 ce 0.7010 | 336s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 620/2948 loss 0.7937 ce 0.7937 | 347s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 640/2948 loss 0.7395 ce 0.7395 | 359s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 660/2948 loss 0.8055 ce 0.7301 | 371s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 680/2948 loss 4.7569 ce 4.7619 | 383s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 700/2948 loss 0.6971 ce 0.7141 | 395s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 720/2948 loss 0.7542 ce 0.7625 | 406s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 740/2948 loss 0.6850 ce 0.7256 | 418s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 760/2948 loss 0.6866 ce 0.7475 | 430s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 780/2948 loss 0.7236 ce 0.7264 | 442s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 800/2948 loss 2.8165 ce 2.7746 | 453s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 820/2948 loss 2.6854 ce 2.7465 | 464s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 840/2948 loss 0.6238 ce 0.6334 | 475s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 860/2948 loss 0.5702 ce 0.7163 | 487s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 880/2948 loss 2.5707 ce 2.5707 | 499s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 900/2948 loss 0.7193 ce 0.7000 | 510s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 920/2948 loss 0.7098 ce 0.6964 | 521s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 940/2948 loss 0.6943 ce 0.7282 | 533s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 960/2948 loss 0.7091 ce 0.7091 | 543s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 980/2948 loss 0.6668 ce 0.6973 | 555s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1000/2948 loss 0.7126 ce 0.7225 | 566s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1020/2948 loss 0.6955 ce 0.7185 | 578s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1040/2948 loss 0.7190 ce 0.7301 | 590s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1060/2948 loss 0.6964 ce 0.7193 | 601s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1080/2948 loss 0.7094 ce 0.7464 | 613s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1100/2948 loss 0.6099 ce 0.6764 | 624s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1120/2948 loss 0.6846 ce 0.7309 | 635s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1140/2948 loss 0.6944 ce 0.7242 | 647s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1160/2948 loss 0.6727 ce 0.7412 | 658s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1180/2948 loss 0.6688 ce 0.6887 | 669s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1200/2948 loss 0.7222 ce 0.7164 | 681s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1220/2948 loss 0.6545 ce 0.6780 | 693s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1240/2948 loss 0.7131 ce 0.7229 | 705s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1260/2948 loss 0.7091 ce 0.7412 | 716s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1280/2948 loss 0.0636 ce 0.6538 | 729s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1300/2948 loss 2.8570 ce 2.8570 | 740s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1320/2948 loss 0.6421 ce 0.6600 | 752s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1340/2948 loss 0.7253 ce 0.7253 | 763s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1360/2948 loss 0.7322 ce 0.7767 | 775s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1380/2948 loss 0.6765 ce 0.7195 | 786s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1400/2948 loss 0.6295 ce 0.7344 | 798s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1420/2948 loss 0.7130 ce 0.7533 | 809s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1440/2948 loss 0.7120 ce 0.7193 | 821s elapsed | peak GPU 6.51 GB
+  epoch 1/2 update 1460/2948 loss 0.7327 ce 0.7457 | 833s elapsed | peak GPU 6.51 GB
+=== epoch 1 done in 841s, avg loss 1.0726
+  epoch 2/2 update 1480/2948 loss 0.7201 ce 0.7329 | 844s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1500/2948 loss 0.7078 ce 0.7131 | 856s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1520/2948 loss 0.7382 ce 0.7382 | 867s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1540/2948 loss 0.7237 ce 0.7341 | 879s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1560/2948 loss 0.6935 ce 0.6935 | 890s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1580/2948 loss 0.7504 ce 0.7276 | 901s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1600/2948 loss 0.7127 ce 0.7127 | 913s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1620/2948 loss 0.6919 ce 0.7130 | 925s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1640/2948 loss 0.6436 ce 0.6703 | 937s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1660/2948 loss 0.7319 ce 0.7319 | 949s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1680/2948 loss 0.7309 ce 0.7309 | 960s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1700/2948 loss 0.7144 ce 0.7144 | 973s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1720/2948 loss 0.7013 ce 0.6930 | 984s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1740/2948 loss 0.6881 ce 0.6881 | 995s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1760/2948 loss 0.7606 ce 0.7606 | 1006s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1780/2948 loss 0.6865 ce 0.6865 | 1017s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1800/2948 loss 0.7430 ce 0.7430 | 1028s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1820/2948 loss 0.7192 ce 0.7270 | 1039s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1840/2948 loss 0.7534 ce 0.7534 | 1050s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1860/2948 loss 0.7167 ce 0.7167 | 1061s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1880/2948 loss 0.6828 ce 0.6828 | 1072s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1900/2948 loss 0.7461 ce 0.7524 | 1084s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1920/2948 loss 0.6686 ce 0.6845 | 1096s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1940/2948 loss 0.6457 ce 0.6716 | 1108s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1960/2948 loss 0.7163 ce 0.7430 | 1119s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 1980/2948 loss 0.7298 ce 0.7298 | 1130s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2000/2948 loss 0.6828 ce 0.7026 | 1142s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2020/2948 loss 0.7549 ce 0.7606 | 1153s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2040/2948 loss 0.6986 ce 0.7060 | 1165s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2060/2948 loss 0.7269 ce 0.7269 | 1177s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2080/2948 loss 0.6995 ce 0.6995 | 1189s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2100/2948 loss 0.6971 ce 0.7182 | 1201s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2120/2948 loss 0.6172 ce 0.6172 | 1213s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2140/2948 loss 0.6679 ce 0.6679 | 1225s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2160/2948 loss 0.6521 ce 0.6655 | 1236s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2180/2948 loss 0.6687 ce 0.6687 | 1248s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2200/2948 loss 0.6657 ce 0.6749 | 1259s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2220/2948 loss 0.6750 ce 0.6750 | 1270s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2240/2948 loss 0.7096 ce 0.7096 | 1281s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2260/2948 loss 0.6893 ce 0.6938 | 1292s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2280/2948 loss 0.6444 ce 0.6444 | 1303s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2300/2948 loss 0.7277 ce 0.7277 | 1315s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2320/2948 loss 0.7595 ce 0.7595 | 1326s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2340/2948 loss 0.6778 ce 0.6999 | 1338s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2360/2948 loss 0.6794 ce 0.7406 | 1348s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2380/2948 loss 0.7482 ce 0.7642 | 1359s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2400/2948 loss 0.7053 ce 0.7053 | 1370s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2420/2948 loss 0.6937 ce 0.6937 | 1381s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2440/2948 loss 0.6799 ce 0.6799 | 1392s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2460/2948 loss 0.7530 ce 0.7530 | 1403s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2480/2948 loss 0.7068 ce 0.7209 | 1413s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2500/2948 loss 0.6633 ce 0.6666 | 1424s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2520/2948 loss 0.6292 ce 0.6292 | 1436s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2540/2948 loss 0.7482 ce 0.7482 | 1448s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2560/2948 loss 0.6344 ce 0.6411 | 1460s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2580/2948 loss 0.6501 ce 0.6585 | 1471s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2600/2948 loss 0.7324 ce 0.7324 | 1483s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2620/2948 loss 0.6680 ce 0.6749 | 1494s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2640/2948 loss 0.7122 ce 0.7122 | 1506s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2660/2948 loss 0.6928 ce 0.6928 | 1518s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2680/2948 loss 0.6580 ce 0.6580 | 1530s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2700/2948 loss 0.7292 ce 0.7292 | 1541s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2720/2948 loss 0.6850 ce 0.6850 | 1553s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2740/2948 loss 0.6121 ce 0.6283 | 1565s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2760/2948 loss 0.7096 ce 0.7214 | 1577s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2780/2948 loss 0.7113 ce 0.7113 | 1588s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2800/2948 loss 0.6925 ce 0.6853 | 1600s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2820/2948 loss 0.6651 ce 0.7053 | 1611s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2840/2948 loss 0.6974 ce 0.7182 | 1622s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2860/2948 loss 0.7096 ce 0.7444 | 1634s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2880/2948 loss 0.6709 ce 0.6709 | 1645s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2900/2948 loss 0.7816 ce 0.7816 | 1657s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2920/2948 loss 0.6495 ce 0.7221 | 1668s elapsed | peak GPU 6.51 GB
+  epoch 2/2 update 2940/2948 loss 0.6574 ce 0.6752 | 1680s elapsed | peak GPU 6.51 GB
+=== epoch 2 done in 1684s, avg loss 0.7580
+fitting calibration temperatures on calib.jsonl
+temperatures by bucket: {'choice:3-5': 4.073, 'choice:6-10': 3.849, 'choice:11+': 3.797, 'choice:2': 0.994} | overall 3.916
+| lang | question | n | accuracy | ECE before | ECE after |
+|---|---|---|---|---|---|
+| en | family | 817 | 0.862 | 0.137 | 0.082 |
+| en | format | 817 | 0.990 | 0.010 | 0.040 |
+| en | gender_signal | 990 | 0.998 | 0.002 | 0.032 |
+| en | stat_career_record | 264 | 0.985 | 0.015 | 0.063 |
+| en | stat_firsts_history | 54 | 1.000 | 0.000 | 0.024 |
+| en | stat_player_stat | 106 | 1.000 | 0.000 | 0.000 |
+| en | stat_role_or_ranking | 45 | 1.000 | 0.000 | 0.000 |
+| en | stat_team_record | 84 | 0.988 | 0.012 | 0.051 |
+| en | stat_world_cup_record | 107 | 1.000 | 0.000 | 0.043 |
+| en | topic | 990 | 0.936 | 0.063 | 0.030 |
+| hi | family | 812 | 0.936 | 0.060 | 0.005 |
+| hi | format | 812 | 0.988 | 0.012 | 0.034 |
+| hi | gender_signal | 980 | 0.965 | 0.034 | 0.001 |
+| hi | stat_career_record | 248 | 0.923 | 0.079 | 0.115 |
+| hi | stat_firsts_history | 57 | 1.000 | 0.000 | 0.024 |
+| hi | stat_player_stat | 120 | 1.000 | 0.000 | 0.000 |
+| hi | stat_role_or_ranking | 44 | 1.000 | 0.000 | 0.000 |
+| hi | stat_team_record | 96 | 1.000 | 0.000 | 0.042 |
+| hi | stat_world_cup_record | 104 | 0.875 | 0.136 | 0.117 |
+| hi | topic | 980 | 0.979 | 0.021 | 0.017 |
+| ta | family | 835 | 0.884 | 0.106 | 0.043 |
+| ta | format | 835 | 0.988 | 0.011 | 0.037 |
+| ta | gender_signal | 990 | 0.965 | 0.035 | 0.001 |
+| ta | stat_career_record | 270 | 0.859 | 0.135 | 0.163 |
+| ta | stat_firsts_history | 56 | 0.804 | 0.196 | 0.167 |
+| ta | stat_player_stat | 112 | 1.000 | 0.002 | 0.002 |
+| ta | stat_role_or_ranking | 65 | 1.000 | 0.000 | 0.000 |
+| ta | stat_team_record | 86 | 0.663 | 0.329 | 0.244 |
+| ta | stat_world_cup_record | 101 | 0.832 | 0.136 | 0.093 |
+| ta | topic | 990 | 0.952 | 0.048 | 0.013 |
+
+Overall accuracy per language (all questions, calibration set): en=0.955, hi=0.965, ta=0.934
+saved to models\laya-mak-v4

@@ -1,0 +1,79 @@
+
+$ training/calibrate/fit_temperature.py
+{
+ "model": "C:\\Users\\Jabin M\\OneDrive\\Desktop\\ICC'26\\models\\laya-mak-v2",
+ "target": 0.98,
+ "n_calib": 2982,
+ "per_lang": {
+  "en": {
+   "gender_acc_all": 0.9989969909729187,
+   "gender_ece_all": 0.024898294884654226
+  },
+  "hi": {
+   "gender_acc_all": 0.9879032258064516,
+   "gender_ece_all": 0.01997066532258182
+  },
+  "ta": {
+   "gender_acc_all": 0.9687814702920443,
+   "gender_ece_all": 0.005091641490431589
+  }
+ },
+ "no_rule_cue_rows": 854,
+ "chosen_threshold": 0.98,
+ "note": "fit on calibration data only; if None, no threshold reaches the target -> keep the safe default and report"
+}
+{'t': 0.5, 'en': {'accepted': 25, 'accuracy': 0.96, 'accept_rate': 0.0909}, 'hi': {'accepted': 21, 'accuracy': 0.9048, 'accept_rate': 0.07}, 'ta': {'accepted': 40, 'accuracy': 0.625, 'accept_rate': 0.1434}, 'meets': False}
+{'t': 0.55, 'en': {'accepted': 25, 'accuracy': 0.96, 'accept_rate': 0.0909}, 'hi': {'accepted': 21, 'accuracy': 0.9048, 'accept_rate': 0.07}, 'ta': {'accepted': 40, 'accuracy': 0.625, 'accept_rate': 0.1434}, 'meets': False}
+{'t': 0.6, 'en': {'accepted': 25, 'accuracy': 0.96, 'accept_rate': 0.0909}, 'hi': {'accepted': 21, 'accuracy': 0.9048, 'accept_rate': 0.07}, 'ta': {'accepted': 40, 'accuracy': 0.625, 'accept_rate': 0.1434}, 'meets': False}
+{'t': 0.65, 'en': {'accepted': 25, 'accuracy': 0.96, 'accept_rate': 0.0909}, 'hi': {'accepted': 21, 'accuracy': 0.9048, 'accept_rate': 0.07}, 'ta': {'accepted': 40, 'accuracy': 0.625, 'accept_rate': 0.1434}, 'meets': False}
+{'t': 0.7, 'en': {'accepted': 25, 'accuracy': 0.96, 'accept_rate': 0.0909}, 'hi': {'accepted': 21, 'accuracy': 0.9048, 'accept_rate': 0.07}, 'ta': {'accepted': 40, 'accuracy': 0.625, 'accept_rate': 0.1434}, 'meets': False}
+{'t': 0.75, 'en': {'accepted': 25, 'accuracy': 0.96, 'accept_rate': 0.0909}, 'hi': {'accepted': 21, 'accuracy': 0.9048, 'accept_rate': 0.07}, 'ta': {'accepted': 40, 'accuracy': 0.625, 'accept_rate': 0.1434}, 'meets': False}
+{'t': 0.8, 'en': {'accepted': 25, 'accuracy': 0.96, 'accept_rate': 0.0909}, 'hi': {'accepted': 21, 'accuracy': 0.9048, 'accept_rate': 0.07}, 'ta': {'accepted': 40, 'accuracy': 0.625, 'accept_rate': 0.1434}, 'meets': False}
+{'t': 0.85, 'en': {'accepted': 25, 'accuracy': 0.96, 'accept_rate': 0.0909}, 'hi': {'accepted': 21, 'accuracy': 0.9048, 'accept_rate': 0.07}, 'ta': {'accepted': 40, 'accuracy': 0.625, 'accept_rate': 0.1434}, 'meets': False}
+{'t': 0.9, 'en': {'accepted': 25, 'accuracy': 0.96, 'accept_rate': 0.0909}, 'hi': {'accepted': 21, 'accuracy': 0.9048, 'accept_rate': 0.07}, 'ta': {'accepted': 40, 'accuracy': 0.625, 'accept_rate': 0.1434}, 'meets': False}
+{'t': 0.95, 'en': {'accepted': 25, 'accuracy': 0.96, 'accept_rate': 0.0909}, 'hi': {'accepted': 21, 'accuracy': 0.9048, 'accept_rate': 0.07}, 'ta': {'accepted': 40, 'accuracy': 0.625, 'accept_rate': 0.1434}, 'meets': False}
+
+$ training/evaluate_classifiers.py --mode dev --arms d_shipped,d2_shipped_laya_first
+d_shipped calib {'family/en': 0.84, 'family/hi': 0.871, 'family/ta': 0.789, 'format/en': 0.971, 'format/hi': 0.975, 'format/ta': 0.958, 'gender_signal/en': 0.965, 'gender_signal/hi': 0.949, 'gender_signal/ta': 0.919, 'stat/en': 0.787, 'stat/hi': 0.843, 'stat/ta': 0.722, 'topic/en': 0.927, 'topic/hi': 0.992, 'topic/ta': 0.964}
+d_shipped messy {'family/en': 0.768, 'family/hi': 0.829, 'family/ta': 0.753, 'format/en': 0.898, 'format/hi': 0.95, 'format/ta': 0.916, 'gender_signal/en': 0.957, 'gender_signal/hi': 0.944, 'gender_signal/ta': 0.921, 'stat/en': 0.661, 'stat/hi': 0.776, 'stat/ta': 0.675, 'topic/en': 0.891, 'topic/hi': 0.972, 'topic/ta': 0.945}
+d2_shipped_laya_first calib {'family/en': 0.904, 'family/hi': 0.908, 'family/ta': 0.851, 'format/en': 0.971, 'format/hi': 0.974, 'format/ta': 0.958, 'gender_signal/en': 0.965, 'gender_signal/hi': 0.949, 'gender_signal/ta': 0.919, 'stat/en': 0.854, 'stat/hi': 0.86, 'stat/ta': 0.774, 'topic/en': 0.944, 'topic/hi': 0.991, 'topic/ta': 0.964}
+d2_shipped_laya_first messy {'family/en': 0.823, 'family/hi': 0.857, 'family/ta': 0.823, 'format/en': 0.898, 'format/hi': 0.945, 'format/ta': 0.913, 'gender_signal/en': 0.957, 'gender_signal/hi': 0.944, 'gender_signal/ta': 0.921, 'stat/en': 0.712, 'stat/hi': 0.787, 'stat/ta': 0.739, 'topic/en': 0.908, 'topic/hi': 0.966, 'topic/ta': 0.942}
+wrote C:\Users\Jabin M\OneDrive\Desktop\ICC'26\results\classifier\dev\report.md
+
+$ training/evaluate_classifiers.py --mode test --i-confirm-single-run --arms a_rules,b_laya_zeroshot,c_laya_ft,d_shipped,e_qwen_lora,f_xlmr_ft
+a_rules en {'family/en': 0.565, 'format/en': 0.738, 'gender_signal/en': 0.816, 'stat/en': 0.5, 'topic/en': 0.843}
+a_rules hi {'family/hi': 0.478, 'format/hi': 0.613, 'gender_signal/hi': 0.877, 'stat/hi': 0.446, 'topic/hi': 0.803}
+a_rules ta {'family/ta': 0.429, 'format/ta': 0.577, 'gender_signal/ta': 0.91, 'stat/ta': 0.365, 'topic/ta': 0.752}
+b_laya_zeroshot en {'family/en': 0.357, 'format/en': 0.469, 'gender_signal/en': 0.261, 'stat/en': 0.065, 'topic/en': 0.481}
+b_laya_zeroshot hi {'family/hi': 0.177, 'format/hi': 0.312, 'gender_signal/hi': 0.281, 'stat/hi': 0.022, 'topic/hi': 0.365}
+b_laya_zeroshot ta {'family/ta': 0.18, 'format/ta': 0.275, 'gender_signal/ta': 0.395, 'stat/ta': 0.005, 'topic/ta': 0.248}
+c_laya_ft en {'family/en': 0.599, 'format/en': 0.895, 'gender_signal/en': 0.795, 'stat/en': 0.52, 'topic/en': 0.917}
+c_laya_ft hi {'family/hi': 0.64, 'format/hi': 0.801, 'gender_signal/hi': 0.911, 'stat/hi': 0.559, 'topic/hi': 0.946}
+c_laya_ft ta {'family/ta': 0.624, 'format/ta': 0.831, 'gender_signal/ta': 0.938, 'stat/ta': 0.497, 'topic/ta': 0.924}
+d_shipped en {'family/en': 0.609, 'format/en': 0.895, 'gender_signal/en': 0.816, 'stat/en': 0.537, 'topic/en': 0.92}
+d_shipped hi {'family/hi': 0.64, 'format/hi': 0.806, 'gender_signal/hi': 0.877, 'stat/hi': 0.559, 'topic/hi': 0.946}
+d_shipped ta {'family/ta': 0.619, 'format/ta': 0.825, 'gender_signal/ta': 0.91, 'stat/ta': 0.503, 'topic/ta': 0.924}
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   3%|▎         | 10/338 [00:00<00:04, 72.81it/s]Loading weights:   6%|▌         | 19/338 [00:00<00:04, 73.51it/s]Loading weights:   8%|▊         | 27/338 [00:00<00:04, 69.10it/s]Loading weights:  10%|█         | 34/338 [00:00<00:05, 60.57it/s]Loading weights:  13%|█▎        | 45/338 [00:00<00:04, 66.66it/s]Loading weights:  20%|██        | 69/338 [00:00<00:02, 111.54it/s]Loading weights:  24%|██▍       | 81/338 [00:01<00:03, 66.28it/s] Loading weights:  27%|██▋       | 92/338 [00:01<00:03, 71.93it/s]Loading weights:  30%|███       | 102/338 [00:01<00:06, 36.06it/s]Loading weights:  32%|███▏      | 109/338 [00:02<00:06, 37.17it/s]Loading weights:  34%|███▍      | 115/338 [00:02<00:06, 34.17it/s]Loading weights:  36%|███▌      | 120/338 [00:02<00:07, 30.38it/s]Loading weights:  43%|████▎     | 145/338 [00:02<00:03, 56.20it/s]Loading weights:  45%|████▌     | 153/338 [00:02<00:03, 52.60it/s]Loading weights:  47%|████▋     | 160/338 [00:03<00:03, 55.44it/s]Loading weights: 100%|██████████| 338/338 [00:03<00:00, 111.21it/s]
+e_qwen_lora en {'family/en': 0.565, 'format/en': 0.789, 'gender_signal/en': 0.834, 'stat/en': 0.52, 'topic/en': 0.855}
+e_qwen_lora hi {'family/hi': 0.586, 'format/hi': 0.855, 'gender_signal/hi': 0.867, 'stat/hi': 0.527, 'topic/hi': 0.941}
+e_qwen_lora ta {'family/ta': 0.566, 'format/ta': 0.757, 'gender_signal/ta': 0.9, 'stat/ta': 0.487, 'topic/ta': 0.867}
+f_xlmr_ft en {'family/en': 0.565, 'format/en': 0.85, 'gender_signal/en': 0.881, 'stat/en': 0.497, 'topic/en': 0.926}
+f_xlmr_ft hi {'family/hi': 0.608, 'format/hi': 0.866, 'gender_signal/hi': 0.916, 'stat/hi': 0.505, 'topic/hi': 0.921}
+f_xlmr_ft ta {'family/ta': 0.582, 'format/ta': 0.852, 'gender_signal/ta': 0.933, 'stat/ta': 0.481, 'topic/ta': 0.914}
+wrote C:\Users\Jabin M\OneDrive\Desktop\ICC'26\results\classifier\test\report.md
+
+$ -m mak.eval.run_e1 --arms plain,prompt_only
+plain: 25 records, 0 transport errors, 143s
+plain: 50 records, 0 transport errors, 210s
+plain: 75 records, 0 transport errors, 314s
+plain: 100 records, 0 transport errors, 381s
+plain: 125 records, 0 transport errors, 451s
+plain: 150 records, 0 transport errors, 551s
+plain: 175 records, 0 transport errors, 616s
+plain: 200 records, 0 transport errors, 688s
+plain: 225 records, 0 transport errors, 760s
+plain: 250 records, 0 transport errors, 843s
+plain: 275 records, 0 transport errors, 941s
+plain: 300 records, 0 transport errors, 1011s
+plain: 325 records, 0 transport errors, 1081s
+plain: 350 records, 0 transport errors, 1175s

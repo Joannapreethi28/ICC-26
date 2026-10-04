@@ -1,0 +1,281 @@
+{
+ "testset": "C:\\Users\\Jabin M\\OneDrive\\Desktop\\ICC'26\\training\\data\\messy_calib.jsonl",
+ "n_queries": 20,
+ "by_q_lang": [
+  {
+   "q": "family",
+   "lang": "en",
+   "n": 13,
+   "acc": 0.38461538461538464,
+   "lo": 0.17709446581236818,
+   "hi": 0.6447751902773146,
+   "ece": 0.36607692307692313
+  },
+  {
+   "q": "format",
+   "lang": "en",
+   "n": 13,
+   "acc": 0.46153846153846156,
+   "lo": 0.2320575430148814,
+   "hi": 0.7085656756816796,
+   "ece": 0.4704461538461539
+  },
+  {
+   "q": "gender_signal",
+   "lang": "en",
+   "n": 20,
+   "acc": 0.4,
+   "lo": 0.21880396741419272,
+   "hi": 0.613422057684794,
+   "ece": 0.37026000000000003
+  },
+  {
+   "q": "stat",
+   "lang": "en",
+   "n": 13,
+   "acc": 0.0,
+   "lo": 0.0,
+   "hi": 0.22810184305529166,
+   "ece": 0.0
+  },
+  {
+   "q": "topic",
+   "lang": "en",
+   "n": 20,
+   "acc": 0.3,
+   "lo": 0.14547527396899385,
+   "hi": 0.5189767762289793,
+   "ece": 0.29838000000000003
+  }
+ ],
+ "by_q_slice": [
+  {
+   "q": "family",
+   "slice": "messy_hard",
+   "n": 13,
+   "acc": 0.38461538461538464,
+   "lo": 0.17709446581236818,
+   "hi": 0.6447751902773146,
+   "ece": 0.36607692307692313
+  },
+  {
+   "q": "format",
+   "slice": "messy_hard",
+   "n": 13,
+   "acc": 0.46153846153846156,
+   "lo": 0.2320575430148814,
+   "hi": 0.7085656756816796,
+   "ece": 0.4704461538461539
+  },
+  {
+   "q": "gender_signal",
+   "slice": "messy_hard",
+   "n": 20,
+   "acc": 0.4,
+   "lo": 0.21880396741419272,
+   "hi": 0.613422057684794,
+   "ece": 0.37026000000000003
+  },
+  {
+   "q": "stat",
+   "slice": "messy_hard",
+   "n": 13,
+   "acc": 0.0,
+   "lo": 0.0,
+   "hi": 0.22810184305529166,
+   "ece": 0.0
+  },
+  {
+   "q": "topic",
+   "slice": "messy_hard",
+   "n": 20,
+   "acc": 0.3,
+   "lo": 0.14547527396899385,
+   "hi": 0.5189767762289793,
+   "ece": 0.29838000000000003
+  }
+ ],
+ "by_q_source": [
+  {
+   "q": "family",
+   "source": "grammar",
+   "n": 10,
+   "acc": 0.4,
+   "lo": 0.16817758120350967,
+   "hi": 0.6873304525498135,
+   "ece": 0.29373
+  },
+  {
+   "q": "family",
+   "source": "noise",
+   "n": 3,
+   "acc": 0.3333333333333333,
+   "lo": 0.0614903152761605,
+   "hi": 0.7923450448735121,
+   "ece": 0.6072333333333333
+  },
+  {
+   "q": "format",
+   "source": "grammar",
+   "n": 10,
+   "acc": 0.5,
+   "lo": 0.23658959361548731,
+   "hi": 0.7634104063845126,
+   "ece": 0.52103
+  },
+  {
+   "q": "format",
+   "source": "noise",
+   "n": 3,
+   "acc": 0.3333333333333333,
+   "lo": 0.0614903152761605,
+   "hi": 0.7923450448735121,
+   "ece": 0.5042333333333333
+  },
+  {
+   "q": "gender_signal",
+   "source": "grammar",
+   "n": 16,
+   "acc": 0.4375,
+   "lo": 0.2309836333518552,
+   "hi": 0.6682180439322347,
+   "ece": 0.34045
+  },
+  {
+   "q": "gender_signal",
+   "source": "noise",
+   "n": 4,
+   "acc": 0.25,
+   "lo": 0.045586062644636216,
+   "hi": 0.6993639475573634,
+   "ece": 0.5441500000000001
+  },
+  {
+   "q": "stat",
+   "source": "grammar",
+   "n": 10,
+   "acc": 0.0,
+   "lo": 0.0,
+   "hi": 0.2775401687666166,
+   "ece": 0.0
+  },
+  {
+   "q": "stat",
+   "source": "noise",
+   "n": 3,
+   "acc": 0.0,
+   "lo": 0.0,
+   "hi": 0.5615060804490177,
+   "ece": 0.0
+  },
+  {
+   "q": "topic",
+   "source": "grammar",
+   "n": 16,
+   "acc": 0.3125,
+   "lo": 0.14164435051961052,
+   "hi": 0.5559606813326594,
+   "ece": 0.34033125
+  },
+  {
+   "q": "topic",
+   "source": "noise",
+   "n": 4,
+   "acc": 0.25,
+   "lo": 0.045586062644636216,
+   "hi": 0.6993639475573634,
+   "ece": 0.424475
+  }
+ ],
+ "confusion": {
+  "gender_signal": {
+   "none -> none": 7,
+   "none -> women": 4,
+   "both_named -> none": 2,
+   "men -> none": 2,
+   "none -> men": 1,
+   "both_named -> men": 1,
+   "none -> both_named": 1,
+   "both_named -> women": 1,
+   "women -> women": 1
+  },
+  "topic": {
+   "cricket_stat -> non_sport": 5,
+   "cricket_stat -> cricket_stat": 4,
+   "cricket_stat -> cricket_general": 3,
+   "other_sport_stat -> cricket_stat": 1,
+   "other_sport_stat -> other_sport_stat": 1,
+   "cricket_general -> other_sport_stat": 1,
+   "cricket_general -> non_sport": 1,
+   "cricket_stat -> other_sport_stat": 1,
+   "non_sport -> cricket_stat": 1,
+   "cricket_general -> cricket_general": 1,
+   "cricket_general -> cricket_stat": 1
+  },
+  "family": {
+   "player_stat -> player_stat": 2,
+   "team_record -> other_stat": 2,
+   "recent_result -> recent_result": 2,
+   "career_record -> recent_result": 2,
+   "career_record -> player_stat": 1,
+   "world_cup_record -> world_cup_record": 1,
+   "other_stat -> recent_result": 1,
+   "player_stat -> career_record": 1,
+   "career_record -> other_stat": 1
+  },
+  "stat": {
+   "career_line -> None": 3,
+   "most_wins -> None": 2,
+   "last_result -> None": 2,
+   "runs -> None": 1,
+   "most_wickets -> None": 1,
+   "other -> None": 1,
+   "economy -> None": 1,
+   "centuries -> None": 1,
+   "team_total -> None": 1
+  },
+  "format": {
+   "unspecified -> league": 4,
+   "unspecified -> unspecified": 3,
+   "unspecified -> Test": 2,
+   "T20_WC -> T20_WC": 1,
+   "unspecified -> T20_WC": 1,
+   "ODI_WC -> ODI_WC": 1,
+   "ODI -> ODI": 1
+  }
+ },
+ "confident_errors": [
+  {
+   "id": "messy_calib-11",
+   "lang": "en",
+   "slice": "messy_hard",
+   "source": "grammar",
+   "q": "family",
+   "gold": "other_stat",
+   "pred": "recent_result",
+   "conf": 0.9097,
+   "ok": 0,
+   "text": "How sixes weree hit in cricket in 2018?",
+   "error": null
+  },
+  {
+   "id": "messy_calib-18",
+   "lang": "en",
+   "slice": "messy_hard",
+   "source": "grammar",
+   "q": "topic",
+   "gold": "cricket_stat",
+   "pred": "non_sport",
+   "conf": 0.932,
+   "ok": 0,
+   "text": "In men's game, how good are Joe Root's career numbers???",
+   "error": null
+  }
+ ],
+ "errors": 0,
+ "option_order_changed": null,
+ "latency_ms": {
+  "p50": 24.781899992376566,
+  "p95": 26.91899996716529
+ }
+}

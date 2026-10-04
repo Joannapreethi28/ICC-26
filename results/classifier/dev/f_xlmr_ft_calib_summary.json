@@ -1,0 +1,403 @@
+{
+ "testset": "C:\\Users\\Jabin M\\OneDrive\\Desktop\\ICC'26\\training\\data\\calib.jsonl",
+ "n_queries": 20,
+ "by_q_lang": [
+  {
+   "q": "family",
+   "lang": "en",
+   "n": 13,
+   "acc": 0.9230769230769231,
+   "lo": 0.6668546607175265,
+   "hi": 0.9862899336203037,
+   "ece": 0.10686727899771474
+  },
+  {
+   "q": "format",
+   "lang": "en",
+   "n": 13,
+   "acc": 1.0,
+   "lo": 0.7718981569447083,
+   "hi": 1.0,
+   "ece": 0.0018237508260287028
+  },
+  {
+   "q": "gender_signal",
+   "lang": "en",
+   "n": 20,
+   "acc": 1.0,
+   "lo": 0.8388698745050667,
+   "hi": 1.0,
+   "ece": 0.0020346671342850176
+  },
+  {
+   "q": "stat",
+   "lang": "en",
+   "n": 13,
+   "acc": 0.7692307692307693,
+   "lo": 0.49743126004873084,
+   "hi": 0.918206209075343,
+   "ece": 0.04356863406988292
+  },
+  {
+   "q": "topic",
+   "lang": "en",
+   "n": 20,
+   "acc": 0.95,
+   "lo": 0.7638641064874331,
+   "hi": 0.9911187805671268,
+   "ece": 0.09847614467144013
+  }
+ ],
+ "by_q_slice": [
+  {
+   "q": "family",
+   "slice": "explicit",
+   "n": 5,
+   "acc": 1.0,
+   "lo": 0.5655085052479191,
+   "hi": 1.0,
+   "ece": 0.08585338592529297
+  },
+  {
+   "q": "family",
+   "slice": "injection",
+   "n": 3,
+   "acc": 1.0,
+   "lo": 0.43849391955098227,
+   "hi": 1.0,
+   "ece": 0.04987919330596924
+  },
+  {
+   "q": "family",
+   "slice": "plain",
+   "n": 4,
+   "acc": 0.75,
+   "lo": 0.3006360524426366,
+   "hi": 0.9544139373553637,
+   "ece": 0.20249725133180618
+  },
+  {
+   "q": "family",
+   "slice": "surname",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 0.00038111209869384766
+  },
+  {
+   "q": "format",
+   "slice": "explicit",
+   "n": 5,
+   "acc": 1.0,
+   "lo": 0.5655085052479191,
+   "hi": 1.0,
+   "ece": 0.0002610206604003462
+  },
+  {
+   "q": "format",
+   "slice": "injection",
+   "n": 3,
+   "acc": 1.0,
+   "lo": 0.43849391955098227,
+   "hi": 1.0,
+   "ece": 0.007448971271514893
+  },
+  {
+   "q": "format",
+   "slice": "plain",
+   "n": 4,
+   "acc": 1.0,
+   "lo": 0.5100999795960008,
+   "hi": 1.0,
+   "ece": 8.612871170043945e-06
+  },
+  {
+   "q": "format",
+   "slice": "surname",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 2.2292137145996094e-05
+  },
+  {
+   "q": "gender_signal",
+   "slice": "control_insensitive",
+   "n": 7,
+   "acc": 1.0,
+   "lo": 0.6456611570247934,
+   "hi": 1.0,
+   "ece": 0.00032784257616313983
+  },
+  {
+   "q": "gender_signal",
+   "slice": "explicit",
+   "n": 5,
+   "acc": 1.0,
+   "lo": 0.5655085052479191,
+   "hi": 1.0,
+   "ece": 0.00018279552459721238
+  },
+  {
+   "q": "gender_signal",
+   "slice": "injection",
+   "n": 3,
+   "acc": 1.0,
+   "lo": 0.43849391955098227,
+   "hi": 1.0,
+   "ece": 0.004074970881144169
+  },
+  {
+   "q": "gender_signal",
+   "slice": "plain",
+   "n": 4,
+   "acc": 1.0,
+   "lo": 0.5100999795960008,
+   "hi": 1.0,
+   "ece": 0.006181299686431885
+  },
+  {
+   "q": "gender_signal",
+   "slice": "surname",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 0.000534355640411377
+  },
+  {
+   "q": "stat",
+   "slice": "explicit",
+   "n": 5,
+   "acc": 0.8,
+   "lo": 0.3755282641185388,
+   "hi": 0.9637768390302125,
+   "ece": 0.043363010883331304
+  },
+  {
+   "q": "stat",
+   "slice": "injection",
+   "n": 3,
+   "acc": 0.6666666666666666,
+   "lo": 0.2076549551264879,
+   "hi": 0.9385096847238394,
+   "ece": 0.010497689247131348
+  },
+  {
+   "q": "stat",
+   "slice": "plain",
+   "n": 4,
+   "acc": 0.75,
+   "lo": 0.3006360524426366,
+   "hi": 0.9544139373553637,
+   "ece": 0.18624028563499453
+  },
+  {
+   "q": "stat",
+   "slice": "surname",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 0.0
+  },
+  {
+   "q": "topic",
+   "slice": "control_insensitive",
+   "n": 7,
+   "acc": 0.8571428571428571,
+   "lo": 0.48686549668097007,
+   "hi": 0.9743210440510253,
+   "ece": 0.25117459467479153
+  },
+  {
+   "q": "topic",
+   "slice": "explicit",
+   "n": 5,
+   "acc": 1.0,
+   "lo": 0.5655085052479191,
+   "hi": 1.0,
+   "ece": 0.020012748241424516
+  },
+  {
+   "q": "topic",
+   "slice": "injection",
+   "n": 3,
+   "acc": 1.0,
+   "lo": 0.43849391955098227,
+   "hi": 1.0,
+   "ece": 0.012545764446258545
+  },
+  {
+   "q": "topic",
+   "slice": "plain",
+   "n": 4,
+   "acc": 1.0,
+   "lo": 0.5100999795960008,
+   "hi": 1.0,
+   "ece": 0.01798805594444275
+  },
+  {
+   "q": "topic",
+   "slice": "surname",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 0.0016474723815917969
+  }
+ ],
+ "by_q_source": [
+  {
+   "q": "family",
+   "source": "grammar",
+   "n": 10,
+   "acc": 0.9,
+   "lo": 0.5958436145024278,
+   "hi": 0.9821242504842788,
+   "ece": 0.12393831908702851
+  },
+  {
+   "q": "family",
+   "source": "noise",
+   "n": 3,
+   "acc": 1.0,
+   "lo": 0.43849391955098227,
+   "hi": 1.0,
+   "ece": 0.049963812033335366
+  },
+  {
+   "q": "format",
+   "source": "grammar",
+   "n": 10,
+   "acc": 1.0,
+   "lo": 0.7224598312333834,
+   "hi": 1.0,
+   "ece": 0.00232039093971248
+  },
+  {
+   "q": "format",
+   "source": "noise",
+   "n": 3,
+   "acc": 1.0,
+   "lo": 0.43849391955098227,
+   "hi": 1.0,
+   "ece": 0.00016828378041588987
+  },
+  {
+   "q": "gender_signal",
+   "source": "grammar",
+   "n": 16,
+   "acc": 1.0,
+   "lo": 0.8063865817272802,
+   "hi": 1.0,
+   "ece": 0.0020479708909988403
+  },
+  {
+   "q": "gender_signal",
+   "source": "noise",
+   "n": 4,
+   "acc": 1.0,
+   "lo": 0.5100999795960008,
+   "hi": 1.0,
+   "ece": 0.0019814521074295044
+  },
+  {
+   "q": "stat",
+   "source": "grammar",
+   "n": 10,
+   "acc": 0.7,
+   "lo": 0.39677321997956516,
+   "hi": 0.892210712513788,
+   "ece": 0.07561814188957214
+  },
+  {
+   "q": "stat",
+   "source": "noise",
+   "n": 3,
+   "acc": 1.0,
+   "lo": 0.43849391955098227,
+   "hi": 1.0,
+   "ece": 0.07902928193410237
+  },
+  {
+   "q": "topic",
+   "source": "grammar",
+   "n": 16,
+   "acc": 0.9375,
+   "lo": 0.7167073163197013,
+   "hi": 0.9888809426916687,
+   "ece": 0.11737786605954173
+  },
+  {
+   "q": "topic",
+   "source": "noise",
+   "n": 4,
+   "acc": 1.0,
+   "lo": 0.5100999795960008,
+   "hi": 1.0,
+   "ece": 0.022869259119033813
+  }
+ ],
+ "confusion": {
+  "gender_signal": {
+   "none -> none": 13,
+   "both_named -> both_named": 4,
+   "men -> men": 2,
+   "women -> women": 1
+  },
+  "topic": {
+   "cricket_stat -> cricket_stat": 13,
+   "cricket_general -> cricket_general": 4,
+   "other_sport_stat -> other_sport_stat": 2,
+   "non_sport -> cricket_stat": 1
+  },
+  "family": {
+   "career_record -> career_record": 4,
+   "player_stat -> player_stat": 3,
+   "team_record -> team_record": 2,
+   "recent_result -> recent_result": 2,
+   "world_cup_record -> world_cup_record": 1,
+   "other_stat -> career_record": 1
+  },
+  "stat": {
+   "career_line -> career_line": 3,
+   "most_wins -> most_wins": 2,
+   "last_result -> None": 2,
+   "runs -> runs": 1,
+   "most_wickets -> most_wickets": 1,
+   "other -> sixes": 1,
+   "economy -> economy": 1,
+   "centuries -> centuries": 1,
+   "team_total -> team_total": 1
+  },
+  "format": {
+   "unspecified -> unspecified": 10,
+   "T20_WC -> T20_WC": 1,
+   "ODI_WC -> ODI_WC": 1,
+   "ODI -> ODI": 1
+  }
+ },
+ "confident_errors": [
+  {
+   "id": "calib-10",
+   "lang": "en",
+   "slice": "control_insensitive",
+   "source": "grammar",
+   "q": "topic",
+   "gold": "non_sport",
+   "pred": "cricket_stat",
+   "conf": 0.9211193323135376,
+   "ok": 0,
+   "text": "Best films about men in the army?",
+   "error": null
+  }
+ ],
+ "errors": 0,
+ "option_order_changed": null,
+ "latency_ms": {
+  "p50": 7.4393999530002475,
+  "p95": 19.043700071051717
+ }
+}
