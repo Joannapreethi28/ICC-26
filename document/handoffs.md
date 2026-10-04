@@ -43,6 +43,10 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 ### Sun 04 Oct 2026 | FROM Efanio TO both | FYI | MCP setup complete; consumer connection and demo recording pending
 **Identity:** The person working in this chat is Efanio, not Sir Jabin. Attribute this work and the next account-side steps to Efanio. Earlier messages are preserved as historical records.
 
+### Sun 04 Oct, 23:55 IST | FROM Jabin TO Efanio | DONE | demo + MCP live again (trained Laya)
+**Demo:** https://924d7dfe7ec2a1f775.gradio.live  **MCP:** https://924d7dfe7ec2a1f775.gradio.live/gradio_api/mcp/
+**Verified:** scripts/check_mcp.py on the public URL: discovery OK; EN/HI/TA trained Laya, both records, sources and dates; catalogue OK. Temporary share link backed by Jabin's laptop (keep it on, plugged in, online). For the demo video.
+
 ### Sun 04 Oct, 23:53 IST | FROM Jabin TO Efanio | DONE + FYI | injection order fixed (Sir Jabin OK); demo restart; deck status
 **What:** decide() order restored in src/mak/policy/decide.py (non-sport/unsupported first, then injection -> both); tests/policy/test_decide.py updated; your Tamil injection test still passes (your ta.yaml lines cover it). 490 tests pass incl. demo tests (gradio[mcp] now installed on Jabin's laptop).
 **Demo:** the earlier gradio.live link died when its Python process stopped. Jabin is restarting serve_demo.py --share; the NEW URL will be posted here.
