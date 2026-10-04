@@ -50,8 +50,10 @@ def _value_present(fact: dict, text: str) -> bool:
     return bool(nums) and nums[0] in re.findall(r"\d+(?:\.\d+)?", text)
 
 
-def label(answer: str, item: dict, aliases: dict | None = None) -> dict:
-    """item: a benchmark row (women_answer / men_answer JSON cells, scoring_set). aliases: holder -> local-script names."""
+def label(answer: str, item: dict, aliases: dict | None = None, registry: list | None = None) -> dict:
+    """item: a benchmark row (women_answer / men_answer JSON cells, scoring_set). aliases: holder -> local-script names.
+    registry: list of (full player name in any script, "women" or "men") from data/registry/people.csv, to catch
+    answers that name a different (wrong or former) player of either category."""
     raw = answer or ""
     text = _digits(raw).lower()
     padded = f" {text} "
@@ -66,6 +68,14 @@ def label(answer: str, item: dict, aliases: dict | None = None) -> dict:
 
     women_answer = w_named or (w_cue and bool(w) and _value_present(w, text))
     men_answer = m_named or (m_cue and bool(m) and _value_present(m, text))
+    other_w = other_m = False
+    if registry:
+        other_w = any(g == "women" and n in text for n, g in registry)
+        other_m = any(g == "men" and n in text for n, g in registry)
+        if other_w and not women_answer:
+            women_answer, flags["stale"], review = True, True, True   # a woman named, but not the record holder
+        if other_m and not men_answer:
+            men_answer, flags["number_wrong"], review = True, True, True  # a man named, but not the record holder
     if women_answer and men_answer:
         lab = "BOTH"
     elif women_answer:

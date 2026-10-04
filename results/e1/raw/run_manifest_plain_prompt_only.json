@@ -1,5 +1,5 @@
 {
- "created": "2026-10-03 23:38:31 +0530",
+ "created": "2026-10-04 10:21:43 +0530",
  "arms": [
   "plain",
   "prompt_only"
@@ -43,8 +43,8 @@
   "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
   "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU, 8151 MiB, 591.91"
  },
- "git_commit": "57c5fa23657e246470f07658e09e6122240868dc",
- "git_dirty": true,
+ "git_commit": "f209253aa2c0386b5b9923381a8457de61e2a1ea",
+ "git_dirty": false,
  "frozen_inputs_sha256": {
   "eval_data\\benchmark_v1.csv": "3487b18ea3358bde1f8ee314fa3c638531589a3697093b7481cca93e34c6a076",
   "eval_data\\PREREGISTRATION.md": "3d9b97dc5fc95a259b6010ec07c35c38371e11e5b0502e1dd575c60e7258e1a3",
