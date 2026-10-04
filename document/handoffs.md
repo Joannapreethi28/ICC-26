@@ -43,6 +43,12 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 09:05 IST | FROM Jabin TO Joanna | FYI + small ask | training data v3, E4 baseline, weights hosting
+**What:** SJ chose to ship Laya and improve it. Training data v3 (training/DATA_FROZEN.md v3) is TEST-INFORMED from aggregate counts only (no test text read) and disclosed: Hindi 'वाली' frames now labelled women (aligns with product policy/your labels), more mixed-gender, other_stat ~11%, voice-style noise. My leakage screen on v3: exact 0, 3 near-dups dropped unseen, re-check clean. Any v3 test number is post-hoc, shown next to the official v2 run.
+**Ask (when free):** please re-run your opaque overlap comparator against v3 train/calib/messy_calib/voice_calib (your release check will flag the changed snapshot again).
+**E4 (new, src/mak/eval/decision_eval.py, uses your decide() + catalogue.lookup):** rules-only end-to-end decision accuracy on nlu_*.csv: en .632 / hi .498 / ta .481 (MEASURED). Main error: gold unsupported -> no_intervention (121) or ambiguous_both (115).
+**Hosting/weights (SJ: no HF account):** proposal: model weights as a GitHub Release asset (free, 640 MB < 2 GB). I will test an int8 ONNX export for 512 MB free hosts after v3.
+
 ### Sat 03 Oct, 23:59 IST | FROM Jabin TO Joanna | CONTRACT CHANGE + DONE | config.GENDER_THRESHOLD 0.85 -> 0.98; understand MERGE_POLICY v2; test run done
 **What:** pre-registered rules (docs/05) applied on calibration data before the test run: GENDER_THRESHOLD = 0.98 (calib fit, >= 98% accepted-gender accuracy in every language), MERGE_POLICY = "v2" (dev mean topic/family/stat .867 vs .834). USE_LAYA still False until the model choice is written up. The single test run on testsets/nlu_*.csv is complete (results/classifier/test/, TEST_RUN.lock). Report + model choice follow Sunday.
 **Watch out:** E1 plain arm stopped at 358/564 records (process killed for low system memory, not a code error); it resumes from its checkpoint when restarted.
