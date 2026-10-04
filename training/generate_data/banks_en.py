@@ -153,6 +153,6 @@ BANK = {
     "surnames": [("Mandhana", "W"), ("Perry", "W"), ("Harmanpreet", "W"), ("Healy", "W"), ("Kohli", "M"), ("Babar", "M"), ("Root", "M"), ("Bumrah", "M")],
     "surname_frames": ["{s} stats", "{s} record", "{s} career", "{s} runs?", "how many runs has {s} scored?"],
     "mixed_frames": ["Compare {p1} and {p2} career stats", "{p1} vs {p2} stats", "Who has better numbers, {p1} or {p2}?",
-                     "{p1} and {p2} career record comparison"],
+                     "{p1} and {p2} career record comparison", "Is {p1} better than {p2}?", "{p1} or {p2}, who has more runs?", "who is better {p1} or {p2}", "{p1} versus {p2} numbers", "Compare {p1} with {p2}", "{p1} vs {p2} who scored more"],
     "years": [2009, 2010, 2012, 2014, 2016, 2017, 2018, 2020, 2022, 2023, 2024],
 }

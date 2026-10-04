@@ -14,23 +14,25 @@ import banks_en
 import banks_hi
 import banks_ta
 from mak import labels
-from noise import apply_noise
+from noise import apply_noise, voice
+import banks_v3_extra as _V3
 
 VARIANTS = {
     "en": [(banks_en.BANK, 1.0)],
     "hi": [(banks_hi.BANK, 0.7), (banks_hi.BANK_ROM, 0.3)],
     "ta": [(banks_ta.BANK, 0.65), (banks_ta.BANK_ROM, 0.35)],
 }
-FAMILY_W = {"career_record": 0.40, "world_cup_record": 0.15, "firsts_history": 0.08, "team_record": 0.12,
-            "player_stat": 0.08, "recent_result": 0.05, "role_or_ranking": 0.07, "other_stat": 0.05}
+FAMILY_W = {"career_record": 0.33, "world_cup_record": 0.13, "firsts_history": 0.08, "team_record": 0.12,
+            "player_stat": 0.08, "recent_result": 0.05, "role_or_ranking": 0.07, "other_stat": 0.14}
 STAT_GENDER_W = {"none": 0.22, "women": 0.27, "men": 0.25, "both_named": 0.26}
 INJ_GENDER_W = {"none": 0.70, "women": 0.15, "men": 0.15}
 GENERAL_GENDER_W = {"none": 0.60, "women": 0.15, "men": 0.15, "both_named": 0.10}
 OTHER_GENDER_W = {"none": 0.50, "women": 0.20, "men": 0.20, "both_named": 0.10}
 FORMAT_W = {"unspecified": 0.45, "T20I": 0.15, "ODI": 0.12, "Test": 0.08, "T20_WC": 0.05, "ODI_WC": 0.05, "league": 0.10}
 WC_FORMAT_W = {"unspecified": 0.5, "T20_WC": 0.25, "ODI_WC": 0.25}
-KIND_W = {"stat": 0.52, "injection": 0.05, "surname": 0.04, "mixed": 0.035, "weak": 0.08, "general": 0.12, "other_sport": 0.10, "non_sport": 0.08}
+KIND_W = {"stat": 0.495, "injection": 0.05, "surname": 0.04, "mixed": 0.08, "weak": 0.08, "general": 0.10, "other_sport": 0.10, "non_sport": 0.08}
 NOISE_P = 0.40
+VOICE_P = 0.15  # v3: speech-to-text style rows
 
 
 def _wchoice(rng: random.Random, weights: dict):
@@ -193,6 +195,8 @@ def _weak_row(bank, rng, split):
         return None
     idx, (kind, (text, fam, stat)) = rng.choice(items)
     gender = "women" if kind == "strong" else "none"
+    if bank["lang"] == "hi" and re.search(r"वाली|\bwali\b", text):  # v3: Hindi feminine form = women, as in product policy/rules
+        gender = "women"
     return _row(bank, text, gender, "cricket_stat", fam, stat, "unspecified", f"{bank['variant']}|{kind}|{idx}", "grammatical_gender")
 
 
@@ -208,10 +212,22 @@ def _norm(text: str) -> str:
     return re.sub(r"[\W_]+", " ", text.lower()).strip()
 
 
+def _add_v3(bank: dict) -> None:
+    """Data v3: extra other_stat cores + general cricket questions (banks_v3_extra.py). Idempotent."""
+    if bank.get("_v3"):
+        return
+    v = bank["variant"]
+    bank["cores"][("other_stat", "other")] = list(bank["cores"].get(("other_stat", "other"), [])) + _V3.OTHER_STAT.get(v, [])
+    bank["general"] = list(bank.get("general", [])) + _V3.GENERAL.get(v, [])
+    bank["_v3"] = True
+
+
 def generate(lang: str, n: int, seed: int, split: str = "all") -> list[dict]:
     assert lang in VARIANTS and split in ("train", "calib", "all")
     rng = random.Random(f"{lang}-{seed}-{split}")
     banks, bw = zip(*VARIANTS[lang])
+    for b in banks:
+        _add_v3(b)
     rows, seen, attempts = [], set(), 0
     while len(rows) < n and attempts < n * 60:
         attempts += 1
@@ -226,6 +242,8 @@ def generate(lang: str, n: int, seed: int, split: str = "all") -> list[dict]:
             noisy, ops = apply_noise(row["text"], bank, rng)
             if ops and noisy:
                 row.update(text=noisy, source="noise", slice="typo" if "typo" in ops else row["slice"])
+        elif rng.random() < VOICE_P:
+            row.update(text=voice(row["text"], bank, rng), source="noise")
         if bank["script"] == "latin" and lang != "en" and row["slice"] in ("plain", "explicit"):
             row["slice"] = "romanised"
         key = _norm(row["text"])

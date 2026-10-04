@@ -1,6 +1,22 @@
 # DATA_FROZEN
 
-## v2 (current): frozen 2026-10-03 (J-P3, approved by Sir Jabin: "v2 first, then test once")
+## v3 (current): frozen 2026-10-04 ~09:30 IST (SJ: ship Laya, improve it honestly)
+
+TEST-INFORMED (disclosed): built after the single official test run, from AGGREGATE slice/confusion counts only; no test
+text was read. Results of any v3 model on the test sets are reported as post-hoc, next to the official v2 run.
+Changes vs v2: (1) Hindi feminine 'वाली/wali' frames labelled women (product policy; was none, G-022 mismatch);
+(2) mixed-gender rows 3.5% -> 8% + more pair phrasings; (3) other_stat ~1% -> ~11% (banks_v3_extra.py: fastest century,
+catches, hat-tricks...), more general-cricket questions; (4) voice-style noise (VOICE_P 0.15: no punctuation, spoken
+numbers, native-script cricket terms, fillers, misheard names); new dev slice voice_calib.jsonl (synthetic).
+Leakage: exact 0; near-dup screen dropped 3 train rows unseen; re-check clean on all four files. Hashes: UTF-8, LF.
+
+| file | rows | sha256 |
+|---|---|---|
+| training/data/train.jsonl | 10775 | 0e061d5c6a51cb3e2076b5edffdb6aa12924cd676687d39df34ba73d8638f7c8 |
+| training/data/calib.jsonl | 2960 | 2ba8c6ae595a321924814642f8d1e1bc695863dcec772ee3c05eaa9ca7eea091 |
+| training/data/messy_calib.jsonl | 2960 | 57f940a6383073ad350fc345f03eef413eee9fa474305430cfce42c47c4703d2 |
+| training/data/voice_calib.jsonl | 2960 | eba0067bc922ace711ee5d1c013b1c69363aaf23e8e4f79462dfb8fd5c147006 |
+## v2 (superseded; official test run used v2 models): frozen 2026-10-03 (J-P3, approved by Sir Jabin: "v2 first, then test once")
 
 Built ONLY from calibration-set findings (G-026); the frozen test sets were not opened or scored before this freeze
 (only testsets/FROZEN.md counts/hashes were read). Changes vs v1: English slang/variant phrasings added to 4 career cores

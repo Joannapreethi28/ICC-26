@@ -19,7 +19,7 @@ from multiprocessing import Pool
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 COLS = ("text", "query", "question")
 NEAR = 0.92
-NAMES = ("train", "calib", "messy_calib")
+NAMES = ("train", "calib", "messy_calib", "voice_calib")
 _BY_LEN: dict = {}
 _TEST: set = set()
 

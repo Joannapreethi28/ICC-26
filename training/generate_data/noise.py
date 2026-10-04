@@ -119,3 +119,33 @@ def apply_noise(text: str, bank: dict, rng: random.Random) -> tuple[str, list[st
         if ok:
             applied.append(op)
     return re.sub(r"\s+", " ", text).strip(), applied
+
+
+# ---- v3: speech-to-text style (voice assistants, esp. Hindi/Tamil). Labels unchanged; gender cue words untouched. ----
+_VOICE_TERMS = {
+    "latin": [(r"\bT20Is?\b", ("t twenty", "t twenty international", "tee twenty")), (r"\bT20\b", ("t twenty", "twenty twenty")),
+              (r"\bODIs?\b", ("one day", "o d i", "one dayer")), (r"\bWPL\b", ("w p l",)), (r"\bIPL\b", ("i p l",)),
+              (r"\bWC\b", ("world cup",)), (r"\b2024\b", ("twenty twenty four",)), (r"\b2023\b", ("twenty twenty three",)),
+              (r"\b2022\b", ("twenty twenty two",))],
+    "deva": [(r"T20I?s?|टी20", ("टी ट्वेंटी", "टी-ट्वेंटी")), (r"ODIs?|वनडे", ("वनडे", "वन डे", "ओडीआई")), (r"IPL", ("आईपीएल",)),
+             (r"WPL", ("डब्ल्यूपीएल",))],
+    "taml": [(r"T20I?s?|டி20", ("டி ட்வென்டி", "டி-20")), (r"ODIs?", ("ஒன் டே", "ஒருநாள்")), (r"IPL", ("ஐபிஎல்",))],
+}
+_VOICE_FILLERS = {"en": ("umm ", "uh ", "so ", "hey "), "hi": ("अच्छा ", "मतलब ", "यार "), "hi_rom": ("accha ", "matlab ", "yaar "),
+                  "ta": ("சொல்லுங்க ", "அப்புறம் "), "ta_rom": ("sollunga ", "appuram ", "enna ")}
+_MISHEAR = {"Mandhana": "Mandana", "Babar": "Babur", "Kohli": "Koli", "Harmanpreet": "Harmanprit", "Perry": "Peri",
+            "Tendulkar": "Tendulkur", "Mithali": "Mitali", "Rashid": "Rashed"}
+
+
+def voice(text: str, bank: dict, rng: random.Random) -> str:
+    script = {"latin": "latin"}.get(bank["script"], "deva" if bank["lang"] == "hi" else "taml")
+    for pat, alts in _VOICE_TERMS[script] + (_VOICE_TERMS["latin"] if script != "latin" else []):
+        if re.search(pat, text) and rng.random() < 0.8:
+            text = re.sub(pat, rng.choice(alts), text, count=1)
+    for a, b in _MISHEAR.items():
+        if a in text and rng.random() < 0.4:
+            text = text.replace(a, b)
+    text = re.sub(r"[?!.,;:()\"'।]", " ", text).lower()
+    if rng.random() < 0.5:
+        text = rng.choice(_VOICE_FILLERS.get(bank["variant"], ("",))) + text
+    return re.sub(r"\s+", " ", text).strip()

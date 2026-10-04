@@ -95,6 +95,22 @@ def main():
             row["meta"] = {**row["meta"], "slice": "messy_hard"}
             g.write(json.dumps(row, ensure_ascii=False) + "\n")
     print(f"wrote {out} ({n} rows, {changed} changed)")
+    import banks_en, banks_hi, banks_ta  # v3: voice-style dev slice (synthetic speech-to-text style; EVALUATION ONLY)
+    from noise import voice
+    banks = {b.BANK["variant"]: b.BANK for m in (banks_en, banks_hi, banks_ta) for b in [m]}
+    for m in (banks_en, banks_hi, banks_ta):
+        for extra in m.__dict__.values():
+            if isinstance(extra, dict) and "variant" in extra and "script" in extra:
+                banks[extra["variant"]] = extra
+    vout = ROOT / "training" / "data" / "voice_calib.jsonl"
+    with src.open(encoding="utf-8") as f, vout.open("w", encoding="utf-8", newline="\n") as g:
+        for line in f:
+            row = json.loads(line)
+            bank = banks.get(row["meta"]["variant"], banks["en"])
+            row["state"] = voice(row["state"], bank, rng)
+            row["meta"] = {**row["meta"], "slice": "voice_style"}
+            g.write(json.dumps(row, ensure_ascii=False) + "\n")
+    print(f"wrote {vout}")
     for lang in ("en", "hi", "ta"):
         with out.open(encoding="utf-8") as f:
             ex = [json.loads(x)["state"] for x in f if f'"lang": "{lang}"' in x][:4]

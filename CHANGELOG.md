@@ -47,3 +47,5 @@
 - 2026-10-03 src/mak/eval/run_e1.py: E1 launcher; writes run_manifest (model digest, Ollama version, licence line, hardware, options, seeds, prompts, git commit, frozen-input hashes) before generating; resumable; keeps Windows awake only while running (process-scoped). SJ OK'd overnight runs.
 
 - 2026-10-03 ~22:15 SJ: run the single test scoring tonight (Joanna re-audits after 10:30; post-hoc exclusion if she flags rows). Handoff posted; docs/05 logged.
+
+- 2026-10-04 ~09:30 SJ: ship Laya; improve honestly. Data v3 (test-informed from aggregate counts only, disclosed): Hindi 'वाली' -> women (policy alignment), mixed-gender 8%, other_stat ~11% + general cricket, voice-style noise + voice_calib dev slice; threshold fit excludes injection rows, finer grid. Laya v3 training started. D1: no HF account; hosting via an alternative (SJ).

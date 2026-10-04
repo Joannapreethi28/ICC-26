@@ -84,7 +84,7 @@ BANK = {
     "teams": ["भारत", "ऑस्ट्रेलिया", "इंग्लैंड", "पाकिस्तान", "दक्षिण अफ्रीका", "न्यूज़ीलैंड", "वेस्टइंडीज़", "श्रीलंका", "बांग्लादेश"],
     "surnames": [("मंधाना", "W"), ("हीली", "W"), ("हरमनप्रीत", "W"), ("कोहली", "M"), ("बाबर", "M"), ("बुमराह", "M")],
     "surname_frames": ["{s} के आंकड़े", "{s} का रिकॉर्ड", "{s} का करियर", "{s} ने कितने रन बनाए?"],
-    "mixed_frames": ["{p1} और {p2} के करियर आंकड़ों की तुलना करो", "{p1} बनाम {p2} आंकड़े", "{p1} या {p2}, किसके आंकड़े बेहतर हैं?"],
+    "mixed_frames": ["{p1} और {p2} के करियर आंकड़ों की तुलना करो", "{p1} बनाम {p2} आंकड़े", "{p1} या {p2}, किसके आंकड़े बेहतर हैं?", "{p1} और {p2} में कौन बेहतर है?", "{p1} बनाम {p2} किसके रन ज़्यादा हैं", "{p1} से {p2} की तुलना करो", "{p1} या {p2} कौन बड़ा खिलाड़ी है"],
     "years": [2009, 2010, 2012, 2014, 2016, 2017, 2018, 2020, 2022, 2023, 2024],
 }
 
@@ -164,6 +164,6 @@ BANK_ROM = {
     "teams": ["India", "Australia", "England", "Pakistan", "South Africa", "New Zealand", "West Indies", "Sri Lanka"],
     "surnames": [("Mandhana", "W"), ("Healy", "W"), ("Harmanpreet", "W"), ("Kohli", "M"), ("Babar", "M"), ("Bumrah", "M")],
     "surname_frames": ["{s} ke stats", "{s} ka record", "{s} ka career", "{s} ne kitne runs banaye?"],
-    "mixed_frames": ["{p1} aur {p2} ke career stats compare karo", "{p1} vs {p2} stats", "{p1} ya {p2}, kiske numbers behtar hain?"],
+    "mixed_frames": ["{p1} aur {p2} ke career stats compare karo", "{p1} vs {p2} stats", "{p1} ya {p2}, kiske numbers behtar hain?", "{p1} aur {p2} me kaun better hai", "{p1} vs {p2} kiske runs zyada", "{p1} ki {p2} se tulna karo", "{p1} ya {p2} kaun bada player hai"],
     "years": [2009, 2010, 2012, 2014, 2016, 2017, 2018, 2020, 2022, 2023, 2024],
 }

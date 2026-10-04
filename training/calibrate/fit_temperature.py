@@ -24,12 +24,12 @@ from mak.nlu.laya_head import LayaHead  # noqa: E402
 from mak.nlu.rules import rules_parse  # noqa: E402
 
 TARGET = 0.98
-GRID = [round(0.50 + 0.01 * i, 2) for i in range(50)]
+GRID = [round(0.50 + 0.01 * i, 2) for i in range(45)] + [round(0.950 + 0.001 * i, 3) for i in range(50)]
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default=str(ROOT / "models" / "laya-mak-v2"))
+    ap.add_argument("--model", default=str(ROOT / "models" / "laya-mak-v3"))
     a = ap.parse_args()
     head = LayaHead.load(a.model)
     rows = [json.loads(x) for x in open(ROOT / "training" / "data" / "calib.jsonl", encoding="utf-8")]
@@ -38,7 +38,7 @@ def main():
         lang, gold = r["meta"]["lang"], r["meta"]["gender_signal"]
         g, p = head.predict(r["state"])["gender_signal"]
         rule = rules_parse(r["state"], lang)
-        recs.append({"lang": lang, "gold": gold, "pred": g, "p": p, "rule_cue": rule.gender_conf >= 1.0})
+        recs.append({"lang": lang, "gold": gold, "pred": g, "p": p, "rule_cue": rule.gender_conf >= 1.0 or rule.injection_suspected})
     out = {"model": a.model, "target": TARGET, "n_calib": len(recs), "per_lang": {}}
     for lang in ("en", "hi", "ta"):
         xs = [x for x in recs if x["lang"] == lang]

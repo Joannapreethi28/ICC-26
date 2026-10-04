@@ -182,7 +182,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--smoke", action="store_true")
     ap.add_argument("--epochs", type=int, default=EPOCHS)
-    ap.add_argument("--out", default=str(ROOT / "models" / "laya-mak-v2"))
+    ap.add_argument("--out", default=str(ROOT / "models" / "laya-mak-v3"))
     args = ap.parse_args()
     assert torch.cuda.is_available(), "CUDA not available"
     device = torch.device("cuda")

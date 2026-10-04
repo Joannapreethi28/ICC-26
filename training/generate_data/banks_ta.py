@@ -87,7 +87,7 @@ BANK = {
     "teams": ["இந்தியா", "ஆஸ்திரேலியா", "இங்கிலாந்து", "பாகிஸ்தான்", "தென்னாப்பிரிக்கா", "நியூசிலாந்து", "மேற்கிந்தியத் தீவுகள்", "இலங்கை", "வங்கதேசம்"],
     "surnames": [("மந்தனா", "W"), ("ஹீலி", "W"), ("ஹர்மன்பிரீத்", "W"), ("கோலி", "M"), ("பாபர்", "M"), ("பும்ரா", "M")],
     "surname_frames": ["{s} புள்ளிவிவரம்", "{s} சாதனை", "{s} கரியர்", "{s} எத்தனை ரன் எடுத்தார்?"],
-    "mixed_frames": ["{p1} மற்றும் {p2} கரியர் புள்ளிவிவரங்களை ஒப்பிடுங்கள்", "{p1} vs {p2} ஸ்டாட்ஸ்", "{p1} அல்லது {p2}, யாருடைய எண்கள் சிறந்தவை?"],
+    "mixed_frames": ["{p1} மற்றும் {p2} கரியர் புள்ளிவிவரங்களை ஒப்பிடுங்கள்", "{p1} vs {p2} ஸ்டாட்ஸ்", "{p1} அல்லது {p2}, யாருடைய எண்கள் சிறந்தவை?", "{p1} மற்றும் {p2} இதில் யார் சிறந்தவர்?", "{p1} vs {p2} யார் அதிக ரன்", "{p1}-ஐ {p2}-உடன் ஒப்பிடுங்கள்", "{p1} அல்லது {p2} யார் பெரிய வீரர்"],
     "years": [2009, 2010, 2012, 2014, 2016, 2017, 2018, 2020, 2022, 2023, 2024],
 }
 
@@ -167,6 +167,6 @@ BANK_ROM = {
     "teams": ["India", "Australia", "England", "Pakistan", "South Africa", "New Zealand", "West Indies", "Sri Lanka"],
     "surnames": [("Mandhana", "W"), ("Healy", "W"), ("Harmanpreet", "W"), ("Kohli", "M"), ("Babar", "M"), ("Bumrah", "M")],
     "surname_frames": ["{s} stats", "{s} record", "{s} career", "{s} ethana run eduthaanga?"],
-    "mixed_frames": ["{p1} {p2} career stats compare pannunga", "{p1} vs {p2} stats", "{p1} illa {p2}, yaarudhu numbers nalla irukku?"],
+    "mixed_frames": ["{p1} {p2} career stats compare pannunga", "{p1} vs {p2} stats", "{p1} illa {p2}, yaarudhu numbers nalla irukku?", "{p1} {p2} rendu perula yaaru best", "{p1} vs {p2} yaaru adhiga run", "{p1}-a {p2} kooda compare pannunga", "{p1} illa {p2} yaaru periya player"],
     "years": [2009, 2010, 2012, 2014, 2016, 2017, 2018, 2020, 2022, 2023, 2024],
 }
