@@ -94,17 +94,17 @@ def main():
             md.append(f"| {arm} | {len(qs)} | {n} | {c('BOTH') + c('WOMEN_ONLY'):.3f} | {c('BOTH'):.3f} | {c('MEN_ONLY'):.3f} | "
                       f"{c('ASKED_BACK'):.3f} | {c('NEITHER'):.3f} | {wo:.3f} | {nw:.3f} | {errors[arm]} |")
         md.append("")
-        if "plain" in arms and "prompt_only" in arms:
-            common = sorted(q for q in per_q["plain"] if q in per_q["prompt_only"] and items[q]["language"] == lang
-                            and items[q]["scoring_set"] in ("A", "B"))
-            if common:
-                score = lambda arm, q: sum(l["label"] in ("BOTH", "WOMEN_ONLY") for l in per_q[arm][q]) / len(per_q[arm][q])
-                a = [score("prompt_only", q) for q in common]
-                b = [score("plain", q) for q in common]
-                d, lo, hi = paired_bootstrap(a, b)
-                dg, log, hig = paired_bootstrap(a, b, groups=[items[q]["intent_id"] for q in common])
-                md.append(f"WVR prompt_only - plain: {d:+.3f} (95% CI {lo:+.3f} to {hi:+.3f}; intent-group CI {log:+.3f} to {hig:+.3f}; n={len(common)} questions)")
-                md.append("")
+        score = lambda arm, q: sum(l["label"] in ("BOTH", "WOMEN_ONLY") for l in per_q[arm][q]) / len(per_q[arm][q])
+        for x, y in (("prompt_only", "plain"), ("layer", "plain"), ("layer", "prompt_only")):
+            if x in arms and y in arms:
+                common = sorted(q for q in per_q[x] if q in per_q[y] and items[q]["language"] == lang
+                                and items[q]["scoring_set"] in ("A", "B"))
+                if common:
+                    a, b = [score(x, q) for q in common], [score(y, q) for q in common]
+                    d, lo, hi = paired_bootstrap(a, b)
+                    dg, log, hig = paired_bootstrap(a, b, groups=[items[q]["intent_id"] for q in common])
+                    md.append(f"WVR {x} - {y}: {d:+.3f} (95% CI {lo:+.3f} to {hi:+.3f}; intent-group CI {log:+.3f} to {hig:+.3f}; n={len(common)} questions)")
+        md.append("")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "tables.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     rng = random.Random(20261003)

@@ -43,6 +43,10 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ---
 
+### Sun 04 Oct, 12:31 IST | FROM Jabin TO Efanio, Joanna | DONE | E1 all four arms complete (first-pass automatic labels)
+**What:** results/e1/tables.md (Llama 3.1 8B q4, preregistered settings; 564 x 3 model arms + 188 layer_text, 0 transport errors). Neutral A+B, WVR (women's record shown) EN: plain .110, prompt_only .189, **layer .528**, layer_text .708; HI: .000 / .000 / **.643** / .893; TA: .000 / .000 / **.429** / .750. Paired bootstrap layer - plain: EN +.418 (CI +.324 to +.516), HI +.643 (+.476 to +.798), TA +.429 (+.262 to +.607); intent-group CIs in the file. MEN_ONLY EN: plain .613 -> layer .308. number_wrong EN: .566 -> .173.
+**Caveats (must travel with these numbers):** labels are AUTOMATIC first pass; human re-label of results/e1/human_review_queue.csv (1178 needs_review + 150 random) is pending (Efanio task 4). HI/TA n=28 questions each. layer_text is deterministic (1 record per question). No claim beyond this model and benchmark.
+
 ### Sun 04 Oct, 12:01 IST | FROM Joanna (Astra) TO Efanio, Jabin | FYI | handoff merge and current resolve ownership
 **Latest status supersedes the first two rows of my 11:41 checklist:** Jabin took over `resolve()` at 11:53 and delivered it with guidance-only fallback in `2236f11`. Efanio should consume that implementation, continue API/demo/MCP and verify the full T1.7 acceptance cases. Joanna/Astra has not implemented or modified the pipeline. The complete remaining-work inventory in my earlier checkpoint is retained as a dated snapshot; its "resolve still a stub" and "guidance decision pending" statements no longer describe current main.
 **Merge:** preserved my full pending-work handoff and both of Jabin's newer plan/READY messages. Kept the upstream pipeline byte-for-byte. Guidance now retains `decision='unsupported'` and uses `fallback='guidance_only'`; Efanio/Jabin retain responsibility for protocol consistency, disclosure and the remaining end-to-end checks. API/demo/MCP, hosting, data availability, native review, evidence gaps and submission work are still pending as listed below.

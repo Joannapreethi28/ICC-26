@@ -1,0 +1,32 @@
+﻿layer: 25 records, 0 transport errors, 87s
+layer: 50 records, 0 transport errors, 164s
+layer: 75 records, 0 transport errors, 241s
+layer: 100 records, 0 transport errors, 314s
+layer: 125 records, 0 transport errors, 394s
+layer: 150 records, 0 transport errors, 492s
+layer: 175 records, 0 transport errors, 566s
+layer: 200 records, 0 transport errors, 644s
+layer: 225 records, 0 transport errors, 720s
+layer: 250 records, 0 transport errors, 793s
+layer: 275 records, 0 transport errors, 873s
+layer: 300 records, 0 transport errors, 954s
+layer: 325 records, 0 transport errors, 1026s
+layer: 350 records, 0 transport errors, 1112s
+layer: 375 records, 0 transport errors, 1199s
+layer: 400 records, 0 transport errors, 1294s
+layer: 425 records, 0 transport errors, 1379s
+layer: 450 records, 0 transport errors, 1462s
+layer: 475 records, 0 transport errors, 1580s
+layer: 500 records, 0 transport errors, 1711s
+layer: 525 records, 0 transport errors, 1816s
+layer: 550 records, 0 transport errors, 1909s
+layer DONE: 564 new records, 0 transport errors, 1985s
+layer_text: 25 records, 0 transport errors, 1s
+layer_text: 50 records, 0 transport errors, 2s
+layer_text: 75 records, 0 transport errors, 3s
+layer_text: 100 records, 0 transport errors, 4s
+layer_text: 125 records, 0 transport errors, 5s
+layer_text: 150 records, 0 transport errors, 6s
+layer_text: 175 records, 0 transport errors, 7s
+layer_text DONE: 188 new records, 0 transport errors, 8s
+wrote C:\Users\Jabin M\OneDrive\Desktop\ICC'26\results\e1\tables.md | review queue: 1178 + 150

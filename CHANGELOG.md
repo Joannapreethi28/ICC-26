@@ -77,3 +77,5 @@
 - 2026-10-04 duckdb 1.5.6 installed on Jabin's laptop (SJ OK; torch/transformers unchanged): 439 tests pass; only rapidfuzz-dependent tests (test_entities, test_registry_snapshot) remain unrunnable here. SJ: keep the GitHub Release until the end.
 
 - 2026-10-04 ~12:20 resolve() implemented by Jabin (SJ: remove dependency): src/mak/pipeline.py; guidance-only fallback via fallback='guidance_only' (decision vocabulary unchanged). rapidfuzz installed (SJ OK). 457 tests pass. E1 layer + layer_text started.
+
+- 2026-10-04 ~13:05 E1 complete (all arms, 0 transport errors). First-pass WVR EN plain .110 / prompt_only .189 / layer .528 / layer_text .708; layer - plain EN +.418 (CI +.324 to +.516), HI +.643, TA +.429. e1_tables.py now also reports layer comparisons. Human re-label pending.
