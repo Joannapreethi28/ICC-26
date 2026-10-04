@@ -31,15 +31,65 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 | 3 | Registry table (people + hi/ta labels) | Joanna → Jabin | Sat 20:30 | **DONE Sat 17:20 IST (K-P1)** |
 | 4 | Frozen test sets + xsport.csv | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
 | 5 | Benchmark v1 + PREREGISTRATION | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
-| 6 | `LayaHead` + weights | Jabin → Joanna | Sun 10:30 | **DONE Sun 10:55 (Laya v3, GitHub Release + scripts/get_laya_weights.py)** |
-| 7 | `resolve()` + API + demo | Joanna → Jabin | Sun 10:30 | pending |
-| 8 | Captured plain-arm hero answer | Jabin → Joanna | Sun 12:30 | pending |
-| 9 | Live Space + MCP + record-pages URLs | Joanna → both | Sun 13:30 | pending |
+| 6 | `LayaHead` + weights | Jabin → Efanio | Sun 10:30 | **DONE Sun 10:55 (Laya v3; Release/download script exists). Weights absent on Joanna's machine; respect latest distribution decision.** |
+| 7 | `resolve()` + API + demo | Efanio → Jabin / both | `resolve()` Sun 13:00 (updated split) | **TRANSFERRED: resolve still a stub; API/demo/MCP not started by Joanna. Post `resolve() READY` first.** |
+| 8 | Captured plain-arm hero answer | Jabin → Efanio | Sun 12:30 | Plain-arm raw responses delivered; select the dated/model-labelled hero answer for the demo; UI integration pending |
+| 9 | Live app + MCP + record-pages URLs | Efanio → both | Hosting schedule per Checkpoint B | Pending build, hosting eligibility/capacity checks and Sir Jabin's public-deployment approval |
 | 10 | Facts + policy + answer components (K-P3) | Joanna → Jabin | Sun 10:00 | **IMPLEMENTED Sat 21:40 IST (76cb7ce / 857b1cd); native wording review pending** |
 
 ---
 
 # Messages (newest first)
+
+---
+
+### Sun 04 Oct, 11:41 IST | FROM Joanna (Astra) TO Efanio, Jabin | CHECKPOINT A (Joanna) | complete pending-work handoff
+
+**Ownership confirmed by Joanna:** another teammate will implement `resolve()`; **Joanna/Astra will not start it**. The current repo identifies that teammate as **Efanio**, and Sir Jabin's final split in `c479a1c` transfers all remaining K-P4, K-P5 and R-phase work to him. Follow [Efanio's guide](efanio_split.md) and its ownership table; the older `OWNERS.md` still shows the original two-person split. This note records the existing transfer, not a new assignment. Jabin retains GPU/heavy computation as listed in [his live queue](jabin_split.md).
+
+**Exact stopping point:** K-P1, K-P2 and K-P3 were published through `1532f40`. This checkpoint incorporates main through `c479a1c`. **There is no half-written Phase 4 code, local Phase 4 branch, running server, package-install job or unfinished model download from Astra.** `src/mak/pipeline.py` is still the Phase 0 stub. `api/`, `ui/`, `pages/` and `adapters/` contain their package skeletons. Phase 4 was estimated/planned only. Earlier messages saying Joanna would start it are superseded by this transfer.
+
+**Completed components to reuse:** data/registry/entity resolution ([phase 1 notes](../docs/phase1-data.md)); the frozen questions and answer benchmark (`testsets/FROZEN.md`, `eval_data/release_manifest.json`); computed records, golden-first retrieval, policy and en/hi/ta templates ([phase 3 interfaces and limits](../docs/phase3-facts.md), [saved outputs](../docs/phase3-examples.md)). The last full suite Astra ran was **451 passed** on the pre-overnight integration through `57c5fa2`; that is historical validation, not a new test result for `c479a1c`. No training, classifier selection or benchmark run needs to be repeated merely to take over.
+
+**Pending engineering work — Efanio's queue:** exact acceptance tests remain in [buildplan](buildplan.md) and [Joanna's transferred task list](joanna_split.md).
+
+| Priority / scope | Work still required | Completion / dependency |
+|---|---|---|
+| First: `resolve()` — T1.7 | Replace `src/mak/pipeline.py` stub, preserving `resolve(query, lang="auto") -> Resolution`. Connect understanding, registry entities/category overrides, catalogue, policy, facts, leader and rendering; accumulate trace/confidence/fallback/latency. Handle mixed names, surname ambiguity, unspecified format and injection. | En/hi/ta component and boundary tests green; actual sourced results returned; push and post **`resolve() READY`** with commit. This alone unblocks Jabin's E1 layer run. Updated target: Sun 13:00 IST. |
+| Resolve policy decision | Decide the proposed **guidance-only fallback** with Jabin and keep runner/E4 decision semantics consistent. Joanna has not adopted or implemented it; current unsupported behaviour remains. | Before any affected layer output, record a dated, versioned protocol amendment and its evaluation/run identifiers. Preserve the original frozen v1 bytes/hashes; distinguish amended results from the original protocol. Never manufacture a verified Fact. |
+| Local environment / data | Install the required API/UI/browser packages in Efanio's environment; establish the DB and approved model-access route. Confirm the trace says which backend actually ran. | `USE_LAYA=True` is now committed, but a missing weight directory silently falls back to rules. Do not call that trained-model inference. Jabin needs DuckDB/rapidfuzz and the facts data before his layer run. |
+| API — T1.7 | `src/mak/api/app.py`: POST `/resolve`, GET `/intents`, `/coverage`, `/health`; validation and JSON contract; `tests/e2e/test_api.py`. | Empty/oversized requests handled as specified; emoji/non-cricket safe; actual English/Hindi/Tamil answers with sources/dates; all Review Focus cases covered. |
+| Demo + MCP — T1.8 | `src/mak/ui/demo.py`: query/language inputs, presets, answer, trace, source/date table and coverage; expose `resolve_sports_query` and `list_supported_intents`. | Local demo works and MCP discovery/call is verified at `/gradio_api/mcp/`. Use the actual captured plain-arm answer for the before panel, with model/date; raw plain outputs now exist. |
+| Browser/product checks | Add `tests/e2e/test_demo_fn.py`, `test_ui.py`; exercise presets, keyboard access, visible output and console errors. | Verify a real running local app in all three languages; passing component tests alone does not meet this check. |
+| Hosting — K-P5 / T3.1 / G6 | Prepare deployment files, startup/model loading, REST/MCP configuration, health and cold-start checks. Verify current free-host eligibility/capacity rather than relying on old plan assumptions. | Public app/MCP links remain pending. Follow Sir Jabin's current **no public deployment until his approval** decision. If ONNX is chosen, Jabin's wrapper + accuracy verification is still required; an export-size check is not production inference. |
+| Record pages — T3.2 / G7 | `src/mak/pages/build.py`, templates and `site/`: both categories, dates/sources, en/hi/ta, parseable JSON-LD `FAQPage`; accessible markup. | Build/test pages; validate three pages with recorded evidence; publish URLs only after deployment approval. |
+| Football — T3.5 / G9 | `adapters/{base,cricket,football}.py`, `data/golden/football_v1.csv`, tests; verify 10–20 source-dated rows using two sources each. | Neutral/explicit-category football answers work through unchanged category policy. Jabin's E3 classifier report is already available; it does not implement or validate this facts adapter. |
+| Product documentation — T4.2 | Architecture, data card, benchmark card, licences, limits and README with setup, API example and MCP config. Reuse phase notes, frozen cards and Jabin's existing model card. | Document incomplete Cricsheet coverage, native-name fallback, actual inference backend, original vs post-hoc results, and unpassed gates. Verify archive licences separately from the Cricsheet Register licence. |
+| Hardening / refresh — T4.1 | At least 30 injection checks, 200 fuzzed inputs with no server error, queue/concurrency limits, accessibility, reproducible versions/seeds, `scripts/refresh.py`. | Recompute/reconcile refreshes and flag changed headlines for review; preserve source dates and frozen evaluation evidence. |
+| Reproducible reports — T3.6 / G8 | `scripts/run_all_eval.py --from-raw`, report orchestration and `results/README.md`; coordinate changes to Jabin-owned eval modules. | Regenerate tables/plots from saved raw files and compare reproducibly without re-querying models. Existing individual report generators are useful inputs, not completion of this aggregate task. |
+| Pitch / submission — T4.3 + Monday | Five-slide deck, summary and three-minute video script; recording/editing and presenter choice; final claim/source check. | Every metric labelled, dated and tied to evidence. Confirm the exact submission deadline/timezone; re-verify dynamic records, rerun final checks, submit and log receipt. Sir Jabin decides presentation/submission roles. Build freeze remains Sun 20:00 IST. |
+
+**Open reviews and evidence carried forward (not completed by handing them over):**
+
+- **Native wording:** human Hindi/Tamil review of answer templates and relevant lexicons/banks is pending. Astra's self-review is not native-speaker or independent-human review. Source context/country/recent-result text can still be English; missing native names deliberately fall back to English.
+- **Records:** `results/reconciliation.md` has one unresolved Sonam Yeshey / S Yeshi identity match. Keep it flagged until source IDs establish identity. Recheck the 25 V1 single-source rows and four V2 rows with repeated URLs identified by `audit_golden()`, plus dynamic records before submission. Do not replace golden headlines with incomplete Cricsheet totals or silently rewrite frozen benchmark truths.
+- **Later training audits:** Astra's completed v2 overlap recheck is `eval_data/overlap_audit_training_v2.json` (810 rows, zero flags). Jabin subsequently requested v3 + `voice_calib` coverage; **that recheck is still pending**. Working `training/data/` now contains v4, although the shipped model is v3: identify the intended snapshot and exact hashes before labelling a new audit. The frozen comparator only reads train/calib/messy_calib, so running it unchanged does **not** audit voice_calib. Use separate versioned audit evidence/tooling, retain original frozen artifacts and disclose post-hoc timing.
+- **Human E1 labels and E5 screenshots:** Efanio coordinates actual people for `results/e1/human_review_queue.csv` and consumer-app screenshots/logs as specified in his guide. These are pending human tasks, not work already done by this agent. Preserve raw responses and generator-produced tables; record agreement and distinguish the screenshot pilot from a measured rate.
+- **Results claims:** Jabin reports plain/prompt-only E1 complete, E3/E4/classifier reports and a model card delivered. Layer/layer_text still await real `resolve()`. Official v2 evaluation and test-informed v3/v4 results must remain distinct; Gate G4 is reported unmet. Human review and complete E1 tables remain dependencies for final claims.
+
+**Machine handover:** Joanna's checkout is `ICC-26-latest`; the working embedded Python is `../.icc-tools/python/python.exe` (3.11.9). Her full `data/processed/mak.duckdb` exists locally; raw archives, DB, Python environments, credentials and model binaries are gitignored and do **not** arrive with a clone. Portable registry/native-label CSVs do. Use `docs/phase1-data.md` and the downloader/rebuild interfaces to establish data on another machine, retaining snapshot provenance. At this checkpoint, FastAPI, Uvicorn, Gradio, httpx and Playwright are **not installed in Joanna's interpreter**, and `models/laya-mak-v3/model.safetensors` is absent. No need to repeat the already-completed Phase 2 translation download or generation.
+
+**Verification entry points (from the repo, after environment setup):**
+
+```powershell
+python eval_data/tools/build_release.py --check
+python -m pytest -q
+python -m mak.records.reconcile
+```
+
+`--check` verifies the committed freeze; do not invoke v1 reassembly to absorb newer training data. The last command intentionally rewrites the reconciliation report from the local DB. For Joanna's embedded interpreter, use its relative path and a fresh workspace `--basetemp` for pytest. Native Python on other machines needs the package installed or `PYTHONPATH=src`; do not copy credentials or machine-specific environment binaries into Git.
+
+**Suggested guides:** `.claude/skills/huggingface-gradio/SKILL.md`, `mcp-builder/SKILL.md` and `webapp-testing/SKILL.md` for K-P4; the existing hosting guides only after the host is selected. Follow the current ownership/approval rules in `efanio_split.md` and post Checkpoint B with completed work, actual test results, URLs and unresolved issues. This update is a documentation handover; Astra is not implementing transferred work.
 
 ---
 

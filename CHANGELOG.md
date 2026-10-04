@@ -1,5 +1,7 @@
 # CHANGELOG (build)
 
+- 2026-10-04 11:41 IST: Joanna's Checkpoint A handoff: confirmed `resolve()` transfers to Efanio under the latest team split; catalogued all remaining K-P4/K-P5/refinement/submission work, human reviews, later-training audit gaps, machine prerequisites and Jabin dependencies. Updated sync-board ownership/status. No Phase 4 implementation was started by Astra; prior test counts remain labelled historical. Original frozen evaluation evidence retained.
+
 - 2026-10-03 22:21 IST: resolved concurrent main updates through `57c5fa2` while publishing K-P3; preserved both handoff entries. 451 tests passed in 19.42s and 65 frozen hashes verified. Additional opaque audit against training v2: 810 released classifier/transfer rows, 0 exact/near flags at 0.92, 34.17s. Saved separately as `eval_data/overlap_audit_training_v2.json`; original v1 freeze/audit and all evaluation labels remain unchanged.
 
 - 2026-10-03 21:40 IST: K-P3 integrated with Jabin's `0bd6055` (training v2 and evaluation runners). **450 tests passed in 7.97s**, no skips. Preserved both handoff entries; changed the old release-assembly test to validate frozen v1 and separately prove rejection of a changed training snapshot. Frozen release tools/data/audit unchanged. Implementation `76cb7ce`, integration `857b1cd`; phase handoff records native wording review and one identity caveat.
