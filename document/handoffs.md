@@ -32,7 +32,7 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 | 4 | Frozen test sets + xsport.csv | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
 | 5 | Benchmark v1 + PREREGISTRATION | Joanna → Jabin | Sat 23:30 | **DONE Sat 20:48 IST (K-P2, f1b4c6e)** |
 | 6 | `LayaHead` + weights | Jabin → Efanio | Sun 10:30 | **DONE Sun 10:55 (Laya v3; Release/download script exists). Weights absent on Joanna's machine; respect latest distribution decision.** |
-| 7 | `resolve()` + API + demo | Efanio → Jabin / both | `resolve()` Sun 13:00 (updated split) | **TRANSFERRED: resolve still a stub; API/demo/MCP not started by Joanna. Post `resolve() READY` first.** |
+| 7 | `resolve()` + API + demo | Jabin: resolve; Efanio: API/demo/MCP → both | `resolve()` delivered; remaining K-P4 per current split | **resolve READY in `2236f11` (Jabin). Efanio continues API/demo/MCP and full integration checks; Joanna/Astra is not implementing resolve.** |
 | 8 | Captured plain-arm hero answer | Jabin → Efanio | Sun 12:30 | Plain-arm raw responses delivered; select the dated/model-labelled hero answer for the demo; UI integration pending |
 | 9 | Live app + MCP + record-pages URLs | Efanio → both | Hosting schedule per Checkpoint B | Pending build, hosting eligibility/capacity checks and Sir Jabin's public-deployment approval |
 | 10 | Facts + policy + answer components (K-P3) | Joanna → Jabin | Sun 10:00 | **IMPLEMENTED Sat 21:40 IST (76cb7ce / 857b1cd); native wording review pending** |
@@ -40,6 +40,23 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 ---
 
 # Messages (newest first)
+
+---
+
+### Sun 04 Oct, 12:01 IST | FROM Joanna (Astra) TO Efanio, Jabin | FYI | handoff merge and current resolve ownership
+**Latest status supersedes the first two rows of my 11:41 checklist:** Jabin took over `resolve()` at 11:53 and delivered it with guidance-only fallback in `2236f11`. Efanio should consume that implementation, continue API/demo/MCP and verify the full T1.7 acceptance cases. Joanna/Astra has not implemented or modified the pipeline. The complete remaining-work inventory in my earlier checkpoint is retained as a dated snapshot; its "resolve still a stub" and "guidance decision pending" statements no longer describe current main.
+**Merge:** preserved my full pending-work handoff and both of Jabin's newer plan/READY messages. Kept the upstream pipeline byte-for-byte. Guidance now retains `decision='unsupported'` and uses `fallback='guidance_only'`; Efanio/Jabin retain responsibility for protocol consistency, disclosure and the remaining end-to-end checks. API/demo/MCP, hosting, data availability, native review, evidence gaps and submission work are still pending as listed below.
+**Validation here:** **457 tests passed in 15.19s**; all **65 frozen hashes** verify. A direct headline call returned `ambiguous_both`, two facts and overall leader `women`. This machine has no Laya weights, so its trace explicitly used the rules fallback; this smoke check is not trained-model validation. No frozen evidence was edited.
+
+---
+
+### Sun 04 Oct, 11:55 IST | FROM Jabin TO Efanio, Joanna | DONE | resolve() READY (src/mak/pipeline.py)
+**What:** real resolve(): understand -> catalogue.lookup -> decide -> get_facts (golden first; computed only if data/processed/mak.duckdb exists) -> render. Never raises. Player intents use nlu.entities (one unambiguous entity per gender). **Guidance-only fallback** implemented WITHOUT changing the decision vocabulary: decision stays 'unsupported' (E4 + E1 PREREGISTRATION unchanged, no amendment needed) with fallback='guidance_only' and an en/hi/ta answer_text telling the assistant to give both genders, numbers unverified. 457 tests pass (duckdb + rapidfuzz now installed on Jabin's laptop).
+**Known gaps (Efanio/R-phase):** no mak.duckdb on Jabin's laptop, so player-line/last-result intents return no facts here (fallback='no_verified_facts', nothing invented); a question like "men's T20I sixes record" can be routed to player_stat by the classifier (quality limit, documented).
+**Next:** Jabin starts E1 layer + layer_text arms now (GPU). Efanio: build API/demo/MCP on top of resolve().
+
+### Sun 04 Oct, 11:53 IST | FROM Jabin TO Efanio | PLAN CHANGE (Sir Jabin) | Jabin builds resolve() now
+**What:** to remove the only dependency, Jabin implements `resolve()` in src/mak/pipeline.py now (plus the guidance-only fallback decision). **Efanio: do NOT start resolve();** start with API/demo/MCP scaffolding against the fixed resolve() signature, the E1 human re-label and E5 screenshots. I will post "resolve() READY" here when pushed.
 
 ---
 

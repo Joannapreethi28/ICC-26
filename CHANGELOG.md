@@ -1,5 +1,7 @@
 # CHANGELOG (build)
 
+- 2026-10-04 12:01 IST: merged the concurrent handoff additions through `2236f11`, preserving both histories. Updated current status: Jabin delivered resolve; Efanio continues API/demo/MCP and remaining integration. Upstream pipeline unchanged. 457 tests passed in 15.19s; 65 frozen hashes verified; headline smoke check returned both records with the local rules fallback (weights absent).
+
 - 2026-10-04 11:41 IST: Joanna's Checkpoint A handoff: confirmed `resolve()` transfers to Efanio under the latest team split; catalogued all remaining K-P4/K-P5/refinement/submission work, human reviews, later-training audit gaps, machine prerequisites and Jabin dependencies. Updated sync-board ownership/status. No Phase 4 implementation was started by Astra; prior test counts remain labelled historical. Original frozen evaluation evidence retained.
 
 - 2026-10-03 22:21 IST: resolved concurrent main updates through `57c5fa2` while publishing K-P3; preserved both handoff entries. 451 tests passed in 19.42s and 65 frozen hashes verified. Additional opaque audit against training v2: 810 released classifier/transfer rows, 0 exact/near flags at 0.92, 34.17s. Saved separately as `eval_data/overlap_audit_training_v2.json`; original v1 freeze/audit and all evaluation labels remain unchanged.
@@ -71,3 +73,7 @@
 - 2026-10-04 CHECKPOINT A (Jabin): E1 plain + prompt_only complete and scored (first pass); ONNX int8 export 318 MB / 96.5% agreement / 51 ms CPU (training/export/export_onnx.py, results/onnx_check.json). Efanio continues per document/efanio_split.md.
 
 - 2026-10-04 ~11:45 SJ final split: Jabin = GPU/heavy only; Efanio = all Joanna remaining + non-GPU Jabin items. efanio_split.md rewritten (ownership table, resolve() first by 13:00), jabin_split.md live status rewritten as session start point, joanna_split.md marked TRANSFERRED, handoff + docs/05 logged.
+
+- 2026-10-04 duckdb 1.5.6 installed on Jabin's laptop (SJ OK; torch/transformers unchanged): 439 tests pass; only rapidfuzz-dependent tests (test_entities, test_registry_snapshot) remain unrunnable here. SJ: keep the GitHub Release until the end.
+
+- 2026-10-04 ~12:20 resolve() implemented by Jabin (SJ: remove dependency): src/mak/pipeline.py; guidance-only fallback via fallback='guidance_only' (decision vocabulary unchanged). rapidfuzz installed (SJ OK). 457 tests pass. E1 layer + layer_text started.
