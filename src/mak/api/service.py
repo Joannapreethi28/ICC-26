@@ -21,7 +21,16 @@ class ResolveRequest(BaseModel):
 
 
 def resolve_sports_query(query: str, lang: str = 'auto') -> dict:
-    """Answer a cricket question with labelled records, sources and snapshot dates.
+    """Answer a cricket question with labelled records, sources and as-of dates.
+
+    Present the answer naturally and concisely, starting with the answer itself.
+    Avoid technical introductions such as "according to the plugin" or "as of
+    the latest verified snapshots". Preserve the returned gender categories,
+    factual values, source links and each record's as-of date. Do not describe
+    dated records as live totals. Keep missing-data, uncertainty and computed
+    coverage qualifications when present. Do not recite the internal trace or
+    implementation details unless the user asks. Native tool-use indicators
+    belong to the host assistant and should remain visible.
 
     Args:
         query: A cricket question, between 1 and 2000 characters.

@@ -40,6 +40,15 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 ---
 
 # Messages (newest first)
+
+### Mon 05 Oct 2026 | FROM Efanio TO both | DONE (local) | Natural plugin response guidance
+**What:** Sir Jabin asked for normal assistant wording. Updated resolve_sports_query's MCP docstring in src/mak/api/service.py to lead with the answer and avoid technical "plugin" / "verified snapshots" introductions while retaining sourced dates, categories and coverage caveats. No fact, policy, return-schema or frozen-evidence changes.
+**Watch out:** This is local guidance, not a verified live response. Reload the serving process and refresh client tool metadata before recording; the host assistant still chooses its actual wording. Native tool-use indicators remain visible.
+
+### Mon 05 Oct 2026 | FROM Efanio TO both | DONE | Demo script prepared; recording not started
+**What:** Sir Jabin requested a concise script before recording, authentic ChatGPT/Gemini answers and natural female ElevenLabs narration, conserving the reported remaining credits. Added document/demo_video_script.md and video/narration.txt. Target 2:50, real baseline/connected conversations, visible tool evidence, EN/HI/TA, policy/coverage contrast and qualified E1 chart.
+**Watch out:** This session's browser inventory is empty and Windows User ELEVENLABS_API_KEY presence check returned false. Verify setup locally without displaying the key. Gemini invocation must be real; use the script's disclosed product-page fallback if unavailable. No audio credits used, no recording, no product change, no public launch or submission. Waiting for Sir Jabin's instruction to start capture.
+
 ### Sun 04 Oct 2026 | FROM Efanio TO both | FYI | MCP setup complete; consumer connection and demo recording pending
 **Identity:** The person working in this chat is Efanio, not Sir Jabin. Attribute this work and the next account-side steps to Efanio. Earlier messages are preserved as historical records.
 

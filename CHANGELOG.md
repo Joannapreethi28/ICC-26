@@ -1,5 +1,9 @@
 # CHANGELOG (build)
 
+- 2026-10-05: Updated the MCP resolver's response guidance to request direct, conversational answers instead of technical plugin/snapshot introductions, preserving categories, facts, sources, dates and coverage qualifications. Live host wording remains controlled by ChatGPT/Gemini; server reload and client tool refresh are needed to expose the new description.
+
+- 2026-10-05: Prepared `document/demo_video_script.md` and `video/narration.txt` for a 2:50 genuine ChatGPT/Gemini demonstration with natural female narration, native tool indicators, dated sources, preliminary-result caveats and a disclosed fallback if Gemini cannot invoke MCP. No recording/audio API calls or product changes. Browser/key access remains unverified for capture.
+
 - 2026-10-04: Pitch v10 moves Jabin Joseph and Efanio Jens closer to Joanna Preethi on the closing slide, with other slide content unchanged. Final package validated and closing slide visually checked.
 
 - 2026-10-04: Pitch v9 removes the minimized screenshots at user request, retains clearly labelled enlarged original excerpts, rebalances slide 1, enlarges/aligns slide 2 record comparison and improves slide 4 bottom spacing. Audited all five final renders against template clarity and recorded findings in `submssion/presentation-audit.md`. Five slides, no notes, chart and font checks passed.
