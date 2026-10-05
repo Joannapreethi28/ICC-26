@@ -27,7 +27,10 @@ def resolve_sports_query(query: str, lang: str = 'auto') -> dict:
     or infer a gender word ("men's", "women's") and do not carry gender over from
     earlier messages: the tool itself decides whether the question names a gender.
     When the result contains both a women's and a men's record, present both.
-    Present the answer naturally and concisely, starting with the answer itself.
+    Present the answer naturally and concisely, starting with the answer itself,
+    in plain sentences like a normal assistant reply: no emojis, no country flags
+    or country-code badges, no decorative symbols, and at most a short list.
+    Give every record its own as-of date.
     Avoid technical introductions such as "according to the plugin" or "as of
     the latest verified snapshots". Preserve the returned gender categories,
     factual values, source links and each record's as-of date. Do not describe

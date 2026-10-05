@@ -54,6 +54,19 @@ def main() -> None:
     logo = base64.b64encode((config.ROOT / 'logo' / 'logo_mcp_128.png').read_bytes()).decode()
     demo.mcp_server_obj.mcp_server.icons = [Icon(src=f'data:image/png;base64,{logo}', mimeType='image/png', sizes=['128x128'])]
     demo.mcp_server_obj.mcp_server.website_url = 'https://github.com/Joannapreethi28/ICC-26'
+    # Both tools only read verified records. readOnlyHint lets hosts (ChatGPT) skip the write-action confirmation;
+    # Gradio 6.29 does not expose tool annotations, so they are added to its tools/list response here.
+    from mcp.types import ListToolsRequest, ToolAnnotations
+    handlers = demo.mcp_server_obj.mcp_server.request_handlers
+    gradio_list_tools = handlers[ListToolsRequest]
+
+    async def list_tools_read_only(request):
+        result = await gradio_list_tools(request)
+        for tool in result.root.tools:
+            tool.annotations = ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True,
+                                               openWorldHint=False)
+        return result
+    handlers[ListToolsRequest] = list_tools_read_only
     if args.share and not share_url:
         demo.close()
         raise RuntimeError('Public tunnel failed; no public endpoint is ready')
