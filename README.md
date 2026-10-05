@@ -84,16 +84,33 @@ The fine-tuned classifier is published as an open release: [Laya v3 for Make AI 
 
 ## What's in this repo
 
-| Folder | What it holds |
-|---|---|
-| `src/mak/` | The layer itself: understanding, policy, fact lookup, answer templates, API, demo UI and MCP tools |
-| `data/` | Verified records, player and team names in Hindi and Tamil, keyword lists |
-| `training/` | Training-data generation, fine-tuning and calibration |
-| `testsets/`, `eval_data/` | Held-out test sets (kept away from training) and the benchmark questions |
-| `results/` | Evaluation reports and raw scores |
-| `scripts/` | Get the model weights, run the demo, check the MCP server |
-| `deploy/` | Free hosting on Modal |
-| `tests/` | The test suite |
+```
+src/mak/          the layer itself
+  nlu/              understanding: Laya model + rules
+  policy/           the "show both" decision, in plain code
+  ingest/, registry/  building the fact database from Cricsheet and Wikidata
+  fetch/, records/  looking up verified facts
+  compose/          answer templates (en / hi / ta)
+  api/, ui/         REST API, demo page, MCP tools
+  eval/             evaluation code (E1, E3, E4, classifier report)
+data/             what the layer needs at runtime
+  golden/           hand-verified records with sources and as-of dates
+  i18n/, registry/  player and team names in Hindi and Tamil
+  lexicons/         keyword lists for the rules
+training/         how the model was built
+  generate_data/    synthetic training questions (3 languages, with noise)
+  data/             the frozen training and calibration sets
+  finetune/         Laya fine-tuning
+  calibrate/        confidence calibration
+  qwen_parser/, train_encoder_baseline.py   alternative models we compared against
+testsets/         held-out test sets, never shown to training
+eval_data/        how the test sets and the benchmark were built (sources, annotations, tools)
+results/          evaluation reports and raw scores
+scripts/          get the model weights, run the demo, check the MCP server
+deploy/           free hosting on Modal
+tests/            the test suite
+logo/             logo and icons
+```
 
 ## Data and licences
 
