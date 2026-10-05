@@ -14,6 +14,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--share', action='store_true', help='Create a temporary public HTTPS URL; requires team approval')
     parser.add_argument('--port', type=int, default=7862)
+    parser.add_argument('--host', default='127.0.0.1', help='0.0.0.0 only inside a hosting container (deploy/modal_app.py)')
     args = parser.parse_args()
 
     # Model files are already provisioned. Startup must not fetch missing artifacts.
@@ -39,7 +40,7 @@ def main() -> None:
     from mak.ui.demo import build_demo, THEME, CUSTOM_CSS
     demo = build_demo()
     _, local_url, share_url = demo.launch(
-        server_name='127.0.0.1', server_port=args.port, share=args.share,
+        server_name=args.host, server_port=args.port, share=args.share,
         mcp_server=True, theme=THEME, css=CUSTOM_CSS,
         show_error=False, prevent_thread_lock=True, max_threads=8,
         favicon_path=str(config.ROOT / 'logo' / 'favicon.png'),

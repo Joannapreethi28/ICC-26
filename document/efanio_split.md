@@ -54,6 +54,6 @@ Post "FROM Efanio TO both | CHECKPOINT B" in handoffs.md: done, numbers (with la
 Follow `document/demo_video_guide.md` (context, rules, live URLs, storyboard, narration, captions, ElevenLabs, ffmpeg pipeline, checklist).
 
 ## 9. Refinement -> demo -> submission (updated Mon 05 Oct, 09:24 IST, Sir Jabin)
-**Deadline 23:59 IST today.** Current live demo/MCP URL, logo files and the 5-step check: `document/jabin_split.md` LIVE STATUS (the URL changes on every server restart). ChatGPT connector icon: upload `logo/logo_mcp_128.png` in the connector form. Hosting decision (HF Space via a teammate account older than 30 days / Modal / laptop) is the team's, at the end.
+**Deadline 23:59 IST today.** Permanent demo/MCP (Modal, free): https://jabssyyy--make-ai-know-her-web.modal.run (MCP: `/gradio_api/mcp/`). Open it once before recording; it sleeps when idle, so the first load takes ~20-60 s. ChatGPT connector icon: `logo/logo_chatgpt_256.png`. Check list: `document/jabin_split.md` LIVE STATUS.
 
 Sir Jabin refines first. Then run the pre-submission MCP check (document/jabin_split.md LIVE STATUS). Then Efanio records the demo video manually (raw captures in video/raw/, voice clips in video/voice/, narration video/narration.txt are available; the automated assembler was rejected) and submits. Every number with its label (official / post-hoc / first-pass E1). Commit the final deck to submission/final/ before submitting.

@@ -41,6 +41,14 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 # Messages (newest first)
 
+### Mon 05 Oct, 10:20 IST | FROM Jabin (Claude Code) TO Efanio, Joanna | DONE | PERMANENT hosting on Modal (free)
+- **Use this URL from now on (it never changes):** demo https://jabssyyy--make-ai-know-her-web.modal.run , MCP https://jabssyyy--make-ai-know-her-web.modal.run/gradio_api/mcp/ . check_mcp.py green en/hi/ta + icons. The laptop no longer needs to stay on.
+- Sleeps when idle, so the first request takes ~20-60 s. Before recording, open the demo once to wake it.
+- Free $1/month credit on Sir Jabin's workspace, no card, so it can never be charged.
+- ChatGPT connector icon: `logo/logo_chatgpt_256.png`.
+- Fixed: the Release zip has Windows backslash paths; `scripts/get_laya_weights.py` now extracts correctly on Linux/macOS.
+- Repo cleanup at the end: keep `src/`, `data/`, `logo/`, `scripts/serve_demo.py`, `scripts/get_laya_weights.py`, `deploy/`.
+
 ### Mon 05 Oct, 09:24 IST | FROM Jabin (Claude Code) TO Efanio, Joanna | DONE | MCP logo live, new URL, README; hand-over
 - **New URL (old ones dead):** demo https://85007419db81af9060.gradio.live , MCP https://85007419db81af9060.gradio.live/gradio_api/mcp/ . check_mcp.py green en/hi/ta.
 - **Logo:** Sir Jabin's `logo/logo_for_mcp.png`. For ChatGPT, upload `logo/logo_mcp_128.png` in the connector form's icon field; ChatGPT does not pick it up from the server. The server also sends it in MCP `serverInfo.icons`, and the demo has a favicon.

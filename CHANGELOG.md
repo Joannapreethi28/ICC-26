@@ -1,5 +1,7 @@
 # CHANGELOG (build)
 
+- 2026-10-05 10:20: Permanent free hosting on Modal (`deploy/modal_app.py`; https://jabssyyy--make-ai-know-her-web.modal.run, MCP at /gradio_api/mcp/), check_mcp.py green en/hi/ta. `serve_demo.py --host`. Fixed `get_laya_weights.py` for the Release zip's Windows backslash paths (Linux/macOS). ChatGPT icon `logo/logo_chatgpt_256.png` (<10 KB). README/docs now use the Modal URL.
+
 - 2026-10-05 09:24: MCP logo: `logo/` sizes (128 px connector icon, 512, favicon) from Sir Jabin's logo; the server sends MCP `serverInfo.icons` + websiteUrl; the demo has a favicon. Server restarted, new URL https://85007419db81af9060.gradio.live, check_mcp.py green. README: submitted status, links, run steps.
 
 - 2026-10-05 08:55: Demo/MCP server restarted (old URL dead); new URL https://277143684aa6b204f5.gradio.live, check_mcp.py green en/hi/ta. Release `laya-mak-v3` notes rewritten as a model card. Post-hoc E3 re-run with current code (`results/e3/*posthoc_20261005*`; topic en 0.797 -> 0.932, gender unchanged). Added MCP flow diagram for the deck (`submission/screenshots/mcp_flow.png`).

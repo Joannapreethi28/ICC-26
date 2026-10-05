@@ -3,6 +3,7 @@ Free, no account needed.  python scripts/get_laya_weights.py
 """
 import hashlib
 import pathlib
+import shutil
 import sys
 import urllib.request
 import zipfile
@@ -32,8 +33,16 @@ def main():
     urllib.request.urlretrieve(URL, tmp)
     if sha(tmp) != ZIP_SHA256:
         sys.exit("zip SHA-256 mismatch: download corrupted or tampered; not unzipping")
-    with zipfile.ZipFile(tmp) as z:
-        z.extractall(DEST)
+    with zipfile.ZipFile(tmp) as z:  # the release zip was made on Windows: entry names use "\" (breaks plain unzip on Linux/macOS)
+        for info in z.infolist():
+            target = (DEST / info.filename.replace("\\", "/")).resolve()
+            if DEST.resolve() not in target.parents:
+                sys.exit(f"unsafe path in zip: {info.filename}")
+            if info.is_dir():
+                continue
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with z.open(info) as src, target.open("wb") as dst:
+                shutil.copyfileobj(src, dst)
     tmp.unlink()
     if sha(DEST / "model.safetensors") != MODEL_SHA256:
         sys.exit("model.safetensors SHA-256 mismatch after unzip")

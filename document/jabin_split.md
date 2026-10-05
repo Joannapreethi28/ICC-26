@@ -10,21 +10,23 @@ Owner: Sir Jabin, with Claude Code. Partner track: `joanna_split.md` (Joanna + A
 
 ---
 
-## LIVE STATUS (updated Mon 05 Oct, 09:24 IST; newest state only; a new session starts HERE)
+## LIVE STATUS (updated Mon 05 Oct, 10:20 IST; newest state only; a new session starts HERE)
 
-**Deadline: 23:59 IST Mon 5 Oct (Sir Jabin).** **Phase: REFINEMENT, small tweaks only (Sir Jabin: deck is ready).** Then push and hand over: teammates do the video, the hosting decision (HF via a >30-day account / Modal / laptop; decided at the end) and submission. Sir Jabin checks ChatGPT at the end.
-**Jabin track: complete** (Laya v3 shipped, official + post-hoc evals, E1 all arms, E3/E4, resolve(), report, model card). Keep: `video/raw/` (real screen captures) and `video/voice/` (Bella clips) for the team's edit. ffmpeg uninstalled; temp files cleaned.
-Live demo/MCP (URL since 05 Oct 09:22): https://85007419db81af9060.gradio.live , MCP https://85007419db81af9060.gradio.live/gradio_api/mcp/ (server PID 31892, started with `PYTHONPATH=src`; older 924d7… and 277143… URLs are DEAD). check_mcp.py passed en/hi/ta + catalogue at 09:23. **Is it on?** Open `<URL>/gradio_api/mcp/schema`; a tool list means on.
-Logo: `logo/logo_for_mcp.png` (Sir Jabin's). `logo/logo_mcp_128.png` = icon to upload in ChatGPT's connector form (ChatGPT does NOT take it from the server automatically). The server also sends it as MCP `serverInfo.icons` (verified in `initialize`) for clients that read it; demo tab favicon = `logo/favicon.png`.
-Cross-sport (E3): official run 4 Oct (gender en 0.949 vs rules 0.847, topic en 0.797; n=59, only 1 ta row). Post-hoc re-run 5 Oct with current code (other-sport keep rule): gender en 0.949, topic en 0.932 (`results/e3/report_posthoc_20261005.md`, POST-HOC).
+**Deadline: 23:59 IST Mon 5 Oct (Sir Jabin).** **Phase: REFINEMENT, small tweaks only (Sir Jabin: deck is ready).** Then push and hand over: teammates do the video and submission.
+**Jabin track: complete** (Laya v3 shipped, official + post-hoc evals, E1 all arms, E3/E4, resolve(), report, model card). Keep: `video/raw/` (real screen captures) and `video/voice/` (Bella clips) for the team's edit.
+**PERMANENT HOSTING (Modal, free, Sir Jabin's workspace `jabssyyy`, no card):** demo https://jabssyyy--make-ai-know-her-web.modal.run , MCP https://jabssyyy--make-ai-know-her-web.modal.run/gradio_api/mcp/ . check_mcp.py passed en/hi/ta + catalogue + icons at 10:18. Sleeps after 5 idle min; cold start measured 20 s. Free credit $1/month (~14 awake hours at ~$0.07/h); no card, so it stops if exhausted and is never charged. Redeploy: `PYTHONIOENCODING=utf-8 python -m modal deploy deploy/modal_app.py` (login key in the user folder `.modal.toml`, never in the repo). The URL never changes. Gradio share links (924d7…, 277143…, 85007419…) are retired.
+**Is it on?** Open `<URL>/gradio_api/mcp/schema`; a tool list means on (the first open after idle takes ~20-60 s).
+Logo: `logo/logo_for_mcp.png` (Sir Jabin's). ChatGPT connector icon = `logo/logo_chatgpt_256.png` (form limit: PNG, 10 KB; ChatGPT does NOT take it from the server). The server also sends `serverInfo.icons`; demo favicon `logo/favicon.png`.
+Model zip bug fixed (5 Oct): the Release zip stores Windows backslash paths, so plain unzip on Linux/macOS breaks the tokenizer folder. `scripts/get_laya_weights.py` now normalises paths (zip and sha256 unchanged).
+Cross-sport (E3): official run 4 Oct (gender en 0.949 vs rules 0.847, topic en 0.797; n=59, only 1 ta row). Post-hoc re-run 5 Oct with current code: topic en 0.932 (`results/e3/report_posthoc_20261005.md`, POST-HOC).
 
-**Pre-submission MCP check (run on Sir Jabin's laptop before Efanio records/submits):**
-1. Server up: port 7862 listening (`scripts/serve_demo.py --share`), trained Laya loaded (trace shows "laya:", not "laya unavailable").
-2. `python scripts/check_mcp.py <PUBLIC_URL>/gradio_api/mcp/` prints "trained Laya, both records, sources and dates OK" for en/hi/ta and "Catalogue OK".
-3. ChatGPT plugin "Make AI Know Her" points to the SAME public URL and has `logo/logo_mcp_128.png` as its icon (Settings -> Apps & Connectors; a restart changes the gradio.live URL: recreate the plugin if so).
-4. `python -m pytest tests -q` green (490 passed on 5 Oct 01:00; needs duckdb, rapidfuzz, gradio[mcp]).
-5. Laptop stays on, plugged in, online while judges might use the link (temporary share link, not permanent hosting).
-Open: ChatGPT re-point + icon (Sir Jabin, at the end); small deck tweaks (Sir Jabin); video, hosting decision, submission (teammates). Model weights are public: GitHub Release `laya-mak-v3` (Apache-2.0, release notes = model card).
+**Pre-submission check:**
+1. Open the Modal demo URL (wait up to 60 s); trace shows "laya:".
+2. `python scripts/check_mcp.py https://jabssyyy--make-ai-know-her-web.modal.run/gradio_api/mcp/`: 4 OK lines.
+3. ChatGPT connector "Make AI Know Her" uses the Modal MCP URL + `logo/logo_chatgpt_256.png` (created once; the URL never changes).
+4. `python -m pytest tests -q` green (490 passed on 5 Oct 10:00).
+5. The laptop no longer needs to stay on.
+Open: Sir Jabin creates the ChatGPT connector on the Modal URL; small deck tweaks (Sir Jabin); video, submission (teammates); repo cleanup at the end (keep src/, data/, logo/, scripts/serve_demo.py, scripts/get_laya_weights.py, deploy/). Model weights are public: GitHub Release `laya-mak-v3` (Apache-2.0, release notes = model card).
 
 ## How we stay independent of each other
 
