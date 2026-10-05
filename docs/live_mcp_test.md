@@ -1,11 +1,12 @@
 # Live MCP test — 4 October 2026
 ## Current live test
 
-- Demo: https://df337fc2ba08c1ca49.gradio.live
-- MCP: https://df337fc2ba08c1ca49.gradio.live/gradio_api/mcp/
+- Demo: https://ea95ffb3e669617b62.gradio.live
+- MCP: https://ea95ffb3e669617b62.gradio.live/gradio_api/mcp/
+- Restarted 5 October at Sir Jabin's request. Public MCP discovery confirms the new conversational-answer guidance. Trained EN/HI/TA calls and catalogue pass. Client connections must use this new URL; this session has no connected browser to refresh their metadata.
 - Efanio confirmed Sir Jabin's approval in chat before launch, including the standard tunnel-helper download.
 - Verified over the public HTTPS URL: MCP initialization, exact two-tool discovery, EN/HI/TA calls with real Laya traces and sourced/dated records, and catalogue call.
-- Server process: PID 4364 on this launch, localhost port 7862. Stop this specific process to end the tunnel; PID may change on restart. Logs: %TEMP%/mak-public-out.log and mak-public-err.log. Do not commit machine logs.
+- Server process: PID 37220 on this launch, localhost port 7862. Stop this specific process to end the tunnel; PID may change on restart. Logs: results/demo_reload_stdout.log and results/demo_reload_stderr.log. Do not commit machine logs.
 - Gradio reports up to one week, best effort. The endpoint stops when the laptop sleeps, disconnects or the process exits. Restarting sharing may change the URL.
 - Consumer-app connection has not yet been verified inside ChatGPT or Gemini accounts; the public MCP transport and trained inference have been verified independently.
 

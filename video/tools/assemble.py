@@ -68,12 +68,14 @@ def segment(i, slot, out):
     d = dur(raw)
     speed = max(1.0, d / slot)
     note = f"clip {d:.1f}s"
-    if speed > 2.5:
-        note += f" WARNING: needs {speed:.1f}x, capped at 2.5x (trim the recording)"
-        speed = 2.5
+    ss = 0.0
+    if speed > 2.6:  # too long even at 2.6x: keep the END (the answer), drop early typing/waiting
+        ss = d - slot * 2.6
+        note += f" trimmed first {ss:.1f}s, 2.6x"
+        speed = 2.6
     elif speed > 1.0:
         note += f" sped up {speed:.2f}x"
-    run(["-i", str(raw), "-t", f"{slot}", "-vf", f"setpts=PTS/{speed},{vf},tpad=stop_mode=clone:stop_duration={slot}", "-an",
+    run(["-ss", f"{ss}", "-i", str(raw), "-vf", f"setpts=PTS/{speed},{vf},tpad=stop_mode=clone:stop_duration={slot}", "-an",
          "-c:v", "libx264", "-crf", "18", "-t", f"{slot}", str(out)])
     return note
 
@@ -85,7 +87,7 @@ def main():
     for i in range(1, 11):
         vo = V / "voice" / f"{i:02d}.mp3"
         vd = dur(vo)
-        slot = round(max(TARGET[i], vd + LEAD + 0.6), 2)
+        slot = round(max(4.0, vd + LEAD + 0.5), 2)  # narration-driven: no dead air
         seg = V / "build" / f"seg{i:02d}.mp4"
         info = segment(i, slot, seg)
         segs.append(seg)

@@ -37,3 +37,8 @@ video/raw/
 video/samples/
 video/voice/
 video/build/
+results/demo_reload_*.log
+submission/template.pptx
+submission/Untitled design.pptx
+video/*.mp4
+!video/make-ai-know-her-demo.mp4

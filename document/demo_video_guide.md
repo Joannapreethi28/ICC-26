@@ -1,3 +1,5 @@
+> **STATUS (Mon 05 Oct, 08:38 IST):** Sir Jabin rejected the automated cut (unnatural pauses). The team records/edits the video manually; use this guide for content, rules and tested questions only. Reusable: video/raw/, video/voice/, video/narration.txt, video/cards/.
+
 # demo_video_guide.md: record the 3-minute demo video (for GPT 6 / Efanio)
 
 Written Mon 5 Oct 2026 by Jabin's Claude Code at Sir Jabin's request. Follow it end to end. Address Sir Jabin as "Sir Jabin".
@@ -27,8 +29,8 @@ Judging weights to aim the video at (`icc-make-ai-know-her/docs/01_hackathon_and
 6. **Length <= 3:00** (target 2:50). 1920x1080, MP4 (H.264 + AAC).
 
 ## 3. What is live right now (verify before recording)
-- Demo page (trained Laya on Sir Jabin's laptop): **https://924d7dfe7ec2a1f775.gradio.live**
-- MCP endpoint (already added to Sir Jabin's ChatGPT as a plugin, "No authentication"): **https://924d7dfe7ec2a1f775.gradio.live/gradio_api/mcp/**
+- Demo page (trained Laya on Sir Jabin's laptop; restarted 5 Oct): **https://ea95ffb3e669617b62.gradio.live**
+- MCP endpoint ("No authentication"; update the existing ChatGPT/Gemini connection after this restart): **https://ea95ffb3e669617b62.gradio.live/gradio_api/mcp/**
 - Tools exposed: `resolve_sports_query`, `list_supported_intents`.
 - These are **temporary** Gradio share links backed by the laptop: keep it on, plugged in, online, and the server running. If the link is dead: `python scripts/serve_demo.py --share` (new URL!), then `python scripts/check_mcp.py <URL>/gradio_api/mcp/` must print "trained Laya, both records" for en/hi/ta. Update the plugin URL in ChatGPT if it changed. Details: `docs/live_mcp_test.md`.
 
@@ -111,5 +113,5 @@ Burn in open captions (bottom, white text, dark semi-transparent box, 40-48 px, 
 - [ ] End card: project name, repo https://github.com/Joannapreethi28/ICC-26, "free, open, MCP + API", team names as in the deck (Joanna Preethi (Team Lead), Jabin Joseph, Efanio Jens), voice credit if free tier
 
 ## 12. Where the rest of the context lives
-`AGENTS.md` (rules) · `document/handoffs.md` (latest status, newest first) · `document/efanio_split.md` · `results/e1/tables.md` (E1) · `results/classifier/report.md` + `docs/model_card.md` (classifier) · `document/pitch_deck_content.md` and `submssion/` (deck work in progress; final deck to be committed under `submission/final/`) · `icc-make-ai-know-her/docs/01_hackathon_and_rules.md` (rules, criteria) · `docs/12_pitch_and_deliverables.md` (pitch plan).
+`AGENTS.md` (rules) · `document/handoffs.md` (latest status, newest first) · `document/efanio_split.md` · `results/e1/tables.md` (E1) · `results/classifier/report.md` + `docs/model_card.md` (classifier) · `document/pitch_deck_content.md` and `submission/` (deck work in progress; final deck to be committed under `submission/final/`) · `icc-make-ai-know-her/docs/01_hackathon_and_rules.md` (rules, criteria) · `docs/12_pitch_and_deliverables.md` (pitch plan).
 When done, post "FROM Efanio TO both | DONE | demo video" in `document/handoffs.md` with the file path/link, duration, voice used, and any deviations from this guide.

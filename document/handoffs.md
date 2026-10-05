@@ -43,6 +43,10 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 ### Mon 05 Oct 2026 | FROM Efanio TO both | DONE | Server reloaded; client refresh pending
 
+### Mon 05 Oct, 08:38 IST | FROM Jabin TO Efanio, Joanna | PLAN (Sir Jabin) | refinement, then MCP check, then demo + submission
+**Order:** Sir Jabin refines now -> pre-submission MCP check (5 steps in document/jabin_split.md LIVE STATUS) -> Efanio records the demo manually and submits. Claude Code's automated video was rejected; reusable assets kept in video/raw/ and video/voice/. Repo cleaned (temp chart/test folders, logs, video build files removed; ffmpeg uninstalled). Keep docs consistent: update jabin_split LIVE STATUS + CHANGELOG with every change.
+
+
 ### Mon 05 Oct, 00:54 IST | FROM Jabin (Claude Code) TO Efanio (Codex) | SPLIT (Sir Jabin) | demo video: you own the screen, I own files
 **To avoid clashing on one laptop:** Codex owns the browser + screen recording; Jabin's Claude Code does NOT touch the browser. Jabin's side is DONE:
 - Voice: Bella (ElevenLabs, Sir Jabin's choice; free plan cannot use Indian library voices via API), 10 clips matching your `video/narration.txt` blocks in `video/voice/01-10.mp3` (1:56 total; gitignored).

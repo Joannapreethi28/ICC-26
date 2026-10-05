@@ -1,5 +1,7 @@
 # CHANGELOG (build)
 
+- 2026-10-05: At Sir Jabin's request, retained only the finalized deck in submssion/final, renamed to Make AI Know Her - ICC Pitch.pptx. Removed previous generated decks, build scripts, previews and presentation working notes. Preserved original template/design decks, screenshots and project files. SHA-256 confirms final deck content is unchanged.
+
 - 2026-10-05: Restarted the identified trained-Laya demo at Sir Jabin's request. New public URL https://ea95ffb3e669617b62.gradio.live; public tool discovery confirms conversational-answer guidance and EN/HI/TA sourced-result checks pass. Updated live instructions. Consumer plugin URL/metadata refresh remains pending browser access.
 
 - 2026-10-05: Updated the MCP resolver's response guidance to request direct, conversational answers instead of technical plugin/snapshot introductions, preserving categories, facts, sources, dates and coverage qualifications. Live host wording remains controlled by ChatGPT/Gemini; server reload and client tool refresh are needed to expose the new description.
@@ -140,3 +142,7 @@
 - 2026-10-05 document/demo_video_guide.md written for GPT 6 (Sir Jabin: GPT 6 records the demo video); linked from efanio_split.md + handoff.
 
 - 2026-10-05 demo video (Jabin side): ffmpeg installed (SJ OK, official gyan.dev build, winget hash-checked); Bella voice clips for video/narration.txt; cards + assembler (video/tools/*); draft 2:54.6 with placeholders. Codex records scenes 02-08 (handoff).
+
+- 2026-10-05 08:38 REFINEMENT phase (Sir Jabin): automated demo video rejected; team records manually (video/raw, video/voice kept). Repo cleanup: .chart-data-*, test-results, video/build, video/samples, old logs removed; ffmpeg uninstalled. Docs updated: jabin_split LIVE STATUS (+ 5-step pre-submission MCP check), efanio_split §9, demo_video_guide status, handoff.
+
+- 2026-10-05 deck folder renamed submssion/ -> submission/; final deck + screenshots committed (submission/final, submission/screenshots); large source designs and video drafts gitignored; Codex's assemble.py/captions/live_mcp_test edits and deletion of the rejected demo MP4 committed.

@@ -52,3 +52,6 @@ Post "FROM Efanio TO both | CHECKPOINT B" in handoffs.md: done, numbers (with la
 
 ## 8. Demo video (Mon 5 Oct)
 Follow `document/demo_video_guide.md` (context, rules, live URLs, storyboard, narration, captions, ElevenLabs, ffmpeg pipeline, checklist).
+
+## 9. Refinement -> demo -> submission (updated Mon 05 Oct, 08:38 IST, Sir Jabin)
+Sir Jabin refines first. Then run the pre-submission MCP check (document/jabin_split.md LIVE STATUS). Then Efanio records the demo video manually (raw captures in video/raw/, voice clips in video/voice/, narration video/narration.txt are available; the automated assembler was rejected) and submits. Every number with its label (official / post-hoc / first-pass E1). Commit the final deck to submission/final/ before submitting.

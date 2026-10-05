@@ -10,22 +10,20 @@ Owner: Sir Jabin, with Claude Code. Partner track: `joanna_split.md` (Joanna + A
 
 ---
 
-## LIVE STATUS (updated Sun 4 Oct 18:35 IST; newest state only; a new session starts HERE)
+## LIVE STATUS (updated Mon 05 Oct, 08:38 IST; newest state only; a new session starts HERE)
 
-**18:35:** Jabin track complete (E1 all arms, resolve(), reviews). Efanio pushed Task 1 (API/demo/MCP, cd62e8d); Sir Jabin reports Efanio also submitted the entry, but the repo has no record yet: CHECKPOINT B requested in handoffs.md (submitted materials, Laya on/off, numbers + labels, whether resubmission is allowed). Open: Efanio's decide() injection-order fix.
+**Phase: REFINEMENT (Sir Jabin).** Order: (1) Sir Jabin refines the product/deck now; (2) MCP + demo check (list below); (3) Efanio records the demo video (team does it manually; Claude Code's automated cut was rejected by Sir Jabin) and submits.
+**Jabin track: complete** (Laya v3 shipped, official + post-hoc evals, E1 all arms, E3/E4, resolve(), report, model card). Keep: `video/raw/` (real screen captures) and `video/voice/` (Bella clips) for the team's edit. ffmpeg uninstalled; temp files cleaned.
+Live demo/MCP: https://924d7dfe7ec2a1f775.gradio.live (server PID 37220 started by Codex 00:42; plugin in Sir Jabin's ChatGPT recreated to this URL at 01:30).
 
-**Split from Checkpoint A (SJ decision):** Jabin = GPU / heavy computation on his laptop ONLY. Efanio (GPT 6) = all of Joanna's remaining work + non-GPU parts of Jabin's (guide: `document/efanio_split.md`, ownership table there). Joanna away.
-**Done:** classifier shipped (Laya v3, USE_LAYA=True, threshold 0.85); official run (v2) + post-hoc v3/v4, E3, E4 in `results/`; report `results/classifier/report.md`; model card `docs/model_card.md`; E1 plain + prompt_only complete (`results/e1/tables.md`, first-pass labels); ONNX int8 318 MB (`results/onnx_check.json`). Weights only in `models/` (gitignored; Release exists, no more publishing until the end).
+**Pre-submission MCP check (run on Sir Jabin's laptop before Efanio records/submits):**
+1. Server up: port 7862 listening (`scripts/serve_demo.py --share`), trained Laya loaded (trace shows "laya:", not "laya unavailable").
+2. `python scripts/check_mcp.py <PUBLIC_URL>/gradio_api/mcp/` prints "trained Laya, both records, sources and dates OK" for en/hi/ta and "Catalogue OK".
+3. ChatGPT plugin "Make AI Know Her" points to the SAME public URL (Settings -> Plugins; a restart changes the gradio.live URL: recreate the plugin if so).
+4. `python -m pytest tests -q` green (490 passed on 5 Oct 01:00; needs duckdb, rapidfuzz, gradio[mcp]).
+5. Laptop stays on, plugged in, online while judges might use the link (temporary share link, not permanent hosting).
+Open: final deck version (`submission/final/`, untracked, folder name typo) to commit; submission form (Efanio).
 
-| # | Jabin's GPU/heavy queue | Blocked on |
-|---|---|---|
-| 1 | ~~Install duckdb~~ DONE 11:55 (439 tests pass). rapidfuzz pending SJ OK (needed only if resolve() uses entities.py) | - |
-| 2 | E1 layer + layer_text: `python -m mak.eval.run_e1 --arms layer,layer_text` then `python -m mak.eval.e1_tables` (~1.5-2 h GPU). DONE 13:05: layer WVR EN .528 vs plain .110 (first-pass labels; human re-label pending, Efanio) | - |
-| 3 | ~~Regenerate report~~ DONE (classifier report unchanged by E1; E1 numbers in results/e1/tables.md) | - |
-| 4 | Optional: ONNX inference wrapper + accuracy check (only if Efanio picks ONNX hosting) | Efanio's hosting choice |
-| 5 | Final: publish decision at the end (SJ: keep the existing Release until then) | SJ |
-
-Rules: never read test text; post-hoc numbers always next to the official run; log in handoffs/CHANGELOG/docs/05.
 ## How we stay independent of each other
 
 | Interface | Owner | Fixed in Phase 0 as | Until the real one lands, the other side uses |
