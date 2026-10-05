@@ -43,3 +43,24 @@ submission/Untitled design.pptx
 video/*.mp4
 !video/make-ai-know-her-demo.mp4
 logs/
+
+# Kept on the team's machines only, not on GitHub (cleanup 5 Oct 2026):
+# planning notes, agent files, research pack, deck, video, dev logs
+/.claude/
+/Skills/
+/AGENTS.md
+/CLAUDE.md
+/CHANGELOG.md
+/OWNERS.md
+/document/
+/icc-make-ai-know-her/
+/submission/
+/video/
+/site/
+/space/
+/.gradio/
+/docs/*
+!/docs/model_card.md
+/results/*.log
+/results/*.err
+/results/*.jpg

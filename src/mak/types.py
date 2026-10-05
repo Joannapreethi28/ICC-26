@@ -1,4 +1,4 @@
-"""Shared data types for Make AI Know Her. SHARED CONTRACT: change only with a CONTRACT CHANGE message in document/handoffs.md."""
+"""Shared data types for Make AI Know Her."""
 from __future__ import annotations
 
 from dataclasses import dataclass, field

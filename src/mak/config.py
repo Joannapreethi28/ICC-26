@@ -1,4 +1,4 @@
-"""Paths and thresholds. SHARED CONTRACT: change only with a CONTRACT CHANGE message in document/handoffs.md."""
+"""Paths and thresholds."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]

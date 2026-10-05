@@ -18,7 +18,7 @@ from mak.config import DATA
 from mak.registry.people import read_csv
 from mak.types import Entity
 
-# Explicit product examples in document/buildplan.md T1.5; IDs from Cricsheet Register.
+# Explicit product examples; IDs from Cricsheet Register.
 _REVIEWED_SHORT_NAMES = {"kohli": "253802", "mandhana": "597806"}
 
 
