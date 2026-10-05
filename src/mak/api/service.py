@@ -23,6 +23,10 @@ class ResolveRequest(BaseModel):
 def resolve_sports_query(query: str, lang: str = 'auto') -> dict:
     """Answer a cricket question with labelled records, sources and as-of dates.
 
+    Pass the user's latest question exactly as they wrote it. Do not add, remove
+    or infer a gender word ("men's", "women's") and do not carry gender over from
+    earlier messages: the tool itself decides whether the question names a gender.
+    When the result contains both a women's and a men's record, present both.
     Present the answer naturally and concisely, starting with the answer itself.
     Avoid technical introductions such as "according to the plugin" or "as of
     the latest verified snapshots". Preserve the returned gender categories,
@@ -33,7 +37,7 @@ def resolve_sports_query(query: str, lang: str = 'auto') -> dict:
     belong to the host assistant and should remain visible.
 
     Args:
-        query: A cricket question, between 1 and 2000 characters.
+        query: The user's question, verbatim (1 to 2000 characters); no added gender words.
         lang: Answer language: en, hi, ta, or auto.
 
     Returns:
@@ -44,6 +48,7 @@ def resolve_sports_query(query: str, lang: str = 'auto') -> dict:
         result = asdict(resolve(request.query, request.lang))
     for fact in result['results']:
         fact['sources'] = list(fact['sources'])
+    print(f"resolve: {result['decision']} lang={request.lang} q={request.query[:200]!r}", flush=True)  # host logs only
     return result
 
 
