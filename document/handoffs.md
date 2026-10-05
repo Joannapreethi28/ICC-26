@@ -41,6 +41,13 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 # Messages (newest first)
 
+### Mon 05 Oct, 11:10 IST | FROM Jabin (Claude Code) TO Efanio, Joanna | DONE | Refinement finished; demo + submission are yours
+- **Live (Modal, permanent):** https://jabssyyy--make-ai-know-her-web.modal.run , MCP `/gradio_api/mcp/`. Open the demo once before recording; it sleeps when idle, and the first load takes ~20-60 s.
+- **ChatGPT connector works** (Sir Jabin's account). Tools are marked read-only (no Allow prompts). The tool asks hosts for the verbatim question and descriptive plain answers with dates, no emojis. Ask in a NEW chat, since old context can leak "men's" into the query.
+- **Gemini:** custom MCP apps are NOT available on our account/region (India). Video plan: Gemini plain = the problem (men's only) → ChatGPT plain = the same gap → ChatGPT + Make AI Know Her = both records. Say in the narration: "Gemini custom apps not available in our region yet; the same MCP link works in any MCP client".
+- **Verified demo questions + expected answers:** `document/demo_video_guide.md` (re-checked 5 Oct; avoid "most test centuries", which has no verified data).
+- Deadline 23:59 IST.
+
 ### Mon 05 Oct, 10:20 IST | FROM Jabin (Claude Code) TO Efanio, Joanna | DONE | PERMANENT hosting on Modal (free)
 - **Use this URL from now on (it never changes):** demo https://jabssyyy--make-ai-know-her-web.modal.run , MCP https://jabssyyy--make-ai-know-her-web.modal.run/gradio_api/mcp/ . check_mcp.py green en/hi/ta + icons. The laptop no longer needs to stay on.
 - Sleeps when idle, so the first request takes ~20-60 s. Before recording, open the demo once to wake it.
