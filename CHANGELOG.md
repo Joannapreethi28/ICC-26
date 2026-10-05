@@ -1,5 +1,7 @@
 # CHANGELOG (build)
 
+- 2026-10-05 08:55: Demo/MCP server restarted (old URL dead); new URL https://277143684aa6b204f5.gradio.live, check_mcp.py green en/hi/ta. Release `laya-mak-v3` notes rewritten as a model card. Post-hoc E3 re-run with current code (`results/e3/*posthoc_20261005*`; topic en 0.797 -> 0.932, gender unchanged). Added MCP flow diagram for the deck (`submission/screenshots/mcp_flow.png`).
+
 - 2026-10-05: At Sir Jabin's request, retained only the finalized deck in submssion/final, renamed to Make AI Know Her - ICC Pitch.pptx. Removed previous generated decks, build scripts, previews and presentation working notes. Preserved original template/design decks, screenshots and project files. SHA-256 confirms final deck content is unchanged.
 
 - 2026-10-05: Restarted the identified trained-Laya demo at Sir Jabin's request. New public URL https://ea95ffb3e669617b62.gradio.live; public tool discovery confirms conversational-answer guidance and EN/HI/TA sourced-result checks pass. Updated live instructions. Consumer plugin URL/metadata refresh remains pending browser access.

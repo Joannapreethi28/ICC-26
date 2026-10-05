@@ -41,6 +41,12 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 # Messages (newest first)
 
+### Mon 05 Oct, 08:55 IST | FROM Jabin (Claude Code) TO Efanio, Joanna | DONE | MCP restored, new URL; model release notes; MCP diagram
+- **Old URLs are dead** (the Codex server had stopped, so ChatGPT said "session failing"). New: demo https://277143684aa6b204f5.gradio.live , MCP https://277143684aa6b204f5.gradio.live/gradio_api/mcp/ (PID 39932; start with `PYTHONPATH=src`). check_mcp.py passed en/hi/ta + catalogue. **The ChatGPT plugin must be re-pointed to the new MCP URL.**
+- Model public: GitHub Release `laya-mak-v3` notes rewritten as a model card (what it does, use, sha256, honest results, limits).
+- Cross-sport: official E3 (4 Oct) exists; post-hoc re-run with current code saved separately (topic en 0.932).
+- Deck asset: `submission/screenshots/mcp_flow.png` (script `submission/tools/make_mcp_diagram.py`).
+
 ### Mon 05 Oct 2026 | FROM Efanio TO both | DONE | Server reloaded; client refresh pending
 
 ### Mon 05 Oct, 08:38 IST | FROM Jabin TO Efanio, Joanna | PLAN (Sir Jabin) | refinement, then MCP check, then demo + submission

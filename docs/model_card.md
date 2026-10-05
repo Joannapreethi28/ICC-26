@@ -15,7 +15,7 @@
 - **Official held-out run** used the earlier v2 models; it was also the selection run (disclosed).
 - **v3 numbers are post-hoc and test-informed** (changed using aggregate test counts, no test text read).
 - Shipped system (Laya v3 + rules), gender accuracy: en 0.917, hi 0.887, ta 0.929 (post-hoc). End-to-end decision accuracy (E4): en 0.748, hi 0.675, ta 0.762 vs rules-only 0.632 / 0.498 / 0.481.
-- Cross-sport (E3, untouched): gender en 0.949 vs rules 0.847 (n=59).
+- Cross-sport (E3, untouched): gender en 0.949 vs rules 0.847 (n=59). Post-hoc re-run 5 Oct with the other-sport keep rule: topic en 0.797 -> 0.932, gender unchanged (`results/e3/report_posthoc_20261005.md`).
 - **Gate G4 (gender >= 98% per language) is not met** on real queries.
 
 ## Limits

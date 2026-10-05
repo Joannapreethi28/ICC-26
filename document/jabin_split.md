@@ -10,11 +10,12 @@ Owner: Sir Jabin, with Claude Code. Partner track: `joanna_split.md` (Joanna + A
 
 ---
 
-## LIVE STATUS (updated Mon 05 Oct, 08:38 IST; newest state only; a new session starts HERE)
+## LIVE STATUS (updated Mon 05 Oct, 08:53 IST; newest state only; a new session starts HERE)
 
 **Phase: REFINEMENT (Sir Jabin).** Order: (1) Sir Jabin refines the product/deck now; (2) MCP + demo check (list below); (3) Efanio records the demo video (team does it manually; Claude Code's automated cut was rejected by Sir Jabin) and submits.
 **Jabin track: complete** (Laya v3 shipped, official + post-hoc evals, E1 all arms, E3/E4, resolve(), report, model card). Keep: `video/raw/` (real screen captures) and `video/voice/` (Bella clips) for the team's edit. ffmpeg uninstalled; temp files cleaned.
-Live demo/MCP: https://924d7dfe7ec2a1f775.gradio.live (server PID 37220 started by Codex 00:42; plugin in Sir Jabin's ChatGPT recreated to this URL at 01:30).
+Live demo/MCP (NEW URL 05 Oct 08:50): https://277143684aa6b204f5.gradio.live , MCP https://277143684aa6b204f5.gradio.live/gradio_api/mcp/ (server PID 39932, started by Claude Code with `PYTHONPATH=src`; old 924d7… URL is DEAD: the Codex server had stopped, which is why ChatGPT said "session failing"). check_mcp.py passed en/hi/ta + catalogue at 08:51. **ChatGPT plugin must be re-pointed to the new URL (step 3).**
+Cross-sport (E3): official run 4 Oct (gender en 0.949 vs rules 0.847, topic en 0.797; n=59, only 1 ta row). Post-hoc re-run 5 Oct with current code (other-sport keep rule): gender en 0.949, topic en 0.932 (`results/e3/report_posthoc_20261005.md`, POST-HOC).
 
 **Pre-submission MCP check (run on Sir Jabin's laptop before Efanio records/submits):**
 1. Server up: port 7862 listening (`scripts/serve_demo.py --share`), trained Laya loaded (trace shows "laya:", not "laya unavailable").
@@ -22,7 +23,7 @@ Live demo/MCP: https://924d7dfe7ec2a1f775.gradio.live (server PID 37220 started 
 3. ChatGPT plugin "Make AI Know Her" points to the SAME public URL (Settings -> Plugins; a restart changes the gradio.live URL: recreate the plugin if so).
 4. `python -m pytest tests -q` green (490 passed on 5 Oct 01:00; needs duckdb, rapidfuzz, gradio[mcp]).
 5. Laptop stays on, plugged in, online while judges might use the link (temporary share link, not permanent hosting).
-Open: final deck version (`submission/final/`, untracked, folder name typo) to commit; submission form (Efanio).
+Open: re-point ChatGPT plugin (Sir Jabin); MCP picture for the deck; deck refinements; submission form (Efanio). Model weights are public: GitHub Release `laya-mak-v3` (Apache-2.0, release notes = model card).
 
 ## How we stay independent of each other
 

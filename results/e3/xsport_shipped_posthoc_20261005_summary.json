@@ -1,0 +1,246 @@
+{
+ "testset": "C:\\Users\\Jabin M\\OneDrive\\Desktop\\ICC'26\\testsets\\xsport.csv",
+ "n_queries": 60,
+ "by_q_lang": [
+  {
+   "q": "gender_signal",
+   "lang": "en",
+   "n": 59,
+   "acc": 0.9491525423728814,
+   "lo": 0.8608327667771333,
+   "hi": 0.9825575988405467,
+   "ece": 0.01809661016949149
+  },
+  {
+   "q": "gender_signal",
+   "lang": "ta",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 0.043200000000000016
+  },
+  {
+   "q": "topic",
+   "lang": "en",
+   "n": 59,
+   "acc": 0.9322033898305084,
+   "lo": 0.8382425011833289,
+   "hi": 0.9733218129016085,
+   "ece": 0.06779661016949157
+  },
+  {
+   "q": "topic",
+   "lang": "ta",
+   "n": 1,
+   "acc": 0.0,
+   "lo": 0.0,
+   "hi": 0.7934567085261071,
+   "ece": 1.0
+  }
+ ],
+ "by_q_slice": [
+  {
+   "q": "gender_signal",
+   "slice": "explicit",
+   "n": 23,
+   "acc": 0.8695652173913043,
+   "lo": 0.678721020269818,
+   "hi": 0.954624234856553,
+   "ece": 0.113617391304348
+  },
+  {
+   "q": "gender_signal",
+   "slice": "plain",
+   "n": 37,
+   "acc": 1.0,
+   "lo": 0.9059390425448564,
+   "hi": 1.0,
+   "ece": 0.04293783783783789
+  },
+  {
+   "q": "topic",
+   "slice": "explicit",
+   "n": 23,
+   "acc": 0.9565217391304348,
+   "lo": 0.7900841350594088,
+   "hi": 0.9922835330378734,
+   "ece": 0.04347826086956519
+  },
+  {
+   "q": "topic",
+   "slice": "plain",
+   "n": 37,
+   "acc": 0.8918918918918919,
+   "lo": 0.7529115358483284,
+   "hi": 0.9571487947949374,
+   "ece": 0.10810810810810811
+  }
+ ],
+ "by_q_source": [
+  {
+   "q": "gender_signal",
+   "source": "aya",
+   "n": 1,
+   "acc": 1.0,
+   "lo": 0.20654329147389294,
+   "hi": 1.0,
+   "ece": 0.043200000000000016
+  },
+  {
+   "q": "gender_signal",
+   "source": "nq_open",
+   "n": 59,
+   "acc": 0.9491525423728814,
+   "lo": 0.8608327667771333,
+   "hi": 0.9825575988405467,
+   "ece": 0.01809661016949149
+  },
+  {
+   "q": "topic",
+   "source": "aya",
+   "n": 1,
+   "acc": 0.0,
+   "lo": 0.0,
+   "hi": 0.7934567085261071,
+   "ece": 1.0
+  },
+  {
+   "q": "topic",
+   "source": "nq_open",
+   "n": 59,
+   "acc": 0.9322033898305084,
+   "lo": 0.8382425011833289,
+   "hi": 0.9733218129016085,
+   "ece": 0.06779661016949157
+  }
+ ],
+ "confusion": {
+  "gender_signal": {
+   "none -> none": 37,
+   "men -> men": 11,
+   "women -> women": 9,
+   "men -> none": 2,
+   "women -> none": 1
+  },
+  "topic": {
+   "other_sport_stat -> other_sport_stat": 55,
+   "other_sport_stat -> cricket_stat": 5
+  },
+  "family": {},
+  "stat": {},
+  "format": {}
+ },
+ "confident_errors": [
+  {
+   "id": "ta-aya-train-5a69e8e6-010118",
+   "lang": "ta",
+   "slice": "plain",
+   "source": "aya",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "\n2022 FIFA உலகக் கோப்பையை வென்ற நாடு எது?\n",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-030621",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "when has argentina won the fifa world cup",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-005130",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who win the under 17 fifa world cup",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-077149",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "where will the 2019 fifa mens world cup be held",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-080101",
+   "lang": "en",
+   "slice": "plain",
+   "source": "nq_open",
+   "q": "topic",
+   "gold": "other_sport_stat",
+   "pred": "cricket_stat",
+   "conf": 1.0,
+   "ok": 0,
+   "text": "who is the host of fifa world cup 2026",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-039952",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "women",
+   "pred": "none",
+   "conf": 0.9567,
+   "ok": 0,
+   "text": "when did venus williams win her first wimbledon title",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-027236",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 0.9575,
+   "ok": 0,
+   "text": "how many nba titles does kobe bryant have",
+   "error": null
+  },
+  {
+   "id": "en-nq-train-7070589b-083924",
+   "lang": "en",
+   "slice": "explicit",
+   "source": "nq_open",
+   "q": "gender_signal",
+   "gold": "men",
+   "pred": "none",
+   "conf": 0.9569,
+   "ok": 0,
+   "text": "when did michael jordan come to the nba",
+   "error": null
+  }
+ ],
+ "errors": 0,
+ "option_order_changed": null,
+ "latency_ms": {
+  "p50": 24.835000003804453,
+  "p95": 53.1288999991375
+ }
+}
