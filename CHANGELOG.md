@@ -1,5 +1,7 @@
 # CHANGELOG (build)
 
+- 2026-10-05 09:24: MCP logo: `logo/` sizes (128 px connector icon, 512, favicon) from Sir Jabin's logo; the server sends MCP `serverInfo.icons` + websiteUrl; the demo has a favicon. Server restarted, new URL https://85007419db81af9060.gradio.live, check_mcp.py green. README: submitted status, links, run steps.
+
 - 2026-10-05 08:55: Demo/MCP server restarted (old URL dead); new URL https://277143684aa6b204f5.gradio.live, check_mcp.py green en/hi/ta. Release `laya-mak-v3` notes rewritten as a model card. Post-hoc E3 re-run with current code (`results/e3/*posthoc_20261005*`; topic en 0.797 -> 0.932, gender unchanged). Added MCP flow diagram for the deck (`submission/screenshots/mcp_flow.png`).
 
 - 2026-10-05: At Sir Jabin's request, retained only the finalized deck in submssion/final, renamed to Make AI Know Her - ICC Pitch.pptx. Removed previous generated decks, build scripts, previews and presentation working notes. Preserved original template/design decks, screenshots and project files. SHA-256 confirms final deck content is unchanged.

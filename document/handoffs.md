@@ -41,6 +41,12 @@ This file is the ONLY channel between the two tracks (`jabin_split.md`, `joanna_
 
 # Messages (newest first)
 
+### Mon 05 Oct, 09:24 IST | FROM Jabin (Claude Code) TO Efanio, Joanna | DONE | MCP logo live, new URL, README; hand-over
+- **New URL (old ones dead):** demo https://85007419db81af9060.gradio.live , MCP https://85007419db81af9060.gradio.live/gradio_api/mcp/ . check_mcp.py green en/hi/ta.
+- **Logo:** Sir Jabin's `logo/logo_for_mcp.png`. For ChatGPT, upload `logo/logo_mcp_128.png` in the connector form's icon field; ChatGPT does not pick it up from the server. The server also sends it in MCP `serverInfo.icons`, and the demo has a favicon.
+- **README:** submitted status, live/MCP links, model release, run steps.
+- **Yours:** video, hosting decision (end of day), submission by 23:59 IST. Sir Jabin does the ChatGPT re-point + icon check at the end.
+
 ### Mon 05 Oct, 08:55 IST | FROM Jabin (Claude Code) TO Efanio, Joanna | DONE | MCP restored, new URL; model release notes; MCP diagram
 - **Old URLs are dead** (the Codex server had stopped, so ChatGPT said "session failing"). New: demo https://277143684aa6b204f5.gradio.live , MCP https://277143684aa6b204f5.gradio.live/gradio_api/mcp/ (PID 39932; start with `PYTHONPATH=src`). check_mcp.py passed en/hi/ta + catalogue. **The ChatGPT plugin must be re-pointed to the new MCP URL.**
 - Model public: GitHub Release `laya-mak-v3` notes rewritten as a model card (what it does, use, sha256, honest results, limits).
