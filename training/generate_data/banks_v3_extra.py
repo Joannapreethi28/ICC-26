@@ -1,4 +1,4 @@
-"""Data v3 additions (3-4 Oct 2026, Jabin/Claude dev time). OWNER: Jabin.
+"""Data v3 additions (3-4 Oct 2026, dev time). OWNER: Jabin.
 Why: on the frozen test run, aggregate confusion counts (no test text read) showed most family errors were real
 'other cricket statistic' questions forced into a specific family, and general cricket questions read as stats.
 These phrasings were written from general cricket knowledge, never from the test sets (G-011). hi/ta need native review.
